@@ -1,0 +1,65 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://dpy8lokjdhd4m"]
+
+[ext_resource type="FontFile" uid="uid://n7lo661wrh6j" path="res://Menus/Assets/PixCon.ttf" id="2_4etes"]
+[ext_resource type="Texture2D" uid="uid://bwy7gwo2t0i3b" path="res://Menus/Assets/customGUI.png" id="2_bcupd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4oukk"]
+texture = ExtResource("2_bcupd")
+region_rect = Rect2(64, 48, 48, 16)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pggn1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c8j5r"]
+texture = ExtResource("2_bcupd")
+region_rect = Rect2(144, 16, 48, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2mi6r"]
+texture = ExtResource("2_bcupd")
+region_rect = Rect2(144, 32, 48, 16)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e1vm3"]
+
+[resource]
+default_font = ExtResource("2_4etes")
+Button/colors/font_color = Color(0.52549, 0.513726, 0.541176, 1)
+Button/colors/font_disabled_color = Color(0.52549, 0.513726, 0.541176, 1)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 27
+Button/fonts/font = ExtResource("2_4etes")
+Button/styles/disabled = SubResource("StyleBoxTexture_4oukk")
+Button/styles/focus = SubResource("StyleBoxEmpty_pggn1")
+Button/styles/hover = SubResource("StyleBoxTexture_c8j5r")
+Button/styles/normal = SubResource("StyleBoxTexture_c8j5r")
+Button/styles/pressed = SubResource("StyleBoxTexture_2mi6r")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 25
+Label/fonts/font = ExtResource("2_4etes")
+Label/styles/normal = SubResource("StyleBoxEmpty_e1vm3")
+RichTextLabel/colors/default_color = Color(0.0823529, 0.533333, 0, 1)
+RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 1)
+RichTextLabel/constants/shadow_offset_x = 7
+RichTextLabel/constants/shadow_offset_y = 7
+RichTextLabel/font_sizes/bold_font_size = 70
+RichTextLabel/font_sizes/normal_font_size = 75
+RichTextLabel/fonts/normal_font = ExtResource("2_4etes")
+VBoxContainer/constants/separation = 20

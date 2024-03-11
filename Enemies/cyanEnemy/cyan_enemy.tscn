@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cv85or44ka3di"]
+
+[ext_resource type="Script" path="res://Enemies/cyanEnemy/cyan_enemy.gd" id="1_dtmpf"]
+[ext_resource type="Texture2D" uid="uid://6vvvvsjs5ohm" path="res://Enemies/cyanEnemy/Assets/cyan hull.png" id="1_rkf8x"]
+[ext_resource type="Texture2D" uid="uid://bbj5jjgw3sm5f" path="res://Enemies/cyanEnemy/Assets/turret cyan.png" id="2_k8tos"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n3kng"]
+radius = 22.0907
+
+[node name="cyan_enemy" type="CharacterBody2D"]
+script = ExtResource("1_dtmpf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rkf8x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_n3kng")
+
+[node name="turret" type="Sprite2D" parent="."]
+texture = ExtResource("2_k8tos")
+offset = Vector2(14, 0)
+
+[node name="Marker2D" type="Marker2D" parent="turret"]
+position = Vector2(45, 0)

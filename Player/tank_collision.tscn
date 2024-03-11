@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3koeysg41d5w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_imk5w"]
+size = Vector2(69.25, 67.375)
+
+[node name="tank_collision" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_imk5w")

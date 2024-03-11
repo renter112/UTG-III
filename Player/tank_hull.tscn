@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://crrg2iwsh7hjr"]
+
+[ext_resource type="Texture2D" uid="uid://osn4aa5dgrfm" path="res://Player/Assets/tank_hull_CAF.png" id="1_0tepi"]
+[ext_resource type="Script" path="res://Player/Scripts/tank_hull.gd" id="1_2q5m4"]
+[ext_resource type="PackedScene" uid="uid://cc6yeqe3gt1d1" path="res://Player/tank_turret.tscn" id="2_rvdxb"]
+[ext_resource type="PackedScene" uid="uid://c3koeysg41d5w" path="res://Player/tank_collision.tscn" id="3_b4p7v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u1npa"]
+size = Vector2(65, 64)
+
+[node name="tank_hull" type="CharacterBody2D"]
+script = ExtResource("1_2q5m4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_u1npa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0tepi")
+
+[node name="tank_turret" parent="." instance=ExtResource("2_rvdxb")]
+position = Vector2(7, 0)
+
+[node name="tank_collision" parent="." instance=ExtResource("3_b4p7v")]

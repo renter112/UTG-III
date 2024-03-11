@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<level>
+<levelName name="5"></levelName>
+<levelSeed seed="kc6b2gt9d1tfmu2gwxiirre8t1s1pmjp"></levelSeed>
+	<grid x="20" y="11"></grid>
+	<objects>
+		<coord x="6" y="3" type="block"></coord>
+		<coord x="6" y="4" type="block"></coord>
+		<coord x="6" y="5" type="block"></coord>
+		<coord x="17" y="5" type="finish"></coord>
+		<coord x="6" y="6" type="block"></coord>
+		<coord x="6" y="7" type="block"></coord>
+	</objects>
+	<enemies>
+		<tank x="3" y="5" type="p1"></tank>
+		<enemy x="13" y="5" type="cyan"></enemy>
+	</enemies>
+</level>

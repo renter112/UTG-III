@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://didu57jrg4k0u"]
+
+[ext_resource type="Script" path="res://Enemies/blueEnemy/big_bullet.cs" id="1_cr8nm"]
+[ext_resource type="Texture2D" uid="uid://ckdoc0rohxj2a" path="res://Enemies/blueEnemy/assets/bigbullet.png" id="2_wtf8i"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wwo58"]
+radius = 1.20579
+height = 2.85806
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_11iif"]
+radius = 0.541581
+height = 1.913
+
+[node name="BigBullet" type="RigidBody2D"]
+collision_layer = 5
+collision_mask = 4
+input_pickable = true
+gravity_scale = 0.0
+max_contacts_reported = 10000
+contact_monitor = true
+script = ExtResource("1_cr8nm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_wtf8i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+scale = Vector2(-2.89479, 4.19865)
+shape = SubResource("CapsuleShape2D_wwo58")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
+
+[node name="bigBulletArea" type="Area2D" parent="."]
+collision_layer = 13
+collision_mask = 13
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bigBulletArea"]
+position = Vector2(7, -2.11031e-12)
+rotation = 1.5708
+scale = Vector2(-7.38578, 4.18191)
+shape = SubResource("CapsuleShape2D_11iif")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="bigBulletArea" to="." method="_on_area_2d_area_entered"]

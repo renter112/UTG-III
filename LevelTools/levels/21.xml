@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<level>
+<levelName name="21"></levelName>
+<levelSeed seed="3kgoqb3p27ohqxo8h728dn9jbhx21lsg"></levelSeed>
+	<grid x="20" y="11"></grid>
+	<objects>
+		<coord x="3" y="3" type="hole"></coord>
+		<coord x="4" y="3" type="hole"></coord>
+		<coord x="10" y="3" type="hole"></coord>
+		<coord x="11" y="3" type="hole"></coord>
+		<coord x="3" y="4" type="hole"></coord>
+		<coord x="4" y="4" type="hole"></coord>
+		<coord x="10" y="4" type="hole"></coord>
+		<coord x="11" y="4" type="hole"></coord>
+		<coord x="7" y="7" type="hole"></coord>
+		<coord x="8" y="7" type="hole"></coord>
+		<coord x="15" y="7" type="hole"></coord>
+		<coord x="16" y="7" type="hole"></coord>
+		<coord x="7" y="8" type="hole"></coord>
+		<coord x="8" y="8" type="hole"></coord>
+		<coord x="15" y="8" type="hole"></coord>
+		<coord x="16" y="8" type="hole"></coord>
+		<coord x="18" y="9" type="finish"></coord>
+	</objects>
+	<enemies>
+		<enemy x="7" y="2" type="boss"></enemy>
+		<enemy x="16" y="2" type="boss"></enemy>
+		<tank x="1" y="6" type="p1"></tank>
+		<enemy x="13" y="8" type="boss"></enemy>
+	</enemies>
+</level>

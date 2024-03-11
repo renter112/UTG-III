@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcpi8quy7je5a"]
+
+[ext_resource type="Script" path="res://Enemies/cyanEnemy/ghost_bullet.cs" id="1_kpw2d"]
+[ext_resource type="Texture2D" uid="uid://cm2lxfop0v6oc" path="res://player/Assets/bullet.png" id="2_8y3gu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wwo58"]
+radius = 0.666667
+height = 3.27869
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_11iif"]
+radius = 2.99999
+height = 5.99999
+
+[node name="GhostBullet" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 128
+input_pickable = true
+gravity_scale = 0.0
+max_contacts_reported = 10000
+contact_monitor = true
+script = ExtResource("1_kpw2d")
+
+[node name="bulletSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_8y3gu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+scale = Vector2(3, 2.44)
+shape = SubResource("CapsuleShape2D_wwo58")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
+
+[node name="bulletArea" type="Area2D" parent="."]
+collision_layer = 13
+collision_mask = 13
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bulletArea"]
+position = Vector2(6, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_11iif")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="bulletArea" to="." method="_on_area_2d_area_entered"]

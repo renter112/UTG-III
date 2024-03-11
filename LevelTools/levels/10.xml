@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<level>
+<levelName name="10"></levelName>
+<levelSeed seed="idcglqb7u2lknr4sy5tw2xqubs1zxyba"></levelSeed>
+	<grid x="20" y="11"></grid>
+	<objects>
+		<coord x="1" y="1" type="block"></coord>
+		<coord x="2" y="1" type="block"></coord>
+		<coord x="3" y="1" type="block"></coord>
+		<coord x="10" y="1" type="hole"></coord>
+		<coord x="1" y="2" type="block"></coord>
+		<coord x="2" y="2" type="block"></coord>
+		<coord x="3" y="2" type="block"></coord>
+		<coord x="10" y="2" type="hole"></coord>
+		<coord x="1" y="3" type="block"></coord>
+		<coord x="2" y="3" type="block"></coord>
+		<coord x="7" y="3" type="block"></coord>
+		<coord x="7" y="4" type="block"></coord>
+		<coord x="16" y="4" type="block"></coord>
+		<coord x="17" y="4" type="block"></coord>
+		<coord x="18" y="4" type="block"></coord>
+		<coord x="7" y="5" type="block"></coord>
+		<coord x="17" y="5" type="finish"></coord>
+		<coord x="18" y="5" type="block"></coord>
+		<coord x="7" y="6" type="block"></coord>
+		<coord x="16" y="6" type="block"></coord>
+		<coord x="17" y="6" type="block"></coord>
+		<coord x="18" y="6" type="block"></coord>
+		<coord x="1" y="7" type="block"></coord>
+		<coord x="2" y="7" type="block"></coord>
+		<coord x="7" y="7" type="block"></coord>
+		<coord x="1" y="8" type="block"></coord>
+		<coord x="2" y="8" type="block"></coord>
+		<coord x="3" y="8" type="block"></coord>
+		<coord x="10" y="8" type="hole"></coord>
+		<coord x="1" y="9" type="block"></coord>
+		<coord x="2" y="9" type="block"></coord>
+		<coord x="3" y="9" type="block"></coord>
+		<coord x="10" y="9" type="hole"></coord>
+	</objects>
+	<enemies>
+		<enemy x="13" y="3" type="orange"></enemy>
+		<tank x="2" y="5" type="p1"></tank>
+		<enemy x="13" y="7" type="orange"></enemy>
+	</enemies>
+</level>

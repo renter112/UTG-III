@@ -1,0 +1,82 @@
+[gd_scene load_steps=3 format=3 uid="uid://blvx75g1xfqcb"]
+
+[ext_resource type="Theme" uid="uid://dnii5kb4mtk7p" path="res://Menus/Assets/levelSelectButtons.tres" id="1_aldb7"]
+[ext_resource type="Script" path="res://Menus/Scripts/level_select.gd" id="1_t4i6d"]
+
+[node name="level_select" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_aldb7")
+script = ExtResource("1_t4i6d")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="ReturnButton" type="Button" parent="MarginContainer/CenterContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "return"
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/CenterContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/CenterContainer/HBoxContainer/CenterContainer"]
+layout_mode = 2
+text = "page back"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/CenterContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/CenterContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/CenterContainer/HBoxContainer/MarginContainer/CenterContainer"]
+layout_mode = 2
+columns = 5
+
+[node name="CenterContainer2" type="CenterContainer" parent="MarginContainer/CenterContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/CenterContainer/HBoxContainer/CenterContainer2"]
+layout_mode = 2
+text = "page forward"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/CenterContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/CenterContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "exit"
+
+[connection signal="pressed" from="MarginContainer/CenterContainer/HBoxContainer/VBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/HBoxContainer/VBoxContainer2/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxqbfqm8qikut"]
+
+[ext_resource type="Script" path="res://player/collision.cs" id="1_1sxax"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ycuvi"]
+size = Vector2(40, 34.75)
+
+[node name="tank_coll" type="Area2D"]
+collision_layer = 255
+collision_mask = 255
+script = ExtResource("1_1sxax")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ycuvi")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

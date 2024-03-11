@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<level>
+<levelName name="16"></levelName>
+<levelSeed seed="gj4xyjqvgu6c3biklhphmvg3yju3ycvq"></levelSeed>
+	<grid x="20" y="11"></grid>
+	<objects>
+		<coord x="1" y="3" type="block"></coord>
+		<coord x="2" y="3" type="block"></coord>
+		<coord x="3" y="3" type="block"></coord>
+		<coord x="4" y="3" type="block"></coord>
+		<coord x="5" y="3" type="block"></coord>
+		<coord x="6" y="3" type="block"></coord>
+		<coord x="7" y="3" type="hole"></coord>
+		<coord x="8" y="3" type="hole"></coord>
+		<coord x="9" y="3" type="hole"></coord>
+		<coord x="10" y="3" type="hole"></coord>
+		<coord x="11" y="3" type="hole"></coord>
+		<coord x="12" y="3" type="hole"></coord>
+		<coord x="13" y="3" type="hole"></coord>
+		<coord x="14" y="3" type="block"></coord>
+		<coord x="15" y="3" type="block"></coord>
+		<coord x="16" y="3" type="block"></coord>
+		<coord x="17" y="3" type="block"></coord>
+		<coord x="18" y="3" type="block"></coord>
+		<coord x="17" y="5" type="finish"></coord>
+		<coord x="1" y="7" type="block"></coord>
+		<coord x="2" y="7" type="block"></coord>
+		<coord x="3" y="7" type="block"></coord>
+		<coord x="4" y="7" type="block"></coord>
+		<coord x="5" y="7" type="block"></coord>
+		<coord x="6" y="7" type="block"></coord>
+		<coord x="7" y="7" type="hole"></coord>
+		<coord x="8" y="7" type="hole"></coord>
+		<coord x="9" y="7" type="hole"></coord>
+		<coord x="10" y="7" type="hole"></coord>
+		<coord x="11" y="7" type="hole"></coord>
+		<coord x="12" y="7" type="hole"></coord>
+		<coord x="13" y="7" type="hole"></coord>
+		<coord x="14" y="7" type="block"></coord>
+		<coord x="15" y="7" type="block"></coord>
+		<coord x="16" y="7" type="block"></coord>
+		<coord x="17" y="7" type="block"></coord>
+		<coord x="18" y="7" type="block"></coord>
+	</objects>
+	<enemies>
+		<enemy x="9" y="1" type="yellow"></enemy>
+		<enemy x="11" y="1" type="yellow"></enemy>
+		<tank x="2" y="5" type="p1"></tank>
+		<enemy x="9" y="9" type="yellow"></enemy>
+		<enemy x="11" y="9" type="yellow"></enemy>
+	</enemies>
+</level>

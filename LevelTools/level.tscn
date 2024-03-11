@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxx6yyrip754i"]
+
+[ext_resource type="Script" path="res://LevelTools/Scripts/level.gd" id="1_35bql"]
+[ext_resource type="TileSet" uid="uid://lyy5fn5e5k5b" path="res://LevelTools/Assets/mapTileSet.tres" id="1_fnihl"]
+[ext_resource type="PackedScene" uid="uid://crrg2iwsh7hjr" path="res://Player/tank_hull.tscn" id="2_d7ucm"]
+[ext_resource type="PackedScene" uid="uid://bwk5u2oxcp50e" path="res://Items/finish_button.tscn" id="3_cdbvr"]
+
+[node name="level" type="Node2D"]
+script = ExtResource("1_35bql")
+
+[node name="Map" type="TileMap" parent="."]
+tile_set = ExtResource("1_fnihl")
+format = 2
+layer_1/tile_data = PackedInt32Array()
+
+[node name="finish_button" parent="." instance=ExtResource("3_cdbvr")]
+position = Vector2(391, 107)
+
+[node name="tank_hull" parent="." instance=ExtResource("2_d7ucm")]
+position = Vector2(68, 97)
+
+[node name="cam" type="Camera2D" parent="."]
+anchor_mode = 0

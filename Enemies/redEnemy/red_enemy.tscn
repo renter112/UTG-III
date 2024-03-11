@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://1q2w88vf0mmf"]
+
+[ext_resource type="Texture2D" uid="uid://8m8sgvnjxdg8" path="res://Enemies/redEnemy/Assets/red_hull.png" id="1_7fifu"]
+[ext_resource type="Script" path="res://Enemies/redEnemy/red_enemy.gd" id="1_o74m4"]
+[ext_resource type="Texture2D" uid="uid://0dncj2fxyj2l" path="res://Enemies/redEnemy/Assets/red_turret.png" id="2_s3vnm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gyt1m"]
+radius = 25.0
+
+[node name="red_enemy" type="CharacterBody2D" groups=["enemies"]]
+script = ExtResource("1_o74m4")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7fifu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gyt1m")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="turret" type="Sprite2D" parent="."]
+texture = ExtResource("2_s3vnm")
+offset = Vector2(19, 0)
+
+[node name="Marker2D" type="Marker2D" parent="turret"]
+position = Vector2(58, 0)

@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://dunmyf27w1bpj"]
+
+[ext_resource type="Script" path="res://Enemies/redEnemy/red_tank.cs" id="1_jooaq"]
+[ext_resource type="Texture2D" uid="uid://3d5b4o7vc4dk" path="res://Enemies/redEnemy/Assets/hull.png" id="1_n2kb5"]
+[ext_resource type="Texture2D" uid="uid://bjly023c2t0op" path="res://Enemies/redEnemy/Assets/turret.png" id="2_avxvl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g1glv"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mw6tm"]
+radius = 8.0
+
+[node name="RedTank" type="CharacterBody2D"]
+script = ExtResource("1_jooaq")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_g1glv")
+
+[node name="hullSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_n2kb5")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="turret" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="turretSprite" type="Sprite2D" parent="turret"]
+texture = ExtResource("2_avxvl")
+offset = Vector2(4, 0)
+
+[node name="eCol" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="eCol"]
+shape = SubResource("CircleShape2D_mw6tm")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxkkcepd10qbx"]
+
+[ext_resource type="Theme" uid="uid://dnii5kb4mtk7p" path="res://Menus/Assets/levelSelectButtons.tres" id="1_thbi1"]
+[ext_resource type="Script" path="res://Menus/Assets/button.gd" id="2_rsoep"]
+
+[node name="Button" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("1_thbi1")
+text = "1
+"
+script = ExtResource("2_rsoep")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

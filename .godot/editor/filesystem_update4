@@ -1,0 +1,12 @@
+res://Player/tank_hull.tscn
+res://LevelTools/Assets/mapTileSet.tres
+res://Menus/Assets/menuTheme.tres
+res://Menus/Assets/levelSelectButtons.tres
+res://LevelTools/level.tscn
+res://Enemies/redEnemy/red_enemy.tscn
+res://Enemies/blueEnemy/blue_enemy.tscn
+res://Enemies/cyanEnemy/cyan_enemy.tscn
+res://Enemies/orangeEnemy/orange_enemy.tscn
+res://Menus/main_menu.tscn
+res://Menus/level_select.tscn
+res://Menus/Assets/button.tscn
