@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3xm1qs5wqebj"
-path="res://.godot/imported/hull.png-9ca3849329b0db3867b3c08616b4895f.ctex"
+uid="uid://v0fl0qflv10n"
+path="res://.godot/imported/osaka-100-yard-stare-by-me-v0-b064yxmkl0zb1.png-0918b6a12a2aa4117373349e7b3e2ffd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemies/yellowEnemy/hull.png"
-dest_files=["res://.godot/imported/hull.png-9ca3849329b0db3867b3c08616b4895f.ctex"]
+source_file="res://Menus/Assets/osaka-100-yard-stare-by-me-v0-b064yxmkl0zb1.png"
+dest_files=["res://.godot/imported/osaka-100-yard-stare-by-me-v0-b064yxmkl0zb1.png-0918b6a12a2aa4117373349e7b3e2ffd.ctex"]
 
 [params]
 

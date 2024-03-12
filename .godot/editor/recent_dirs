@@ -1,7 +1,10 @@
-res://LevelTools/Assets
-res://Menus/Assets
+res://Enemies/yellowEnemy/Assets
+res://Enemies/yellowEnemy
+res://Items/Assets
 res://Menus/Scripts
 res://Menus
+res://LevelTools/Assets
+res://Menus/Assets
 res://
 res://Enemies/orangeEnemy/Assets
 res://Enemies/orangeEnemy
@@ -15,7 +18,5 @@ res://LevelTools/Scripts
 res://LevelTools
 res://Items/Scripts
 res://Items
-res://Items/Assets
 res://Player/Scripts
 res://Player
-res://Player/Assets

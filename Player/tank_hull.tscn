@@ -9,6 +9,7 @@
 size = Vector2(65, 64)
 
 [node name="tank_hull" type="CharacterBody2D"]
+scale = Vector2(0.9, 0.9)
 script = ExtResource("1_2q5m4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

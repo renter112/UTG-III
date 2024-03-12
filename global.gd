@@ -1,7 +1,6 @@
 extends Node
 
 var current_scene = null
-var level = 1
 
 func _ready():
 	var root = get_tree().root
@@ -35,14 +34,47 @@ func _deferred_goto_scene(path):
 
 	# Optionally, to make it compatible with the SceneTree.change_scene_to_file() API.
 	get_tree().current_scene = current_scene
-
+	
+var level = 1 as int
 func get_level():
 	return level
 func set_level(lvl):
 	level = lvl
+
+var enemies = 0
+func get_enemies():
+	return enemies
+func add_enemies(e):
+	enemies += e
+
 
 var osaka = false
 func get_osaka():
 	return osaka
 func set_osaka(o):
 	osaka = o
+
+var shots :
+	get:
+		return shots
+	set(value):
+		shots = value
+
+var attempts :
+	get:
+		return attempts
+	set(value):
+		attempts = value
+
+var time :
+	get:
+		return time
+	set(value):
+		time = value
+
+var success :
+	get:
+		return success
+	set(value):
+		success = value
+

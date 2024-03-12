@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://donjb1ch00a52"]
+[gd_scene load_steps=5 format=3 uid="uid://donjb1ch00a52"]
 
 [ext_resource type="Theme" uid="uid://dpy8lokjdhd4m" path="res://Menus/Assets/menuTheme.tres" id="1_vmiof"]
 [ext_resource type="Script" path="res://Menus/Scripts/main_menu.gd" id="2_fvmtf"]
 [ext_resource type="Theme" uid="uid://dnii5kb4mtk7p" path="res://Menus/Assets/levelSelectButtons.tres" id="2_n15jf"]
+[ext_resource type="Texture2D" uid="uid://dpbwnxmmlt6ow" path="res://Menus/Assets/mainMenuSC.png" id="4_0i8gr"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -57,7 +58,10 @@ layout_mode = 2
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/CenterContainer"]
 layout_mode = 2
 theme = ExtResource("2_n15jf")
+bbcode_enabled = true
 text = "[center]UTG-II"
+fit_content = true
+autowrap_mode = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -66,19 +70,23 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Button" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(450, 125)
 layout_mode = 2
 disabled = true
 text = "Adventure"
 
 [node name="LevelSelectButton" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(450, 125)
 layout_mode = 2
 text = "Level Select"
 
 [node name="OptionButton" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(450, 125)
 layout_mode = 2
 text = "Options"
 
 [node name="ExitButton" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(450, 125)
 layout_mode = 2
 text = "EXIT"
 
@@ -90,6 +98,8 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/CenterContainer/MarginContainer"]
 layout_mode = 2
+texture = ExtResource("4_0i8gr")
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/LevelSelectButton" to="." method="_on_level_select_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/OptionButton" to="." method="_on_option_button_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

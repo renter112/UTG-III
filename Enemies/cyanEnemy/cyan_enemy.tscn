@@ -10,7 +10,7 @@ radius = 22.0907
 [node name="cyan_enemy" type="CharacterBody2D"]
 script = ExtResource("1_dtmpf")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="enemyhull" type="Sprite2D" parent="."]
 texture = ExtResource("1_rkf8x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -22,3 +22,8 @@ offset = Vector2(14, 0)
 
 [node name="Marker2D" type="Marker2D" parent="turret"]
 position = Vector2(45, 0)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true

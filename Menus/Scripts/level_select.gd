@@ -3,17 +3,12 @@ extends Control
 var button = preload("res://Menus/Assets/button.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for n in range(1,24):
-		print(n)
+	Global.attempts = 0
+	for n in range(1,25):
 		var b = button.instantiate()
 		b.text = str(n)
 		$MarginContainer/CenterContainer/HBoxContainer/MarginContainer/CenterContainer/GridContainer.add_child(b)
 	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 
 func _on_return_button_pressed():

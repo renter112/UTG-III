@@ -1,0 +1,104 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqrvjq6rhl2xn"]
+
+[ext_resource type="Script" path="res://Menus/Scripts/game_over_menu.gd" id="1_x1fdu"]
+[ext_resource type="Theme" uid="uid://dpy8lokjdhd4m" path="res://Menus/Assets/menuTheme.tres" id="1_yn4k4"]
+[ext_resource type="FontFile" uid="uid://n7lo661wrh6j" path="res://Menus/Assets/PixCon.ttf" id="2_b4154"]
+
+[node name="GameOverMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x1fdu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0.466667, 0.466667, 0.466667, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 200
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_yn4k4")
+theme_override_colors/font_color = Color(0, 0.411765, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("2_b4154")
+theme_override_font_sizes/font_size = 64
+text = "FAILURE"
+horizontal_alignment = 1
+
+[node name="InfoCon" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_yn4k4")
+theme_override_constants/separation = 50
+
+[node name="AttemptsLabel" type="Label" parent="MarginContainer/VBoxContainer/InfoCon"]
+layout_mode = 2
+text = "Attempts: 1"
+
+[node name="TimeLabel" type="Label" parent="MarginContainer/VBoxContainer/InfoCon"]
+layout_mode = 2
+text = "Time Taken: 0:40"
+
+[node name="ShotsLabel" type="Label" parent="MarginContainer/VBoxContainer/InfoCon"]
+layout_mode = 2
+text = "Shots Fired: 5"
+
+[node name="ButtonsCon" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_yn4k4")
+theme_override_constants/separation = 150
+
+[node name="RetryButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonsCon"]
+custom_minimum_size = Vector2(250, 75)
+layout_mode = 2
+theme = ExtResource("1_yn4k4")
+theme_override_font_sizes/font_size = 25
+text = "Try Again"
+
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonsCon"]
+custom_minimum_size = Vector2(250, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Main Menu"
+
+[node name="NextButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonsCon"]
+custom_minimum_size = Vector2(250, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+disabled = true
+text = "Next Level"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonsCon/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonsCon/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonsCon/NextButton" to="." method="_on_next_button_pressed"]

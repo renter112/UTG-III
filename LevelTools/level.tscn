@@ -21,3 +21,5 @@ position = Vector2(68, 97)
 
 [node name="cam" type="Camera2D" parent="."]
 anchor_mode = 0
+
+[connection signal="level_finish" from="finish_button" to="." method="_on_finish_button_level_finish"]

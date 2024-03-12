@@ -13,15 +13,10 @@ func _process(delta):
 	$RayCast2D.target_position = tank.position - position
 	if $Timer.is_stopped() && $RayCast2D.is_colliding() != true:
 			shoot()
-			$Timer.start(3.0)
+			$Timer.start(1.5)
 
 func shoot():
 	var b = bullet.instantiate()
-	var b2 = bullet.instantiate()
-	var b3 = bullet.instantiate()
+	b.speed = 350
 	get_tree().get_root().add_child(b)
-	get_tree().get_root().add_child(b2)
-	get_tree().get_root().add_child(b3)
-	b.transform = $turret/marker_left.global_transform
-	b2.transform = $turret/marker_middle.global_transform
-	b3.transform = $turret/marker_right.global_transform
+	b.transform = $turret/Marker2D.global_transform

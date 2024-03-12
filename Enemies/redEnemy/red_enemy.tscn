@@ -12,7 +12,7 @@ script = ExtResource("1_o74m4")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="enemyhull" type="Sprite2D" parent="."]
 texture = ExtResource("1_7fifu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

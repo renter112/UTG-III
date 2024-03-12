@@ -12,11 +12,16 @@ script = ExtResource("1_n2gyg")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="enemyhull" type="Sprite2D" parent="."]
 texture = ExtResource("1_e4tyr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_8ibbp")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
 
 [node name="turret" type="Sprite2D" parent="."]
 texture = ExtResource("2_vvi23")
