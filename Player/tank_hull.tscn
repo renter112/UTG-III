@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://crrg2iwsh7hjr"]
+[gd_scene load_steps=7 format=3 uid="uid://crrg2iwsh7hjr"]
 
 [ext_resource type="Texture2D" uid="uid://osn4aa5dgrfm" path="res://Player/Assets/tank_hull_CAF.png" id="1_0tepi"]
 [ext_resource type="Script" path="res://Player/Scripts/tank_hull.gd" id="1_2q5m4"]
 [ext_resource type="PackedScene" uid="uid://cc6yeqe3gt1d1" path="res://Player/tank_turret.tscn" id="2_rvdxb"]
 [ext_resource type="PackedScene" uid="uid://c3koeysg41d5w" path="res://Player/tank_collision.tscn" id="3_b4p7v"]
+[ext_resource type="AudioStream" uid="uid://b6wcuc7wqcn4r" path="res://Player/Assets/Tank_Sound.....wav" id="5_r1ut7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u1npa"]
 size = Vector2(65, 64)
@@ -23,3 +24,7 @@ texture = ExtResource("1_0tepi")
 position = Vector2(7, 0)
 
 [node name="tank_collision" parent="." instance=ExtResource("3_b4p7v")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_r1ut7")
+autoplay = true
