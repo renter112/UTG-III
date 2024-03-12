@@ -22,6 +22,8 @@ func shoot():
 	get_tree().get_root().add_child(b)
 	get_tree().get_root().add_child(b2)
 	get_tree().get_root().add_child(b3)
-	b.transform = $turret/marker_left.global_transform
-	b2.transform = $turret/marker_middle.global_transform
-	b3.transform = $turret/marker_right.global_transform
+	var theta = PI / 6
+	b.transform = $turret/marker_middle.global_transform
+	b2.transform = $turret/marker_left.global_transform#.rotated(PI /6)
+	b3.transform = $turret/marker_right.global_transform#.rotated(-PI / 6)
+

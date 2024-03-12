@@ -6,6 +6,9 @@ var blockList = []
 var enemies = 0
 var scaler = 64 as int
 var timer = 0 
+
+var pause_menu = preload("res://Menus/pause_menu.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	parseXML()
@@ -98,6 +101,10 @@ func _process(_delta):
 	timer += _delta
 	pass
 
+func _input(event):
+	if event.is_action_pressed("pause"):
+		get_tree().root.add_child(pause_menu.instantiate())
+		get_tree().paused = true
 
 func _on_finish_button_level_finish():
 	Global.success = true
