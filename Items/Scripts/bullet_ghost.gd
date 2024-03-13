@@ -14,7 +14,7 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	if body.name == "tank_hull":
+	if body.name == "tank_hull" || body.name == "tank_collision" || body.name == "tank_turret":
 		body.visible = false
 	queue_free()
 	pass # Replace with function body.

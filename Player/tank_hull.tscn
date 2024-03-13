@@ -9,7 +9,7 @@
 size = Vector2(64.2222, 64.2222)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xqx3d"]
-size = Vector2(67.7778, 66.6667)
+size = Vector2(68.8889, 68.8889)
 
 [node name="tank_hull" type="CharacterBody2D"]
 scale = Vector2(0.9, 0.9)
@@ -34,7 +34,9 @@ stream = ExtResource("5_r1ut7")
 autoplay = true
 
 [node name="tank_collision" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tank_collision"]
-position = Vector2(-0.555557, 1.65568e-06)
+visible = false
+position = Vector2(-1.68218e-06, -2.98023e-07)
 shape = SubResource("RectangleShape2D_xqx3d")
