@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://1q2w88vf0mmf"]
+[gd_scene load_steps=6 format=3 uid="uid://1q2w88vf0mmf"]
 
 [ext_resource type="Texture2D" uid="uid://8m8sgvnjxdg8" path="res://Enemies/redEnemy/Assets/red_hull.png" id="1_7fifu"]
 [ext_resource type="Script" path="res://Enemies/redEnemy/red_enemy.gd" id="1_o74m4"]
@@ -6,6 +6,12 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gyt1m"]
 radius = 25.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_h35c8"]
+vertices = PackedVector2Array(394, 81, 368, 82, 471, -77, 462, -31, 520, -79, 602, 77, 593, 77, 504, -32)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 2), PackedInt32Array(2, 7, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(619, 87, 588, 87, 499, -22, 468, -21, 401, 91, 350, 94, 467, -87, 527, -90)])
+source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="red_enemy" type="CharacterBody2D" groups=["enemies"]]
 script = ExtResource("1_o74m4")
@@ -28,3 +34,19 @@ offset = Vector2(19, 0)
 
 [node name="Marker2D" type="Marker2D" parent="turret"]
 position = Vector2(58, 0)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+process_priority = 1
+process_physics_priority = 1
+process_thread_group = 1
+process_thread_group_order = 0
+process_thread_messages = 3
+show_behind_parent = true
+position = Vector2(-590, -46)
+navigation_polygon = SubResource("NavigationPolygon_h35c8")
+use_edge_connections = false
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 0.1
+target_desired_distance = 0.1
+avoidance_enabled = true

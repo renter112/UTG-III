@@ -8,8 +8,9 @@ func _ready():
 	pass
 	
 func _process(delta):
-	$turret.rotation = (tank.position - position).angle()
+
 	if $Timer.is_stopped():
+			$turret.rotation = (tank.position - position).angle()
 			shoot()
 			$Timer.start(3.0)
 
