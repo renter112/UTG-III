@@ -16,10 +16,10 @@ func _process(delta):
 	navigation_agent.path_desired_distance = 0.5
 	navigation_agent.target_desired_distance = 0.5
 	call_deferred("actor_setup")
+	$turret.rotation = (tank.position - position).angle()
 	$RayCast2D.target_position = tank.position - position
 	if $Timer.is_stopped() && $RayCast2D.is_colliding() != true:
 			movement_target_position = tank.position
-			$turret.rotation = (tank.position - position).angle()
 			shoot()
 			$Timer.start(1.5)
 

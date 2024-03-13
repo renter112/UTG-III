@@ -12,6 +12,7 @@ func _ready():
 	pass
 	
 func _process(delta):
+	$turret.rotation = (tank.position - position).angle()
 	navigation_agent.path_desired_distance = 0.5
 	navigation_agent.target_desired_distance = 0.5
 	call_deferred("actor_setup")

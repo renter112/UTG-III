@@ -15,8 +15,8 @@ func _process(delta):
 	navigation_agent.target_desired_distance = 0.5
 	call_deferred("actor_setup")
 	movement_target_position = tank.position
+	$turret.rotation = (tank.position - position).angle()
 	if $Timer.is_stopped():
-			$turret.rotation = (tank.position - position).angle()
 			shoot()
 			$Timer.start(3.0)
 
