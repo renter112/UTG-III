@@ -8,8 +8,8 @@ radius = 5.0
 height = 22.0
 
 [node name="bullet_ghost" type="Area2D"]
-collision_layer = 6
-collision_mask = 6
+collision_layer = 2
+collision_mask = 4
 script = ExtResource("1_lvan3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -20,5 +20,5 @@ texture = ExtResource("2_xvb0w")
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_wpixh")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

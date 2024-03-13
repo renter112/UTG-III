@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://dhb6ex3o2huo2"]
+
+[ext_resource type="Texture2D" uid="uid://ckod1mvivp7dk" path="res://Player/Assets/tankhull_1.png" id="1_j5uro"]
+[ext_resource type="Texture2D" uid="uid://cmux5qp05jltk" path="res://Player/Assets/tankhull_2.png" id="2_3rnf5"]
+[ext_resource type="Texture2D" uid="uid://c0b36htqldmpe" path="res://Player/Assets/tankhull_3.png" id="3_njvpn"]
+[ext_resource type="Texture2D" uid="uid://22p4aq2miery" path="res://Player/Assets/tankhull_4.png" id="4_p2plx"]
+[ext_resource type="Texture2D" uid="uid://crbiuoytgdwb8" path="res://Player/Assets/tankhull_5.png" id="5_g1k8g"]
+[ext_resource type="Texture2D" uid="uid://bf1vxf4v3pumq" path="res://Player/Assets/tankhull_6.png" id="6_48ltw"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_j5uro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3rnf5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_njvpn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p2plx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g1k8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_48ltw")
+}],
+"loop": true,
+"name": &"driving",
+"speed": 20.0
+}]

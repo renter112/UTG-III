@@ -1,30 +1,40 @@
 [gd_scene load_steps=7 format=3 uid="uid://crrg2iwsh7hjr"]
 
-[ext_resource type="Texture2D" uid="uid://osn4aa5dgrfm" path="res://Player/Assets/tank_hull_CAF.png" id="1_0tepi"]
 [ext_resource type="Script" path="res://Player/Scripts/tank_hull.gd" id="1_2q5m4"]
+[ext_resource type="SpriteFrames" uid="uid://dhb6ex3o2huo2" path="res://Player/Assets/tank_hull_animated.tres" id="2_5cp7j"]
 [ext_resource type="PackedScene" uid="uid://cc6yeqe3gt1d1" path="res://Player/tank_turret.tscn" id="2_rvdxb"]
-[ext_resource type="PackedScene" uid="uid://c3koeysg41d5w" path="res://Player/tank_collision.tscn" id="3_b4p7v"]
 [ext_resource type="AudioStream" uid="uid://b6wcuc7wqcn4r" path="res://Player/Assets/Tank_Sound.....wav" id="5_r1ut7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u1npa"]
-size = Vector2(65, 64)
+size = Vector2(64.2222, 64.2222)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xqx3d"]
+size = Vector2(67.7778, 66.6667)
 
 [node name="tank_hull" type="CharacterBody2D"]
 scale = Vector2(0.9, 0.9)
+collision_layer = 4
+collision_mask = 27
 script = ExtResource("1_2q5m4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
+position = Vector2(-0.111113, 0.111113)
 shape = SubResource("RectangleShape2D_u1npa")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_0tepi")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_5cp7j")
+animation = &"driving"
+frame_progress = 0.464299
 
 [node name="tank_turret" parent="." instance=ExtResource("2_rvdxb")]
-position = Vector2(7, 0)
-
-[node name="tank_collision" parent="." instance=ExtResource("3_b4p7v")]
+position = Vector2(7.77778, 0)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_r1ut7")
 autoplay = true
+
+[node name="tank_collision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tank_collision"]
+position = Vector2(-0.555557, 1.65568e-06)
+shape = SubResource("RectangleShape2D_xqx3d")
