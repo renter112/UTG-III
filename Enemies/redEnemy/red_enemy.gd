@@ -7,18 +7,21 @@ var movement_target_position: Vector2
 
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 func _ready():
-	navigation_agent.path_desired_distance = 4.0
-	navigation_agent.target_desired_distance = 4.0
+
 	tank =  get_node("../tank_hull")
 	$RayCast2D.add_exception(tank)
-	call_deferred("actor_setup")
+
+	movement_target_position = position
 	pass
 	
 func _process(delta):
-	movement_target_position = tank.position- position
+	navigation_agent.path_desired_distance = 0.5
+	navigation_agent.target_desired_distance = 0.5
+	call_deferred("actor_setup")
 	$RayCast2D.target_position = tank.position - position
+	$turret.rotation = (tank.position - position).angle()
 	if $Timer.is_stopped() && $RayCast2D.is_colliding() != true:
-			$turret.rotation = (tank.position - position).angle()
+			movement_target_position = tank.position
 			shoot()
 			$Timer.start(2.0)
 
