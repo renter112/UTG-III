@@ -15,7 +15,7 @@ func _process(delta):
 func _on_body_entered(body):
 	print(body.name)
 	if body.name == "tank_hull":
-		body.queue_free()
+		body.visible = false
 	elif body.get_node_or_null("turret"):
 		body.queue_free()
 		Global.enemies -= 1

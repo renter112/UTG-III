@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed = 150
 @export var rotation_speed = 2.0
-
+signal level_finish()
 var rotation_dir = 0
 var controls_classic = Global.tank_controls_classic
 
@@ -21,3 +21,11 @@ func _physics_process(delta):
 	if controls_classic :
 		rotation += rotation_dir * rotation_speed * delta
 	move_and_slide()
+
+func _process(_delta):
+	print(visible)
+	if visible == false:
+		killed()
+
+func killed():
+	emit_signal("level_finish")

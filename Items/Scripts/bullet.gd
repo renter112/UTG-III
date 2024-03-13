@@ -6,9 +6,8 @@ func _physics_process(delta):
 	position += transform.x * speed * delta
 
 func _on_Bullet_body_entered(body):
-	print(body.name)
 	if body.name == "tank_hull":
-		body.queue_free()
+		body.visible = false
 	elif body.get_node_or_null("turret"):
 		body.queue_free()
 		Global.enemies -= 1
