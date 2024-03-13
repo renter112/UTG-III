@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://og4dmo3fs2q0"]
+
+[ext_resource type="Script" path="res://Enemies/orangeEnemy/orange_tank.gd" id="1_ypiy6"]
+[ext_resource type="Texture2D" uid="uid://c1urtpfwy3qle" path="res://Enemies/orangeEnemy/Assets/orangeHull.png" id="2_ntqu0"]
+[ext_resource type="Texture2D" uid="uid://dosybexfpwugs" path="res://Enemies/orangeEnemy/Assets/orangeTurret.png" id="3_0w838"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ibbp"]
+radius = 29.1548
+
+[node name="orange_tank" type="CharacterBody2D"]
+script = ExtResource("1_ypiy6")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="enemyhull" type="Sprite2D" parent="."]
+texture = ExtResource("2_ntqu0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8ibbp")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="turret" type="Sprite2D" parent="."]
+texture = ExtResource("3_0w838")
+offset = Vector2(15, 0)
+
+[node name="marker_middle" type="Marker2D" parent="turret"]
+position = Vector2(47, 0)
+
+[node name="marker_left" type="Marker2D" parent="turret"]
+position = Vector2(37, -22)
+
+[node name="marker_right" type="Marker2D" parent="turret"]
+position = Vector2(37, 22)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
