@@ -56,8 +56,8 @@ func parseXML():
 				if(enemy == null):
 					break
 				var e = enemy.instantiate()
-				add_child(e)
 				e.position = Vector2(att_dict["x"] as int *scaler + scaler/2, att_dict["y"] as int *scaler + scaler/2) 
+				add_child(e)
 				if att_dict["type"] != "cyan":
 					enemies += 1
 				e.add_to_group("enemies")

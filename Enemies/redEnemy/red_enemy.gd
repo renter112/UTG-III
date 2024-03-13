@@ -3,13 +3,15 @@ extends CharacterBody2D
 var tank
 var bullet = preload("res://Items/bullet.tscn")
 var movement_speed: float = 75.0
-var movement_target_position: Vector2 = Vector2(position.x + 5, position.y+5)
+var movement_target_position: Vector2
 
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 func _ready():
 
 	tank =  get_node("../tank_hull")
 	$RayCast2D.add_exception(tank)
+
+	movement_target_position = position
 	pass
 	
 func _process(delta):
@@ -38,7 +40,7 @@ func set_movement_target(movement_target: Vector2):
 
 func _physics_process(delta):
 	if navigation_agent.is_navigation_finished():
-		movement_target_position = Vector2(position.x - 5, position.y-5)
+		return
 
 	var current_agent_position: Vector2 = global_position
 	var next_path_position: Vector2 = navigation_agent.get_next_path_position()
