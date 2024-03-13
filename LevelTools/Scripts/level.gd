@@ -112,7 +112,7 @@ func _input(event):
 func _on_finish_button_level_finish():
 	Global.success = true
 	
-	if Global.get_adventureMode() :
+	if !Global.get_adventureMode() || str(Global.get_level()).begins_with("h"):
 		Global.goto_scene("res://Menus/main_menu.tscn")
 	else:
 		if (timer as int % 60) as int < 10:
