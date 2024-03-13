@@ -22,7 +22,10 @@ func _ready():
 func parseXML():
 	var parser = XMLParser.new()
 	var level = Global.get_level()
-	parser.open("res://LevelTools/levels/"+str(level)+".xml")
+	if Global.get_adventureMode() :
+		parser.open("res://LevelTools/AdventureLevels/"+str(level)+".xml")
+	else:
+		parser.open("res://LevelTools/levels/"+str(level)+".xml")
 	while parser.read() != ERR_FILE_EOF:
 		if parser.get_node_type() == XMLParser.NODE_ELEMENT:
 			var node_name = parser.get_node_name()
