@@ -51,7 +51,7 @@ text = "~"
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/CenterContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="MarginContainer/CenterContainer/HBoxContainer/CenterContainer"]
+[node name="BackButton" type="Button" parent="MarginContainer/CenterContainer/HBoxContainer/CenterContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 text = "<"
@@ -69,7 +69,7 @@ columns = 6
 [node name="CenterContainer2" type="CenterContainer" parent="MarginContainer/CenterContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="MarginContainer/CenterContainer/HBoxContainer/CenterContainer2"]
+[node name="ForwardButton" type="Button" parent="MarginContainer/CenterContainer/HBoxContainer/CenterContainer2"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 text = ">"
@@ -84,4 +84,6 @@ layout_mode = 2
 text = "x"
 
 [connection signal="pressed" from="MarginContainer/CenterContainer/HBoxContainer/VBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/HBoxContainer/CenterContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/HBoxContainer/CenterContainer2/ForwardButton" to="." method="_on_forward_button_pressed"]
 [connection signal="pressed" from="MarginContainer/CenterContainer/HBoxContainer/VBoxContainer2/Button" to="." method="_on_button_pressed"]
