@@ -108,6 +108,11 @@ func _input(event):
 
 func _on_finish_button_level_finish():
 	Global.success = true
-	Global.time = str( (timer / 60) as int) + ":" + str((timer as int % 60) as int)
-	Global.goto_scene("res://Menus/game_over_menu.tscn")
+	
+	if Global.get_adventureMode() :
+		Global.goto_scene("res://Menus/main_menu.tscn")
+	else:
+		Global.time = str( (timer / 60) as int) + ":" + str((timer as int % 60) as int)
+		Global.goto_scene("res://Menus/game_over_menu.tscn")
+		
 	pass # Replace with function body.

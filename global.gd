@@ -40,3 +40,8 @@ var time
 var success
 
 var tank_controls_classic = true 
+var adventureMode = false
+func get_adventureMode():
+	return adventureMode
+func set_adventureMode(a):
+	adventureMode = a
