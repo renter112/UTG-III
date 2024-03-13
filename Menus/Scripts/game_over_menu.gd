@@ -5,6 +5,7 @@ func _ready():
 	if Global.success && !Global.adventureMode:
 		$MarginContainer/VBoxContainer/Label.text = "SUCCESS"
 		$MarginContainer/VBoxContainer/ButtonsCon/NextButton.disabled = false
+		$AudioStreamPlayer2D.playing = true
 	elif !Global.success && !Global.adventureMode:
 		$MarginContainer/VBoxContainer/Label.text = "FAILURE"
 		$MarginContainer/VBoxContainer/ButtonsCon/NextButton.disabled = true
