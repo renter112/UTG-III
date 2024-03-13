@@ -2,12 +2,21 @@ extends Control
 
 
 func _ready():
-	if Global.success:
+	if Global.success && !Global.adventureMode:
 		$MarginContainer/VBoxContainer/Label.text = "SUCCESS"
 		$MarginContainer/VBoxContainer/ButtonsCon/NextButton.disabled = false
-	else:
+	elif !Global.success && !Global.adventureMode:
 		$MarginContainer/VBoxContainer/Label.text = "FAILURE"
 		$MarginContainer/VBoxContainer/ButtonsCon/NextButton.disabled = true
+		
+	if Global.success && Global.adventureMode:
+		$MarginContainer/VBoxContainer/Label.text = "SUCCESS"
+		$MarginContainer/VBoxContainer/ButtonsCon/NextButton.disabled = false
+		$MarginContainer/VBoxContainer/ButtonsCon/RetryButton.disabled = true
+	elif !Global.success && Global.adventureMode:
+		$MarginContainer/VBoxContainer/Label.text = "FAILURE"
+		$MarginContainer/VBoxContainer/ButtonsCon/NextButton.disabled = true
+		$MarginContainer/VBoxContainer/ButtonsCon/RetryButton.disabled = true
 		
 	$MarginContainer/VBoxContainer/InfoCon/AttemptsLabel.text = "Attempts: " + str(Global.attempts)
 	$MarginContainer/VBoxContainer/InfoCon/TimeLabel.text = "Timer: " + str(Global.time)

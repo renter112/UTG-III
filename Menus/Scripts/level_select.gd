@@ -7,7 +7,6 @@ func _ready():
 	for n in range(1,25):
 		var b = button.instantiate()
 		b.text = str(n)
-		b.name = str(n)
 		$MarginContainer/CenterContainer/HBoxContainer/MarginContainer/CenterContainer/GridContainer.add_child(b)
 	pass # Replace with function body.
 
