@@ -8,9 +8,9 @@
 radius = 25.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_h35c8"]
-vertices = PackedVector2Array(607, 29, 607, 66, 568, 66, 573, 27)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(617, 76, 557, 76, 565, 17, 617, 20)])
+vertices = PackedVector2Array(494, 82, 367, 83, 472, -77, 712, -77, 504, 80, 505, 80, 521, 78, 558, 80, 702, 74)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 4, 3, 6), PackedInt32Array(7, 6, 3, 8)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(712, 84, 558, 91, 521, 88, 506, 90, 496, 92, 350, 94, 467, -87, 723, -87)])
 parsed_geometry_type = 0
 source_geometry_group_name = &"navigation_polygon_source_group"
 
