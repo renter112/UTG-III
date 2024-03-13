@@ -58,12 +58,12 @@ theme = ExtResource("1_j5kne")
 theme_override_constants/separation = 300
 
 [node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(250, 75)
+custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 text = "Main Menu"
 
 [node name="ResumeButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(250, 75)
+custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 text = "Resume"
 
