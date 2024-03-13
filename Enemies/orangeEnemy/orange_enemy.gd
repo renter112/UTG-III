@@ -11,8 +11,8 @@ func _ready():
 func _process(delta):
 
 	$RayCast2D.target_position = tank.position - position
+	$turret.rotation = (tank.position - position).angle()
 	if $Timer.is_stopped() && $RayCast2D.is_colliding() != true:
-			$turret.rotation = (tank.position - position).angle()
 			shoot()
 			$Timer.start(3.0)
 
