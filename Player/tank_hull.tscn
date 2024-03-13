@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://crrg2iwsh7hjr"]
 
 [ext_resource type="Script" path="res://Player/Scripts/tank_hull.gd" id="1_2q5m4"]
-[ext_resource type="SpriteFrames" uid="uid://dhb6ex3o2huo2" path="res://Player/Assets/tank_hull_animated.tres" id="2_5cp7j"]
+[ext_resource type="SpriteFrames" path="res://Player/Assets/tank_hull_animated.tres" id="2_5cp7j"]
 [ext_resource type="PackedScene" uid="uid://cc6yeqe3gt1d1" path="res://Player/tank_turret.tscn" id="2_rvdxb"]
 [ext_resource type="AudioStream" uid="uid://b6wcuc7wqcn4r" path="res://Player/Assets/Tank_Sound.....wav" id="5_r1ut7"]
 

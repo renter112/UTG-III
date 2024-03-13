@@ -14,8 +14,7 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	print(body.name)
 	if body.name == "tank_hull":
-		body.queue_free()
+		body.visible = false
 	queue_free()
 	pass # Replace with function body.

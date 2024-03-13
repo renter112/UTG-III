@@ -111,7 +111,17 @@ func _input(event):
 
 func _on_finish_button_level_finish():
 	Global.success = true
+	finish()
+
+	pass # Replace with function body.
+
+
+func _on_tank_hull_level_finish():
+	Global.success = false
+	finish()
+	pass # Replace with function body.
 	
+func finish():
 	if Global.get_adventureMode() && str(Global.get_level()).begins_with("h"):
 		Global.goto_scene("res://Menus/main_menu.tscn")
 	else:
@@ -121,4 +131,3 @@ func _on_finish_button_level_finish():
 			Global.time = str( (timer / 60) as int) + ":" + str((timer as int % 60) as int)
 		Global.goto_scene("res://Menus/game_over_menu.tscn")
 		
-	pass # Replace with function body.
