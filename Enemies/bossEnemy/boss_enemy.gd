@@ -18,7 +18,7 @@ func _process(delta):
 func shoot():
 	var b = bullet.instantiate()
 	var b2 = bullet.instantiate()
-	get_tree().get_root().add_child(b)
-	get_tree().get_root().add_child(b2)
+	get_tree().get_root().get_node("/root/level").add_child(b)
+	get_tree().get_root().get_node("/root/level").add_child(b2)
 	b.transform = $turret/Marker2D.global_transform
 	b2.transform = $turret/leftMarker2D.global_transform

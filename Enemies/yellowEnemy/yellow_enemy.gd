@@ -19,5 +19,5 @@ func _process(delta):
 func shoot():
 	var b = bullet.instantiate()
 	b.speed = 350
-	get_tree().get_root().add_child(b)
+	get_tree().get_root().get_node("/root/level").add_child(b)
 	b.transform = $turret/Marker2D.global_transform

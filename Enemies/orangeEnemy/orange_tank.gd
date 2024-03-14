@@ -28,9 +28,9 @@ func shoot():
 	var b = bullet.instantiate()
 	var b2 = bullet.instantiate()
 	var b3 = bullet.instantiate()
-	get_tree().get_root().add_child(b)
-	get_tree().get_root().add_child(b2)
-	get_tree().get_root().add_child(b3)
+	get_tree().get_root().get_node("/root/level").add_child(b)
+	get_tree().get_root().get_node("/root/level").add_child(b2)
+	get_tree().get_root().get_node("/root/level").add_child(b3)
 	var theta = PI / 6
 	b.transform = $turret/marker_middle.global_transform
 	b2.transform = $turret/marker_left.global_transform#.rotated(PI /6)

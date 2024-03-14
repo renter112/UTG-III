@@ -52,7 +52,7 @@ func parseXML():
 				if att_dict["type"] == "p1":
 					$tank_hull.position = Vector2(att_dict["x"] as int * scaler + scaler/2,att_dict["y"] as int *scaler + scaler/2)
 			elif node_name == "enemy":
-				var enemy = load("res://Enemies/"+att_dict["type"]+"Enemy/"+att_dict["type"]+"_tank.tscn")
+				var enemy = load("res://Enemies/"+att_dict["type"]+"Enemy/"+att_dict["type"]+"_enemy.tscn")
 				if(enemy == null):
 					break
 				var e = enemy.instantiate()
