@@ -1,15 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxx6yyrip754i"]
+[gd_scene load_steps=5 format=3 uid="uid://dxx6yyrip754i"]
 
 [ext_resource type="Script" path="res://LevelTools/Scripts/level.gd" id="1_35bql"]
 [ext_resource type="TileSet" uid="uid://lyy5fn5e5k5b" path="res://LevelTools/Assets/mapTileSet.tres" id="1_fnihl"]
 [ext_resource type="PackedScene" uid="uid://crrg2iwsh7hjr" path="res://Player/tank_hull.tscn" id="2_d7ucm"]
 [ext_resource type="PackedScene" uid="uid://bwk5u2oxcp50e" path="res://Items/finish_button.tscn" id="3_cdbvr"]
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_16ax5"]
-vertices = PackedVector2Array(1841, 870, -256, 864, -382, -278, 1865, -280)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-266, 874, 1851, 881, 1876, -291, -394, -288)])
-source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="level" type="Node2D"]
 script = ExtResource("1_35bql")
@@ -27,9 +21,6 @@ position = Vector2(68, 97)
 
 [node name="cam" type="Camera2D" parent="."]
 anchor_mode = 0
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-navigation_polygon = SubResource("NavigationPolygon_16ax5")
 
 [connection signal="level_finish" from="finish_button" to="." method="_on_finish_button_level_finish"]
 [connection signal="level_finish" from="tank_hull" to="." method="_on_tank_hull_level_finish"]

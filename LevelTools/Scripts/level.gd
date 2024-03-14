@@ -87,6 +87,7 @@ func build_objects():
 				create_grid_element(obj.x,obj.y,5,0,1)
 			3.0:
 				create_grid_element(obj.x,obj.y,5,1,1)
+				$Map.erase_cell(0,Vector2(obj.x,obj.y))
 			4.0:
 				create_grid_element(obj.x,obj.y,5,2,1)
 			_:
