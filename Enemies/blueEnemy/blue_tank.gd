@@ -21,7 +21,7 @@ func _process(delta):
 			movement_target_position = tank.position
 			$turret.rotation = (tank.position - position).angle()
 			shoot()
-			$Timer.start(3.0)
+			$Timer.start(1.5)
 
 func shoot():
 	var b = bullet.instantiate()

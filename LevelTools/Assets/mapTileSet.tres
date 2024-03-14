@@ -1,7 +1,14 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://lyy5fn5e5k5b"]
+[gd_resource type="TileSet" load_steps=6 format=3 uid="uid://lyy5fn5e5k5b"]
 
 [ext_resource type="Texture2D" uid="uid://darde63jye3c4" path="res://LevelTools/Assets/toyfloor.png" id="1_rnqdg"]
 [ext_resource type="Texture2D" uid="uid://d4iahqvfa0hdc" path="res://LevelTools/Assets/animefloor.png" id="2_sd53k"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_g572p"]
+vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1sdc4"]
 texture = ExtResource("1_rnqdg")
@@ -70,6 +77,7 @@ texture_region_size = Vector2i(64, 64)
 5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 5:1/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 5:1/0/physics_layer_1/angular_velocity = 0.0
+5:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_g572p")
 0:2/0 = 0
 0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:2/0/physics_layer_0/angular_velocity = 0.0
