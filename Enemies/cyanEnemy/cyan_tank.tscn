@@ -1,23 +1,56 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtmfmbbg0v4d0"]
+[gd_scene load_steps=11 format=3 uid="uid://dtmfmbbg0v4d0"]
 
 [ext_resource type="Script" path="res://Enemies/cyanEnemy/cyan_tank.gd" id="1_4udia"]
-[ext_resource type="Texture2D" uid="uid://6vvvvsjs5ohm" path="res://Enemies/cyanEnemy/Assets/cyan hull.png" id="1_xkup4"]
+[ext_resource type="Texture2D" uid="uid://b8hpp8k1au8si" path="res://Enemies/cyanEnemy/Assets/hull_1.png" id="2_eiu2i"]
 [ext_resource type="Texture2D" uid="uid://bbj5jjgw3sm5f" path="res://Enemies/cyanEnemy/Assets/turret cyan.png" id="2_krvl1"]
+[ext_resource type="Texture2D" uid="uid://ca8oyg7antdb8" path="res://Enemies/cyanEnemy/Assets/hull_2.png" id="3_j43r1"]
+[ext_resource type="Texture2D" uid="uid://bht2w3amik6o5" path="res://Enemies/cyanEnemy/Assets/hull_3.png" id="4_vnd41"]
+[ext_resource type="Texture2D" uid="uid://dxy6bjxfrj8v6" path="res://Enemies/cyanEnemy/Assets/hull_4.png" id="5_u5nq4"]
+[ext_resource type="Texture2D" uid="uid://bhyry8whwccgb" path="res://Enemies/cyanEnemy/Assets/hull_5.png" id="6_8hs5x"]
+[ext_resource type="Texture2D" uid="uid://jk0ypmakivjy" path="res://Enemies/cyanEnemy/Assets/hull_6.png" id="7_7vla4"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_n3kng"]
-radius = 22.0907
+[sub_resource type="SpriteFrames" id="SpriteFrames_g8o5y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_eiu2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_j43r1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vnd41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_u5nq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8hs5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7vla4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lv2km"]
+size = Vector2(64, 64)
 
 [node name="cyan_tank" type="CharacterBody2D"]
 collision_mask = 0
 script = ExtResource("1_4udia")
 
-[node name="enemyhull" type="Sprite2D" parent="."]
-texture = ExtResource("1_xkup4")
+[node name="enemyhull" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_g8o5y")
+frame_progress = 0.943964
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_n3kng")
+shape = SubResource("RectangleShape2D_lv2km")
 
 [node name="turret" type="Sprite2D" parent="."]
+position = Vector2(8, 0)
 texture = ExtResource("2_krvl1")
 offset = Vector2(14, 0)
 

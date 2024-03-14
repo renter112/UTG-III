@@ -1,22 +1,54 @@
-[gd_scene load_steps=5 format=3 uid="uid://df6nvro68msly"]
+[gd_scene load_steps=11 format=3 uid="uid://df6nvro68msly"]
 
 [ext_resource type="Script" path="res://Enemies/blueEnemy/blue_tank.gd" id="1_i0s1i"]
-[ext_resource type="Texture2D" uid="uid://ckk031ak0mmv" path="res://Enemies/blueEnemy/Assets/hullBIG.png" id="2_ujnxj"]
+[ext_resource type="Texture2D" uid="uid://m0r637845dyv" path="res://Enemies/blueEnemy/Assets/hull_1.png" id="2_8cdy6"]
+[ext_resource type="Texture2D" uid="uid://6tefgb5t3ktx" path="res://Enemies/blueEnemy/Assets/hull_2.png" id="3_ax0nk"]
 [ext_resource type="Texture2D" uid="uid://cr7n5gev2713t" path="res://Enemies/blueEnemy/Assets/turretBIG.png" id="3_prfo7"]
+[ext_resource type="Texture2D" uid="uid://flu0mx2182h6" path="res://Enemies/blueEnemy/Assets/hull_3.png" id="4_xhu2b"]
+[ext_resource type="Texture2D" uid="uid://cmkddnebhp4ef" path="res://Enemies/blueEnemy/Assets/hull_4.png" id="5_yebnw"]
+[ext_resource type="Texture2D" uid="uid://c2832bjxbjkeq" path="res://Enemies/blueEnemy/Assets/hull_5.png" id="6_njwo8"]
+[ext_resource type="Texture2D" uid="uid://chxmlvwev0p80" path="res://Enemies/blueEnemy/Assets/hull_6.png" id="7_laaqv"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_60jm3"]
-radius = 24.0
+[sub_resource type="SpriteFrames" id="SpriteFrames_o6lfr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8cdy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ax0nk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xhu2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yebnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_njwo8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_laaqv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l350e"]
+size = Vector2(64, 64)
 
 [node name="blue_tank" type="CharacterBody2D"]
 script = ExtResource("1_i0s1i")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 
-[node name="enemyhull" type="Sprite2D" parent="."]
-texture = ExtResource("2_ujnxj")
+[node name="enemyhull" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_o6lfr")
+frame_progress = 0.888709
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_60jm3")
+shape = SubResource("RectangleShape2D_l350e")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
@@ -24,6 +56,7 @@ one_shot = true
 autostart = true
 
 [node name="turret" type="Sprite2D" parent="."]
+position = Vector2(8, 0)
 texture = ExtResource("3_prfo7")
 offset = Vector2(16, 0)
 
