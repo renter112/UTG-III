@@ -78,36 +78,36 @@ theme_override_constants/margin_right = 50
 layout_mode = 2
 columns = 3
 
-[node name="Button" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+[node name="MusicButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 theme = ExtResource("2_eobug")
 toggle_mode = true
 text = "Music"
 
-[node name="Button2" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+[node name="SoundsButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 theme = ExtResource("2_eobug")
 toggle_mode = true
 text = "Sound FX"
 
-[node name="Button3" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-theme = ExtResource("2_eobug")
-toggle_mode = true
-text = "Osaka Mode"
-
-[node name="Button4" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+[node name="OsakaButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 theme = ExtResource("2_eobug")
 toggle_mode = true
 button_pressed = true
+text = "Osaka Mode"
+
+[node name="FullScreenButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+theme = ExtResource("2_eobug")
+toggle_mode = true
 text = "Fullscreen"
 
-[node name="ControlButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+[node name="ControlsButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 theme = ExtResource("2_eobug")
@@ -135,6 +135,9 @@ layout_mode = 2
 theme = ExtResource("2_eobug")
 text = "back"
 
-[connection signal="toggled" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/Button3" to="." method="_on_button_3_toggled"]
-[connection signal="pressed" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/ControlButton" to="." method="_on_control_button_pressed"]
+[connection signal="toggled" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/MusicButton" to="." method="_on_music_button_toggled"]
+[connection signal="toggled" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/SoundsButton" to="." method="_on_sounds_button_toggled"]
+[connection signal="toggled" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/OsakaButton" to="." method="_on_osaka_button_toggled"]
+[connection signal="toggled" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/FullScreenButton" to="." method="_on_full_screen_button_toggled"]
+[connection signal="pressed" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/ControlsButton" to="." method="_on_control_button_pressed"]
 [connection signal="pressed" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
