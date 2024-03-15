@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://Enemies/blueEnemy/blue_tank.gd" id="1_i0s1i"]
 [ext_resource type="Texture2D" uid="uid://m0r637845dyv" path="res://Enemies/blueEnemy/Assets/hull_1.png" id="2_8cdy6"]
 [ext_resource type="Texture2D" uid="uid://6tefgb5t3ktx" path="res://Enemies/blueEnemy/Assets/hull_2.png" id="3_ax0nk"]
-[ext_resource type="Texture2D" uid="uid://cr7n5gev2713t" path="res://Enemies/blueEnemy/Assets/turretBIG.png" id="3_prfo7"]
 [ext_resource type="Texture2D" uid="uid://flu0mx2182h6" path="res://Enemies/blueEnemy/Assets/hull_3.png" id="4_xhu2b"]
 [ext_resource type="Texture2D" uid="uid://cmkddnebhp4ef" path="res://Enemies/blueEnemy/Assets/hull_4.png" id="5_yebnw"]
 [ext_resource type="Texture2D" uid="uid://c2832bjxbjkeq" path="res://Enemies/blueEnemy/Assets/hull_5.png" id="6_njwo8"]
 [ext_resource type="Texture2D" uid="uid://chxmlvwev0p80" path="res://Enemies/blueEnemy/Assets/hull_6.png" id="7_laaqv"]
+[ext_resource type="Texture2D" uid="uid://dupjthopgpalr" path="res://Enemies/blueEnemy/Assets/turret.png" id="8_m0hov"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o6lfr"]
 animations = [{
@@ -57,7 +57,7 @@ autostart = true
 
 [node name="turret" type="Sprite2D" parent="."]
 position = Vector2(8, 0)
-texture = ExtResource("3_prfo7")
+texture = ExtResource("8_m0hov")
 offset = Vector2(16, 0)
 
 [node name="Marker2D" type="Marker2D" parent="turret"]

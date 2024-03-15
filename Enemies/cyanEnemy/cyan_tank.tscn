@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://Enemies/cyanEnemy/cyan_tank.gd" id="1_4udia"]
 [ext_resource type="Texture2D" uid="uid://b8hpp8k1au8si" path="res://Enemies/cyanEnemy/Assets/hull_1.png" id="2_eiu2i"]
-[ext_resource type="Texture2D" uid="uid://bbj5jjgw3sm5f" path="res://Enemies/cyanEnemy/Assets/turret cyan.png" id="2_krvl1"]
 [ext_resource type="Texture2D" uid="uid://ca8oyg7antdb8" path="res://Enemies/cyanEnemy/Assets/hull_2.png" id="3_j43r1"]
 [ext_resource type="Texture2D" uid="uid://bht2w3amik6o5" path="res://Enemies/cyanEnemy/Assets/hull_3.png" id="4_vnd41"]
 [ext_resource type="Texture2D" uid="uid://dxy6bjxfrj8v6" path="res://Enemies/cyanEnemy/Assets/hull_4.png" id="5_u5nq4"]
 [ext_resource type="Texture2D" uid="uid://bhyry8whwccgb" path="res://Enemies/cyanEnemy/Assets/hull_5.png" id="6_8hs5x"]
 [ext_resource type="Texture2D" uid="uid://jk0ypmakivjy" path="res://Enemies/cyanEnemy/Assets/hull_6.png" id="7_7vla4"]
+[ext_resource type="Texture2D" uid="uid://bf6cdb04qg4ix" path="res://Enemies/cyanEnemy/Assets/turret.png" id="8_4oog7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g8o5y"]
 animations = [{
@@ -51,11 +51,11 @@ shape = SubResource("RectangleShape2D_lv2km")
 
 [node name="turret" type="Sprite2D" parent="."]
 position = Vector2(8, 0)
-texture = ExtResource("2_krvl1")
+texture = ExtResource("8_4oog7")
 offset = Vector2(14, 0)
 
 [node name="Marker2D" type="Marker2D" parent="turret"]
-position = Vector2(45, 0)
+position = Vector2(58.8979, -0.184246)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0

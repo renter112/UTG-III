@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://Enemies/redEnemy/red_tank.gd" id="1_fm1uw"]
 [ext_resource type="Texture2D" uid="uid://dyaq32fo7mrcg" path="res://Enemies/redEnemy/Assets/hull_1.png" id="2_0kpnb"]
 [ext_resource type="Texture2D" uid="uid://ovuorqc3vss2" path="res://Enemies/redEnemy/Assets/hull_2.png" id="3_3brjh"]
-[ext_resource type="Texture2D" uid="uid://0dncj2fxyj2l" path="res://Enemies/redEnemy/Assets/red_turret.png" id="3_8wuf3"]
 [ext_resource type="Texture2D" uid="uid://dsrh1t14c7gc4" path="res://Enemies/redEnemy/Assets/hull_3.png" id="4_btk6b"]
 [ext_resource type="Texture2D" uid="uid://kmxumv4pbhr8" path="res://Enemies/redEnemy/Assets/hull_4.png" id="5_d665u"]
 [ext_resource type="Texture2D" uid="uid://bre6f1sgdpys7" path="res://Enemies/redEnemy/Assets/hull_5.png" id="6_6igg1"]
 [ext_resource type="Texture2D" uid="uid://be5jttgynen47" path="res://Enemies/redEnemy/Assets/hull_6.png" id="7_io2n2"]
+[ext_resource type="Texture2D" uid="uid://drgygjlkqr2y" path="res://Enemies/redEnemy/Assets/turret.png" id="8_u0g2r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_28cih"]
 animations = [{
@@ -59,9 +59,9 @@ one_shot = true
 autostart = true
 
 [node name="turret" type="Sprite2D" parent="."]
-position = Vector2(9, 0)
+position = Vector2(5, 0)
 rotation = 6.28319
-texture = ExtResource("3_8wuf3")
+texture = ExtResource("8_u0g2r")
 offset = Vector2(19, 0)
 
 [node name="Marker2D" type="Marker2D" parent="turret"]

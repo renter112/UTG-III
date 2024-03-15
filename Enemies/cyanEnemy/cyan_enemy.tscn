@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cv85or44ka3di"]
 
 [ext_resource type="Script" path="res://Enemies/cyanEnemy/cyan_enemy.gd" id="1_dtmpf"]
-[ext_resource type="Texture2D" uid="uid://6vvvvsjs5ohm" path="res://Enemies/cyanEnemy/Assets/cyan hull.png" id="1_rkf8x"]
-[ext_resource type="Texture2D" uid="uid://bbj5jjgw3sm5f" path="res://Enemies/cyanEnemy/Assets/turret cyan.png" id="2_k8tos"]
+[ext_resource type="Texture2D" uid="uid://baao2n0ul24to" path="res://Enemies/cyanEnemy/Assets/turret_hull.png" id="2_p7lec"]
+[ext_resource type="Texture2D" uid="uid://bf6cdb04qg4ix" path="res://Enemies/cyanEnemy/Assets/turret.png" id="3_s1svo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n3kng"]
 radius = 22.0907
@@ -11,17 +11,17 @@ radius = 22.0907
 script = ExtResource("1_dtmpf")
 
 [node name="enemyhull" type="Sprite2D" parent="."]
-texture = ExtResource("1_rkf8x")
+texture = ExtResource("2_p7lec")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_n3kng")
 
 [node name="turret" type="Sprite2D" parent="."]
-texture = ExtResource("2_k8tos")
+texture = ExtResource("3_s1svo")
 offset = Vector2(14, 0)
 
 [node name="Marker2D" type="Marker2D" parent="turret"]
-position = Vector2(45, 0)
+position = Vector2(51, 0)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0

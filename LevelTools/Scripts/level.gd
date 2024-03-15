@@ -111,7 +111,7 @@ func create_grid_element(x,y,tx,ty,l):
 	if Global.osaka_mode_on:
 		$Map.set_cell(l,Vector2i(x,y),1,Vector2i(tx,ty),0)
 	else:
-		$Map.set_cell(l,Vector2i(x,y),0,Vector2i(tx,ty),0)
+		$Map.set_cell(l,Vector2i(x,y),2,Vector2i(tx,ty),0)
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

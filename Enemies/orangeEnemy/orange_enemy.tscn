@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://pdqr74j08od5"]
 
-[ext_resource type="Texture2D" uid="uid://c1urtpfwy3qle" path="res://Enemies/orangeEnemy/Assets/orangeHull.png" id="1_e4tyr"]
 [ext_resource type="Script" path="res://Enemies/orangeEnemy/orange_enemy.gd" id="1_n2gyg"]
-[ext_resource type="Texture2D" uid="uid://dosybexfpwugs" path="res://Enemies/orangeEnemy/Assets/orangeTurret.png" id="2_vvi23"]
+[ext_resource type="Texture2D" uid="uid://dgvl07f60o5ma" path="res://Enemies/orangeEnemy/Assets/turret_hull.png" id="2_kqbfi"]
+[ext_resource type="Texture2D" uid="uid://b4pah6futdwpk" path="res://Enemies/orangeEnemy/Assets/turret.png" id="3_2dhhd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8ibbp"]
 radius = 29.1548
@@ -13,7 +13,7 @@ script = ExtResource("1_n2gyg")
 [node name="RayCast2D" type="RayCast2D" parent="."]
 
 [node name="enemyhull" type="Sprite2D" parent="."]
-texture = ExtResource("1_e4tyr")
+texture = ExtResource("2_kqbfi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_8ibbp")
@@ -24,14 +24,14 @@ one_shot = true
 autostart = true
 
 [node name="turret" type="Sprite2D" parent="."]
-texture = ExtResource("2_vvi23")
+texture = ExtResource("3_2dhhd")
 offset = Vector2(15, 0)
 
 [node name="marker_middle" type="Marker2D" parent="turret"]
-position = Vector2(47, 0)
+position = Vector2(50, 0)
 
 [node name="marker_left" type="Marker2D" parent="turret"]
-position = Vector2(37, -22)
+position = Vector2(44, -27)
 
 [node name="marker_right" type="Marker2D" parent="turret"]
-position = Vector2(37, 22)
+position = Vector2(44, 27)

@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bkkhg5wkur8af"]
 
-[ext_resource type="Texture2D" uid="uid://3xm1qs5wqebj" path="res://Enemies/yellowEnemy/Assets/hull.png" id="1_gk1gf"]
 [ext_resource type="Script" path="res://Enemies/yellowEnemy/yellow_enemy.gd" id="1_ug362"]
 [ext_resource type="Texture2D" uid="uid://bloim5p8kv4yl" path="res://Enemies/yellowEnemy/Assets/turret.png" id="2_idnsm"]
+[ext_resource type="Texture2D" uid="uid://cfgnfsim4u44q" path="res://Enemies/yellowEnemy/Assets/turret_hull.png" id="2_r8y4a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dot6m"]
 radius = 24.0
@@ -11,7 +11,7 @@ radius = 24.0
 script = ExtResource("1_ug362")
 
 [node name="enemyhull" type="Sprite2D" parent="."]
-texture = ExtResource("1_gk1gf")
+texture = ExtResource("2_r8y4a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_dot6m")
@@ -26,6 +26,6 @@ texture = ExtResource("2_idnsm")
 offset = Vector2(15, 0)
 
 [node name="Marker2D" type="Marker2D" parent="turret"]
-position = Vector2(45, 0)
+position = Vector2(51, 0)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]

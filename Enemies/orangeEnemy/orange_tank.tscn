@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://Enemies/orangeEnemy/orange_tank.gd" id="1_ypiy6"]
 [ext_resource type="Texture2D" uid="uid://cht57ngjhyhmw" path="res://Enemies/orangeEnemy/Assets/hull_1.png" id="2_8bmjb"]
-[ext_resource type="Texture2D" uid="uid://dosybexfpwugs" path="res://Enemies/orangeEnemy/Assets/orangeTurret.png" id="3_0w838"]
 [ext_resource type="Texture2D" uid="uid://b3q6h2gm7cuy8" path="res://Enemies/orangeEnemy/Assets/hull_2.png" id="3_nrjws"]
 [ext_resource type="Texture2D" uid="uid://dodf48txh7v7f" path="res://Enemies/orangeEnemy/Assets/hull_3.png" id="4_2kahq"]
 [ext_resource type="Texture2D" uid="uid://c1oj8geikg5w2" path="res://Enemies/orangeEnemy/Assets/hull_4.png" id="5_kjsq7"]
 [ext_resource type="Texture2D" uid="uid://cidfpbekwtku4" path="res://Enemies/orangeEnemy/Assets/hull_5.png" id="6_i5kye"]
 [ext_resource type="Texture2D" uid="uid://dtchwiq2spf4e" path="res://Enemies/orangeEnemy/Assets/hull_6.png" id="7_13wwi"]
+[ext_resource type="Texture2D" uid="uid://b4pah6futdwpk" path="res://Enemies/orangeEnemy/Assets/turret.png" id="8_nxhjd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jo5ou"]
 animations = [{
@@ -57,16 +57,16 @@ autostart = true
 
 [node name="turret" type="Sprite2D" parent="."]
 position = Vector2(9, 0)
-texture = ExtResource("3_0w838")
+texture = ExtResource("8_nxhjd")
 offset = Vector2(15, 0)
 
 [node name="marker_middle" type="Marker2D" parent="turret"]
-position = Vector2(47, 0)
+position = Vector2(51, 0)
 
 [node name="marker_left" type="Marker2D" parent="turret"]
-position = Vector2(37, -22)
+position = Vector2(46, -27)
 
 [node name="marker_right" type="Marker2D" parent="turret"]
-position = Vector2(37, 22)
+position = Vector2(46, 27)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

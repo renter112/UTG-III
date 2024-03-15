@@ -59,7 +59,7 @@ texture = ExtResource("2_0jiw7")
 offset = Vector2(15, 0)
 
 [node name="Marker2D" type="Marker2D" parent="turret"]
-position = Vector2(45, 0)
+position = Vector2(54, 0)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 
