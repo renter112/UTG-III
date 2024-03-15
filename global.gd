@@ -31,9 +31,22 @@ var attempts_taken = 0
 var time_taken = 0
 var level_success = false
 
-var tank_controls_classic = true 
+var tank_controls_classic = true
+ 
 var adventureMode = false
 func get_adventureMode():
 	return adventureMode
 func set_adventureMode(a):
 	adventureMode = a
+
+var music = true
+func get_music():
+	return music
+func set_music(m):
+	music = m
+	
+var sounds = true
+func get_sounds():
+	return sounds
+func set_sounds(s):
+	sounds = s
