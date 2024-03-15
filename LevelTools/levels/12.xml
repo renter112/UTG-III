@@ -31,10 +31,10 @@
 		<coord x="15" y="9" type="block"></coord>
 	</objects>
 	<enemies>
-		<enemy x="5" y="1" type="red"></enemy>
-		<tank x="2" y="2" type="p1"></tank>
-		<enemy x="14" y="4" type="red"></enemy>
-		<enemy x="5" y="6" type="red"></enemy>
-		<enemy x="14" y="9" type="red"></enemy>
+		<turret x="5" y="1" type="red"></turret>
+		<player x="2" y="2" type="p1"></player>
+		<turret x="14" y="4" type="red"></turret>
+		<turret x="5" y="6" type="red"></turret>
+		<turret x="14" y="9" type="red"></turret>
 	</enemies>
 </level>

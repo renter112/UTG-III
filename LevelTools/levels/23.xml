@@ -36,11 +36,11 @@
 		<coord x="17" y="9" type="block"></coord>
 	</objects>
 	<enemies>
-		<tank x="1" y="3" type="p1"></tank>
-		<enemy x="8" y="3" type="cyan"></enemy>
-		<enemy x="14" y="3" type="yellow"></enemy>
-		<enemy x="18" y="8" type="yellow"></enemy>
-		<enemy x="6" y="9" type="yellow"></enemy>
-		<enemy x="14" y="9" type="cyan"></enemy>
+		<player x="1" y="3" type="p1"></player>
+		<turret x="8" y="3" type="cyan"></turret>
+		<turret x="14" y="3" type="yellow"></turret>
+		<turret x="18" y="8" type="yellow"></turret>
+		<turret x="6" y="9" type="yellow"></turret>
+		<turret x="14" y="9" type="cyan"></turret>
 	</enemies>
 </level>

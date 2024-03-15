@@ -22,22 +22,14 @@ func get_level():
 func set_level(lvl):
 	level = lvl
 
+
+
 var enemies = 0
-func get_enemies():
-	return enemies
-func add_enemies(e):
-	enemies += e
-
-var osaka = false
-func get_osaka():
-	return osaka
-func set_osaka(o):
-	osaka = o
-
-var shots
-var attempts
-var time
-var success
+var osaka_mode_on = false
+var shots_taken
+var attempts_taken
+var time_taken
+var level_success
 
 var tank_controls_classic = true 
 var adventureMode = false

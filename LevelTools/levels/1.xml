@@ -44,6 +44,6 @@
 		<coord x="10" y="9" type="block"></coord>
 	</objects>
 	<enemies>
-		<tank x="2" y="2" type="p1"></tank>
+		<player x="2" y="2" type="p1"></player>
 	</enemies>
 </level>

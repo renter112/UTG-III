@@ -23,9 +23,9 @@
 		<coord x="18" y="9" type="finish"></coord>
 	</objects>
 	<enemies>
-		<enemy x="7" y="2" type="boss"></enemy>
-		<enemy x="16" y="2" type="boss"></enemy>
-		<tank x="1" y="6" type="p1"></tank>
-		<enemy x="13" y="8" type="boss"></enemy>
+		<turret x="7" y="2" type="boss"></turret>
+		<turret x="16" y="2" type="boss"></turret>
+		<player x="1" y="6" type="p1"></player>
+		<turret x="13" y="8" type="boss"></turret>
 	</enemies>
 </level>

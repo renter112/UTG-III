@@ -97,7 +97,7 @@ custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 theme = ExtResource("2_eobug")
 toggle_mode = true
-text = "Gay Mode"
+text = "Osaka Mode"
 
 [node name="Button4" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(300, 100)
@@ -117,8 +117,8 @@ text = "Classic"
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 theme = ExtResource("2_eobug")
+disabled = true
 toggle_mode = true
-text = "Vagina"
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2

@@ -10,6 +10,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	position += transform.x * speed * delta
+	if position.x > 2000 || position.x < 0 || position.y < 0 || position.y > 2000:
+		queue_free()
 	pass
 
 

@@ -18,9 +18,9 @@
 		<coord x="7" y="9" type="block"></coord>
 	</objects>
 	<enemies>
-		<enemy x="7" y="2" type="blue"></enemy>
-		<tank x="1" y="5" type="p1"></tank>
-		<enemy x="13" y="5" type="orange"></enemy>
-		<enemy x="7" y="8" type="blue"></enemy>
+		<turret x="7" y="2" type="blue"></turret>
+		<player x="1" y="5" type="p1"></player>
+		<turret x="13" y="5" type="orange"></turret>
+		<turret x="7" y="8" type="blue"></turret>
 	</enemies>
 </level>

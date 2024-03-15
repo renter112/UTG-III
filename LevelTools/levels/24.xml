@@ -13,12 +13,12 @@
 		<coord x="17" y="8" type="finish"></coord>
 	</objects>
 	<enemies>
-		<enemy x="11" y="1" type="yellow"></enemy>
-		<tank x="3" y="2" type="p1"></tank>
-		<enemy x="15" y="2" type="cyan"></enemy>
-		<enemy x="16" y="4" type="boss"></enemy>
-		<enemy x="13" y="8" type="boss"></enemy>
-		<enemy x="3" y="9" type="cyan"></enemy>
-		<enemy x="9" y="9" type="yellow"></enemy>
+		<turret x="11" y="1" type="yellow"></turret>
+		<player x="3" y="2" type="p1"></player>
+		<turret x="15" y="2" type="cyan"></turret>
+		<turret x="16" y="4" type="boss"></turret>
+		<turret x="13" y="8" type="boss"></turret>
+		<turret x="3" y="9" type="cyan"></turret>
+		<turret x="9" y="9" type="yellow"></turret>
 	</enemies>
 </level>

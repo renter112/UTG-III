@@ -13,7 +13,7 @@ var pause_menu = preload("res://Menus/pause_menu.tscn")
 func _ready():
 	parseXML()
 	Global.enemies = enemies
-	Global.shots = 0
+	Global.attempts_taken += 1
 	$cam.zoom = Vector2(min(1600/(baseGrid.x*scaler),896/(baseGrid.y*scaler)),min(1600/(baseGrid.x*scaler),896/(baseGrid.y*scaler)))
 	build_grid()
 	build_objects()
@@ -41,6 +41,8 @@ func parseXML():
 						type = 2
 					"block":
 						type = 3
+					"breakable":
+						type = 4
 					"finish":
 						$finish_button.position = Vector2i(att_dict["x"] as int *scaler + scaler/2, att_dict["y"] as int *scaler + scaler/2)
 						type = -1
@@ -48,19 +50,30 @@ func parseXML():
 						type = -1
 				if type != -1:
 					blockList.append(Vector3(att_dict["x"] as int,att_dict["y"] as int,type))
-			elif node_name == "tank":
+			elif node_name == "player":
 				if att_dict["type"] == "p1":
 					$tank_hull.position = Vector2(att_dict["x"] as int * scaler + scaler/2,att_dict["y"] as int *scaler + scaler/2)
-			elif node_name == "enemy":
-				var enemy = load("res://Enemies/"+att_dict["type"]+"Enemy/"+att_dict["type"]+"_enemy.tscn")
-				if(enemy == null):
-					break
-				var e = enemy.instantiate()
-				e.position = Vector2(att_dict["x"] as int *scaler + scaler/2, att_dict["y"] as int *scaler + scaler/2) 
-				add_child(e)
-				if att_dict["type"] != "cyan":
-					enemies += 1
-				e.add_to_group("enemies")
+			elif node_name == "turret":
+				build_enemies(att_dict["type"],att_dict["x"] as float, att_dict["y"] as float, 1)
+			elif node_name == "tank":
+				build_enemies(att_dict["type"],att_dict["x"] as float, att_dict["y"] as float, 2)
+
+func build_enemies(type, x, y, etype):
+	var enemy
+	if etype == 1.0:
+		enemy = load("res://Enemies/"+type+"Enemy/"+type+"_enemy.tscn")
+	elif etype == 2:
+		enemy = load("res://Enemies/"+type+"Enemy/"+type+"_tank.tscn")
+	if(enemy == null):
+		print("no good tank")
+		return
+	var e = enemy.instantiate()
+	print(e)
+	e.position = Vector2( x *scaler + scaler/2, y *scaler + scaler/2) 
+	add_child(e)
+	if type != "cyan":
+		enemies += 1
+	e.add_to_group("enemies")
 
 func build_grid():
 	var b_x = baseGrid.x as int
@@ -90,11 +103,12 @@ func build_objects():
 				$Map.erase_cell(0,Vector2(obj.x,obj.y))
 			4.0:
 				create_grid_element(obj.x,obj.y,5,2,1)
+				$Map.erase_cell(0,Vector2(obj.x,obj.y))
 			_:
 				print("uh oh")
 
 func create_grid_element(x,y,tx,ty,l):
-	if Global.get_osaka():
+	if Global.osaka_mode_on:
 		$Map.set_cell(l,Vector2i(x,y),1,Vector2i(tx,ty),0)
 	else:
 		$Map.set_cell(l,Vector2i(x,y),0,Vector2i(tx,ty),0)
@@ -111,14 +125,14 @@ func _input(event):
 		get_tree().paused = true
 
 func _on_finish_button_level_finish():
-	Global.success = true
+	Global.level_success = true
 	finish()
 
 	pass # Replace with function body.
 
 
 func _on_tank_hull_level_finish():
-	Global.success = false
+	Global.level_success = false
 	finish()
 	pass # Replace with function body.
 	
@@ -127,8 +141,8 @@ func finish():
 		Global.goto_scene("res://Menus/main_menu.tscn")
 	else:
 		if (timer as int % 60) as int < 10:
-			Global.time = str( (timer / 60) as int) + ":0" + str((timer as int % 60) as int)
+			Global.time_taken = str( (timer / 60) as int) + ":0" + str((timer as int % 60) as int)
 		else:
-			Global.time = str( (timer / 60) as int) + ":" + str((timer as int % 60) as int)
+			Global.time_taken = str( (timer / 60) as int) + ":" + str((timer as int % 60) as int)
 		Global.goto_scene("res://Menus/game_over_menu.tscn")
 		

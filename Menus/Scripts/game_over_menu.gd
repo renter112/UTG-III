@@ -2,26 +2,26 @@ extends Control
 
 
 func _ready():
-	if Global.success && !Global.adventureMode:
+	if Global.level_success && !Global.adventureMode:
 		$MarginContainer/VBoxContainer/Label.text = "SUCCESS"
 		$MarginContainer/VBoxContainer/ButtonsCon/NextButton.disabled = false
 		$AudioStreamPlayer2D.playing = true
-	elif !Global.success && !Global.adventureMode:
+	elif !Global.level_success && !Global.adventureMode:
 		$MarginContainer/VBoxContainer/Label.text = "FAILURE"
 		$MarginContainer/VBoxContainer/ButtonsCon/NextButton.disabled = true
 		
-	if Global.success && Global.adventureMode:
+	if Global.level_success && Global.adventureMode:
 		$MarginContainer/VBoxContainer/Label.text = "SUCCESS"
 		$MarginContainer/VBoxContainer/ButtonsCon/NextButton.disabled = false
 		$MarginContainer/VBoxContainer/ButtonsCon/RetryButton.disabled = true
-	elif !Global.success && Global.adventureMode:
+	elif !Global.level_success && Global.adventureMode:
 		$MarginContainer/VBoxContainer/Label.text = "FAILURE"
 		$MarginContainer/VBoxContainer/ButtonsCon/NextButton.disabled = true
 		$MarginContainer/VBoxContainer/ButtonsCon/RetryButton.disabled = true
 		
-	$MarginContainer/VBoxContainer/InfoCon/AttemptsLabel.text = "Attempts: " + str(Global.attempts)
-	$MarginContainer/VBoxContainer/InfoCon/TimeLabel.text = "Timer: " + str(Global.time)
-	$MarginContainer/VBoxContainer/InfoCon/ShotsLabel.text = "Shots Fired: " + str(Global.shots)
+	$MarginContainer/VBoxContainer/InfoCon/AttemptsLabel.text = "Attempts: " + str(Global.attempts_taken)
+	$MarginContainer/VBoxContainer/InfoCon/TimeLabel.text = "Timer: " + str(Global.time_taken)
+	$MarginContainer/VBoxContainer/InfoCon/ShotsLabel.text = "Shots Fired: " + str(Global.shots_taken)
 	pass # Replace with function body.
 
 
@@ -49,6 +49,7 @@ func _on_next_button_pressed():
 		Global.goto_scene("res://LevelTools/level.tscn")
 	else:
 		# ADVENTURE MODE IS FALSE
+		Global.attempts_taken = 0
 		Global.level = int(Global.level) +1
 		Global.goto_scene("res://LevelTools/level.tscn")
 	

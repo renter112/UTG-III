@@ -13,7 +13,7 @@
 		<coord x="10" y="9" type="block"></coord>
 	</objects>
 	<enemies>
-		<tank x="1" y="5" type="p1"></tank>
-		<enemy x="13" y="5" type="blue"></enemy>
+		<player x="1" y="5" type="p1"></player>
+		<turret x="13" y="5" type="blue"></turret>
 	</enemies>
 </level>

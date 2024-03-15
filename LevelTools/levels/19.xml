@@ -17,10 +17,10 @@
 		<coord x="18" y="9" type="finish"></coord>
 	</objects>
 	<enemies>
-		<tank x="1" y="1" type="p1"></tank>
-		<enemy x="11" y="1" type="boss"></enemy>
-		<enemy x="4" y="5" type="orange"></enemy>
-		<enemy x="17" y="5" type="orange"></enemy>
-		<enemy x="15" y="7" type="boss"></enemy>
+		<player x="1" y="1" type="p1"></player>
+		<turret x="11" y="1" type="boss"></turret>
+		<turret x="4" y="5" type="orange"></turret>
+		<turret x="17" y="5" type="orange"></turret>
+		<turret x="15" y="7" type="boss"></turret>
 	</enemies>
 </level>

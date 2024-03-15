@@ -39,8 +39,8 @@
 		<coord x="10" y="9" type="hole"></coord>
 	</objects>
 	<enemies>
-		<enemy x="13" y="3" type="orange"></enemy>
-		<tank x="2" y="5" type="p1"></tank>
-		<enemy x="13" y="7" type="orange"></enemy>
+		<turret x="13" y="3" type="orange"></turret>
+		<player x="2" y="5" type="p1"></player>
+		<turret x="13" y="7" type="orange"></turret>
 	</enemies>
 </level>

@@ -8,7 +8,7 @@ signal level_finish()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if Global.get_enemies() <= 0:
+	if Global.enemies <= 0:
 		$Sprite2D.texture = preload("res://Items/Assets/finishButton.png")
 		good = true
 	pass

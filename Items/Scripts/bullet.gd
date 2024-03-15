@@ -15,6 +15,6 @@ func _on_Bullet_body_entered(body):
 
 
 func _on_area_entered(area):
-	print(area)
-	queue_free()
+	if area.name != "tank_collision":
+		queue_free()
 	pass # Replace with function body.

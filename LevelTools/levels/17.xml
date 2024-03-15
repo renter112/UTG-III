@@ -22,8 +22,8 @@
 		<coord x="14" y="9" type="block"></coord>
 	</objects>
 	<enemies>
-		<enemy x="14" y="2" type="cyan"></enemy>
-		<tank x="2" y="5" type="p1"></tank>
-		<enemy x="14" y="8" type="cyan"></enemy>
+		<turret x="14" y="2" type="cyan"></turret>
+		<player x="2" y="5" type="p1"></player>
+		<turret x="14" y="8" type="cyan"></turret>
 	</enemies>
 </level>

@@ -16,7 +16,7 @@ func _process(_delta):
 	pass
 
 func shoot():
-	Global.shots += 1
+	Global.shots_taken += 1
 	var b = bullet.instantiate()
 	get_tree().get_root().get_node("/root/level").add_child(b)
 	b.transform = $Marker2D.global_transform
