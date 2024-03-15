@@ -26,10 +26,10 @@ func set_level(lvl):
 
 var enemies = 0
 var osaka_mode_on = false
-var shots_taken
-var attempts_taken
-var time_taken
-var level_success
+var shots_taken = 0
+var attempts_taken = 0
+var time_taken = 0
+var level_success = false
 
 var tank_controls_classic = true 
 var adventureMode = false

@@ -4,7 +4,7 @@
 <levelSeed seed="opkoynl7s4pljohzt4cjdmrno3rw87gd"></levelSeed>
 	<grid x="20" y="11"></grid>
 	<objects>
-		<coord x="4" y="1" type="block"></coord>
+		<coord x="4" y="1" type="breakable"></coord>
 		<coord x="17" y="1" type="hole"></coord>
 		<coord x="18" y="1" type="hole"></coord>
 		<coord x="4" y="2" type="block"></coord>
@@ -14,7 +14,7 @@
 		<coord x="4" y="3" type="block"></coord>
 		<coord x="17" y="3" type="hole"></coord>
 		<coord x="18" y="3" type="hole"></coord>
-		<coord x="4" y="4" type="block"></coord>
+		<coord x="4" y="4" type="breakable"></coord>
 		<coord x="5" y="4" type="block"></coord>
 		<coord x="6" y="4" type="block"></coord>
 		<coord x="7" y="4" type="block"></coord>
@@ -27,7 +27,7 @@
 		<coord x="14" y="4" type="block"></coord>
 		<coord x="4" y="5" type="block"></coord>
 		<coord x="14" y="5" type="block"></coord>
-		<coord x="4" y="6" type="block"></coord>
+		<coord x="4" y="6" type="breakable"></coord>
 		<coord x="14" y="6" type="hole"></coord>
 		<coord x="15" y="6" type="hole"></coord>
 		<coord x="16" y="6" type="hole"></coord>
