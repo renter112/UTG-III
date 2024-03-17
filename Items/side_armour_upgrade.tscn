@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjkag6f45xxyp"]
+
+[ext_resource type="Script" path="res://Items/Scripts/side_armour_upgrade.gd" id="1_3p7xo"]
+[ext_resource type="Texture2D" uid="uid://d4js4eugqral3" path="res://Items/Assets/armour_skirt.png" id="1_7sflc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6c2bs"]
+size = Vector2(72, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0fdlk"]
+size = Vector2(72, 8)
+
+[node name="SideArmourUpgrade" type="Node2D"]
+script = ExtResource("1_3p7xo")
+
+[node name="ArmourLeft" type="Area2D" parent="."]
+position = Vector2(0, -31.5)
+rotation = 3.14159
+collision_layer = 4
+collision_mask = 10
+
+[node name="ArmorLeftSprite" type="Sprite2D" parent="ArmourLeft"]
+texture = ExtResource("1_7sflc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArmourLeft"]
+position = Vector2(2.25704e-06, 4)
+shape = SubResource("RectangleShape2D_6c2bs")
+
+[node name="ArmorRight" type="Area2D" parent="."]
+position = Vector2(0, 31.5)
+collision_layer = 4
+collision_mask = 10
+
+[node name="ArmorRightSprite" type="Sprite2D" parent="ArmorRight"]
+texture = ExtResource("1_7sflc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArmorRight"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_0fdlk")
+
+[connection signal="area_entered" from="ArmourLeft" to="." method="_on_armour_left_body_entered"]
+[connection signal="area_entered" from="ArmorRight" to="." method="_on_armor_right_body_entered"]

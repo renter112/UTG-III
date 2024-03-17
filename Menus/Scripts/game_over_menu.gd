@@ -2,26 +2,32 @@ extends Control
 
 
 func _ready():
-	if Global.level_success && !Global.adventureMode:
+	# If level successful 
+	if Global.level_success:
 		$MarginContainer/VBoxContainer/Label.text = "SUCCESS"
-		$MarginContainer/VBoxContainer/ButtonsCon/NextButton.disabled = false
-		$AudioStreamPlayer2D.playing = true
-	elif !Global.level_success && !Global.adventureMode:
+		$MarginContainer/TextureRect.texture = preload("res://Menus/Assets/result_success.png")
+		$MarginContainer/VBoxContainer/MarginContainer/ButtonsCon/NextButton.disabled = false
+		# level success, not adventure
+		if not Global.adventureMode :
+			$AudioStreamPlayer2D.playing = true
+	# level fail
+	else :
+		$AudioStreamPlayer2D.playing = false
 		$MarginContainer/VBoxContainer/Label.text = "FAILURE"
-		$MarginContainer/VBoxContainer/ButtonsCon/NextButton.disabled = true
+		$MarginContainer/TextureRect.texture = preload("res://Menus/Assets/result_fail.png")
+		$MarginContainer/VBoxContainer/MarginContainer/ButtonsCon/NextButton.disabled = true
 		
-	if Global.level_success && Global.adventureMode:
-		$MarginContainer/VBoxContainer/Label.text = "SUCCESS"
-		$MarginContainer/VBoxContainer/ButtonsCon/NextButton.disabled = false
-		$MarginContainer/VBoxContainer/ButtonsCon/RetryButton.disabled = true
-	elif !Global.level_success && Global.adventureMode:
-		$MarginContainer/VBoxContainer/Label.text = "FAILURE"
-		$MarginContainer/VBoxContainer/ButtonsCon/NextButton.disabled = true
-		$MarginContainer/VBoxContainer/ButtonsCon/RetryButton.disabled = true
+	# in adventure mode
+	if Global.adventureMode :
+		Global.attempts_taken = 0 #reset attempts if its adventure, no level select otherwise
+		$MarginContainer/VBoxContainer/MarginContainer/ButtonsCon/RetryButton.disabled = true
+
 		
 	$MarginContainer/VBoxContainer/InfoCon/AttemptsLabel.text = "Attempts: " + str(Global.attempts_taken)
 	$MarginContainer/VBoxContainer/InfoCon/TimeLabel.text = "Timer: " + str(Global.time_taken)
 	$MarginContainer/VBoxContainer/InfoCon/ShotsLabel.text = "Shots Fired: " + str(Global.shots_taken)
+	if Global.osaka_mode_on :
+		$MarginContainer/TextureRect.texture = preload("res://Menus/Assets/osaka-100-yard-stare-by-me-v0-b064yxmkl0zb1.png")
 	pass # Replace with function body.
 
 
