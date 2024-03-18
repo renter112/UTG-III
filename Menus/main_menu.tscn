@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://dpy8lokjdhd4m" path="res://Menus/Assets/menuTheme.tres" id="1_vmiof"]
 [ext_resource type="Script" path="res://Menus/Scripts/main_menu.gd" id="2_fvmtf"]
 [ext_resource type="Theme" uid="uid://dnii5kb4mtk7p" path="res://Menus/Assets/levelSelectButtons.tres" id="2_n15jf"]
-[ext_resource type="Texture2D" uid="uid://dpbwnxmmlt6ow" path="res://Menus/Assets/mainMenuSC.png" id="4_0i8gr"]
+[ext_resource type="Texture2D" uid="uid://cbouloeico07p" path="res://Menus/mainMenuScreenShot-1.png" id="4_6f1k0"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -94,10 +94,12 @@ layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/CenterContainer"]
 layout_mode = 2
+theme_override_constants/margin_left = 100
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/CenterContainer/MarginContainer"]
+custom_minimum_size = Vector2(700, 700)
 layout_mode = 2
-texture = ExtResource("4_0i8gr")
+texture = ExtResource("4_6f1k0")
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/AdventureButton" to="." method="_on_adventure_button_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/LevelSelectButton" to="." method="_on_level_select_button_pressed"]

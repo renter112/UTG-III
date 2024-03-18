@@ -34,6 +34,7 @@ position = Vector2(7.77778, 0)
 stream = ExtResource("5_r1ut7")
 volume_db = -2.0
 autoplay = true
+bus = &"FXS"
 
 [node name="tank_collision" type="Area2D" parent="."]
 visible = false
