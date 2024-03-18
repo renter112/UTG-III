@@ -50,3 +50,9 @@ func get_sounds():
 	return sounds
 func set_sounds(s):
 	sounds = s
+	
+var fullScreen = true
+func get_full_screen():
+	return fullScreen
+func set_full_screen(fs):
+	fullScreen = fs

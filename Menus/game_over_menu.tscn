@@ -112,6 +112,7 @@ text = "Next Level"
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_ba88t")
 autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/ButtonsCon/RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/ButtonsCon/QuitButton" to="." method="_on_quit_button_pressed"]
