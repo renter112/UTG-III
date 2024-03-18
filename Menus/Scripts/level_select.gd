@@ -55,5 +55,4 @@ func _on_forward_button_pressed():
 			var b = button.instantiate()
 			b.text = str(n)
 			$MarginContainer/CenterContainer/HBoxContainer/MarginContainer/CenterContainer/GridContainer.add_child(b)
-			
 	pass # Replace with function body.
