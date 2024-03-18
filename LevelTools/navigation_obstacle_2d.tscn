@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://b176anhbcdnuv"]
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D"]
+radius = 32.0
+vertices = PackedVector2Array(40, 40, -40, 40, -40, -40, 40, -40)

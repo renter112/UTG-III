@@ -78,7 +78,6 @@ text = ">"
 layout_mode = 2
 
 [node name="Button" type="Button" parent="MarginContainer/CenterContainer/HBoxContainer/VBoxContainer2"]
-visible = false
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 text = "x"

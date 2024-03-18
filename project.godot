@@ -66,10 +66,13 @@ shoot={
 [layer_names]
 
 2d_physics/layer_1="walls"
+2d_navigation/layer_1="EnemyPathfinding"
 2d_physics/layer_2="bullet"
+2d_navigation/layer_2="Enemy Avoidance"
 2d_physics/layer_3="player"
 2d_physics/layer_4="enemies"
 2d_physics/layer_5="hole"
+avoidance/layer_1="pathfindingAvoidance"
 
 [rendering]
 
