@@ -113,12 +113,11 @@ layout_mode = 2
 theme = ExtResource("2_eobug")
 text = "Classic"
 
-[node name="Button6" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+[node name="CreditsButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 theme = ExtResource("2_eobug")
-disabled = true
-toggle_mode = true
+text = "Credits"
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -140,4 +139,5 @@ text = "back"
 [connection signal="toggled" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/OsakaButton" to="." method="_on_osaka_button_toggled"]
 [connection signal="toggled" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/FullScreenButton" to="." method="_on_full_screen_button_toggled"]
 [connection signal="pressed" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/ControlsButton" to="." method="_on_control_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

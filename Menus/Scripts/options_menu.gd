@@ -48,3 +48,8 @@ func _on_sounds_button_toggled(toggled_on):
 
 func _on_full_screen_button_toggled(toggled_on):
 	pass # Replace with function body.
+
+
+func _on_credits_button_pressed():
+	Global.goto_scene("res://Menus/credits.tscn")
+	pass # Replace with function body.

@@ -1,0 +1,171 @@
+[gd_scene load_steps=4 format=3 uid="uid://qhxjbvtj0tay"]
+
+[ext_resource type="FontFile" uid="uid://n7lo661wrh6j" path="res://Menus/Assets/PixCon.ttf" id="1_07iw0"]
+[ext_resource type="Script" path="res://Menus/Scripts/credits.gd" id="1_buk46"]
+
+[sub_resource type="Theme" id="Theme_f2wn6"]
+RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
+RichTextLabel/colors/font_shadow_color = Color(0.47451, 0.47451, 0.47451, 0.729412)
+RichTextLabel/constants/shadow_offset_x = 3
+RichTextLabel/constants/shadow_offset_y = 3
+RichTextLabel/font_sizes/bold_font_size = 48
+RichTextLabel/font_sizes/normal_font_size = 32
+RichTextLabel/fonts/bold_font = ExtResource("1_07iw0")
+RichTextLabel/fonts/normal_font = ExtResource("1_07iw0")
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_buk46")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(600, 4000)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 900.0
+offset_bottom = 8471.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_f2wn6")
+bbcode_enabled = true
+text = "[center]
+[b]UTG-II[/b]
+
+
+
+
+
+
+A game by
+[b]lll ltd[/b]
+
+
+
+
+
+
+[b]Directed By[/b]
+Aidan Lewis
+Andreas Lentini
+Owen Laurie
+
+
+
+
+[b]Produced By[/b]
+Aidan Lewis
+Andreas Lentini
+Owen Laurie
+
+
+
+
+[b]Art Director[/b]
+Aidan Lewis
+
+
+
+
+[b]Written by[/b]
+Owen Laurie
+
+
+
+
+[b]Game Designer[/b]
+Andreas Lentini
+
+
+
+
+[b]Programmers[/b]
+Aidan Lewis
+Andreas Lentini
+Owen Laurie
+
+
+
+
+[b]Artists[/b]
+Aidan Lewis
+Andreas Lentini
+Owen Laurie
+
+
+
+
+[b]Sound Designer[/b]
+Owen Laurie
+
+
+
+
+[b]Music Composer[/b]
+Andreas Lentini
+
+
+
+
+[b]Published by[/b]
+LLL Games Co.
+
+
+
+
+[b]Executive Publisher[/b]
+Aidan Lewis
+
+
+[b]Associate Producer[/b]
+Owen Laurie
+
+
+[b]Production Coordinator[/b]
+Andreas Lentini
+
+
+
+
+
+
+
+[b]Special Thanks[/b]
+
+To all the fans that supported us throughout the project
+
+Osaka
+
+Our loving families who always believed
+
+The United States Marine Band
+
+Our Computer Science professors:
+Ruizhong Wei | Xing Tan | Chris Brogly
+
+The Chrysler Town & Country
+
+
+
+
+
+
+[b]Extras[/b]
+Built Using Godot
+COMP-4431
+Lakehead University
+4 8 15 16 23 42"
