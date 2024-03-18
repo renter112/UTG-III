@@ -67,9 +67,9 @@ offset = Vector2(19, 0)
 position = Vector2(59.2857, -0.000264792)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-path_desired_distance = 32.0
-target_desired_distance = 30.0
-path_max_distance = 128.0
+avoidance_enabled = true
 avoidance_layers = 7
 avoidance_mask = 7
 debug_enabled = true
+
+[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]

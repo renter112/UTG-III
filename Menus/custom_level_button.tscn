@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsiotq36sjo5w"]
+
+[ext_resource type="Script" path="res://Menus/Scripts/custom_level_button.gd" id="1_51or6"]
+[ext_resource type="Theme" uid="uid://b5dpw57epf28s" path="res://Menus/Assets/optionsToggleButtons.tres" id="1_bvy6u"]
+
+[node name="CustomLevelButton" type="Button"]
+offset_right = 924.0
+offset_bottom = 93.0
+theme = ExtResource("1_bvy6u")
+text = "Level:"
+script = ExtResource("1_51or6")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

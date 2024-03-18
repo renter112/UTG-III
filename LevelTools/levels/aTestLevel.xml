@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<level>
+<levelName name="ATestLevel"></levelName>
+<levelSeed seed="kd9o1bbj6cq0fllu83phifsvy98xfmn6"></levelSeed>
+	<grid x="25" y="19"></grid>
+	<objects>
+		<coord x="15" y="8" type="finish"></coord>
+	</objects>
+	<enemies>
+		<player x="9" y="8" type="p1"></player>
+	</enemies>
+</level>

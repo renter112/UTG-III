@@ -39,10 +39,6 @@
 	</objects>
 	<enemies>
 		<player x="13" y="2" type="p1"></player>
-		<turret x="1" y="3" type="cyan"></turret>
-		<turret x="14" y="4" type="blue"></turret>
-		<turret x="7" y="8" type="red"></turret>
-		<turret x="2" y="9" type="yellow"></turret>
-		<turret x="18" y="9" type="orange"></turret>
+		<tank x="7" y="8" type="red"></tank>
 	</enemies>
 </level>

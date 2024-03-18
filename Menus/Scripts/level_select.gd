@@ -47,3 +47,8 @@ func _on_forward_button_pressed():
 		b.text = str(n)
 		$MarginContainer/CenterContainer/HBoxContainer/MarginContainer/CenterContainer/GridContainer.add_child(b)
 	pass # Replace with function body.
+
+
+func _on_button_pressed():
+	Global.goto_scene("res://Menus/custom_levels_menu.tscn")
+	pass # Replace with function body.
