@@ -36,7 +36,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gcmck"]
-size = Vector2(65, 64)
+size = Vector2(52, 52)
 
 [node name="red_tank" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 8
@@ -47,11 +47,11 @@ script = ExtResource("1_fm1uw")
 [node name="RayCast2D" type="RayCast2D" parent="."]
 
 [node name="enemyhull" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_28cih")
 frame_progress = 0.617812
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_gcmck")
 
 [node name="Timer" type="Timer" parent="."]
@@ -60,18 +60,16 @@ autostart = true
 
 [node name="turret" type="Sprite2D" parent="."]
 position = Vector2(5, 0)
-rotation = 6.28319
 texture = ExtResource("8_u0g2r")
 offset = Vector2(19, 0)
 
 [node name="Marker2D" type="Marker2D" parent="turret"]
-position = Vector2(63, -8.74228e-07)
+position = Vector2(59.2857, -0.000264792)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-target_desired_distance = 64.0
-avoidance_enabled = true
-radius = 100.0
-neighbor_distance = 30.0
-avoidance_layers = 3
-avoidance_mask = 3
+path_desired_distance = 32.0
+target_desired_distance = 30.0
+path_max_distance = 128.0
+avoidance_layers = 7
+avoidance_mask = 7
 debug_enabled = true

@@ -13,6 +13,6 @@
 	</objects>
 	<enemies>
 		<player x="3" y="5" type="p1"></player>
-		<turret x="13" y="5" type="red"></turret>
+		<tank x="13" y="5" type="red"></tank>
 	</enemies>
 </level>
