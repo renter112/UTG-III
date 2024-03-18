@@ -25,7 +25,6 @@ func set_level(lvl):
 
 
 var enemies = 0
-var osaka_mode_on = false
 var shots_taken = 0
 var attempts_taken = 0
 var time_taken = 0
@@ -33,6 +32,12 @@ var level_success = false
 
 var tank_controls_classic = true
  
+var osaka_mode_on = false
+func get_osaka_mode_on():
+	return osaka_mode_on
+func set_osaka_mode_on(o):
+	osaka_mode_on = o
+
 var adventureMode = false
 func get_adventureMode():
 	return adventureMode
@@ -51,7 +56,7 @@ func get_sounds():
 func set_sounds(s):
 	sounds = s
 	
-var fullScreen = true
+var fullScreen = false
 func get_full_screen():
 	return fullScreen
 func set_full_screen(fs):

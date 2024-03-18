@@ -5,9 +5,7 @@ func _ready():
 		$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/ControlsButton.text = "CLASSIC"
 	else:
 		$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/ControlsButton.text = "MODERN"
-	if Global.osaka_mode_on:
-		$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/OsakaButton.button_pressed = true
-		
+
 	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/MusicButton.set_pressed_no_signal(!Global.music)
 	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/SoundsButton.set_pressed_no_signal(!Global.sounds)
 	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/OsakaButton.set_pressed_no_signal(!Global.osaka_mode_on)
