@@ -4,6 +4,9 @@ extends Control
 func _ready():
 	# If level successful 
 	if Global.level_success:
+		if not Global.levels_cleared.has(Global.level):
+			Global.levels_cleared.push_back(Global.level)
+			Global.save_levels_beaten()
 		$MarginContainer/VBoxContainer/Label.text = "SUCCESS"
 		$MarginContainer/TextureRect.texture = preload("res://Menus/Assets/result_success.png")
 		$MarginContainer/VBoxContainer/MarginContainer/ButtonsCon/NextButton.disabled = false

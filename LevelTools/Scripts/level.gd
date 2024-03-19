@@ -11,6 +11,7 @@ var pause_menu = preload("res://Menus/pause_menu.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print(Global.levels_cleared)
 	parseXML()
 	Global.enemies = enemies
 	Global.attempts_taken += 1

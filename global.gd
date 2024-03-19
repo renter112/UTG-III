@@ -61,3 +61,17 @@ func get_full_screen():
 	return fullScreen
 func set_full_screen(fs):
 	fullScreen = fs
+
+
+var levels_cleared = []
+func get_levels_from_save():
+	if not FileAccess.file_exists("user://save.save"):
+		return
+	var save_file = FileAccess.open("user://save.save",FileAccess.READ)
+	while save_file.get_position() < save_file.get_length():
+		levels_cleared.push_back(save_file.get_line())
+	pass
+func save_levels_beaten():
+	var save_file = FileAccess.open("user://save.save",FileAccess.WRITE)
+	for level in levels_cleared:
+		save_file.store_line(str(level))

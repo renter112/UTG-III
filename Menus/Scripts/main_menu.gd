@@ -1,5 +1,8 @@
 extends Control
 
+func _ready():
+	Global.get_levels_from_save()
+	print(Global.levels_cleared)
 
 
 func _on_level_select_button_pressed():

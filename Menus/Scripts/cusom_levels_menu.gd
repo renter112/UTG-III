@@ -29,7 +29,7 @@ func dir_contents(path):
 
 
 func check_xml(path,file_name):
-	var level_button = preload("res://Menus/custom_level_button.tscn").instantiate()
+	var level_button = preload("res://Menus/Assets/custom_level_button.tscn").instantiate()
 	var parser = XMLParser.new()
 	parser.open(path+"/"+file_name)
 	while parser.read() != ERR_FILE_EOF:
