@@ -24,7 +24,7 @@ func _ready():
 func parseXML():
 	var parser = XMLParser.new()
 	var level = Global.get_level()
-	if Global.get_adventureMode() :
+	if Global.adventureMode :
 		parser.open("res://LevelTools/AdventureLevels/"+str(level)+".xml")
 	else:
 		parser.open("res://LevelTools/levels/"+str(level)+".xml")
@@ -146,7 +146,7 @@ func _on_tank_hull_level_finish():
 	pass # Replace with function body.
 	
 func finish():
-	if Global.get_adventureMode() && str(Global.get_level()).begins_with("h"):
+	if Global.adventureMode && str(Global.get_level()).begins_with("h"):
 		Global.goto_scene("res://Menus/main_menu.tscn")
 	else:
 		if (timer as int % 60) as int < 10:

@@ -33,34 +33,10 @@ var level_success = false
 var tank_controls_classic = true
  
 var osaka_mode_on = false
-func get_osaka_mode_on():
-	return osaka_mode_on
-func set_osaka_mode_on(o):
-	osaka_mode_on = o
-
 var adventureMode = false
-func get_adventureMode():
-	return adventureMode
-func set_adventureMode(a):
-	adventureMode = a
-
 var music = true
-func get_music():
-	return music
-func set_music(m):
-	music = m
-	
 var sounds = true
-func get_sounds():
-	return sounds
-func set_sounds(s):
-	sounds = s
-	
 var fullScreen = false
-func get_full_screen():
-	return fullScreen
-func set_full_screen(fs):
-	fullScreen = fs
 
 
 var levels_cleared = []

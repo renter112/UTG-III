@@ -41,7 +41,7 @@ func _on_retry_button_pressed():
 
 
 func _on_quit_button_pressed():
-	if Global.get_adventureMode():
+	if Global.adventureMode:
 		Global.goto_scene("res://Menus/main_menu.tscn")
 	else:
 		Global.goto_scene("res://Menus/level_select.tscn")
@@ -49,7 +49,7 @@ func _on_quit_button_pressed():
 
 
 func _on_next_button_pressed():
-	if Global.get_adventureMode():
+	if Global.adventureMode:
 		# ADVENTURE MODE IS TRUE
 		if str(Global.get_level()).begins_with("e"):
 			Global.set_level("m" + str(randi_range(1, 3)))

@@ -22,7 +22,7 @@ func _on_option_button_pressed():
 
 func _on_adventure_button_pressed():
 	# this just loads a random level rn
-	Global.set_adventureMode(true)
+	Global.adventureMode = true
 	Global.set_level("e" + str(randi_range(1, 3)))
 	Global.goto_scene("res://LevelTools/level.tscn")
 	pass # Replace with function body.
