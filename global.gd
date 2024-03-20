@@ -33,34 +33,10 @@ var level_success = false
 var tank_controls_classic = true
  
 var osaka_mode_on = false
-func get_osaka_mode_on():
-	return osaka_mode_on
-func set_osaka_mode_on(o):
-	osaka_mode_on = o
-
 var adventureMode = false
-func get_adventureMode():
-	return adventureMode
-func set_adventureMode(a):
-	adventureMode = a
-
 var music = true
-func get_music():
-	return music
-func set_music(m):
-	music = m
-	
 var sounds = true
-func get_sounds():
-	return sounds
-func set_sounds(s):
-	sounds = s
-	
 var fullScreen = false
-func get_full_screen():
-	return fullScreen
-func set_full_screen(fs):
-	fullScreen = fs
 
 
 var levels_cleared = []
@@ -69,16 +45,12 @@ func get_levels_from_save():
 		return
 	var save_file = FileAccess.open("user://save.save",FileAccess.READ)
 	while save_file.get_position() < save_file.get_length():
-		var seed = save_file.get_line()
-		for l in level_dict:
-			if level_dict[l][1] == seed:
-				levels_cleared.push_back(level_dict[l][0].get_basename())
+		levels_cleared.push_back(save_file.get_line())
 	pass
 func save_levels_beaten():
 	var save_file = FileAccess.open("user://save.save",FileAccess.WRITE)
 	for level in levels_cleared:
-		var level_n = str(level)+".xml"
-		save_file.store_line(str(level_dict[level_n][1]))
+		save_file.store_line(str(level))
 
 var level_dict = {}
 func load_level_dict():

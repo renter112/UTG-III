@@ -44,7 +44,9 @@ func check_xml(path,file_name):
 				level_button.text = attributes_dict["name"]
 			if(node_name == "levelSeed"):
 				print(attributes_dict["seed"])
-	$ScrollContainer/VBoxContainer.add_child(level_button)
+	level_button.custom_minimum_size.x = 250
+	level_button.custom_minimum_size.y = 100
+	$MarginContainer/VBoxContainer2/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer.add_child(level_button)
 			#print("The ", node_name, " element has the following attributes: ", attributes_dict)
 
 

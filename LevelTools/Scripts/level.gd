@@ -11,7 +11,6 @@ var pause_menu = preload("res://Menus/pause_menu.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(Global.levels_cleared)
 	parseXML()
 	Global.enemies = enemies
 	Global.attempts_taken += 1
@@ -24,10 +23,10 @@ func _ready():
 func parseXML():
 	var parser = XMLParser.new()
 	var level = Global.get_level()
-	if Global.get_adventureMode() :
+	if Global.adventureMode :
 		parser.open("res://LevelTools/AdventureLevels/"+str(level)+".xml")
 	else:
-		parser.open("res://LevelTools/levels/"+str(level)+".xml")
+		parser.open("res://LevelTools/levels/"+str(level))
 	while parser.read() != ERR_FILE_EOF:
 		if parser.get_node_type() == XMLParser.NODE_ELEMENT:
 			var node_name = parser.get_node_name()
@@ -146,7 +145,7 @@ func _on_tank_hull_level_finish():
 	pass # Replace with function body.
 	
 func finish():
-	if Global.get_adventureMode() && str(Global.get_level()).begins_with("h"):
+	if Global.adventureMode && str(Global.get_level()).begins_with("h"):
 		Global.goto_scene("res://Menus/main_menu.tscn")
 	else:
 		if (timer as int % 60) as int < 10:
