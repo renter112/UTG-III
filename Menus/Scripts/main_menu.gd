@@ -1,9 +1,10 @@
 extends Control
 
 func _ready():
+	Global.load_level_dict()
+	print(Global.level_dict)
 	Global.get_levels_from_save()
 	print(Global.levels_cleared)
-
 
 func _on_level_select_button_pressed():
 	Global.goto_scene("res://Menus/level_select.tscn")
