@@ -7,7 +7,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
@@ -24,7 +24,7 @@ func check_alive():
 		queue_free()
 
 
-func _on_armor_right_body_entered(area):
+func _on_armor_right_body_entered(_area):
 	$ArmorRight.queue_free()
 	health -= 1
 	check_alive()

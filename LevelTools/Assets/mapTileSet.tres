@@ -1,13 +1,13 @@
-[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://lyy5fn5e5k5b"]
+[gd_resource type="TileSet" load_steps=12 format=3 uid="uid://lyy5fn5e5k5b"]
 
 [ext_resource type="Texture2D" uid="uid://darde63jye3c4" path="res://LevelTools/Assets/toyfloor.png" id="1_rnqdg"]
 [ext_resource type="Texture2D" uid="uid://d4iahqvfa0hdc" path="res://LevelTools/Assets/animefloor.png" id="2_sd53k"]
 [ext_resource type="Texture2D" uid="uid://bekmjf7vhgftd" path="res://LevelTools/Assets/grassfloor.png" id="3_8p5ef"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_1o81u"]
-vertices = PackedVector2Array(-20, -32, 21, -32, 8, -23, -11, -24, 32, -20, 32, 20, 20, 6, 20, -12, 5, 19, 19, 32, -20, 32, -7, 19, -21, 11, -32, 20, -32, -20, -21, -11, 25, -32, 32, -32, 32, -24, 20, -15, 11, -23, 32, 23, 32, 32, 24, 32, 11, 19, 20, 10, -23, 32, -32, 32, -32, 25, -21, 14, -12, 19, -21, -14, -32, -24, -32, -32, -24, -32, -13, -24)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(12, 13, 14, 15), PackedInt32Array(16, 17, 18, 19, 20), PackedInt32Array(21, 22, 23, 24, 25), PackedInt32Array(26, 27, 28, 29, 30), PackedInt32Array(31, 32, 33, 34, 35), PackedInt32Array(30, 29, 12), PackedInt32Array(15, 31, 35, 3, 2, 7, 6), PackedInt32Array(20, 19, 7, 2), PackedInt32Array(30, 12, 15, 11), PackedInt32Array(8, 11, 15), PackedInt32Array(25, 24, 8, 15, 6)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(32, -32, 32, -24.0625, 20.3125, -15.1875, 20.2477, -11.9463, 32, -20.4375, 32, 19.5625, 19.8926, 5.8091, 19.8125, 9.8125, 32, 23.3125, 32, 32, 23.9375, 32, 11.1875, 18.5625, 4.6875, 18.8125, 18.8125, 32, -20.1875, 32, -7.42874, 19.0817, -12.1875, 19.1875, -23.4375, 32, -32, 32, -32, 24.5625, -21.1875, 13.5625, -21.0625, 10.9375, -32, 20.3125, -32, -20.1875, -21.2987, -10.6876, -21.3125, -13.6875, -32, -24.1875, -32, -32, -24.1875, -32, -13.1875, -23.6875, -10.5536, -23.6474, -19.8125, -32, 20.9375, -32, 8.4375, -23.3125, 11.4375, -23.3125, 24.5625, -32)])
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_bixdx"]
+vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 agent_radius = 0.0
 
@@ -93,7 +93,7 @@ texture_region_size = Vector2i(64, 64)
 2:2/0/physics_layer_0/angular_velocity = 0.0
 2:2/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 2:2/0/physics_layer_1/angular_velocity = 0.0
-2:2/0/navigation_layer_1/polygon = SubResource("NavigationPolygon_1o81u")
+2:2/0/navigation_layer_1/polygon = SubResource("NavigationPolygon_bixdx")
 3:2/0 = 0
 3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:2/0/physics_layer_0/angular_velocity = 0.0
@@ -321,7 +321,7 @@ texture_region_size = Vector2i(64, 64)
 4:4/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 4:4/0/physics_layer_1/angular_velocity = 0.0
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_nlmyq"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_2c78b"]
 vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)])
@@ -330,13 +330,6 @@ agent_radius = 0.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_iivo7"]
 source_geometry_group_name = &"navigation_polygon_source_group"
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_d2poh"]
-vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)])
-source_geometry_group_name = &"navigation_polygon_source_group"
-agent_radius = 0.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_cgdkg"]
 source_geometry_group_name = &"navigation_polygon_source_group"
@@ -395,7 +388,6 @@ texture_region_size = Vector2i(64, 64)
 5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 5:1/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 5:1/0/physics_layer_1/angular_velocity = 0.0
-5:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_d2poh")
 5:1/0/navigation_layer_1/polygon = SubResource("NavigationPolygon_cgdkg")
 0:2/0 = 0
 0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -408,7 +400,7 @@ texture_region_size = Vector2i(64, 64)
 2:2/0/physics_layer_0/angular_velocity = 0.0
 2:2/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 2:2/0/physics_layer_1/angular_velocity = 0.0
-2:2/0/navigation_layer_1/polygon = SubResource("NavigationPolygon_nlmyq")
+2:2/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_2c78b")
 4:2/0 = 0
 4:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:2/0/physics_layer_0/angular_velocity = 0.0

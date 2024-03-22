@@ -78,8 +78,8 @@ func get_levels_from_save():
 	pass
 func save_levels_beaten():
 	var save_file = FileAccess.open("user://save.save",FileAccess.WRITE)
-	for level in levels_cleared:
-		save_file.store_line(str(level))
+	for leveld in levels_cleared:
+		save_file.store_line(str(leveld))
 
 var level_dict = {}
 func load_level_dict():

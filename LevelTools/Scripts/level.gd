@@ -3,6 +3,7 @@ extends Node2D
 var baseGrid = Vector2(0,0)
 var playerPos = Vector2(0,0)
 var blockList = []
+var blockList2 = []
 var enemies = 0
 var scaler = 64 as int
 var timer = 0 
@@ -108,7 +109,7 @@ func build_objects():
 			3.0:
 				create_grid_element(obj.x,obj.y,5,1,1)
 				$Map.erase_cell(0,Vector2(obj.x,obj.y))
-
+				blockList2.push_back(Vector2(obj.x,obj.y))
 			4.0:
 				create_grid_element(obj.x,obj.y,5,2,1)
 				$Map.erase_cell(0,Vector2(obj.x,obj.y))
