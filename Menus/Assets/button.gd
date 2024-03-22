@@ -9,9 +9,9 @@ func _ready():
 func _on_pressed():
 	for lvl in Global.level_dict:
 		if Global.level_dict[lvl][0] == text:
-			print("FUKC",Global.level_dict[lvl][0])
-			Global.level = lvl
-	Global.set_level(text)
+			print(lvl)
+			Global.level = str(lvl)
+
 	Global.adventureMode = false
 	Global.goto_scene("res://LevelTools/level.tscn")
 	pass # Replace with function body.
