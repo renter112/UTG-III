@@ -75,3 +75,8 @@ func update_back_button():
 	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/BackButton.text = "Save"
 	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/BackButton.add_theme_color_override("font_color",Color(0,.7,0))
 	need_saved = true
+
+
+func _on_controls_view_button_pressed():
+	Global.goto_scene("res://Menus/view_controls_menu.tscn")
+	pass # Replace with function body.

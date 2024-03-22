@@ -33,7 +33,6 @@ var tank_controls_classic = true
 var adventureMode = false
 
 var osaka_mode_on = false
-var adventureMode = false
 var music = true
 var sounds = true
 var fullScreen = false
