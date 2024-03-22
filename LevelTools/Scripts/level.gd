@@ -3,6 +3,7 @@ extends Node2D
 var baseGrid = Vector2(0,0)
 var playerPos = Vector2(0,0)
 var blockList = []
+var blockList2 = []
 var enemies = 0
 var scaler = 64 as int
 var timer = 0 
@@ -11,7 +12,6 @@ var pause_menu = preload("res://Menus/pause_menu.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(Global.levels_cleared)
 	parseXML()
 	Global.enemies = enemies
 	Global.attempts_taken += 1
@@ -27,7 +27,7 @@ func parseXML():
 	if Global.adventureMode :
 		parser.open("res://LevelTools/AdventureLevels/"+str(level)+".xml")
 	else:
-		parser.open("res://LevelTools/levels/"+str(level)+".xml")
+		parser.open("res://LevelTools/levels/"+str(level))
 	while parser.read() != ERR_FILE_EOF:
 		if parser.get_node_type() == XMLParser.NODE_ELEMENT:
 			var node_name = parser.get_node_name()
@@ -109,7 +109,7 @@ func build_objects():
 			3.0:
 				create_grid_element(obj.x,obj.y,5,1,1)
 				$Map.erase_cell(0,Vector2(obj.x,obj.y))
-
+				blockList2.push_back(Vector2(obj.x,obj.y))
 			4.0:
 				create_grid_element(obj.x,obj.y,5,2,1)
 				$Map.erase_cell(0,Vector2(obj.x,obj.y))

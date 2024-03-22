@@ -12,15 +12,17 @@ func _ready():
 	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/FullScreenButton.set_pressed_no_signal(!Global.fullScreen)
 	
 func _on_back_button_pressed():
+	if need_saved:
+		Global.save_config()
 	Global.goto_scene("res://Menus/main_menu.tscn")
 	pass # Replace with function body.
 
 func _on_osaka_button_toggled(toggled_on):
-	if Global.osaka_mode_on :
-		Global.osaka_mode_on = false
-	else :
+	if not toggled_on :
 		Global.osaka_mode_on = true
-	print(toggled_on)
+	else :
+		Global.osaka_mode_on = false
+	update_back_button()
 	pass # Replace with function body.
 
 func _on_control_button_pressed():
@@ -33,33 +35,43 @@ func _on_control_button_pressed():
 	pass # Replace with function body.
 
 func _on_music_button_toggled(toggled_on):
-	if Global.music:
-		Global.music = false
-	else:
+	if not toggled_on:
+		print("turning music on!")
 		Global.music = true
-	AudioServer.set_bus_mute(1, not AudioServer.is_bus_mute(1))
+	else :
+		print("turn off music")
+		Global.music = false
+	Global.update_settings()
+	update_back_button()
 	pass # Replace with function body.
 
 
 func _on_sounds_button_toggled(toggled_on):
-	if Global.sounds:
-		Global.sounds = false
-	else:
+	if not toggled_on:
 		Global.sounds = true
-	AudioServer.set_bus_mute(2, not AudioServer.is_bus_mute(2))
+	else :
+		Global.sounds = false
+	Global.update_settings()
+	update_back_button()
 	pass # Replace with function body.
 
 
 func _on_full_screen_button_toggled(toggled_on):
-	if DisplayServer.window_get_mode() != DisplayServer.WINDOW_MODE_FULLSCREEN:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	if not toggled_on:
 		Global.fullScreen = true
 	else:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		Global.fullScreen = false
+	Global.update_settings()
+	update_back_button()
 	pass # Replace with function body.
 
 
 func _on_credits_button_pressed():
 	Global.goto_scene("res://Menus/credits.tscn")
 	pass # Replace with function body.
+
+var need_saved = false
+func update_back_button():
+	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/BackButton.text = "Save"
+	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/BackButton.add_theme_color_override("font_color",Color(0,.7,0))
+	need_saved = true

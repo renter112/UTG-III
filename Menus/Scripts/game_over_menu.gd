@@ -4,9 +4,10 @@ extends Control
 func _ready():
 	# If level successful 
 	if Global.level_success:
-		if not Global.levels_cleared.has(Global.level):
-			Global.levels_cleared.push_back(Global.level)
-			Global.save_levels_beaten()
+		for lvl in Global.level_dict:
+			if lvl == Global.level:
+				Global.levels_cleared.push_back(Global.level_dict[lvl][1])
+				Global.save_levels_beaten()
 		$MarginContainer/VBoxContainer/Label.text = "SUCCESS"
 		$MarginContainer/TextureRect.texture = preload("res://Menus/Assets/result_success.png")
 		$MarginContainer/VBoxContainer/MarginContainer/ButtonsCon/NextButton.disabled = false
@@ -59,7 +60,7 @@ func _on_next_button_pressed():
 	else:
 		# ADVENTURE MODE IS FALSE
 		Global.attempts_taken = 0
-		Global.level = int(Global.level) +1
+		Global.level = str(int(Global.level.get_basename()) +1 )+".xml"
 		Global.goto_scene("res://LevelTools/level.tscn")
 	
 	pass # Replace with function body.
