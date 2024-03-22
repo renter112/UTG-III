@@ -12,5 +12,8 @@ func _process(delta):
 
 
 func _on_back_button_pressed():
-	Global.goto_scene("res://Menus/options_menu.tscn")
+	if Global.inGame:
+		Global.goto_scene("res://LevelTools/level.tscn")
+	else:
+		Global.goto_scene("res://Menus/options_menu.tscn")
 	pass # Replace with function body.

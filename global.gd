@@ -36,6 +36,7 @@ var osaka_mode_on = false
 var music = true
 var sounds = true
 var fullScreen = false
+var inGame = false
 
 func save_config():
 	var config = ConfigFile.new()

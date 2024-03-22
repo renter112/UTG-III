@@ -1,6 +1,8 @@
 extends Control
 
 func _ready():
+	Global.inGame = false
+	
 	if(Global.tank_controls_classic):
 		$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/ControlsButton.text = "CLASSIC"
 	else:
