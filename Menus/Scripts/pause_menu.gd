@@ -1,7 +1,5 @@
 extends Control
 
-
-
 func _on_quit_button_pressed():
 	get_tree().paused = false
 	if Global.adventureMode:
@@ -11,16 +9,15 @@ func _on_quit_button_pressed():
 		queue_free()
 	pass # Replace with function body.
 
-
 func _on_resume_button_pressed():
 	get_tree().paused = false
 	queue_free()
 	pass # Replace with function body.
 
-
 func _on_retry_button_pressed():
+	get_tree().paused = false
+	Global.goto_scene("res://LevelTools/level.tscn")
 	pass # Replace with function body.
-
 
 func _on_controls_button_pressed():
 	get_tree().paused = false
@@ -28,3 +25,9 @@ func _on_controls_button_pressed():
 	Global.attempts_taken -= 1
 	Global.goto_scene("res://Menus/view_controls_menu.tscn")
 	pass # Replace with function body.
+
+func _input(event):
+	if event.is_action_pressed("pause"):
+		get_tree().paused = false
+		queue_free()
+	pass
