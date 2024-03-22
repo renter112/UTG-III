@@ -1,9 +1,5 @@
 extends Control
 
-func unpause():
-	print("unpause func")
-	queue_free()
-	get_tree().paused = false
 
 func _on_quit_button_pressed():
 	get_tree().paused = false
@@ -16,7 +12,8 @@ func _on_quit_button_pressed():
 
 func _on_resume_button_pressed():
 	print("unpause button")
-	unpause()
+	queue_free()
+	get_tree().paused = false
 	pass # Replace with function body.
 
 func _on_retry_button_pressed():
@@ -31,10 +28,3 @@ func _on_controls_button_pressed():
 	Global.goto_scene("res://Menus/view_controls_menu.tscn")
 	pass # Replace with function body.
 
-func _input(event):
-	# no clue why this doesnt work
-	if event.is_action_pressed("pause"):
-		print("unpause esc")
-		unpause()
-		#$MarginContainer/VBoxContainer/HBoxContainer/GridContainer/RetryButton.button_pressed = true
-	pass

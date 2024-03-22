@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dg3xpdrrb3dfg"]
+[gd_scene load_steps=9 format=3 uid="uid://dg3xpdrrb3dfg"]
 
 [ext_resource type="Script" path="res://Enemies/miniEnemy/mini_tank.gd" id="1_lxt0a"]
 [ext_resource type="Texture2D" uid="uid://cf8tvtvd46avf" path="res://Enemies/miniEnemy/Assets/minihull_1.png" id="1_n41i4"]
@@ -29,10 +29,15 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nhq0u"]
 size = Vector2(18, 18)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_s25un"]
+radius = 28.0
+
 [node name="mini_tank" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 17
 script = ExtResource("1_lxt0a")
 
-[node name="hull" type="AnimatedSprite2D" parent="."]
+[node name="turret" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b83wt")
 frame_progress = 0.114691
 
@@ -42,3 +47,25 @@ shape = SubResource("RectangleShape2D_nhq0u")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 navigation_layers = 3
 path_postprocessing = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="explosion" type="Area2D" parent="."]
+visible = false
+show_behind_parent = true
+collision_layer = 2
+collision_mask = 14
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="explosion"]
+shape = SubResource("CircleShape2D_s25un")
+
+[node name="Polygon2D" type="Polygon2D" parent="explosion"]
+polygon = PackedVector2Array(0, -28, 20, -20, 28, 0, 20, 20, 0, 28, -21, 20, -29, 0, -21, -19)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="explosion" to="." method="_on_explosion_area_entered"]
+[connection signal="body_entered" from="explosion" to="." method="_on_explosion_body_entered"]

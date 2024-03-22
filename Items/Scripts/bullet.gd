@@ -6,15 +6,13 @@ func _physics_process(delta):
 	position += transform.x * speed * delta
 
 func _on_Bullet_body_entered(body):
-	print(body)
+	print("T: ",body.get_node_or_null("turret"))
+	print("H ",body.get_node_or_null("tank"))
 	if body.name == "tank_hull" || body.name == "tank_collision" || body.name == "tank_turret":
 		body.visible = false
 	elif body.get_node_or_null("turret"):
 		body.queue_free()
 		Global.enemies -= 1
-	elif body.get_node_or_null("tank"):
-		body.queue_free()
-		Global.enemies -=1
 	#if body.name == "Map":
 	if body.name == "Map":
 		call_deferred("updateT",body)
