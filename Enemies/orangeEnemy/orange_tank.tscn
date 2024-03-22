@@ -36,7 +36,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ngtys"]
-size = Vector2(64, 64)
+size = Vector2(53, 53)
 
 [node name="orange_tank" type="CharacterBody2D"]
 script = ExtResource("1_ypiy6")
@@ -44,6 +44,8 @@ script = ExtResource("1_ypiy6")
 [node name="RayCast2D" type="RayCast2D" parent="."]
 
 [node name="enemyhull" type="AnimatedSprite2D" parent="."]
+position = Vector2(-6, 0)
+scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_jo5ou")
 frame_progress = 0.570464
 
@@ -51,22 +53,23 @@ frame_progress = 0.570464
 shape = SubResource("RectangleShape2D_ngtys")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.5
 one_shot = true
 autostart = true
 
 [node name="turret" type="Sprite2D" parent="."]
-position = Vector2(9, 0)
 texture = ExtResource("8_nxhjd")
 offset = Vector2(15, 0)
 
 [node name="marker_middle" type="Marker2D" parent="turret"]
-position = Vector2(51, 0)
+position = Vector2(53, 0)
 
 [node name="marker_left" type="Marker2D" parent="turret"]
-position = Vector2(46, -27)
+position = Vector2(47, -28)
 
 [node name="marker_right" type="Marker2D" parent="turret"]
-position = Vector2(46, 27)
+position = Vector2(47, 28)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+navigation_layers = 3
+path_postprocessing = 1

@@ -42,9 +42,11 @@ size = Vector2(52, 52)
 script = ExtResource("1_nn2ia")
 
 [node name="enemyhull" type="AnimatedSprite2D" parent="."]
+position = Vector2(5.96046e-08, 0)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_bgiub")
 frame_progress = 0.0864633
+offset = Vector2(-7.5, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_0147e")
@@ -55,13 +57,11 @@ one_shot = true
 autostart = true
 
 [node name="turret" type="Sprite2D" parent="."]
-position = Vector2(8, 0)
-scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_0jiw7")
 offset = Vector2(15, 0)
 
 [node name="Marker2D" type="Marker2D" parent="turret"]
-position = Vector2(58.75, 0)
+position = Vector2(64, 1)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 

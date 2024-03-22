@@ -41,12 +41,12 @@ size = Vector2(52, 52)
 [node name="red_tank" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 8
 collision_mask = 17
-safe_margin = 32.0
 script = ExtResource("1_fm1uw")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 
 [node name="enemyhull" type="AnimatedSprite2D" parent="."]
+position = Vector2(-6, 0)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_28cih")
 frame_progress = 0.617812
@@ -59,14 +59,15 @@ one_shot = true
 autostart = true
 
 [node name="turret" type="Sprite2D" parent="."]
-position = Vector2(5, 0)
 texture = ExtResource("8_u0g2r")
 offset = Vector2(19, 0)
 
 [node name="Marker2D" type="Marker2D" parent="turret"]
-position = Vector2(59.2857, -0.000264792)
+position = Vector2(60.2857, -0.000264792)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+navigation_layers = 3
+path_postprocessing = 1
 avoidance_layers = 7
 avoidance_mask = 7
 debug_enabled = true

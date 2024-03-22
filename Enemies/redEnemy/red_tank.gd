@@ -10,10 +10,11 @@ var movement_target_position: Vector2
 func _ready():
 	tank =  get_node("../tank_hull")
 	$RayCast2D.add_exception(tank)
+	nav.target_position = tank.global_position
 	pass
 	
 func _process(delta):
-	$RayCast2D.target_position = tank.position - position
+	$RayCast2D.target_position = tank.global_position - global_position
 	$turret.rotation = (tank.position - position).angle()
 	if $Timer.is_stopped() && $RayCast2D.is_colliding() != true:
 		shoot()
@@ -27,10 +28,12 @@ func shoot():
 
 
 func _physics_process(delta):
+	if nav.distance_to_target() < 30.0:
+		nav.target_position = tank.global_position
 	var direction = Vector3()
-	nav.target_position = get_global_mouse_position()
 	direction = nav.get_next_path_position() - global_position
 	direction = direction.normalized()
+	$enemyhull.rotation = direction.angle()
+	$CollisionShape2D.rotation = direction.angle()
 	velocity = velocity.lerp(direction * movement_speed, 7*delta)
 	move_and_slide()
-

@@ -36,13 +36,15 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lv2km"]
-size = Vector2(64, 64)
+size = Vector2(51, 52)
 
 [node name="cyan_tank" type="CharacterBody2D"]
 collision_mask = 0
 script = ExtResource("1_4udia")
 
 [node name="enemyhull" type="AnimatedSprite2D" parent="."]
+position = Vector2(-6, 0)
+scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_g8o5y")
 frame_progress = 0.943964
 
@@ -50,7 +52,6 @@ frame_progress = 0.943964
 shape = SubResource("RectangleShape2D_lv2km")
 
 [node name="turret" type="Sprite2D" parent="."]
-position = Vector2(8, 0)
 texture = ExtResource("8_4oog7")
 offset = Vector2(14, 0)
 
@@ -63,3 +64,5 @@ one_shot = true
 autostart = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+navigation_layers = 3
+path_postprocessing = 1
