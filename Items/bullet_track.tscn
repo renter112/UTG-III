@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4k0adrswha56"]
+
+[ext_resource type="Script" path="res://Items/Scripts/bullet_track.gd" id="1_frw8s"]
+[ext_resource type="Texture2D" uid="uid://b1j3n8ln51mav" path="res://Items/Assets/bullet.png" id="1_gxsn4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q1q1g"]
+radius = 15.0
+height = 56.0
+
+[node name="BulletTrack" type="Area2D"]
+collision_layer = 2
+collision_mask = 15
+script = ExtResource("1_frw8s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_gxsn4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_q1q1g")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+navigation_layers = 3
+path_postprocessing = 1
+debug_enabled = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -29,7 +29,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nhq0u"]
 size = Vector2(18, 18)
 
-[node name="MiniTank" type="CharacterBody2D"]
+[node name="mini_tank" type="CharacterBody2D"]
 script = ExtResource("1_lxt0a")
 
 [node name="hull" type="AnimatedSprite2D" parent="."]
@@ -40,3 +40,5 @@ frame_progress = 0.114691
 shape = SubResource("RectangleShape2D_nhq0u")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+navigation_layers = 3
+path_postprocessing = 1

@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dk72lgjkccgfj"]
+
+[ext_resource type="Texture2D" uid="uid://bfd0ji0wsx2yb" path="res://Enemies/purpleEnemy/Assets/turret_hull.png" id="1_0sa11"]
+[ext_resource type="Script" path="res://Enemies/purpleEnemy/purple_enemy.gd" id="1_aqjb8"]
+[ext_resource type="Texture2D" uid="uid://ccwm65vsfsfyt" path="res://Enemies/purpleEnemy/Assets/turret.png" id="2_kvwwl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3o0o7"]
+radius = 25.02
+
+[node name="PurpleEnemy" type="CharacterBody2D"]
+script = ExtResource("1_aqjb8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0sa11")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3o0o7")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="turret" type="Sprite2D" parent="."]
+texture = ExtResource("2_kvwwl")
+offset = Vector2(14, 0)
+
+[node name="Marker2D" type="Marker2D" parent="turret"]
+position = Vector2(51, 0)

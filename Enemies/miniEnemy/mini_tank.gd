@@ -1,19 +1,24 @@
 extends CharacterBody2D
 
 
+var tank
+var movement_speed: float = 150
+var movement_target_position: Vector2
 
-func actor_setup():
-	await get_tree().physics_frame
-	set_movement_target(movement_target_position)
+@onready var nav: NavigationAgent2D = $NavigationAgent2D
 
-func set_movement_target(movement_target: Vector2):
-	navigation_agent.target_position = movement_target
+func _ready():
+	tank =  get_node("../tank_hull")
+	nav.target_position = tank.global_position
+	pass
+	
+
 
 func _physics_process(delta):
-	if navigation_agent.is_navigation_finished():
-		movement_target_position = tank.position
-		return
-	var direction = (navigation_agent.get_next_path_position() - global_position).normalized()
-	$hull.rotation = direction.angle()
-	$CollisionShape2D.rotation = direction.angle()
-	translate(direction * movement_speed * delta)
+	if nav.distance_to_target() < 30.0:
+		nav.target_position = tank.global_position
+	var direction = Vector3()
+	direction = nav.get_next_path_position() - global_position
+	direction = direction.normalized()
+	velocity = velocity.lerp(direction * movement_speed, 7*delta)
+	move_and_slide()
