@@ -25,5 +25,6 @@ func _on_retry_button_pressed():
 func _on_controls_button_pressed():
 	get_tree().paused = false
 	Global.inGame = true
+	Global.attempts_taken -= 1
 	Global.goto_scene("res://Menus/view_controls_menu.tscn")
 	pass # Replace with function body.
