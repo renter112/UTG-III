@@ -1,5 +1,10 @@
 extends Control
 
+func unpause():
+	print("unpause func")
+	queue_free()
+	get_tree().paused = false
+
 func _on_quit_button_pressed():
 	get_tree().paused = false
 	if Global.adventureMode:
@@ -10,8 +15,8 @@ func _on_quit_button_pressed():
 	pass # Replace with function body.
 
 func _on_resume_button_pressed():
-	get_tree().paused = false
-	queue_free()
+	print("unpause button")
+	unpause()
 	pass # Replace with function body.
 
 func _on_retry_button_pressed():
@@ -27,7 +32,9 @@ func _on_controls_button_pressed():
 	pass # Replace with function body.
 
 func _input(event):
+	# no clue why this doesnt work
 	if event.is_action_pressed("pause"):
-		get_tree().paused = false
-		queue_free()
+		print("unpause esc")
+		unpause()
+		#$MarginContainer/VBoxContainer/HBoxContainer/GridContainer/RetryButton.button_pressed = true
 	pass

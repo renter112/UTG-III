@@ -76,6 +76,7 @@ theme_override_constants/margin_right = 50
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
+theme = ExtResource("2_eobug")
 columns = 3
 
 [node name="MusicButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
@@ -124,6 +125,10 @@ layout_mode = 2
 theme = ExtResource("2_eobug")
 text = "Controls"
 
+[node name="ResetButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Reset"
+
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 250
@@ -146,4 +151,5 @@ text = "back"
 [connection signal="pressed" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/ControlsButton" to="." method="_on_control_button_pressed"]
 [connection signal="pressed" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/ControlsViewButton" to="." method="_on_controls_view_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

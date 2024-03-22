@@ -12,3 +12,7 @@ func _process(delta):
 	if $RichTextLabel.position.y <= -7900 :
 		Global.goto_scene("res://Menus/options_menu.tscn")
 	pass
+
+func _input(event):
+	if event.is_action_pressed("pause"):
+		Global.goto_scene("res://Menus/options_menu.tscn")

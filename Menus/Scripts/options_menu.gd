@@ -82,3 +82,9 @@ func update_back_button():
 func _on_controls_view_button_pressed():
 	Global.goto_scene("res://Menus/view_controls_menu.tscn")
 	pass # Replace with function body.
+
+
+func _on_reset_button_pressed():
+	var save_file = FileAccess.open("user://save.save",FileAccess.WRITE)
+	save_file.store_line("")
+	pass # Replace with function body.
