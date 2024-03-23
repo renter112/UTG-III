@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://crrg2iwsh7hjr"]
+[gd_scene load_steps=9 format=3 uid="uid://crrg2iwsh7hjr"]
 
 [ext_resource type="Script" path="res://Player/Scripts/tank_hull.gd" id="1_2q5m4"]
 [ext_resource type="SpriteFrames" uid="uid://dhb6ex3o2huo2" path="res://Player/Assets/tank_hull_animated.tres" id="2_5cp7j"]
 [ext_resource type="PackedScene" uid="uid://cc6yeqe3gt1d1" path="res://Player/tank_turret.tscn" id="2_rvdxb"]
 [ext_resource type="PackedScene" uid="uid://bjkag6f45xxyp" path="res://Items/side_armour_upgrade.tscn" id="5_m0e0a"]
 [ext_resource type="AudioStream" uid="uid://b6wcuc7wqcn4r" path="res://Player/Assets/Tank_Sound.....wav" id="5_r1ut7"]
+[ext_resource type="AudioStream" uid="uid://br1a7qsfile7r" path="res://Player/Assets/tank_death.wav" id="6_jch3g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u1npa"]
 size = Vector2(64.2222, 64.2222)
@@ -32,7 +33,7 @@ position = Vector2(7.77778, 0)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_r1ut7")
-volume_db = -2.0
+volume_db = -10.0
 autoplay = true
 bus = &"FXS"
 
@@ -45,3 +46,6 @@ position = Vector2(-1.68218e-06, -2.98023e-07)
 shape = SubResource("RectangleShape2D_xqx3d")
 
 [node name="SideArmourUpgrade" parent="." instance=ExtResource("5_m0e0a")]
+
+[node name="death_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_jch3g")

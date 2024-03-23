@@ -16,6 +16,7 @@ func _process(_delta):
 	pass
 
 func shoot():
+	$AudioStreamPlayer2D.play()
 	Global.shots_taken += 1
 	var b = bullet.instantiate()
 	get_tree().get_root().get_node("/root/level").add_child(b)

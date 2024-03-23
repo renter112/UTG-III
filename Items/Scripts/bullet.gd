@@ -6,8 +6,7 @@ func _physics_process(delta):
 	position += transform.x * speed * delta
 
 func _on_Bullet_body_entered(body):
-	print("T: ",body.get_node_or_null("turret"))
-	print("H ",body.get_node_or_null("tank"))
+	get_tree().call_group("level", "play_bullet_play")
 	if body.name == "tank_hull" || body.name == "tank_collision" || body.name == "tank_turret":
 		body.visible = false
 	elif body.get_node_or_null("turret"):
@@ -31,5 +30,6 @@ func updateT(body):
 			
 func _on_area_entered(area):
 	if area.name != "tank_collision":
+		get_tree().call_group("level", "play_bullet_play")
 		queue_free()
 	pass # Replace with function body.

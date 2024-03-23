@@ -31,6 +31,8 @@ var level_success = false
 
 var tank_controls_classic = true
 var adventureMode = false
+var custom_level_on = false
+var custom_level_path = ""
 
 var osaka_mode_on = false
 var music = true
@@ -44,6 +46,7 @@ func save_config():
 	config.set_value("Options","sounds",sounds)
 	config.set_value("Options","osaka",osaka_mode_on)
 	config.set_value("Options","fullScreen",fullScreen)
+	config.set_value("Options","custom_level_path",custom_level_path)
 	config.save("user://opt.cfg")
 
 func load_save_config():
@@ -56,6 +59,7 @@ func load_save_config():
 		sounds = config.get_value(opt, "sounds")
 		osaka_mode_on = config.get_value(opt, "osaka")
 		fullScreen = config.get_value(opt, "fullScreen")
+		custom_level_path = config.get_value(opt, "custom_level_path")
 	update_settings()
 
 func update_settings():

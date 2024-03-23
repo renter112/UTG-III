@@ -3,6 +3,7 @@ extends Control
 var button = preload("res://Menus/Assets/button.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.custom_level_on = false
 	Global.attempts_taken = 0
 	Global.shots_taken = 0
 	Global.time_taken = 0

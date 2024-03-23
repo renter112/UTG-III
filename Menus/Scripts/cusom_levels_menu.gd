@@ -3,7 +3,10 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	dir_contents("res://LevelTools/levels")
+	Global.custom_level_on = true
+	if Global.custom_level_path != "":
+		dir_contents(Global.custom_level_path)
+	#dir_contents("res://LevelTools/levels")
 	pass # Replace with function body.
 
 
@@ -51,4 +54,17 @@ func check_xml(path,file_name):
 
 
 func _on_v_scroll_bar_scrolling():
+	pass # Replace with function body.
+
+
+func _on_button_pressed():
+	$FileDialog.visible = true
+	pass # Replace with function body.
+
+
+func _on_file_dialog_dir_selected(dir):
+	print(dir)
+	Global.custom_level_path = dir
+	Global.save_config()
+	dir_contents(dir)
 	pass # Replace with function body.

@@ -28,6 +28,8 @@ func parseXML():
 	var level = Global.get_level()
 	if Global.adventureMode :
 		parser.open("res://LevelTools/AdventureLevels/"+str(level)+".xml")
+	elif Global.custom_level_on :
+		parser.open("res://LevelTools/AdventureLevels/"+str(level)+".xml")
 	else:
 		parser.open("res://LevelTools/levels/"+str(level))
 	while parser.read() != ERR_FILE_EOF:
@@ -124,8 +126,9 @@ func build_enemies():
 		var e2 = enemy.instantiate()
 		e2.position = Vector2( e[1] *scaler + scaler/2, e[2] *scaler + scaler/2) 
 		add_child(e2)
-		if e[0] != "cyan" || e[0] != "mini":
+		if e[0] != "cyan" && e[0] != "mini":
 			enemies += 1
+			print(enemies)
 		e2.add_to_group("enemies")
 
 
@@ -142,7 +145,6 @@ func _input(event):
 func _on_finish_button_level_finish():
 	Global.level_success = true
 	finish()
-
 	pass # Replace with function body.
 
 
@@ -161,3 +163,6 @@ func finish():
 			Global.time_taken = str( (timer / 60) as int) + ":" + str((timer as int % 60) as int)
 		Global.goto_scene("res://Menus/game_over_menu.tscn")
 		
+
+func play_bullet_play():
+	$AudioStreamPlayer2D.play()
