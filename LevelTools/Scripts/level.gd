@@ -25,13 +25,13 @@ func _ready():
 
 func parseXML():
 	var parser = XMLParser.new()
-	var level = Global.get_level()
+	var level = Global.current_level
 	if Global.adventureMode :
 		parser.open("res://LevelTools/AdventureLevels/"+str(level)+".xml")
 	elif Global.custom_level_on :
 		parser.open("res://LevelTools/AdventureLevels/"+str(level)+".xml")
 	else:
-		parser.open("res://LevelTools/levels/"+str(level))
+		parser.open(str("res://LevelTools/levels/",level[0]))
 	while parser.read() != ERR_FILE_EOF:
 		if parser.get_node_type() == XMLParser.NODE_ELEMENT:
 			var node_name = parser.get_node_name()
@@ -112,9 +112,7 @@ func create_grid_element(x,y,tx,ty,l):
 	pass
 
 func build_enemies():
-	print(enemyDetails)
 	for e in enemyDetails:
-		print(e)
 		var enemy
 		if e[3] == 1.0:
 			enemy = load("res://Enemies/"+e[0]+"Enemy/"+e[0]+"_enemy.tscn" )
@@ -128,7 +126,6 @@ func build_enemies():
 		add_child(e2)
 		if e[0] != "cyan" && e[0] != "mini":
 			enemies += 1
-			print(enemies)
 		e2.add_to_group("enemies")
 
 

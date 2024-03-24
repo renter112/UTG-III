@@ -3,8 +3,9 @@ extends Control
 func _ready():
 	Global.load_save_config()
 	Global.load_levels()
-	Global.load_level_from_dir()
-	Global.get_levels_from_save()
+	Global.load_levels_beaten()
+	#Global.load_level_from_dir()
+	#Global.get_levels_from_save()
 
 func _on_level_select_button_pressed():
 	Global.goto_scene("res://Menus/level_select.tscn")

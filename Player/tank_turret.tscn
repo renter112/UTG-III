@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Player/Scripts/tank_turret.gd" id="1_n6mmn"]
 [ext_resource type="Texture2D" uid="uid://5o8yyssnvewd" path="res://Player/Assets/tankturret_1.png" id="2_m2qkm"]
-[ext_resource type="AudioStream" uid="uid://daix65xku1418" path="res://Player/Assets/gunshot2.wav" id="3_60o6c"]
+[ext_resource type="AudioStream" uid="uid://b7l4svemdyxkn" path="res://Player/Assets/bullet_fire.wav" id="3_1i7r7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e8nnn"]
 size = Vector2(28.75, 15)
@@ -23,5 +23,5 @@ position = Vector2(64, 0)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(52, 0)
-stream = ExtResource("3_60o6c")
+stream = ExtResource("3_1i7r7")
 bus = &"FXS"

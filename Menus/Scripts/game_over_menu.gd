@@ -1,13 +1,19 @@
 extends Control
 
+var level_b
 
 func _ready():
 	# If level successful 
 	if Global.level_success:
-		for lvl in Global.level_dict:
-			if lvl == Global.level:
-				Global.levels_cleared.push_back(Global.level_dict[lvl][1])
-				Global.save_levels_beaten()
+		for level in Global.levels :
+			if level[2] == Global.current_level[2]:
+				level[3] = 1
+				level_b = level
+				Global.save_levels()
+		#for lvl in Global.level_dict:
+			#if lvl == Global.level:
+				#Global.levels_cleared.push_back(Global.level_dict[lvl][1])
+				#Global.save_levels_beaten()
 		$MarginContainer/VBoxContainer/Label.text = "SUCCESS"
 		$MarginContainer/TextureRect.texture = preload("res://Menus/Assets/result_success.png")
 		$MarginContainer/VBoxContainer/MarginContainer/ButtonsCon/NextButton.disabled = false
@@ -60,7 +66,12 @@ func _on_next_button_pressed():
 	else:
 		# ADVENTURE MODE IS FALSE
 		Global.attempts_taken = 0
-		Global.level = str(int(Global.level.get_basename()) +1 )+".xml"
+		#Global.level = str(int(Global.level.get_basename()) +1 )+".xml"
+		print(level_b)
+		level_b[1] = str(int(level_b[1]) + 1)
+		for level in Global.levels:
+			if level[1] == level_b[1]:
+				Global.current_level = level
 		Global.goto_scene("res://LevelTools/level.tscn")
 	
 	pass # Replace with function body.

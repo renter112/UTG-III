@@ -24,7 +24,6 @@ func _physics_process(delta):
 
 func _process(_delta):
 	if visible == false:
-		$death_sound.play()
 		killed()
 	pass
 	
