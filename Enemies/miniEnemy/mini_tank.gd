@@ -28,6 +28,7 @@ func _physics_process(delta):
 	var direction = Vector3()
 	direction = nav.get_next_path_position() - global_position
 	direction = direction.normalized()
+	rotation = direction.angle()
 	velocity = velocity.lerp(direction * movement_speed, 7*delta)
 	move_and_slide()
 

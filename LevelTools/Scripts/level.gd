@@ -14,13 +14,13 @@ var pause_menu = preload("res://Menus/pause_menu.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	parseXML()
-	Global.enemies = enemies
 	Global.attempts_taken += 1
 	Global.shots_taken = 0
 	$cam.zoom = Vector2(min(1600/(baseGrid.x*scaler),896/(baseGrid.y*scaler)),min(1600/(baseGrid.x*scaler),896/(baseGrid.y*scaler)))
 	build_grid()
 	build_objects()
 	build_enemies()
+	Global.enemies = enemies
 	pass # Replace with function body.
 
 func parseXML():
@@ -124,7 +124,7 @@ func build_enemies():
 		var e2 = enemy.instantiate()
 		e2.position = Vector2( e[1] *scaler + scaler/2, e[2] *scaler + scaler/2) 
 		add_child(e2)
-		if e[0] != "cyan":
+		if e[0] != "cyan" || e[0] != "mini":
 			enemies += 1
 		e2.add_to_group("enemies")
 
