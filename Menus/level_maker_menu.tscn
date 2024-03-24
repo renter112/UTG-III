@@ -1,0 +1,230 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqsbb47rxk2e8"]
+
+[ext_resource type="Theme" uid="uid://dpy8lokjdhd4m" path="res://Menus/Assets/menuTheme.tres" id="1_p2jcp"]
+[ext_resource type="Script" path="res://Menus/Scripts/level_maker_menu.gd" id="2_3xj2d"]
+[ext_resource type="Texture2D" uid="uid://dxn2jyn08k72i" path="res://Menus/Assets/maker/maker_tile.png" id="3_bhqaa"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0rieo"]
+texture = ExtResource("3_bhqaa")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+2:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+0:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_j2ct5"]
+tile_size = Vector2i(64, 64)
+sources/1 = SubResource("TileSetAtlasSource_0rieo")
+
+[node name="LevelMakerMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_p2jcp")
+script = ExtResource("2_3xj2d")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 2
+offset_right = 1600.0
+offset_bottom = 112.0
+theme_override_constants/icon_separation = 10
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 23
+
+[node name="Grid Builder" type="HBoxContainer" parent="TabContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Label" type="Label" parent="TabContainer/Grid Builder"]
+layout_mode = 2
+text = "Choose Grid Size	    "
+
+[node name="Label2" type="Label" parent="TabContainer/Grid Builder"]
+layout_mode = 2
+text = "X:  "
+
+[node name="XLineEdit" type="LineEdit" parent="TabContainer/Grid Builder"]
+layout_mode = 2
+text = "20"
+alignment = 1
+
+[node name="Label3" type="Label" parent="TabContainer/Grid Builder"]
+layout_mode = 2
+text = "Y:  "
+
+[node name="YLineEdit" type="LineEdit" parent="TabContainer/Grid Builder"]
+layout_mode = 2
+text = "11"
+alignment = 1
+
+[node name="GenerateButton" type="Button" parent="TabContainer/Grid Builder"]
+custom_minimum_size = Vector2(400, 75)
+layout_mode = 2
+text = "Generate Grid"
+
+[node name="Required" type="HBoxContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Required"]
+layout_mode = 2
+text = "Required: "
+
+[node name="PlayerButton" type="Button" parent="TabContainer/Required"]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+text = "Player"
+
+[node name="FinishButton" type="Button" parent="TabContainer/Required"]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+text = "Finish"
+
+[node name="Obstacles" type="HBoxContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Obstacles"]
+layout_mode = 2
+text = "Obstacles:"
+
+[node name="WallButton" type="Button" parent="TabContainer/Obstacles"]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+text = "Wall"
+
+[node name="HoleButton" type="Button" parent="TabContainer/Obstacles"]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+text = "Hole"
+
+[node name="Turrets" type="HBoxContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="RedTurButton" type="Button" parent="TabContainer/Turrets"]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+text = "Red"
+
+[node name="OrgTurButton" type="Button" parent="TabContainer/Turrets"]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+text = "Orange"
+
+[node name="YelTurButton" type="Button" parent="TabContainer/Turrets"]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+text = "Yellow"
+
+[node name="BluTurButton" type="Button" parent="TabContainer/Turrets"]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+text = "Blue"
+
+[node name="CyaTurButton" type="Button" parent="TabContainer/Turrets"]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+text = "Cyan"
+
+[node name="PurTurButton" type="Button" parent="TabContainer/Turrets"]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+text = "Purple"
+
+[node name="BosTurButton" type="Button" parent="TabContainer/Turrets"]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+text = "Boss"
+
+[node name="Tanks" type="HBoxContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="RedTankButton" type="Button" parent="TabContainer/Tanks"]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+text = "Red"
+
+[node name="OrgTankButton" type="Button" parent="TabContainer/Tanks"]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+text = "Orange"
+
+[node name="YelTankButton" type="Button" parent="TabContainer/Tanks"]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+text = "Yellow"
+
+[node name="BluTankButton" type="Button" parent="TabContainer/Tanks"]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+text = "Blue"
+
+[node name="CyaTankButton" type="Button" parent="TabContainer/Tanks"]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+text = "Cyan"
+
+[node name="MinTankButton" type="Button" parent="TabContainer/Tanks"]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+text = "Mini"
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(0, 128)
+tile_set = SubResource("TileSet_j2ct5")
+format = 2
+layer_1/tile_data = PackedInt32Array()
+
+[connection signal="pressed" from="TabContainer/Grid Builder/GenerateButton" to="." method="_on_generate_button_pressed"]
+[connection signal="pressed" from="TabContainer/Required/PlayerButton" to="." method="_on_player_button_pressed"]
+[connection signal="pressed" from="TabContainer/Required/FinishButton" to="." method="_on_finish_button_pressed"]
+[connection signal="pressed" from="TabContainer/Obstacles/WallButton" to="." method="_on_wall_button_pressed"]
+[connection signal="pressed" from="TabContainer/Obstacles/HoleButton" to="." method="_on_hole_button_pressed"]
+[connection signal="pressed" from="TabContainer/Turrets/RedTurButton" to="." method="_on_red_tur_button_pressed"]
+[connection signal="pressed" from="TabContainer/Turrets/OrgTurButton" to="." method="_on_org_tur_button_pressed"]
+[connection signal="pressed" from="TabContainer/Turrets/YelTurButton" to="." method="_on_yel_tur_button_pressed"]
+[connection signal="pressed" from="TabContainer/Turrets/BluTurButton" to="." method="_on_blu_tur_button_pressed"]
+[connection signal="pressed" from="TabContainer/Turrets/CyaTurButton" to="." method="_on_cya_tur_button_pressed"]
+[connection signal="pressed" from="TabContainer/Turrets/PurTurButton" to="." method="_on_pur_tur_button_pressed"]
+[connection signal="pressed" from="TabContainer/Turrets/BosTurButton" to="." method="_on_bos_tur_button_pressed"]
+[connection signal="pressed" from="TabContainer/Tanks/RedTankButton" to="." method="_on_red_tank_button_pressed"]
+[connection signal="pressed" from="TabContainer/Tanks/OrgTankButton" to="." method="_on_org_tank_button_pressed"]
+[connection signal="pressed" from="TabContainer/Tanks/YelTankButton" to="." method="_on_yel_tank_button_pressed"]
+[connection signal="pressed" from="TabContainer/Tanks/BluTankButton" to="." method="_on_blu_tank_button_pressed"]
+[connection signal="pressed" from="TabContainer/Tanks/CyaTankButton" to="." method="_on_cya_tank_button_pressed"]
+[connection signal="pressed" from="TabContainer/Tanks/MinTankButton" to="." method="_on_min_tank_button_pressed"]

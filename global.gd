@@ -40,6 +40,7 @@ var sounds = true
 var fullScreen = false
 var inGame = false
 
+
 func save_config():
 	var config = ConfigFile.new()
 	config.set_value("Options","music",music )
