@@ -5,7 +5,7 @@ var current_scene = null
 func _ready():
 	DiscordSDK.app_id = 1221336911730311238
 	print("Discord working: " + str(DiscordSDK.get_is_discord_working()))
-	DiscordSDK.details = "This guy is cool"
+	DiscordSDK.state = "Idle"
 	DiscordSDK.large_image = "old-icon"
 	DiscordSDK.start_timestamp = int(Time.get_unix_time_from_system())
 	DiscordSDK.refresh() 

@@ -21,6 +21,8 @@ func _ready():
 	build_objects()
 	build_enemies()
 	Global.enemies = enemies
+	DiscordSDK.state = "Playing Level " + Global.current_level[1]
+	DiscordSDK.refresh() 
 	pass # Replace with function body.
 
 func parseXML():
@@ -151,6 +153,8 @@ func _on_tank_hull_level_finish():
 	pass # Replace with function body.
 	
 func finish():
+	DiscordSDK.state = "Idle"
+	DiscordSDK.refresh() 
 	if Global.adventureMode && str(Global.get_level()).begins_with("h"):
 		Global.goto_scene("res://Menus/main_menu.tscn")
 	else:
