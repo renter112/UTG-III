@@ -1,9 +1,9 @@
 extends Button
 
-func _ready():
-	for s in Global.levels_cleared:
-		if s == Global.level_dict.get(text+".xml")[1] :
-			add_theme_color_override("font_color",Color(0,1,0))
+#func _ready():
+	#for s in Global.levels_cleared:
+		#if s == Global.level_dict.get(text+".xml")[1] :
+			#add_theme_color_override("font_color",Color(0,1,0))
 
 
 func _on_pressed():

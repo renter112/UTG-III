@@ -25,6 +25,7 @@ func _physics_process(delta):
 func _process(_delta):
 	if visible == false:
 		killed()
-
+	pass
+	
 func killed():
 	emit_signal("level_finish")
