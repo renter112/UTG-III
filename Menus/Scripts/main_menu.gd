@@ -2,7 +2,8 @@ extends Control
 
 func _ready():
 	Global.load_save_config()
-	Global.load_level_dict()
+	Global.load_levels()
+	Global.load_level_from_dir()
 	Global.get_levels_from_save()
 
 func _on_level_select_button_pressed():

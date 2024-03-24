@@ -3,6 +3,12 @@ extends Node
 var current_scene = null
 
 func _ready():
+	DiscordSDK.app_id = 1221336911730311238
+	print("Discord working: " + str(DiscordSDK.get_is_discord_working()))
+	DiscordSDK.details = "This guy is cool"
+	DiscordSDK.large_image = "old-icon"
+	DiscordSDK.start_timestamp = int(Time.get_unix_time_from_system())
+	DiscordSDK.refresh() 
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)
 
@@ -21,7 +27,6 @@ func get_level():
 	return level
 func set_level(lvl):
 	level = lvl
-
 
 var enemies = 0
 var shots_taken = 0
@@ -86,8 +91,8 @@ func save_levels_beaten():
 	for leveld in levels_cleared:
 		save_file.store_line(str(leveld))
 
-var level_dict = {}
-func load_level_dict():
+var level_dict = {} 
+func load_level_from_dir():
 	var path = "res://LevelTools/levels"
 	var dir = DirAccess.open(path)
 	if dir:
@@ -119,3 +124,60 @@ func check_xml(path,file_name):
 			elif(node_name == "levelSeed"):
 				s = attributes_dict["seed"]
 	level_dict[file_name] = [n,s]
+
+
+# this is the ultimate level storage device
+# the goal is to phase out level, level_dict and levels_cleared
+# there will be 2 variables, one for built in levels, one for custom downloaded levels
+var levels = []
+var custom_levels = []
+
+# this is used to open the dir and look through the folder
+func load_levels():
+	var path = "res://LevelTools/levels"
+	var dir = DirAccess.open(path)
+	if dir:
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		while file_name != "":
+			if dir.current_is_dir():
+				print("Found directory: " + file_name)
+			else:
+				if file_name.ends_with(".xml"):
+					load_levels_xml(path,file_name)
+			file_name = dir.get_next()
+	else:
+		print("An error occurred when trying to access the path.")
+	load_levels_beaten()
+	print(levels)
+
+# this is used to read the xml for each level
+func load_levels_xml(path,file_name):
+	var parser = XMLParser.new()
+	var n
+	var s
+	parser.open(path+"/"+file_name)
+	while parser.read() != ERR_FILE_EOF:
+		if parser.get_node_type() == XMLParser.NODE_ELEMENT:
+			var node_name = parser.get_node_name()
+			var attributes_dict = {}
+			for idx in range(parser.get_attribute_count()):
+				attributes_dict[parser.get_attribute_name(idx)] = parser.get_attribute_value(idx)
+			if(node_name == "levelName"):
+				n = attributes_dict["name"]
+			elif(node_name == "levelSeed"):
+				s = attributes_dict["seed"]
+	levels.push_back([file_name,n,s,0])
+	
+# this is used to see which of the levels has been beaten
+func load_levels_beaten():
+	if not FileAccess.file_exists("user://save.save"):
+		return
+	var save_file = FileAccess.open("user://save.save",FileAccess.READ)
+	var levels_beat = []
+	while save_file.get_position() < save_file.get_length():
+		levels_beat.push_back(save_file.get_line())
+	for l in levels:
+		if levels_beat.has(l[2]):
+			l[3]=1
+	pass
