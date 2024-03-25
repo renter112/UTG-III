@@ -57,10 +57,9 @@ theme = ExtResource("1_p2jcp")
 script = ExtResource("2_3xj2d")
 
 [node name="TabContainer" type="TabContainer" parent="."]
-layout_mode = 2
+layout_mode = 0
 offset_right = 1600.0
-offset_bottom = 112.0
-theme_override_constants/icon_separation = 10
+offset_bottom = 125.0
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 23
 
@@ -204,6 +203,28 @@ custom_minimum_size = Vector2(200, 75)
 layout_mode = 2
 text = "Mini"
 
+[node name="Finish & Save" type="HBoxContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Finish & Save"]
+layout_mode = 2
+text = "Test :"
+
+[node name="PlayButton" type="Button" parent="TabContainer/Finish & Save"]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+text = "Play"
+
+[node name="Label2" type="Label" parent="TabContainer/Finish & Save"]
+layout_mode = 2
+text = "Save: "
+
+[node name="SaveButton" type="Button" parent="TabContainer/Finish & Save"]
+custom_minimum_size = Vector2(400, 75)
+layout_mode = 2
+text = "SAVE Level"
+
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, 128)
 tile_set = SubResource("TileSet_j2ct5")
@@ -228,3 +249,4 @@ layer_1/tile_data = PackedInt32Array()
 [connection signal="pressed" from="TabContainer/Tanks/BluTankButton" to="." method="_on_blu_tank_button_pressed"]
 [connection signal="pressed" from="TabContainer/Tanks/CyaTankButton" to="." method="_on_cya_tank_button_pressed"]
 [connection signal="pressed" from="TabContainer/Tanks/MinTankButton" to="." method="_on_min_tank_button_pressed"]
+[connection signal="pressed" from="TabContainer/Finish & Save/SaveButton" to="." method="_on_save_button_pressed"]
