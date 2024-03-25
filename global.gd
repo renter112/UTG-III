@@ -34,6 +34,7 @@ var adventureMode = false
 var custom_level_on = false
 var custom_level_path = ""
 
+var played_game_before = false
 var osaka_mode_on = false
 var music = true
 var sounds = true
@@ -47,6 +48,7 @@ func save_config():
 	config.set_value("Options","sounds",sounds)
 	config.set_value("Options","osaka",osaka_mode_on)
 	config.set_value("Options","fullScreen",fullScreen)
+	config.set_value("Options","played_before",played_game_before)
 	config.set_value("Options","custom_level_path",custom_level_path)
 	config.save("user://opt.cfg")
 
@@ -59,6 +61,7 @@ func load_save_config():
 		music = config.get_value(opt, "music")
 		sounds = config.get_value(opt, "sounds")
 		osaka_mode_on = config.get_value(opt, "osaka")
+		played_game_before = config.get_value(opt,"played_before")
 		fullScreen = config.get_value(opt, "fullScreen")
 		custom_level_path = config.get_value(opt, "custom_level_path")
 	update_settings()
@@ -192,3 +195,14 @@ func save_custom_levels():
 	for l in custom_levels:
 		if l[3] == 1:
 			save_file.store_line(str(l[2]))
+
+var t_levels = [
+["T1.xml","T1","sfavsygx77z7idix9gyf5y1ipd0x866t",0],
+["T2.xml","T2","ei0y6pwxndygw6lk2egg7fh4vwgs72uk",0],
+["T3.xml","T3","bxokoc6g0i7q1m485kxoe55i4qvj05g6",0],
+["T4.xml","T4","iha8hndy3f4t92i0f6a2yekix9f19jg8",0],
+["T5.xml","T5","95ss0ewa6twrrk2bdyr8nrmm2xqmfzmz",0],
+["T6.xml","T6","2zqrfrbbjosda2mzzxolnarwu76ksdwv",0],
+["T7.xml","T7","38ounj0t87hker1274k6r3c8035jbech",0],
+["T8.xml","T8","6mjj5rapb9hvi28sei2rcmr9g4ano4fd",0]
+]

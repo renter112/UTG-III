@@ -7,10 +7,17 @@ func _ready():
 	Global.attempts_taken = 0
 	Global.shots_taken = 0
 	Global.time_taken = 0
-	for n in range(1,25):
-		var b = button.instantiate()
-		b.text = str(n)
-		$MarginContainer/CenterContainer/HBoxContainer/MarginContainer/CenterContainer/GridContainer.add_child(b)
+
+	if Global.played_game_before:
+		for n in range(1,25):
+			var b = button.instantiate()
+			b.text = str(n)
+			$MarginContainer/CenterContainer/HBoxContainer/MarginContainer/CenterContainer/GridContainer.add_child(b)
+	else:
+		for n in range(1,9):
+			var b = button.instantiate()
+			b.text = str("T",n)
+			$MarginContainer/CenterContainer/HBoxContainer/MarginContainer/CenterContainer/GridContainer.add_child(b)
 	pass # Replace with function body.
 
 

@@ -32,6 +32,8 @@ func parseXML():
 		parser.open("res://LevelTools/AdventureLevels/"+str(level)+".xml")
 	elif Global.custom_level_on :
 		parser.open(str(Global.custom_level_path+"/"+level[0]))
+	if level[1].begins_with("T"):
+		parser.open(str("res://LevelTools/Tutorial/",level[0]))
 	else:
 		parser.open(str("res://LevelTools/levels/",level[0]))
 	while parser.read() != ERR_FILE_EOF:
@@ -61,12 +63,12 @@ func parseXML():
 			elif node_name == "player":
 				if att_dict["type"] == "p1":
 					$tank_hull.position = Vector2(att_dict["x"] as int * scaler + scaler/2,att_dict["y"] as int *scaler + scaler/2)
-				#if att_dict["dir"] == "u":
-					#$tank_hull.rotation = -90
-				#elif att_dict["dir"] == "d":
-					#$tank_hull.rotation = 90
-				#elif att_dict["dir"] == "l":
-					#$tank_hull.rotation = 180
+				if att_dict["dir"] == "u":
+					$tank_hull.rotation = -90
+				elif att_dict["dir"] == "d":
+					$tank_hull.rotation = 90
+				elif att_dict["dir"] == "l":
+					$tank_hull.rotation = 180
 			elif node_name == "turret":
 				enemyDetails.push_back( [att_dict["type"],att_dict["x"] as float, att_dict["y"] as float, 1] )
 			elif node_name == "tank":
