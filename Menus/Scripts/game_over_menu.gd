@@ -5,11 +5,18 @@ var level_b
 func _ready():
 	# If level successful 
 	if Global.level_success:
-		for level in Global.levels :
-			if level[2] == Global.current_level[2]:
-				level[3] = 1
-				level_b = level
-				Global.save_levels()
+		if Global.custom_level_on:
+			$MarginContainer/VBoxContainer/MarginContainer/ButtonsCon/NextButton.disabled = true
+			for level in Global.custom_levels:
+				if level[2] == Global.current_level[2]:
+					level[3] = 1
+					Global.save_custom_levels()
+		else:
+			for level in Global.levels :
+				if level[2] == Global.current_level[2]:
+					level[3] = 1
+					level_b = level
+					Global.save_levels()
 		#for lvl in Global.level_dict:
 			#if lvl == Global.level:
 				#Global.levels_cleared.push_back(Global.level_dict[lvl][1])
@@ -50,6 +57,8 @@ func _on_retry_button_pressed():
 func _on_quit_button_pressed():
 	if Global.adventureMode:
 		Global.goto_scene("res://Menus/main_menu.tscn")
+	elif Global.custom_level_on:
+		Global.goto_scene("res://Menus/custom_levels_menu.tscn")
 	else:
 		Global.goto_scene("res://Menus/level_select.tscn")
 	pass # Replace with function body.

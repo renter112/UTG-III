@@ -31,7 +31,7 @@ func parseXML():
 	if Global.adventureMode :
 		parser.open("res://LevelTools/AdventureLevels/"+str(level)+".xml")
 	elif Global.custom_level_on :
-		parser.open("res://LevelTools/AdventureLevels/"+str(level)+".xml")
+		parser.open(str(Global.custom_level_path+"/"+level[0]))
 	else:
 		parser.open(str("res://LevelTools/levels/",level[0]))
 	while parser.read() != ERR_FILE_EOF:

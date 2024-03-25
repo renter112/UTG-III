@@ -140,3 +140,55 @@ func save_levels():
 	for l in levels:
 		if l[3] == 1:
 			save_file.store_line(str(l[2]))
+
+func load_custom_levels():
+	var dir = DirAccess.open(custom_level_path)
+	if dir:
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		while file_name != "":
+			if dir.current_is_dir():
+				print("Found directory: " + file_name)
+			else:
+				if file_name.ends_with(".xml"):
+					load_custom_levels_xml(file_name)
+			file_name = dir.get_next()
+	else:
+		print("An error occurred when trying to access the path.")
+	load_custom_levels_beaten()
+	
+func load_custom_levels_xml(file_name):
+	var parser = XMLParser.new()
+	var n
+	var s
+	parser.open(custom_level_path+"/"+file_name)
+	while parser.read() != ERR_FILE_EOF:
+		if parser.get_node_type() == XMLParser.NODE_ELEMENT:
+			var node_name = parser.get_node_name()
+			var attributes_dict = {}
+			for idx in range(parser.get_attribute_count()):
+				attributes_dict[parser.get_attribute_name(idx)] = parser.get_attribute_value(idx)
+			if(node_name == "levelName"):
+				n = attributes_dict["name"]
+			elif(node_name == "levelSeed"):
+				s = attributes_dict["seed"]
+	custom_levels.push_back([file_name,n,s,0])
+	
+# this is used to see which of the levels has been beaten
+func load_custom_levels_beaten():
+	if not FileAccess.file_exists("user://custom.save"):
+		return
+	var save_file = FileAccess.open("user://custom.save",FileAccess.READ)
+	var levels_beat = []
+	while save_file.get_position() < save_file.get_length():
+		levels_beat.push_back(save_file.get_line())
+	for l in custom_levels:
+		if levels_beat.has(l[2]):
+			l[3]=1
+	pass
+
+func save_custom_levels():
+	var save_file = FileAccess.open("user://custom.save",FileAccess.WRITE)
+	for l in custom_levels:
+		if l[3] == 1:
+			save_file.store_line(str(l[2]))

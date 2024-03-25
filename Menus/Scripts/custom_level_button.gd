@@ -1,22 +1,17 @@
 extends Button
 
-
+var level_to_load = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print(level_to_load[3])
+	if level_to_load[3] == 1:
+		add_theme_color_override("font_color",Color(0,1,0))
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-
-
-func _on_button_pressed():
-
-	pass # Replace with function body.
 
 
 func _on_pressed():
-	Global.level = text
+	Global.current_level = level_to_load
 	Global.goto_scene("res://LevelTools/level.tscn")
 	pass # Replace with function body.

@@ -1,60 +1,36 @@
 extends Control
 
-
+var custom_levels
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.custom_level_on = true
 	if Global.custom_level_path != "":
-		dir_contents(Global.custom_level_path)
+		if Global.custom_levels.is_empty():
+			Global.load_custom_levels()
+		$MarginContainer/VBoxContainer2/MarginContainer/Label.text = "Current Dir: "+Global.custom_level_path
 	#dir_contents("res://LevelTools/levels")
+	create_buttons()
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
-func dir_contents(path):
-	var dir = DirAccess.open(path)
-	if dir:
-		dir.list_dir_begin()
-		var file_name = dir.get_next()
-		while file_name != "":
-			if dir.current_is_dir():
-				print("Found directory: " + file_name)
-			else:
-				print("Found file: " + file_name)
-				if file_name.ends_with(".xml"):
-					check_xml(path,file_name)
-			file_name = dir.get_next()
-	else:
-		print("An error occurred when trying to access the path.")
+func create_buttons():
+	for level in Global.custom_levels:
+		print(level)
+		var level_button = preload("res://Menus/Assets/custom_level_button.tscn").instantiate()
+		level_button.level_to_load = level
+		level_button.text = str(level[1])
+		$MarginContainer/VBoxContainer2/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer.add_child(level_button)
 
 
-func check_xml(path,file_name):
-	var level_button = preload("res://Menus/Assets/custom_level_button.tscn").instantiate()
-	var parser = XMLParser.new()
-	parser.open(path+"/"+file_name)
-	while parser.read() != ERR_FILE_EOF:
-		if parser.get_node_type() == XMLParser.NODE_ELEMENT:
-			var node_name = parser.get_node_name()
-			var attributes_dict = {}
-			for idx in range(parser.get_attribute_count()):
-				attributes_dict[parser.get_attribute_name(idx)] = parser.get_attribute_value(idx)
-			print(level_button)
-			if(node_name == "levelName"):
-				print(attributes_dict["name"])
-				level_button.text = attributes_dict["name"]
-			if(node_name == "levelSeed"):
-				print(attributes_dict["seed"])
-	level_button.custom_minimum_size.x = 250
-	level_button.custom_minimum_size.y = 100
-	$MarginContainer/VBoxContainer2/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer.add_child(level_button)
-			#print("The ", node_name, " element has the following attributes: ", attributes_dict)
 
-
-func _on_v_scroll_bar_scrolling():
-	pass # Replace with function body.
+func clear_buttons():
+	var b = $MarginContainer/VBoxContainer2/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer.get_children()
+	for b1 in b:
+		b1.queue_free()
 
 
 func _on_button_pressed():
@@ -66,5 +42,14 @@ func _on_file_dialog_dir_selected(dir):
 	print(dir)
 	Global.custom_level_path = dir
 	Global.save_config()
-	dir_contents(dir)
+	$MarginContainer/VBoxContainer2/MarginContainer/Label.text = "Current Dir: "+Global.custom_level_path
+	Global.custom_levels = []
+	clear_buttons()
+	Global.load_custom_levels()
+	create_buttons()
+	pass # Replace with function body.
+
+
+func _on_back_button_pressed():
+	Global.goto_scene("res://Menus/level_select.tscn")
 	pass # Replace with function body.

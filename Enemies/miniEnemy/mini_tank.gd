@@ -23,6 +23,9 @@ func _process(_delta):
 func _physics_process(delta):
 	if  global_position.distance_to(tank.global_position) < 128:
 		nav.target_position = tank.global_position
+	if global_position.distance_to(tank.global_position) <50:
+		print("early BOOM")
+		_on_timer_timeout()
 	elif nav.distance_to_target() < 20.0:
 		nav.target_position = tank.global_position
 	var direction = Vector3()
