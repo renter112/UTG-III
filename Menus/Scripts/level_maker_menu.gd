@@ -109,6 +109,6 @@ func _on_save_button_pressed():
 					
 	if check_required != 2:
 		print("missing required!")
-		return
+		
 	print(xml_elements)
 	pass # Replace with function body.

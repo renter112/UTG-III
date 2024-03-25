@@ -28,9 +28,9 @@ func create_buttons():
 
 
 func clear_buttons():
-	var b = $MarginContainer/VBoxContainer2/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer.get_children()
-	for b1 in b:
-		b1.queue_free()
+	var bs = $MarginContainer/VBoxContainer2/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer.get_children()
+	for b in bs:
+		b.queue_free()
 
 
 func _on_button_pressed():
