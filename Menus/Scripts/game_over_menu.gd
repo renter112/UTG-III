@@ -17,10 +17,7 @@ func _ready():
 					level[3] = 1
 					level_b = level
 					Global.save_levels()
-		#for lvl in Global.level_dict:
-			#if lvl == Global.level:
-				#Global.levels_cleared.push_back(Global.level_dict[lvl][1])
-				#Global.save_levels_beaten()
+
 		$MarginContainer/VBoxContainer/Label.text = "SUCCESS"
 		$MarginContainer/TextureRect.texture = preload("res://Menus/Assets/result_success.png")
 		$MarginContainer/VBoxContainer/MarginContainer/ButtonsCon/NextButton.disabled = false

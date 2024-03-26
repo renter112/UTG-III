@@ -18,6 +18,8 @@ func _ready():
 			var b = button.instantiate()
 			b.text = str("T",n)
 			$MarginContainer/CenterContainer/HBoxContainer/MarginContainer/CenterContainer/GridContainer.add_child(b)
+	Global.played_game_before = true
+	Global.save_config()
 	pass # Replace with function body.
 
 
@@ -29,41 +31,38 @@ func _on_return_button_pressed():
 
 func _on_back_button_pressed():
 	var buttons = $MarginContainer/CenterContainer/HBoxContainer/MarginContainer/CenterContainer/GridContainer.get_children()
-	var lastButtonNum
+	var lastButtonNum = buttons.back().text
 	var minLevel = 1
-	
 	for b in buttons:
-		lastButtonNum = int(b.text)
-	
-	if lastButtonNum >= minLevel + 24:
-		for b in buttons:
-			b.queue_free()
-	
-		for n in range(lastButtonNum+1,lastButtonNum+25):
-			var b = button.instantiate()
-			b.text = str(n-48)
-			$MarginContainer/CenterContainer/HBoxContainer/MarginContainer/CenterContainer/GridContainer.add_child(b)
-	
+		b.queue_free()
+	if lastButtonNum == "48":
+		create_buttons(1,25)
+	else:
+		create_buttons(1,9)
 	pass # Replace with function body.
 
 
 func _on_forward_button_pressed():
 	var buttons = $MarginContainer/CenterContainer/HBoxContainer/MarginContainer/CenterContainer/GridContainer.get_children()
-	var lastButtonNum
-	var maxLevel = 48
+	var lastButtonNum = buttons.back().text
+	for b in buttons :
+		b.queue_free()
 	
-	for b in buttons:
-		lastButtonNum = int(b.text)
-		
-	if lastButtonNum <= maxLevel - 24:
-		for b in buttons:
-			b.queue_free()
-		
-		for n in range(lastButtonNum+1,lastButtonNum+25):
-			var b = button.instantiate()
-			b.text = str(n)
-			$MarginContainer/CenterContainer/HBoxContainer/MarginContainer/CenterContainer/GridContainer.add_child(b)
+	if lastButtonNum == "T8":
+		create_buttons(1,25)
+	else:
+		create_buttons(25,49)
 	pass # Replace with function body.
+
+func create_buttons(start,end):
+	for n in range(start,end):
+		var b = button.instantiate()
+		if end == 9:
+			b.text = str("T",n)
+		else:
+			b.text = str(n)
+		$MarginContainer/CenterContainer/HBoxContainer/MarginContainer/CenterContainer/GridContainer.add_child(b)
+		
 
 
 func _on_button_pressed():
