@@ -44,9 +44,10 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="ReturnButton" type="Button" parent="MarginContainer/CenterContainer/HBoxContainer/VBoxContainer"]
+clip_contents = true
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-text = "~"
+text = "<<"
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/CenterContainer/HBoxContainer"]
 layout_mode = 2
@@ -75,12 +76,14 @@ layout_mode = 2
 text = ">"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/CenterContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
 
 [node name="Button" type="Button" parent="MarginContainer/CenterContainer/HBoxContainer/VBoxContainer2"]
+visible = false
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-text = "x"
+text = "Custom Levels"
 
 [connection signal="pressed" from="MarginContainer/CenterContainer/HBoxContainer/VBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]
 [connection signal="pressed" from="MarginContainer/CenterContainer/HBoxContainer/CenterContainer/BackButton" to="." method="_on_back_button_pressed"]

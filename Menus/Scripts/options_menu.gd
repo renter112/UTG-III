@@ -4,14 +4,16 @@ func _ready():
 	Global.inGame = false
 	
 	if(Global.tank_controls_classic):
-		$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/ControlsButton.text = "CLASSIC"
+		$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/ControlsButton.text = "CLASSIC"
 	else:
-		$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/ControlsButton.text = "MODERN"
+		$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/ControlsButton.text = "MODERN"
 
-	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/MusicButton.set_pressed_no_signal(!Global.music)
-	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/SoundsButton.set_pressed_no_signal(!Global.sounds)
-	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/OsakaButton.set_pressed_no_signal(!Global.osaka_mode_on)
-	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/FullScreenButton.set_pressed_no_signal(!Global.fullScreen)
+	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/MusicButton.set_pressed_no_signal(!Global.music)
+	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2/SoundsButton.set_pressed_no_signal(!Global.sounds)
+	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4/OsakaButton.set_pressed_no_signal(!Global.osaka_mode_on)
+	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4/FullScreenButton.set_pressed_no_signal(!Global.fullScreen)
+	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/MusicHSlider.value = db_to_linear(Global.music_v)
+	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2/SFXHSlider.value = db_to_linear(Global.sounds_v)
 	
 func _on_back_button_pressed():
 	if need_saved:
@@ -28,11 +30,11 @@ func _on_osaka_button_toggled(toggled_on):
 	pass # Replace with function body.
 
 func _on_control_button_pressed():
-	if($MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/ControlsButton.text == "CLASSIC"):
-		$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/ControlsButton.text = "MODERN"
+	if($MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/ControlsButton.text == "CLASSIC"):
+		$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/ControlsButton.text = "MODERN"
 		Global.tank_controls_classic = false
 	else:
-		$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/ControlsButton.text = "CLASSIC"
+		$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/ControlsButton.text = "CLASSIC"
 		Global.tank_controls_classic = true
 	pass # Replace with function body.
 
@@ -74,8 +76,8 @@ func _on_credits_button_pressed():
 
 var need_saved = false
 func update_back_button():
-	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/BackButton.text = "Save"
-	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/BackButton.add_theme_color_override("font_color",Color(0,.7,0))
+	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer2/BackButton.text = "Save"
+	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer2/BackButton.add_theme_color_override("font_color",Color(0,.7,0))
 	need_saved = true
 
 
@@ -88,3 +90,22 @@ func _on_reset_button_pressed():
 	var save_file = FileAccess.open("user://save.save",FileAccess.WRITE)
 	save_file.store_line("")
 	pass # Replace with function body.
+
+
+func _on_h_slider_value_changed(value):
+	if value == 0:
+		_on_music_button_toggled(Global.music)
+	Global.music_v = linear_to_db(value)
+
+
+func _on_music_h_slider_drag_ended(value_changed):
+	update_back_button()
+
+func _on_sfxh_slider_drag_ended(value_changed):
+	update_back_button()
+
+
+func _on_sfxh_slider_value_changed(value):
+	if value == 0:
+		_on_sounds_button_toggled(Global.sounds)
+	Global.sounds_v = linear_to_db(value)

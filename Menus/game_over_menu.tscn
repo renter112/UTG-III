@@ -100,7 +100,7 @@ text = "Try Again"
 custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
-text = "Main Menu"
+text = "Menu"
 
 [node name="NextButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/ButtonsCon"]
 custom_minimum_size = Vector2(250, 75)

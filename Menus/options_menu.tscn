@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://jcox4gu3vgc7"]
+[gd_scene load_steps=5 format=3 uid="uid://jcox4gu3vgc7"]
 
 [ext_resource type="FontFile" uid="uid://n7lo661wrh6j" path="res://Menus/Assets/PixCon.ttf" id="1_0ewri"]
 [ext_resource type="Script" path="res://Menus/Scripts/options_menu.gd" id="1_r7rsf"]
 [ext_resource type="Theme" uid="uid://b5dpw57epf28s" path="res://Menus/Assets/optionsToggleButtons.tres" id="2_eobug"]
+[ext_resource type="Theme" uid="uid://dpy8lokjdhd4m" path="res://Menus/Assets/menuTheme.tres" id="4_4fas8"]
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -30,10 +31,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.00232, 0.986118)
-theme_override_constants/margin_left = 250
-theme_override_constants/margin_top = 100
-theme_override_constants/margin_right = 250
-theme_override_constants/margin_bottom = 100
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer"]
 layout_mode = 2
@@ -71,62 +72,125 @@ fit_content = true
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_right = 50
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+color = Color(0.333333, 0.333333, 0.333333, 1)
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer"]
+visible = false
 layout_mode = 2
 theme = ExtResource("2_eobug")
 columns = 3
 
-[node name="MusicButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
-custom_minimum_size = Vector2(300, 100)
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer"]
+custom_minimum_size = Vector2(1200, 0)
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_4fas8")
+text = "    Music Volume:   "
+
+[node name="MusicHSlider" type="HSlider" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 1.0
+tick_count = 10
+
+[node name="MusicButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 75)
 layout_mode = 2
 theme = ExtResource("2_eobug")
 toggle_mode = true
-text = "Music"
+text = "Mute
+"
 
-[node name="SoundsButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
-custom_minimum_size = Vector2(300, 100)
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("4_4fas8")
+text = "    Sound Effects: "
+
+[node name="SFXHSlider" type="HSlider" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 1.0
+tick_count = 10
+
+[node name="SoundsButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(150, 100)
 layout_mode = 2
 theme = ExtResource("2_eobug")
 toggle_mode = true
-text = "Sound FX"
+text = "Mute"
 
-[node name="OsakaButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme = ExtResource("4_4fas8")
+text = "    Controls:   "
+
+[node name="ControlsButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+theme = ExtResource("2_eobug")
+text = "Classic"
+
+[node name="ControlsViewButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+theme = ExtResource("2_eobug")
+text = "Mapping"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="OsakaButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 theme = ExtResource("2_eobug")
 toggle_mode = true
 text = "Osaka Mode"
 
-[node name="FullScreenButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+[node name="FullScreenButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 theme = ExtResource("2_eobug")
 toggle_mode = true
 text = "Fullscreen"
 
-[node name="ControlsButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-theme = ExtResource("2_eobug")
-text = "Classic"
-
-[node name="CreditsButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
-custom_minimum_size = Vector2(300, 100)
+[node name="CreditsButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(250, 100)
 layout_mode = 2
 theme = ExtResource("2_eobug")
 text = "Credits"
 
-[node name="ControlsViewButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
-custom_minimum_size = Vector2(300, 100)
+[node name="ResetButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(250, 100)
 layout_mode = 2
 theme = ExtResource("2_eobug")
-text = "Controls"
-
-[node name="ResetButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 text = "Reset"
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer"]
@@ -135,21 +199,24 @@ theme_override_constants/margin_left = 250
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 250
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer2"]
+[node name="BackButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(250, 100)
 layout_mode = 2
-
-[node name="BackButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer"]
-custom_minimum_size = Vector2(500, 100)
-layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme = ExtResource("2_eobug")
 text = "back"
 
-[connection signal="toggled" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/MusicButton" to="." method="_on_music_button_toggled"]
-[connection signal="toggled" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/SoundsButton" to="." method="_on_sounds_button_toggled"]
-[connection signal="toggled" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/OsakaButton" to="." method="_on_osaka_button_toggled"]
-[connection signal="toggled" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/FullScreenButton" to="." method="_on_full_screen_button_toggled"]
-[connection signal="pressed" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/ControlsButton" to="." method="_on_control_button_pressed"]
-[connection signal="pressed" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/ControlsViewButton" to="." method="_on_controls_view_button_pressed"]
-[connection signal="pressed" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/GridContainer/ResetButton" to="." method="_on_reset_button_pressed"]
-[connection signal="pressed" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="drag_ended" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/MusicHSlider" to="." method="_on_music_h_slider_drag_ended"]
+[connection signal="value_changed" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/MusicHSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="toggled" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/MusicButton" to="." method="_on_music_button_toggled"]
+[connection signal="drag_ended" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2/SFXHSlider" to="." method="_on_sfxh_slider_drag_ended"]
+[connection signal="value_changed" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2/SFXHSlider" to="." method="_on_sfxh_slider_value_changed"]
+[connection signal="toggled" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2/SoundsButton" to="." method="_on_sounds_button_toggled"]
+[connection signal="pressed" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/ControlsButton" to="." method="_on_control_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/ControlsViewButton" to="." method="_on_controls_view_button_pressed"]
+[connection signal="toggled" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4/OsakaButton" to="." method="_on_osaka_button_toggled"]
+[connection signal="toggled" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4/FullScreenButton" to="." method="_on_full_screen_button_toggled"]
+[connection signal="pressed" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4/ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer2/BackButton" to="." method="_on_back_button_pressed"]

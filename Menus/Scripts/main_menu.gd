@@ -1,6 +1,7 @@
 extends Control
 
 func _ready():
+
 	Global.load_save_config()
 	Global.load_levels()
 	Global.load_levels_beaten()

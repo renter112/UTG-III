@@ -37,7 +37,9 @@ var custom_level_path = ""
 var played_game_before = false
 var osaka_mode_on = false
 var music = true
+var music_v = 0
 var sounds = true
+var sounds_v = 0
 var fullScreen = false
 var inGame = false
 
@@ -45,7 +47,9 @@ var inGame = false
 func save_config():
 	var config = ConfigFile.new()
 	config.set_value("Options","music",music )
+	config.set_value("Options","music_v",music_v)
 	config.set_value("Options","sounds",sounds)
+	config.set_value("Options","sounds_v",sounds_v)
 	config.set_value("Options","osaka",osaka_mode_on)
 	config.set_value("Options","fullScreen",fullScreen)
 	config.set_value("Options","played_before",played_game_before)
@@ -59,7 +63,9 @@ func load_save_config():
 		return
 	for opt in config.get_sections():
 		music = config.get_value(opt, "music")
+		music_v = config.get_value(opt, "music_v")
 		sounds = config.get_value(opt, "sounds")
+		sounds_v = config.get_value(opt, "sounds_v")
 		osaka_mode_on = config.get_value(opt, "osaka")
 		played_game_before = config.get_value(opt,"played_before")
 		fullScreen = config.get_value(opt, "fullScreen")
@@ -72,6 +78,8 @@ func update_settings():
 	print("full? ",fullScreen)
 	AudioServer.set_bus_mute(2,not sounds)
 	AudioServer.set_bus_mute(1,not music)
+	AudioServer.set_bus_volume_db(1,music_v)
+	AudioServer.set_bus_volume_db(2,sounds_v)
 	if fullScreen:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
