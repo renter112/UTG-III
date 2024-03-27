@@ -87,6 +87,7 @@ func _on_min_tank_button_pressed():
 var xml_elements : Array
 var check_required = 0
 func _on_save_button_pressed():
+	xml_elements.clear()
 	for x in range(1,baseGrid.x -1):
 		for y in range(1,baseGrid.y -1):
 			var atlas = $TileMap.get_cell_atlas_coords(1,Vector2i(x,y))
@@ -95,20 +96,40 @@ func _on_save_button_pressed():
 				print(type)
 				if type == "player":
 					check_required += 1
-					xml_elements.push_back("<player x='"+str(atlas.x)+"' y='"+str(atlas.y)+"' type='p1' ></player>")
+					xml_elements.push_back("<player x=\""+str(atlas.x)+"\" y=\""+str(atlas.y)+"\" type=\"p1\" ></player>")
 				elif type == "finish" :
 					check_required += 1
-					xml_elements.push_back("<coord x='"+str(atlas.x)+"' y='"+str(atlas.y)+"' type='finish' ></coord>")
+					xml_elements.push_back("<coord x=\""+str(atlas.x)+"\" y=\""+str(atlas.y)+"\" type=\"finish\" ></coord>")
 				elif type == "wall":
-					xml_elements.push_back("<coord x='"+str(atlas.x)+"' y='"+str(atlas.y)+"' type='block' ></coord>")
+					xml_elements.push_back("<coord x=\""+str(atlas.x)+"\" y=\""+str(atlas.y)+"\" type=\"block\" ></coord>")
 				elif type == "hole":
-					xml_elements.push_back("<coord x='"+str(atlas.x)+"' y='"+str(atlas.y)+"' type='hole' ></coord>")
+					xml_elements.push_back("<coord x=\""+str(atlas.x)+"\" y=\""+str(atlas.y)+"\" type=\"hole\" ></coord>")
 				elif type.ends_with("tank") or type.ends_with("turret"):
 					type = type.split("_")
-					xml_elements.push_back("<"+str(type[1])+" x='"+str(atlas.x)+"' y='"+str(atlas.y)+"' type='"+type[0]+"'><"+type[1]+">")
+					xml_elements.push_back("<"+str(type[1])+" x=\""+str(atlas.x)+"\" y=\""+str(atlas.y)+"\" type=\""+type[0]+"\"><"+type[1]+">")
 					
 	if check_required != 2:
 		print("missing required!")
 		
 	print(xml_elements)
+	save_xml()
 	pass # Replace with function body.
+
+func save_xml():
+	var name1 = $TabContainer/Required/NameLineEdit.text + "_level"
+	var file = FileAccess.open(str("user://"+name1+".utg2"), FileAccess.WRITE)
+	file.store_line("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>")
+	file.store_line("<level>")
+	file.store_line(str("<levelName name=\""+name1+"\"></levelName> "))
+	file.store_line(str("<seed seed=\""+ str(name1.hash())+"\"></seed> "))
+	file.store_line("<grid x=\""+ str(+baseGrid.x) +"\" y=\""+ str(baseGrid.y) +"\"></seed> ")
+	file.store_line("<objects>")
+	for el in xml_elements:
+		if el.begins_with("<coord>"):
+			file.store_line(el)
+	file.store_line("</objects>")
+	file.store_line("<enemies>")
+	for el in xml_elements:
+		if el.begins_with("<player") or el.begins_with("<tank") or el.begins_with("<turret"):
+			file.store_line(el)
+	file.store_line("</enemies>")

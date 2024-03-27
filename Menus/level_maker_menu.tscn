@@ -62,8 +62,10 @@ offset_right = 1600.0
 offset_bottom = 125.0
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 23
+current_tab = 1
 
 [node name="Grid Builder" type="HBoxContainer" parent="TabContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 5
 
@@ -95,7 +97,6 @@ layout_mode = 2
 text = "Generate Grid"
 
 [node name="Required" type="HBoxContainer" parent="TabContainer"]
-visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="TabContainer/Required"]
@@ -111,6 +112,17 @@ text = "Player"
 custom_minimum_size = Vector2(200, 75)
 layout_mode = 2
 text = "Finish"
+
+[node name="Label2" type="Label" parent="TabContainer/Required"]
+layout_mode = 2
+text = "  Level Name: "
+
+[node name="NameLineEdit" type="LineEdit" parent="TabContainer/Required"]
+custom_minimum_size = Vector2(400, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+placeholder_text = "My Awesome Level!"
+max_length = 20
 
 [node name="Obstacles" type="HBoxContainer" parent="TabContainer"]
 visible = false
