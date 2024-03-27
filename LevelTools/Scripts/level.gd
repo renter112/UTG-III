@@ -98,6 +98,7 @@ func build_objects():
 		match obj.z:
 			2.0:
 				create_grid_element(obj.x,obj.y,5,0,1)
+				create_grid_element_a(obj.x,obj.y,2,2,0,1)
 			3.0:
 				create_grid_element(obj.x,obj.y,5,1,1)
 				$Map.erase_cell(0,Vector2(obj.x,obj.y))
@@ -114,7 +115,12 @@ func create_grid_element(x,y,tx,ty,l):
 	else:
 		$Map.set_cell(l,Vector2i(x,y),2,Vector2i(tx,ty),0)
 	pass
-
+func create_grid_element_a(x,y,tx,ty,l,a):
+	if Global.osaka_mode_on:
+		$Map.set_cell(l,Vector2i(x,y),1,Vector2i(tx,ty),a)
+	else:
+		$Map.set_cell(l,Vector2i(x,y),2,Vector2i(tx,ty),a)
+	pass
 func build_enemies():
 	for e in enemyDetails:
 		var enemy

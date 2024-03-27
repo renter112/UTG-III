@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bw3vfvd1e6x2k"]
+
+[ext_resource type="Texture2D" uid="uid://dehorp3yv4o1e" path="res://Items/Assets/mine.png" id="1_4bxnr"]
+[ext_resource type="Script" path="res://Items/Scripts/mine.gd" id="1_ejcn0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oqbyg"]
+radius = 13.0384
+
+[node name="Mine" type="Node2D"]
+script = ExtResource("1_ejcn0")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_oqbyg")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_4bxnr")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
