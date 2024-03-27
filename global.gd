@@ -62,14 +62,14 @@ func load_save_config():
 	if err != OK:
 		return
 	for opt in config.get_sections():
-		music = config.get_value(opt, "music")
-		music_v = config.get_value(opt, "music_v")
-		sounds = config.get_value(opt, "sounds")
-		sounds_v = config.get_value(opt, "sounds_v")
-		osaka_mode_on = config.get_value(opt, "osaka")
-		played_game_before = config.get_value(opt,"played_before")
-		fullScreen = config.get_value(opt, "fullScreen")
-		custom_level_path = config.get_value(opt, "custom_level_path")
+		music = config.get_value(opt, "music", true)
+		music_v = config.get_value(opt, "music_v", 0)
+		sounds = config.get_value(opt, "sounds", true)
+		sounds_v = config.get_value(opt, "sounds_v", 0)
+		osaka_mode_on = config.get_value(opt, "osaka", false)
+		played_game_before = config.get_value(opt,"played_before", false)
+		fullScreen = config.get_value(opt, "fullScreen", false)
+		custom_level_path = config.get_value(opt, "custom_level_path", "")
 	update_settings()
 
 func update_settings():
