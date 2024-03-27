@@ -13,12 +13,13 @@ func _ready():
 					Global.save_custom_levels()
 		if Global.t_levels.has(Global.current_level):
 			print("tut is on")
-			if Global.t_levels.back == Global.current_level:
+			if Global.t_levels.back() == Global.current_level:
 				level_b = Global.levels[0]
-			level_b = Global.t_levels[Global.t_levels.find(Global.current_level) +1]
+			else:
+				level_b = Global.t_levels[Global.t_levels.find(Global.current_level) +1]
 			print("next level is: ",level_b)
 		elif Global.levels.has(Global.current_level):
-			if Global.levels.back == Global.current_level:
+			if Global.levels.back() == Global.current_level:
 				Global.goto_scene("res://Menus/credits.tscn")
 			level_b = Global.levels[Global.levels.find(Global.current_level) +1]
 			Global.save_levels()

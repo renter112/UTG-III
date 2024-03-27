@@ -9,7 +9,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$RichTextLabel.position.y -= 1.0
-	if $RichTextLabel.position.y <= -7900 :
+	if $RichTextLabel.position.y <= -10000 :
 		Global.goto_scene("res://Menus/options_menu.tscn")
 	pass
 
