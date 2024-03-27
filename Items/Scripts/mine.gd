@@ -12,7 +12,11 @@ func _process(_delta):
 
 func explode():
 	get_tree().call_group("player","mine_boom")
-	queue_free()
+	$explosion.visible = true
+	$explosion.monitoring = true
+	$explosion.monitorable = true
+	print("KABOOM")
+	
 
 
 func _on_timer_timeout():
@@ -28,6 +32,25 @@ func _on_timer_timeout():
 	pass # Replace with function body.
 
 
+
+
+func _on_explosion_body_entered(body):
+	if body.name == "tank_hull" || body.name == "tank_collision" || body.name == "tank_turret":
+		body.visible = false
+	elif body.get_node_or_null("turret"):
+		body.queue_free()
+		Global.enemies -= 1
+	queue_free()
+	pass # Replace with function body.
+
+
+func _on_explosion_area_entered(area):
+	if area.name != "tank_collision":
+		queue_free()
+	pass # Replace with function body.
+
+
 func _on_area_2d_body_entered(body):
-	print(body)
+	if body.get_node_or_null("turret"):
+		explode()
 	pass # Replace with function body.
