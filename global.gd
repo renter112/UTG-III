@@ -114,6 +114,8 @@ func load_levels():
 		print("An error occurred when trying to access the path.")
 	load_levels_beaten()
 	print(levels)
+	levels.sort_custom(func(a, b): return a[1].naturalnocasecmp_to(b[1]) < 0)
+	print(levels)
 
 # this is used to read the xml for each level
 func load_levels_xml(path,file_name):

@@ -11,12 +11,17 @@ func _ready():
 				if level[2] == Global.current_level[2]:
 					level[3] = 1
 					Global.save_custom_levels()
-		else:
-			for level in Global.levels :
-				if level[2] == Global.current_level[2]:
-					level[3] = 1
-					level_b = level
-					Global.save_levels()
+		if Global.t_levels.has(Global.current_level):
+			print("tut is on")
+			if Global.t_levels.back == Global.current_level:
+				level_b = Global.levels[0]
+			level_b = Global.t_levels[Global.t_levels.find(Global.current_level) +1]
+			print("next level is: ",level_b)
+		elif Global.levels.has(Global.current_level):
+			if Global.levels.back == Global.current_level:
+				Global.goto_scene("res://Menus/credits.tscn")
+			level_b = Global.levels[Global.levels.find(Global.current_level) +1]
+			Global.save_levels()
 
 		$MarginContainer/VBoxContainer/Label.text = "SUCCESS"
 		$MarginContainer/TextureRect.texture = preload("res://Menus/Assets/result_success.png")
@@ -72,12 +77,8 @@ func _on_next_button_pressed():
 	else:
 		# ADVENTURE MODE IS FALSE
 		Global.attempts_taken = 0
-		#Global.level = str(int(Global.level.get_basename()) +1 )+".xml"
-		print(level_b)
-		level_b[1] = str(int(level_b[1]) + 1)
-		for level in Global.levels:
-			if level[1] == level_b[1]:
-				Global.current_level = level
+		#Global.level = int(Global.level.get_basename()) +1 )+".xml"
+		Global.current_level = level_b
 		Global.goto_scene("res://LevelTools/level.tscn")
 	
 	pass # Replace with function body.

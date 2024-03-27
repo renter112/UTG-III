@@ -28,6 +28,7 @@ func _ready():
 func parseXML():
 	var parser = XMLParser.new()
 	var level = Global.current_level
+	print("level loading is: ",level)
 	if Global.adventureMode :
 		parser.open("res://LevelTools/AdventureLevels/"+str(level)+".xml")
 	elif Global.custom_level_on :
