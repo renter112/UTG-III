@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://4mhmd483i2l3"]
+
+[ext_resource type="Script" path="res://Menus/Assets/import_notification.gd" id="1_2kq37"]
+[ext_resource type="FontFile" uid="uid://n7lo661wrh6j" path="res://Menus/Assets/PixCon.ttf" id="1_wbc1o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pk6ma"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 20
+border_width_top = 10
+border_width_right = 20
+border_width_bottom = 10
+border_color = Color(0.2, 0.2, 0.2, 1)
+border_blend = true
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_size = 5
+
+[sub_resource type="Theme" id="Theme_cruop"]
+Label/constants/shadow_offset_x = 3
+Label/constants/shadow_offset_y = 3
+Label/font_sizes/font_size = 20
+Label/fonts/font = ExtResource("1_wbc1o")
+Label/styles/normal = SubResource("StyleBoxFlat_pk6ma")
+
+[node name="ImportNotification" type="Control"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_2kq37")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -207.0
+offset_top = -73.0
+offset_right = 207.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_cruop")
+text = "Imported Successfully"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

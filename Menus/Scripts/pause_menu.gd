@@ -5,6 +5,8 @@ func _on_quit_button_pressed():
 	get_tree().paused = false
 	if Global.adventureMode:
 		Global.goto_scene("res://Menus/main_menu.tscn")
+	elif Global.custom_level_on:
+		Global.goto_scene("res://Menus/custom_levels_menu.tscn")
 	else:
 		Global.goto_scene("res://Menus/level_select.tscn")
 		queue_free()

@@ -35,7 +35,7 @@ func parseXML():
 	if Global.adventureMode :
 		parser.open("res://LevelTools/AdventureLevels/"+str(level)+".xml")
 	elif Global.custom_level_on :
-		parser.open(str(Global.custom_level_path+"/"+level[0]))
+		parser.open(str("user://levels/"+level[0]))
 	elif level[1].begins_with("T"):
 		parser.open(str("res://LevelTools/Tutorial/",level[0]))
 	else:

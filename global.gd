@@ -3,7 +3,6 @@ extends Node
 var current_scene = null
 
 func _ready():
-	print(OS.get_cmdline_args())
 	get_viewport().files_dropped.connect(on_files_dropped)
 	DiscordSDK.app_id = 1221336911730311238
 	print("Discord working: " + str(DiscordSDK.get_is_discord_working()))
@@ -159,8 +158,13 @@ func save_levels():
 		if l[3] == 1:
 			save_file.store_line(str(l[2]))
 
+
 func load_custom_levels():
-	var dir = DirAccess.open(custom_level_path)
+	custom_levels.clear()
+	var dir_check = DirAccess.open("user://")
+	if not dir_check.dir_exists("levels"):
+		dir_check.make_dir("user://levels")
+	var dir = DirAccess.open("user://levels/")
 	if dir:
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
@@ -168,7 +172,8 @@ func load_custom_levels():
 			if dir.current_is_dir():
 				print("Found directory: " + file_name)
 			else:
-				if file_name.ends_with(".xml"):
+				if file_name.ends_with(".utg2"):
+					print(file_name)
 					load_custom_levels_xml(file_name)
 			file_name = dir.get_next()
 	else:
@@ -177,9 +182,10 @@ func load_custom_levels():
 	
 func load_custom_levels_xml(file_name):
 	var parser = XMLParser.new()
-	var n
-	var s
-	parser.open(custom_level_path+"/"+file_name)
+	var n = "Level Name"
+	var s = "11111111"
+	var a = "UTG-2"
+	parser.open("user://levels/"+file_name)
 	while parser.read() != ERR_FILE_EOF:
 		if parser.get_node_type() == XMLParser.NODE_ELEMENT:
 			var node_name = parser.get_node_name()
@@ -190,8 +196,10 @@ func load_custom_levels_xml(file_name):
 				n = attributes_dict["name"]
 			elif(node_name == "levelSeed"):
 				s = attributes_dict["seed"]
-	custom_levels.push_back([file_name,n,s,0])
-	
+			elif node_name == "author":
+				a = attributes_dict["user"]
+	custom_levels.push_back([file_name,n,s,0,a])
+	print(custom_levels)
 # this is used to see which of the levels has been beaten
 func load_custom_levels_beaten():
 	if not FileAccess.file_exists("user://custom.save"):
@@ -224,13 +232,14 @@ var t_levels = [
 
 func move_to_custom(files):
 	var check = DirAccess.open("user://")
-	print(check)
 	if not check.dir_exists("levels"):
 		check.make_dir("user://levels")
-	print(check)
 	for file in files:
-		print(str("user://levels/",file.get_file()))
-		var save_file = FileAccess.open(str("user://levels/",file.get_file()),FileAccess.WRITE)
-		var file_open = FileAccess.open(file,FileAccess.READ)
-		while file_open.get_position() < file_open.get_length():
-			save_file.store_line(file_open.get_line())
+		if file.ends_with(".utg2"):
+			var save_file = FileAccess.open(str("user://levels/",file.get_file()),FileAccess.WRITE)
+			var file_open = FileAccess.open(file,FileAccess.READ)
+			while file_open.get_position() < file_open.get_length():
+				save_file.store_line(file_open.get_line())
+	var notif = load("res://Menus/Assets/import_notification.tscn")
+	var notif2 = notif.instantiate() 
+	get_tree().root.add_child.call_deferred(notif2)
