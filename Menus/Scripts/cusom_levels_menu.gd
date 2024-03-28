@@ -51,5 +51,5 @@ func _on_file_dialog_dir_selected(dir):
 
 
 func _on_back_button_pressed():
-	Global.goto_scene("res://Menus/level_select.tscn")
+	Global.goto_scene("res://Menus/level_selector_menu_menu.tscn")
 	pass # Replace with function body.

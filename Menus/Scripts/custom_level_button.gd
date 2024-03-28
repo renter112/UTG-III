@@ -13,5 +13,6 @@ func _ready():
 
 func _on_pressed():
 	Global.current_level = level_to_load
+	Global.custom_level_on = true
 	Global.goto_scene("res://LevelTools/level.tscn")
 	pass # Replace with function body.

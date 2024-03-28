@@ -3,6 +3,8 @@ extends Node
 var current_scene = null
 
 func _ready():
+	print(OS.get_cmdline_args())
+	get_viewport().files_dropped.connect(on_files_dropped)
 	DiscordSDK.app_id = 1221336911730311238
 	print("Discord working: " + str(DiscordSDK.get_is_discord_working()))
 	DiscordSDK.state = "Idle"
@@ -11,6 +13,9 @@ func _ready():
 	DiscordSDK.refresh() 
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)
+	
+func on_files_dropped(files):
+	move_to_custom(files)
 
 func goto_scene(path):
 	call_deferred("_deferred_goto_scene", path)
@@ -216,3 +221,16 @@ var t_levels = [
 ["T7.xml","T7","38ounj0t87hker1274k6r3c8035jbech",0],
 ["T8.xml","T8","6mjj5rapb9hvi28sei2rcmr9g4ano4fd",0]
 ]
+
+func move_to_custom(files):
+	var check = DirAccess.open("user://")
+	print(check)
+	if not check.dir_exists("levels"):
+		check.make_dir("user://levels")
+	print(check)
+	for file in files:
+		print(str("user://levels/",file.get_file()))
+		var save_file = FileAccess.open(str("user://levels/",file.get_file()),FileAccess.WRITE)
+		var file_open = FileAccess.open(file,FileAccess.READ)
+		while file_open.get_position() < file_open.get_length():
+			save_file.store_line(file_open.get_line())

@@ -133,3 +133,8 @@ func save_xml():
 		if el.begins_with("<player") or el.begins_with("<tank") or el.begins_with("<turret"):
 			file.store_line(el)
 	file.store_line("</enemies>")
+
+
+func _on_return_button_pressed():
+	Global.goto_scene("res://Menus/level_selector_menu_menu.tscn")
+	pass # Replace with function body.

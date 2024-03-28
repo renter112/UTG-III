@@ -9,6 +9,9 @@ var enemies = 0
 var scaler = 64 as int
 var timer = 0 
 
+var tank_types = ["red","blue","yellow","mini","cyan","orange"]
+var turret_types = ["red","blue","yellow","boss","cyan","orange","purple"]
+
 var pause_menu = preload("res://Menus/pause_menu.tscn")
 
 # Called when the node enters the scene tree for the first time.
@@ -33,7 +36,7 @@ func parseXML():
 		parser.open("res://LevelTools/AdventureLevels/"+str(level)+".xml")
 	elif Global.custom_level_on :
 		parser.open(str(Global.custom_level_path+"/"+level[0]))
-	if level[1].begins_with("T"):
+	elif level[1].begins_with("T"):
 		parser.open(str("res://LevelTools/Tutorial/",level[0]))
 	else:
 		parser.open(str("res://LevelTools/levels/",level[0]))
@@ -123,12 +126,17 @@ func create_grid_element_a(x,y,tx,ty,l,a):
 	else:
 		$Map.set_cell(l,Vector2i(x,y),2,Vector2i(tx,ty),a)
 	pass
+
 func build_enemies():
 	for e in enemyDetails:
 		var enemy
 		if e[3] == 1.0:
+			if e[0] == "random":
+				e[0] = turret_types.pick_random()
 			enemy = load("res://Enemies/"+e[0]+"Enemy/"+e[0]+"_enemy.tscn" )
 		elif e[3] == 2:
+			if e[0] == "random":
+				e[0] = tank_types.pick_random()
 			enemy = load("res://Enemies/"+e[0]+"Enemy/"+e[0]+"_tank.tscn")
 		if(enemy == null):
 			print("no good tank")

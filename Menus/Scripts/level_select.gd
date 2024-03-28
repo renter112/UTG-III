@@ -24,7 +24,7 @@ func _ready():
 
 
 func _on_return_button_pressed():
-	Global.goto_scene("res://Menus/main_menu.tscn")
+	Global.goto_scene("res://Menus/level_selector_menu_menu.tscn")
 	pass # Replace with function body.
 
 

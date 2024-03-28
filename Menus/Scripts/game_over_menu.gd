@@ -6,7 +6,7 @@ func _ready():
 	# If level successful 
 	if Global.level_success:
 		if Global.custom_level_on:
-			$MarginContainer/VBoxContainer/MarginContainer/ButtonsCon/NextButton.disabled = true
+			$MarginContainer/VBoxContainer/MarginContainer/ButtonsCon/NextButton.visible = false
 			for level in Global.custom_levels:
 				if level[2] == Global.current_level[2]:
 					level[3] = 1
