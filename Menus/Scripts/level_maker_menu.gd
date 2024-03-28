@@ -3,7 +3,7 @@ extends Control
 var baseGrid : Vector2
 
 var selected = Vector2i(2,2)
-
+var cur_level = []
 
 var selected_opts = {"wall":Vector2i(5,1),"hole":Vector2i(5,0),
 "red_tank":Vector2i(6,0),"orange_tank":Vector2i(6,1),"yellow_tank":Vector2i(6,2),"blue_tank":Vector2i(6,3),
@@ -116,11 +116,11 @@ func _on_save_button_pressed():
 		$Label/Timer.start(2)
 		
 	print(xml_elements)
-	save_xml()
 	pass # Replace with function body.
 
 func save_xml():
 	var check = DirAccess.open("user://")
+	var seed = ""+str(randi())+""+str(randi())
 	if not check.dir_exists("levels"):
 		check.make_dir("user://levels")
 	var name1 = $TabContainer/Required/NameLineEdit.text + "_level"
@@ -129,7 +129,7 @@ func save_xml():
 	file.store_line("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>")
 	file.store_line("<level>")
 	file.store_line(str("<levelName name=\""+name1+"\"></levelName> "))
-	file.store_line(str("<levelSeed seed=\""+ str(randi())+""+str(randi())+"\"></levelSeed> "))
+	file.store_line(str("<levelSeed seed=\""+ seed+"\"></levelSeed> "))
 	file.store_line(str("<author user=\""+ user+"\"></author> "))
 	file.store_line("<grid x=\""+ str(+baseGrid.x) +"\" y=\""+ str(baseGrid.y) +"\"></seed> ")
 	file.store_line("<objects>")
@@ -142,7 +142,7 @@ func save_xml():
 		if el.begins_with("<player") or el.begins_with("<tank") or el.begins_with("<turret"):
 			file.store_line(el)
 	file.store_line("</enemies>")
-
+	cur_level = [str(name1)+".utg2",name1,seed,0]
 
 func _on_return_button_pressed():
 	Global.goto_scene("res://Menus/level_selector_menu_menu.tscn")
@@ -151,4 +151,13 @@ func _on_return_button_pressed():
 
 func _on_timer_timeout():
 	$Label.visible = false
+	pass # Replace with function body.
+
+
+func _on_play_button_pressed():
+	_on_save_button_pressed()
+	Global.custom_level_on = true
+	Global.load_custom_levels()
+	Global.current_level = cur_level
+	Global.goto_scene("res://LevelTools/level.tscn")
 	pass # Replace with function body.

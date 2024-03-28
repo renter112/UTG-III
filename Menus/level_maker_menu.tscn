@@ -245,6 +245,7 @@ text = "Test :"
 [node name="PlayButton" type="Button" parent="TabContainer/Finish & Save"]
 custom_minimum_size = Vector2(200, 75)
 layout_mode = 2
+disabled = true
 text = "Play"
 
 [node name="Label2" type="Label" parent="TabContainer/Finish & Save"]
@@ -301,5 +302,6 @@ one_shot = true
 [connection signal="pressed" from="TabContainer/Tanks/BluTankButton" to="." method="_on_blu_tank_button_pressed"]
 [connection signal="pressed" from="TabContainer/Tanks/CyaTankButton" to="." method="_on_cya_tank_button_pressed"]
 [connection signal="pressed" from="TabContainer/Tanks/MinTankButton" to="." method="_on_min_tank_button_pressed"]
+[connection signal="pressed" from="TabContainer/Finish & Save/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="TabContainer/Finish & Save/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="timeout" from="Label/Timer" to="." method="_on_timer_timeout"]
