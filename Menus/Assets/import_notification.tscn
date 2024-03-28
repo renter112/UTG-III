@@ -1,28 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://4mhmd483i2l3"]
+[gd_scene load_steps=3 format=3 uid="uid://4mhmd483i2l3"]
 
 [ext_resource type="Script" path="res://Menus/Assets/import_notification.gd" id="1_2kq37"]
-[ext_resource type="FontFile" uid="uid://n7lo661wrh6j" path="res://Menus/Assets/PixCon.ttf" id="1_wbc1o"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pk6ma"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 20
-border_width_top = 10
-border_width_right = 20
-border_width_bottom = 10
-border_color = Color(0.2, 0.2, 0.2, 1)
-border_blend = true
-corner_radius_top_left = 25
-corner_radius_top_right = 25
-corner_radius_bottom_right = 25
-corner_radius_bottom_left = 25
-shadow_size = 5
-
-[sub_resource type="Theme" id="Theme_cruop"]
-Label/constants/shadow_offset_x = 3
-Label/constants/shadow_offset_y = 3
-Label/font_sizes/font_size = 20
-Label/fonts/font = ExtResource("1_wbc1o")
-Label/styles/normal = SubResource("StyleBoxFlat_pk6ma")
+[ext_resource type="Theme" uid="uid://bo8h4eo8xovgr" path="res://Menus/Assets/notif_theme.tres" id="2_udxh1"]
 
 [node name="ImportNotification" type="Control"]
 layout_mode = 3
@@ -48,7 +27,7 @@ offset_right = 207.0
 offset_bottom = -17.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = SubResource("Theme_cruop")
+theme = ExtResource("2_udxh1")
 text = "Imported Successfully"
 
 [node name="Timer" type="Timer" parent="."]

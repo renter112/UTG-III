@@ -2,24 +2,27 @@ extends Control
 
 var baseGrid : Vector2
 
-var selected : Vector2i
+var selected = Vector2i(2,2)
 
 
 var selected_opts = {"wall":Vector2i(5,1),"hole":Vector2i(5,0),
 "red_tank":Vector2i(6,0),"orange_tank":Vector2i(6,1),"yellow_tank":Vector2i(6,2),"blue_tank":Vector2i(6,3),
 "cyan_tank":Vector2i(6,4),"mini_tank":Vector2i(5,4),"red_turret":Vector2i(0,5),"orange_turret":Vector2i(1,5),
 "yellow_turret":Vector2i(2,5),"blue_turret":Vector2i(3,5),"cyan_turret":Vector2i(4,5),"purple_turret":Vector2i(5,5),
-"boss_turret":Vector2i(6,5),"player":Vector2i(5,2),"finish":Vector2i(5,3)}
+"boss_turret":Vector2i(6,5),"player":Vector2i(5,2),"finish":Vector2i(5,3),"none":Vector2i(2,2)}
 
-func _input(event):
-	if event is InputEventMouseButton:
-		if event.position.y > 192 && event.position.y < 64 + baseGrid.y*64 && event.position.x > 64 && event.position.x < baseGrid.x *64 -64:
-			var e = $TileMap.local_to_map(Vector2(event.position.x,event.position.y-128))
+func _process(delta):
+	if Input.is_action_just_pressed("shoot"):
+		var event = get_viewport().get_mouse_position()
+		if event.y > 192 && event.y < 64 + baseGrid.y*64 && event.x > 64 && event.x < baseGrid.x *64 -64:
+			var e = $TileMap.local_to_map(Vector2(event.x,event.y-128))
 			check_select(e)
 
 func check_select(e):
-	print(e)
-	$TileMap.set_cell(1,e,1,selected,0)
+	if $TileMap.get_cell_atlas_coords(1,e) == selected:
+		$TileMap.set_cell(1,e,1,Vector2i(2,2),0)
+	else:
+		$TileMap.set_cell(1,e,1,selected,0)
 
 
 func _on_generate_button_pressed():
@@ -85,8 +88,8 @@ func _on_min_tank_button_pressed():
 
 
 var xml_elements : Array
-var check_required = 0
 func _on_save_button_pressed():
+	var check_required = 0
 	xml_elements.clear()
 	for x in range(1,baseGrid.x -1):
 		for y in range(1,baseGrid.y -1):
@@ -96,36 +99,42 @@ func _on_save_button_pressed():
 				print(type)
 				if type == "player":
 					check_required += 1
-					xml_elements.push_back("<player x=\""+str(atlas.x)+"\" y=\""+str(atlas.y)+"\" type=\"p1\" ></player>")
+					xml_elements.push_back("<player x=\""+str(x)+"\" y=\""+str(y)+"\" type=\"p1\" ></player>")
 				elif type == "finish" :
 					check_required += 1
-					xml_elements.push_back("<coord x=\""+str(atlas.x)+"\" y=\""+str(atlas.y)+"\" type=\"finish\" ></coord>")
+					xml_elements.push_back("<coord x=\""+str(x)+"\" y=\""+str(y)+"\" type=\"finish\" ></coord>")
 				elif type == "wall":
-					xml_elements.push_back("<coord x=\""+str(atlas.x)+"\" y=\""+str(atlas.y)+"\" type=\"block\" ></coord>")
+					xml_elements.push_back("<coord x=\""+str(x)+"\" y=\""+str(y)+"\" type=\"block\" ></coord>")
 				elif type == "hole":
-					xml_elements.push_back("<coord x=\""+str(atlas.x)+"\" y=\""+str(atlas.y)+"\" type=\"hole\" ></coord>")
+					xml_elements.push_back("<coord x=\""+str(x)+"\" y=\""+str(y)+"\" type=\"hole\" ></coord>")
 				elif type.ends_with("tank") or type.ends_with("turret"):
 					type = type.split("_")
-					xml_elements.push_back("<"+str(type[1])+" x=\""+str(atlas.x)+"\" y=\""+str(atlas.y)+"\" type=\""+type[0]+"\"><"+type[1]+">")
+					xml_elements.push_back("<"+str(type[1])+" x=\""+str(x)+"\" y=\""+str(y)+"\" type=\""+type[0]+"\"></"+type[1]+">")
 					
 	if check_required != 2:
-		print("missing required!")
+		$Label.visible = true
+		$Label/Timer.start(2)
 		
 	print(xml_elements)
 	save_xml()
 	pass # Replace with function body.
 
 func save_xml():
+	var check = DirAccess.open("user://")
+	if not check.dir_exists("levels"):
+		check.make_dir("user://levels")
 	var name1 = $TabContainer/Required/NameLineEdit.text + "_level"
-	var file = FileAccess.open(str("user://"+name1+".utg2"), FileAccess.WRITE)
+	var user = "UTG2-Editor"
+	var file = FileAccess.open(str("user://levels/"+name1+".utg2"), FileAccess.WRITE)
 	file.store_line("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>")
 	file.store_line("<level>")
 	file.store_line(str("<levelName name=\""+name1+"\"></levelName> "))
-	file.store_line(str("<seed seed=\""+ str(name1.hash())+"\"></seed> "))
+	file.store_line(str("<levelSeed seed=\""+ str(randi())+""+str(randi())+"\"></levelSeed> "))
+	file.store_line(str("<author user=\""+ user+"\"></author> "))
 	file.store_line("<grid x=\""+ str(+baseGrid.x) +"\" y=\""+ str(baseGrid.y) +"\"></seed> ")
 	file.store_line("<objects>")
 	for el in xml_elements:
-		if el.begins_with("<coord>"):
+		if el.begins_with("<coord"):
 			file.store_line(el)
 	file.store_line("</objects>")
 	file.store_line("<enemies>")
@@ -137,4 +146,9 @@ func save_xml():
 
 func _on_return_button_pressed():
 	Global.goto_scene("res://Menus/level_selector_menu_menu.tscn")
+	pass # Replace with function body.
+
+
+func _on_timer_timeout():
+	$Label.visible = false
 	pass # Replace with function body.

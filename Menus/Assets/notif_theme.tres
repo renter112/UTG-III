@@ -1,0 +1,24 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bo8h4eo8xovgr"]
+
+[ext_resource type="FontFile" uid="uid://n7lo661wrh6j" path="res://Menus/Assets/PixCon.ttf" id="1_tfg0w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pk6ma"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 20
+border_width_top = 10
+border_width_right = 20
+border_width_bottom = 10
+border_color = Color(0.2, 0.2, 0.2, 1)
+border_blend = true
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_size = 5
+
+[resource]
+Label/constants/shadow_offset_x = 3
+Label/constants/shadow_offset_y = 3
+Label/font_sizes/font_size = 20
+Label/fonts/font = ExtResource("1_tfg0w")
+Label/styles/normal = SubResource("StyleBoxFlat_pk6ma")
