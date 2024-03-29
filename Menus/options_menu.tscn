@@ -172,7 +172,7 @@ custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 theme = ExtResource("2_eobug")
 toggle_mode = true
-text = "Osaka Mode"
+text = "Secret Mode"
 
 [node name="FullScreenButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
 custom_minimum_size = Vector2(300, 100)

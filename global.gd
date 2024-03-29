@@ -12,6 +12,9 @@ func _ready():
 	DiscordSDK.refresh() 
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)
+	load_save_config()
+	load_levels()
+	load_levels_beaten()
 	
 func on_files_dropped(files):
 	move_to_custom(files)
@@ -38,6 +41,7 @@ var adventureMode = false
 var custom_level_on = false
 var custom_level_path = ""
 
+var notif_error = false
 var played_game_before = false
 var osaka_mode_on = false
 var music = true

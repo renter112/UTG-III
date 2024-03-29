@@ -16,21 +16,27 @@ var pause_menu = preload("res://Menus/pause_menu.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	parseXML()
-	Global.attempts_taken += 1
-	Global.shots_taken = 0
-	$cam.zoom = Vector2(min(1600/(baseGrid.x*scaler),896/(baseGrid.y*scaler)),min(1600/(baseGrid.x*scaler),896/(baseGrid.y*scaler)))
-	build_grid()
-	build_objects()
-	build_enemies()
-	Global.enemies = enemies
-	DiscordSDK.state = "Playing Level " + Global.current_level[1]
-	DiscordSDK.refresh() 
-	pass # Replace with function body.
+	if parseXML():
+		Global.attempts_taken += 1
+		Global.shots_taken = 0
+		$cam.zoom = Vector2(min(1600/(baseGrid.x*scaler),896/(baseGrid.y*scaler)),min(1600/(baseGrid.x*scaler),896/(baseGrid.y*scaler)))
+		build_grid()
+		build_objects()
+		build_enemies()
+		Global.enemies = enemies
+		DiscordSDK.state = "Playing Level " + Global.current_level[1]
+		DiscordSDK.refresh() 
+	else:
+		Global.notif_error = true
+		Global.goto_scene("res://Menus/main_menu.tscn")
+		pass # Replace with function body.
 
 func parseXML():
 	var parser = XMLParser.new()
 	var level = Global.current_level
+	print(level.is_empty())
+	if level.is_empty():
+		return false
 	print("level loading is: ",level)
 	if Global.adventureMode :
 		parser.open("res://LevelTools/AdventureLevels/"+str(level)+".xml")
@@ -78,7 +84,7 @@ func parseXML():
 				enemyDetails.push_back( [att_dict["type"],att_dict["x"] as float, att_dict["y"] as float, 1] )
 			elif node_name == "tank":
 				enemyDetails.push_back( [ att_dict["type"], att_dict["x"] as float, att_dict["y"] as float, 2 ])
-				
+	return true
 
 func build_grid():
 	var b_x = baseGrid.x as int
@@ -185,3 +191,4 @@ func finish():
 
 func play_bullet_play():
 	$AudioStreamPlayer2D.play()
+

@@ -9,15 +9,9 @@ func _ready():
 	Global.time_taken = 0
 
 	if Global.played_game_before:
-		for n in range(1,25):
-			var b = button.instantiate()
-			b.text = str(n)
-			$MarginContainer/CenterContainer/HBoxContainer/MarginContainer/CenterContainer/GridContainer.add_child(b)
+		create_buttons(1,25)
 	else:
-		for n in range(1,9):
-			var b = button.instantiate()
-			b.text = str("T",n)
-			$MarginContainer/CenterContainer/HBoxContainer/MarginContainer/CenterContainer/GridContainer.add_child(b)
+		create_buttons(1,9)
 	Global.played_game_before = true
 	Global.save_config()
 	pass # Replace with function body.
@@ -30,7 +24,7 @@ func _on_return_button_pressed():
 
 
 func _on_back_button_pressed():
-	var buttons = $MarginContainer/CenterContainer/HBoxContainer/MarginContainer/CenterContainer/GridContainer.get_children()
+	var buttons = $MarginContainer/VBoxContainer/CenterContainer/HBoxContainer/MarginContainer/CenterContainer/GridContainer.get_children()
 	var lastButtonNum = buttons.back().text
 	var minLevel = 1
 	for b in buttons:
@@ -43,7 +37,7 @@ func _on_back_button_pressed():
 
 
 func _on_forward_button_pressed():
-	var buttons = $MarginContainer/CenterContainer/HBoxContainer/MarginContainer/CenterContainer/GridContainer.get_children()
+	var buttons = $MarginContainer/VBoxContainer/CenterContainer/HBoxContainer/MarginContainer/CenterContainer/GridContainer.get_children()
 	var lastButtonNum = buttons.back().text
 	for b in buttons :
 		b.queue_free()
@@ -59,9 +53,15 @@ func create_buttons(start,end):
 		var b = button.instantiate()
 		if end == 9:
 			b.text = str("T",n)
+			b.level_to_load = Global.t_levels[n -1]
 		else:
 			b.text = str(n)
-		$MarginContainer/CenterContainer/HBoxContainer/MarginContainer/CenterContainer/GridContainer.add_child(b)
+			if Global.levels.size() <= n:
+				b.level_to_load = []
+			else:
+				print(Global.levels[n-1])
+				b.level_to_load = Global.levels[n -1]
+		$MarginContainer/VBoxContainer/CenterContainer/HBoxContainer/MarginContainer/CenterContainer/GridContainer.add_child(b)
 		
 
 

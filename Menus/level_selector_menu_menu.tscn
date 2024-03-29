@@ -47,7 +47,7 @@ theme_override_constants/separation = 40
 layout_mode = 2
 theme = ExtResource("2_kuvhv")
 bbcode_enabled = true
-text = "[center]IDK LOL"
+text = "[center]Game Modes"
 fit_content = true
 autowrap_mode = 0
 
