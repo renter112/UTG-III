@@ -49,7 +49,7 @@ var sounds = true
 var sounds_v = 0
 var fullScreen = false
 var inGame = false
-
+var camera_zoom = Vector2(1,1)
 
 func save_config():
 	var config = ConfigFile.new()

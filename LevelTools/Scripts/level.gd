@@ -20,6 +20,7 @@ func _ready():
 		Global.attempts_taken += 1
 		Global.shots_taken = 0
 		$cam.zoom = Vector2(min(1600/(baseGrid.x*scaler),896/(baseGrid.y*scaler)),min(1600/(baseGrid.x*scaler),896/(baseGrid.y*scaler)))
+		Global.camera_zoom = $cam.zoom
 		build_grid()
 		build_objects()
 		build_enemies()

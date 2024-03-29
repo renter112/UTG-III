@@ -1,5 +1,7 @@
 extends Control
 
+func _ready():
+	scale = Vector2(1/Global.camera_zoom.x,1/Global.camera_zoom.y)
 
 func _on_quit_button_pressed():
 	get_tree().paused = false
