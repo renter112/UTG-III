@@ -14,7 +14,6 @@ func _ready():
 	current_scene = root.get_child(root.get_child_count() - 1)
 	load_save_config()
 	load_levels()
-	load_levels_beaten()
 	
 func on_files_dropped(files):
 	move_to_custom(files)
@@ -39,7 +38,7 @@ var level_success = false
 var tank_controls_classic = true
 var adventureMode = false
 var custom_level_on = false
-var custom_level_path = ""
+
 
 var notif_error = false
 var played_game_before = false
@@ -61,7 +60,6 @@ func save_config():
 	config.set_value("Options","osaka",osaka_mode_on)
 	config.set_value("Options","fullScreen",fullScreen)
 	config.set_value("Options","played_before",played_game_before)
-	config.set_value("Options","custom_level_path",custom_level_path)
 	config.save("user://opt.cfg")
 
 func load_save_config():
@@ -77,7 +75,6 @@ func load_save_config():
 		osaka_mode_on = config.get_value(opt, "osaka", false)
 		played_game_before = config.get_value(opt,"played_before", false)
 		fullScreen = config.get_value(opt, "fullScreen", false)
-		custom_level_path = config.get_value(opt, "custom_level_path", "")
 	update_settings()
 
 func update_settings():
@@ -121,15 +118,14 @@ func load_levels():
 	else:
 		print("An error occurred when trying to access the path.")
 	load_levels_beaten()
-	print(levels)
 	levels.sort_custom(func(a, b): return a[1].naturalnocasecmp_to(b[1]) < 0)
-	print(levels)
+
 
 # this is used to read the xml for each level
 func load_levels_xml(path,file_name):
 	var parser = XMLParser.new()
-	var n
-	var s
+	var n = "LEVEL_NAME_BAD"
+	var s = "SEED_BAD"
 	parser.open(path+"/"+file_name)
 	while parser.read() != ERR_FILE_EOF:
 		if parser.get_node_type() == XMLParser.NODE_ELEMENT:
@@ -138,9 +134,11 @@ func load_levels_xml(path,file_name):
 			for idx in range(parser.get_attribute_count()):
 				attributes_dict[parser.get_attribute_name(idx)] = parser.get_attribute_value(idx)
 			if(node_name == "levelName"):
-				n = attributes_dict["name"]
+				if attributes_dict.has("name"):
+					n = attributes_dict["name"]
 			elif(node_name == "levelSeed"):
-				s = attributes_dict["seed"]
+				if attributes_dict.has("seed"):
+					s = attributes_dict["seed"]
 	levels.push_back([file_name,n,s,0])
 	
 # this is used to see which of the levels has been beaten
@@ -197,11 +195,14 @@ func load_custom_levels_xml(file_name):
 			for idx in range(parser.get_attribute_count()):
 				attributes_dict[parser.get_attribute_name(idx)] = parser.get_attribute_value(idx)
 			if(node_name == "levelName"):
-				n = attributes_dict["name"]
+				if attributes_dict.has("name"):
+					n = attributes_dict["name"]
 			elif(node_name == "levelSeed"):
-				s = attributes_dict["seed"]
+				if attributes_dict.has("seed"):
+					s = attributes_dict["seed"]
 			elif node_name == "author":
-				a = attributes_dict["user"]
+				if attributes_dict.has("user"):
+					a = attributes_dict["user"]
 	custom_levels.push_back([file_name,n,s,0,a])
 	print(custom_levels)
 # this is used to see which of the levels has been beaten
@@ -240,10 +241,41 @@ func move_to_custom(files):
 		check.make_dir("user://levels")
 	for file in files:
 		if file.ends_with(".utg2"):
-			var save_file = FileAccess.open(str("user://levels/",file.get_file()),FileAccess.WRITE)
-			var file_open = FileAccess.open(file,FileAccess.READ)
-			while file_open.get_position() < file_open.get_length():
-				save_file.store_line(file_open.get_line())
+			var safety = check_file_goodness(file)
+			if safety == "SAFE":
+				var save_file = FileAccess.open(str("user://levels/",file.get_file()),FileAccess.WRITE)
+				var file_open = FileAccess.open(file,FileAccess.READ)
+				while file_open.get_position() < file_open.get_length():
+					save_file.store_line(file_open.get_line())
+			else:
+				print("ERROR IN LOAD: ",safety)
+				return
 	var notif = load("res://Menus/Assets/import_notification.tscn")
 	var notif2 = notif.instantiate() 
 	get_tree().root.add_child.call_deferred(notif2)
+
+func check_file_goodness(file):
+	var parser = XMLParser.new()
+	parser.open(file)
+	while parser.read() != ERR_FILE_EOF:
+		if parser.get_node_type() == XMLParser.NODE_ELEMENT:
+			var node_name = parser.get_node_name()
+			var att_dict = {}
+			for idx in range(parser.get_attribute_count()):
+				att_dict[parser.get_attribute_name(idx)] = parser.get_attribute_value(idx)
+			if node_name == "grid":
+				if not att_dict.has("x") or not att_dict.has("y"):
+					return "ERR GRID"
+			elif node_name == "coord":
+				if not att_dict.has("type") or not att_dict.has("x") or not att_dict.has("y"):
+					return "ERR COORD"
+			elif node_name == "player":
+				if not att_dict.has("type") or not att_dict.has("x") or not att_dict.has("y"):
+					return "ERR PLAYER"
+			elif node_name == "turret":
+				if not att_dict.has("type") or not att_dict.has("y") or not att_dict.has("x"):
+					return "ERR TURRET"
+			elif node_name == "tank":
+				if not att_dict.has("type") or not att_dict.has("y") or not att_dict.has("x"):
+					return "ERR TANK"
+	return "SAFE"

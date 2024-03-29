@@ -34,7 +34,6 @@ func _ready():
 func parseXML():
 	var parser = XMLParser.new()
 	var level = Global.current_level
-	print(level.is_empty())
 	if level.is_empty():
 		return false
 	print("level loading is: ",level)
@@ -53,26 +52,33 @@ func parseXML():
 			for idx in range(parser.get_attribute_count()):
 				att_dict[parser.get_attribute_name(idx)] = parser.get_attribute_value(idx)
 			if node_name == "grid":
-				baseGrid = Vector2(att_dict["x"] as int,att_dict["y"] as int)
+				if att_dict.has("x") && att_dict.has("y"):
+					baseGrid = Vector2(att_dict["x"] as int,att_dict["y"] as int)
+				else:
+					return false
 			elif node_name == "coord":
-				var type = 0
-				match att_dict["type"]:
-					"hole":
-						type = 2
-					"block":
-						type = 3
-					"breakable":
-						type = 4
-					"finish":
-						$finish_button.position = Vector2i(att_dict["x"] as int *scaler + scaler/2, att_dict["y"] as int *scaler + scaler/2)
-						type = -1
-					_:
-						type = -1
-				if type != -1:
-					blockList.append(Vector3(att_dict["x"] as int,att_dict["y"] as int,type))
+				if att_dict.has("type") && att_dict.has("x") && att_dict.has("y"):
+					var type = 0
+					match att_dict["type"]:
+						"hole":
+							type = 2
+						"block":
+							type = 3
+						"breakable":
+							type = 4
+						"finish":
+							$finish_button.position = Vector2i(att_dict["x"] as int *scaler + scaler/2, att_dict["y"] as int *scaler + scaler/2)
+							type = -1
+						_:
+							type = -1
+					if type != -1:
+						blockList.append(Vector3(att_dict["x"] as int,att_dict["y"] as int,type))
 			elif node_name == "player":
-				if att_dict["type"] == "p1":
-					$tank_hull.position = Vector2(att_dict["x"] as int * scaler + scaler/2,att_dict["y"] as int *scaler + scaler/2)
+				if att_dict.has("type") && att_dict.has("x") && att_dict.has("y"):
+					if att_dict["type"] == "p1":
+						$tank_hull.position = Vector2(att_dict["x"] as int * scaler + scaler/2,att_dict["y"] as int *scaler + scaler/2)
+				else:
+					return false
 				if att_dict.has("dir"):
 					if att_dict["dir"] == "u":
 						$tank_hull.rotation = -90
@@ -81,9 +87,11 @@ func parseXML():
 					elif att_dict["dir"] == "l":
 						$tank_hull.rotation = 180
 			elif node_name == "turret":
-				enemyDetails.push_back( [att_dict["type"],att_dict["x"] as float, att_dict["y"] as float, 1] )
+				if att_dict.has("type") && att_dict.has("y") && att_dict.has("x"):
+					enemyDetails.push_back( [att_dict["type"],att_dict["x"] as float, att_dict["y"] as float, 1] )
 			elif node_name == "tank":
-				enemyDetails.push_back( [ att_dict["type"], att_dict["x"] as float, att_dict["y"] as float, 2 ])
+				if att_dict.has("type") && att_dict.has("y") && att_dict.has("x"):
+					enemyDetails.push_back( [ att_dict["type"], att_dict["x"] as float, att_dict["y"] as float, 2 ])
 	return true
 
 func build_grid():
