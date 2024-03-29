@@ -3,10 +3,10 @@ extends Control
 var level_b
 
 func _ready():
+
 	# If level successful 
 	if Global.level_success:
 		if Global.custom_level_on:
-			$MarginContainer/VBoxContainer/MarginContainer/ButtonsCon/NextButton.visible = false
 			for level in Global.custom_levels:
 				if level[2] == Global.current_level[2]:
 					level[3] = 1
@@ -19,9 +19,11 @@ func _ready():
 				level_b = Global.t_levels[Global.t_levels.find(Global.current_level) +1]
 			print("next level is: ",level_b)
 		elif Global.levels.has(Global.current_level):
+			print("save level??")
 			if Global.levels.back() == Global.current_level:
 				Global.goto_scene("res://Menus/credits.tscn")
 			level_b = Global.levels[Global.levels.find(Global.current_level) +1]
+			Global.levels[Global.levels.find(Global.current_level)][3] = 1
 			Global.save_levels()
 
 		$MarginContainer/VBoxContainer/Label.text = "SUCCESS"
@@ -41,8 +43,10 @@ func _ready():
 	if Global.adventureMode :
 		Global.attempts_taken = 0 #reset attempts if its adventure, no level select otherwise
 		$MarginContainer/VBoxContainer/MarginContainer/ButtonsCon/RetryButton.disabled = true
-
-		
+	# in custom mode
+	if Global.custom_level_on:
+		$MarginContainer/VBoxContainer/MarginContainer/ButtonsCon/NextButton.visible = false
+	
 	$MarginContainer/VBoxContainer/InfoCon/AttemptsLabel.text = "Attempts: " + str(Global.attempts_taken)
 	$MarginContainer/VBoxContainer/InfoCon/TimeLabel.text = "Timer: " + str(Global.time_taken)
 	$MarginContainer/VBoxContainer/InfoCon/ShotsLabel.text = "Shots Fired: " + str(Global.shots_taken)

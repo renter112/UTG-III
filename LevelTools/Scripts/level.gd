@@ -27,7 +27,7 @@ func _ready():
 		DiscordSDK.state = "Playing Level " + Global.current_level[1]
 		DiscordSDK.refresh() 
 	else:
-		Global.notif_error = true
+		Global.level_err = true
 		Global.goto_scene("res://Menus/main_menu.tscn")
 		pass # Replace with function body.
 
@@ -196,7 +196,4 @@ func finish():
 			Global.time_taken = str( (timer / 60) as int) + ":" + str((timer as int % 60) as int)
 		Global.goto_scene("res://Menus/game_over_menu.tscn")
 		
-
-func play_bullet_play():
-	$AudioStreamPlayer2D.play()
 

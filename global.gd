@@ -39,8 +39,8 @@ var tank_controls_classic = true
 var adventureMode = false
 var custom_level_on = false
 
-
-var notif_error = false
+var level_err = false
+var notif_message = false
 var played_game_before = false
 var osaka_mode_on = false
 var music = true
@@ -249,10 +249,9 @@ func move_to_custom(files):
 					save_file.store_line(file_open.get_line())
 			else:
 				print("ERROR IN LOAD: ",safety)
+				push_notif("ERROR LOADING: "+safety)
 				return
-	var notif = load("res://Menus/Assets/import_notification.tscn")
-	var notif2 = notif.instantiate() 
-	get_tree().root.add_child.call_deferred(notif2)
+	push_notif("IMPORTED SUCCESSFULLY")
 
 func check_file_goodness(file):
 	var parser = XMLParser.new()
@@ -279,3 +278,9 @@ func check_file_goodness(file):
 				if not att_dict.has("type") or not att_dict.has("y") or not att_dict.has("x"):
 					return "ERR TANK"
 	return "SAFE"
+
+func push_notif(msg):
+	notif_message = msg
+	var notif = load("res://Menus/Assets/import_notification.tscn")
+	var notif2 = notif.instantiate() 
+	get_tree().root.add_child.call_deferred(notif2)

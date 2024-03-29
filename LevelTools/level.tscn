@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxx6yyrip754i"]
+[gd_scene load_steps=5 format=3 uid="uid://dxx6yyrip754i"]
 
 [ext_resource type="Script" path="res://LevelTools/Scripts/level.gd" id="1_35bql"]
 [ext_resource type="TileSet" uid="uid://lyy5fn5e5k5b" path="res://LevelTools/Assets/mapTileSet.tres" id="1_fnihl"]
 [ext_resource type="PackedScene" uid="uid://crrg2iwsh7hjr" path="res://Player/tank_hull.tscn" id="2_d7ucm"]
 [ext_resource type="PackedScene" uid="uid://bwk5u2oxcp50e" path="res://Items/finish_button.tscn" id="3_cdbvr"]
-[ext_resource type="AudioStream" uid="uid://dfnj4e555hyms" path="res://Player/Assets/bullet_done.mp3" id="5_8dusl"]
 
 [node name="level" type="Node2D" groups=["level"]]
 script = ExtResource("1_35bql")
@@ -22,10 +21,6 @@ position = Vector2(68, 97)
 
 [node name="cam" type="Camera2D" parent="."]
 anchor_mode = 0
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_8dusl")
-bus = &"FXS"
 
 [connection signal="level_finish" from="finish_button" to="." method="_on_finish_button_level_finish"]
 [connection signal="level_finish" from="tank_hull" to="." method="_on_tank_hull_level_finish"]
