@@ -9,7 +9,7 @@ func _ready():
 		if Global.custom_level_on:
 			for level in Global.custom_levels:
 				if level[2] == Global.current_level[2]:
-					level[3] = 1
+					level[3] = Global.time_taken
 					Global.save_custom_levels()
 		if Global.t_levels.has(Global.current_level):
 			print("tut is on")

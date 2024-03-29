@@ -85,16 +85,15 @@ theme_override_constants/separation = 50
 custom_minimum_size = Vector2(800, 600)
 layout_mode = 2
 theme_override_constants/margin_left = 20
-theme_override_constants/margin_right = 20
+theme_override_constants/margin_right = 200
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer2/HBoxContainer2/MarginContainer2"]
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer2/HBoxContainer2/MarginContainer2/ScrollContainer"]
-custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
 theme_override_constants/separation = 20
-alignment = 1
+alignment = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer2/HBoxContainer2"]
 custom_minimum_size = Vector2(600, 0)
@@ -117,14 +116,17 @@ theme_override_constants/separation = 50
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Level_Name"
+horizontal_alignment = 1
 
 [node name="AuthorLabel" type="Label" parent="MarginContainer/VBoxContainer2/HBoxContainer2/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Level_Author"
+horizontal_alignment = 1
 
 [node name="BeatenLabel" type="Label" parent="MarginContainer/VBoxContainer2/HBoxContainer2/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Beaten_Level"
+horizontal_alignment = 1
 
 [node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer2/HBoxContainer2/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 100)
@@ -136,7 +138,7 @@ text = "Play"
 title = "Open File(s)"
 initial_position = 1
 size = Vector2i(800, 400)
-ok_button_text = "Import"
+ok_button_text = "Open"
 file_mode = 1
 access = 2
 use_native_dialog = true

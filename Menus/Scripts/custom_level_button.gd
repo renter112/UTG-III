@@ -4,7 +4,7 @@ var level_to_load = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print(level_to_load)
-	if level_to_load[3] == 1:
+	if not level_to_load[3].is_empty():
 		add_theme_color_override("font_color",Color(0,1,0))
 	pass # Replace with function body.
 
@@ -18,8 +18,8 @@ func _on_pressed():
 	Global.current_level = level_to_load
 	name_label.text = level_to_load[1]
 	author_label.text = level_to_load[4]
-	if level_to_load[3] == 1:
-		beaten_label.text = "Beaten"
+	if not level_to_load[3].is_empty():
+		beaten_label.text = str("Time: ",level_to_load[3])
 	else:
 		beaten_label.text = "Not Beaten"
 	pass # Replace with function body.

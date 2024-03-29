@@ -4,7 +4,8 @@
 [ext_resource type="Theme" uid="uid://b5dpw57epf28s" path="res://Menus/Assets/optionsToggleButtons.tres" id="1_bvy6u"]
 
 [node name="CustomLevelButton" type="Button"]
-offset_right = 531.0
+custom_minimum_size = Vector2(550, 150)
+offset_right = 392.0
 offset_bottom = 93.0
 theme = ExtResource("1_bvy6u")
 text = "Level:"

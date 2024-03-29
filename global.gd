@@ -203,26 +203,27 @@ func load_custom_levels_xml(file_name):
 			elif node_name == "author":
 				if attributes_dict.has("user"):
 					a = attributes_dict["user"]
-	custom_levels.push_back([file_name,n,s,0,a])
-	print(custom_levels)
+	custom_levels.push_back([file_name,n,s,"",a])
 # this is used to see which of the levels has been beaten
 func load_custom_levels_beaten():
 	if not FileAccess.file_exists("user://custom.save"):
 		return
 	var save_file = FileAccess.open("user://custom.save",FileAccess.READ)
-	var levels_beat = []
+	var levels_beat = {}
 	while save_file.get_position() < save_file.get_length():
-		levels_beat.push_back(save_file.get_line())
+		var vals = save_file.get_line().split(" ")
+		levels_beat[vals[0]] = vals[1]
+		
 	for l in custom_levels:
 		if levels_beat.has(l[2]):
-			l[3]=1
+			l[3]= levels_beat.get(l[2])
 	pass
 
 func save_custom_levels():
 	var save_file = FileAccess.open("user://custom.save",FileAccess.WRITE)
 	for l in custom_levels:
-		if l[3] == 1:
-			save_file.store_line(str(l[2]))
+		if not l[3].is_empty():
+			save_file.store_line(str(l[2]) + " " + str(l[3]))
 
 var t_levels = [
 ["T1.xml","T1","sfavsygx77z7idix9gyf5y1ipd0x866t",0],
