@@ -89,7 +89,8 @@ func _on_min_tank_button_pressed():
 
 var xml_elements : Array
 func _on_save_button_pressed():
-	var check_required = 0
+	var player_check = 0
+	var finish_check = 0
 	xml_elements.clear()
 	for x in range(1,baseGrid.x -1):
 		for y in range(1,baseGrid.y -1):
@@ -98,10 +99,10 @@ func _on_save_button_pressed():
 				var type = selected_opts.find_key(atlas)
 				print(type)
 				if type == "player":
-					check_required += 1
+					player_check += 1
 					xml_elements.push_back("<player x=\""+str(x)+"\" y=\""+str(y)+"\" type=\"p1\" ></player>")
 				elif type == "finish" :
-					check_required += 1
+					finish_check += 1
 					xml_elements.push_back("<coord x=\""+str(x)+"\" y=\""+str(y)+"\" type=\"finish\" ></coord>")
 				elif type == "wall":
 					xml_elements.push_back("<coord x=\""+str(x)+"\" y=\""+str(y)+"\" type=\"block\" ></coord>")
@@ -111,10 +112,12 @@ func _on_save_button_pressed():
 					type = type.split("_")
 					xml_elements.push_back("<"+str(type[1])+" x=\""+str(x)+"\" y=\""+str(y)+"\" type=\""+type[0]+"\"></"+type[1]+">")
 					
-	if check_required != 2:
+	if not player_check == 1 or not finish_check == 1:
 		$Label.visible = true
+		$Label.text = "Missing Requirements"
 		$Label/Timer.start(2)
-		
+	else:
+		save_xml()
 	print(xml_elements)
 	pass # Replace with function body.
 
@@ -143,6 +146,9 @@ func save_xml():
 			file.store_line(el)
 	file.store_line("</enemies>")
 	cur_level = [str(name1)+".utg2",name1,seed,0]
+	$Label.visible = true
+	$Label.text = "LEVEL SAVED"
+	$Label/Timer.start(2)
 
 func _on_return_button_pressed():
 	Global.goto_scene("res://Menus/level_selector_menu_menu.tscn")

@@ -70,6 +70,5 @@ navigation_layers = 3
 path_postprocessing = 1
 avoidance_layers = 7
 avoidance_mask = 7
-debug_enabled = true
 
 [connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
