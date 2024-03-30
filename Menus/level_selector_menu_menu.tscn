@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cce35jm44ajb4"]
+[gd_scene load_steps=6 format=3 uid="uid://cce35jm44ajb4"]
 
 [ext_resource type="Theme" uid="uid://dpy8lokjdhd4m" path="res://Menus/Assets/menuTheme.tres" id="1_fi6f0"]
 [ext_resource type="Script" path="res://Menus/Scripts/level_selector_menu_menu.gd" id="2_4456o"]
 [ext_resource type="Theme" uid="uid://tjw11djg71fg" path="res://Menus/Assets/custom_menu_theme.tres" id="3_7gl4s"]
+[ext_resource type="Theme" uid="uid://dnii5kb4mtk7p" path="res://Menus/Assets/levelSelectButtons.tres" id="3_qmc7p"]
 [ext_resource type="Texture2D" uid="uid://brdig5meii7vn" path="res://Menus/Assets/custom_background.png" id="4_pmwsl"]
 
 [node name="LevelSelectorMenuMenu" type="Control"]
@@ -40,8 +41,24 @@ theme_override_constants/margin_bottom = 50
 layout_mode = 2
 theme_override_constants/separation = 40
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 4
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+theme = ExtResource("3_qmc7p")
+text = "<<"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 130
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
 theme = ExtResource("3_7gl4s")
 bbcode_enabled = true
 text = "[center]Game Modes"
@@ -95,13 +112,8 @@ text = "Map Builder"
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/CenterContainer"]
-custom_minimum_size = Vector2(150, 75)
-layout_mode = 2
-text = "Back"
-
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/LevelSelectButton" to="." method="_on_level_select_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/AdventureButton" to="." method="_on_adventure_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2/CustomButton" to="." method="_on_custom_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2/MapBuilderButton" to="." method="_on_map_builder_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/CenterContainer/BackButton" to="." method="_on_back_button_pressed"]

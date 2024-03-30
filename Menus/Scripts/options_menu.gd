@@ -40,10 +40,8 @@ func _on_control_button_pressed():
 
 func _on_music_button_toggled(toggled_on):
 	if not toggled_on:
-		print("turning music on!")
 		Global.music = true
 	else :
-		print("turn off music")
 		Global.music = false
 	Global.update_settings()
 	update_back_button()
@@ -94,7 +92,11 @@ func _on_reset_button_pressed():
 
 func _on_h_slider_value_changed(value):
 	if value == 0:
-		_on_music_button_toggled(Global.music)
+		if not Global.music:
+			Global.music = true
+		else :
+			Global.music = false
+		Global.update_settings()
 	Global.music_v = linear_to_db(value)
 
 
@@ -107,5 +109,9 @@ func _on_sfxh_slider_drag_ended(value_changed):
 
 func _on_sfxh_slider_value_changed(value):
 	if value == 0:
-		_on_sounds_button_toggled(Global.sounds)
+		if not Global.sounds:
+			Global.sounds = true
+		else :
+			Global.sounds = false
+		Global.update_settings()
 	Global.sounds_v = linear_to_db(value)
