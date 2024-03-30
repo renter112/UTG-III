@@ -71,3 +71,4 @@ Button/styles/hover = SubResource("StyleBoxTexture_ccldo")
 Button/styles/normal = SubResource("StyleBoxTexture_ccldo")
 Button/styles/pressed = SubResource("StyleBoxTexture_wlg6h")
 RichTextLabel/colors/default_color = Color(0.286275, 0.403922, 0.156863, 1)
+RichTextLabel/styles/normal = null

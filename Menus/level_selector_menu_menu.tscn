@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cce35jm44ajb4"]
+[gd_scene load_steps=5 format=3 uid="uid://cce35jm44ajb4"]
 
 [ext_resource type="Theme" uid="uid://dpy8lokjdhd4m" path="res://Menus/Assets/menuTheme.tres" id="1_fi6f0"]
 [ext_resource type="Script" path="res://Menus/Scripts/level_selector_menu_menu.gd" id="2_4456o"]
-[ext_resource type="Theme" uid="uid://dnii5kb4mtk7p" path="res://Menus/Assets/levelSelectButtons.tres" id="2_kuvhv"]
+[ext_resource type="Theme" uid="uid://tjw11djg71fg" path="res://Menus/Assets/custom_menu_theme.tres" id="3_7gl4s"]
+[ext_resource type="Texture2D" uid="uid://brdig5meii7vn" path="res://Menus/Assets/custom_background.png" id="4_pmwsl"]
 
 [node name="LevelSelectorMenuMenu" type="Control"]
 layout_mode = 3
@@ -35,17 +36,13 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
-layout_mode = 2
-color = Color(0.466667, 0.466667, 0.466667, 1)
-
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 40
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_kuvhv")
+theme = ExtResource("3_7gl4s")
 bbcode_enabled = true
 text = "[center]Game Modes"
 fit_content = true
@@ -54,6 +51,12 @@ autowrap_mode = 0
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = 100
+
+[node name="ColorRect" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(1100, 500)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_pmwsl")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2

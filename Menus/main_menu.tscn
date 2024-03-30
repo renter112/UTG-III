@@ -38,7 +38,7 @@ theme_override_constants/margin_bottom = 50
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer"]
 layout_mode = 2
-color = Color(0.466667, 0.466667, 0.466667, 1)
+color = Color(0.25098, 0.25098, 0.25098, 1)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
