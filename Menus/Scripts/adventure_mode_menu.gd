@@ -10,6 +10,7 @@ var val = 2
 
 func _ready():
 	Global.adventure_mode_level_num = 0
+	Global.adventureMode = false
 	
 
 func _on_h_slider_value_changed(value):
@@ -28,14 +29,18 @@ func _on_play_button_pressed():
 	var diff = Global.adventure_mode_difficulty[val]
 	print(diff)
 	Global.adventure_mode_diff_selected = diff
+	Global.adventureMode = true
 	var rng = RandomNumberGenerator.new()
 	var a = rng.randi_range(0, 100)
 	if diff[0] > a and a > 0 :
-		print("easy")
+		Global.current_level = Global.e_levels.pick_random()
 	elif diff[0]+diff[1] > a :
+		Global.current_level = Global.m_levels.pick_random()
 		print("med")
 	else :
+		Global.current_level = Global.h_levels.pick_random()
 		print("hard")
+	Global.goto_scene("res://LevelTools/level.tscn")
 	# my idea:
 	#have bunch of hard / med / easy levels
 	# each difficulty has % assosiciated with each of them, easy -> 60% easy, 30% med 10% hard

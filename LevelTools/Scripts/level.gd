@@ -191,6 +191,20 @@ func finish():
 			Global.goto_scene("res://Menus/adventure_mode_menu.tscn")
 		else:
 			print("LOAD NEXT LEVEL")
+			var rng = RandomNumberGenerator.new()
+			var a = rng.randi_range(0, 100)
+			if Global.adventure_mode_diff_selected[0] > a and a > 0 :
+				Global.current_level = Global.e_levels.pick_random()
+			elif Global.adventure_mode_diff_selected[0]+Global.adventure_mode_diff_selected[1] > a :
+				Global.current_level = Global.m_levels.pick_random()
+				print("med")
+			else :
+				Global.current_level = Global.h_levels.pick_random()
+				print("hard")
+			Global.adventure_mode_level_num += 1
+			if Global.adventure_mode_level_num == 21:
+				Global.goto_scene("res://Menus/credits.tscn")
+			Global.goto_scene("res://LevelTools/level.tscn")
 	else:
 		if (timer as int % 60) as int < 10:
 			Global.time_taken = str( (timer / 60) as int) + ":0" + str((timer as int % 60) as int)

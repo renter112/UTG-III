@@ -262,6 +262,19 @@ var m_levels = [
 ["m8.utg2", "m8", "y0idapd7xvbqejzix1zr9ra8uhx3kx4l", 0],
 ["m9.utg2", "m9", "1lpzp52gu83r2ro7f4scj54k1opu24p0", 0],
 ["m10.utg2", "m10", "6ojy0w2gzby6lmtuuct44azugiij2vr7", 0]]
+var h_levels = [
+["h1.utg2", "h1", "ch82qjcb128qkwyfbni9zob1mgke8v68", 0],
+ ["h2.utg2", "h2", "2vcwik7jw21f59q8wo0uak97p1k2xwjd", 0],
+["h3.utg2", "h3", "p9mdn8d62f1old8w6jihxei5hdxkqdk8", 0],
+["h4.utg2", "h4", "x8y0j0bfxi7q8z65oef1lddo4nh7bj8d", 0],
+["h5.utg2", "h5", "jernnrij2vc1bbzk6l2wszot7hqj0qub", 0],
+["h6.utg2", "h6", "red8iud9kll3yq6e5nvn9crleboa4337", 0],
+["h7.utg2", "h7", "qcp44lq0aj432gp1b4frm3qni7cyrsqt", 0],
+["h8.utg2", "h8", "k6mc4z29urkxrcsurf7bh2u8hyw38pbv", 0],
+["h9.utg2", "h9", "fa6amptcij8n7yltv9s5civng3452rsr", 0],
+["h10.utg2", "h10", "nixb3z90xwdpkmlfqqf4hu4xpkn14gsv", 0]
+]
+
 
 func move_to_custom(files):
 	var check = DirAccess.open("user://")
