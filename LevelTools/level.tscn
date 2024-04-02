@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxx6yyrip754i"]
+[gd_scene load_steps=6 format=3 uid="uid://dxx6yyrip754i"]
 
 [ext_resource type="Script" path="res://LevelTools/Scripts/level.gd" id="1_35bql"]
 [ext_resource type="TileSet" uid="uid://lyy5fn5e5k5b" path="res://LevelTools/Assets/mapTileSet.tres" id="1_fnihl"]
 [ext_resource type="PackedScene" uid="uid://crrg2iwsh7hjr" path="res://Player/tank_hull.tscn" id="2_d7ucm"]
 [ext_resource type="PackedScene" uid="uid://bwk5u2oxcp50e" path="res://Items/finish_button.tscn" id="3_cdbvr"]
+[ext_resource type="FontFile" uid="uid://n7lo661wrh6j" path="res://Menus/Assets/PixCon.ttf" id="5_2hv73"]
 
 [node name="level" type="Node2D" groups=["level"]]
 script = ExtResource("1_35bql")
@@ -21,6 +22,14 @@ position = Vector2(68, 97)
 
 [node name="cam" type="Camera2D" parent="."]
 anchor_mode = 0
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_right = 221.0
+offset_bottom = 89.0
+theme_override_fonts/font = ExtResource("5_2hv73")
+theme_override_font_sizes/font_size = 30
+text = "Level 0/20"
 
 [connection signal="level_finish" from="finish_button" to="." method="_on_finish_button_level_finish"]
 [connection signal="level_finish" from="tank_hull" to="." method="_on_tank_hull_level_finish"]

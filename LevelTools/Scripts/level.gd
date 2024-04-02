@@ -39,6 +39,8 @@ func parseXML():
 	print("level loading is: ",level)
 	if Global.adventureMode :
 		parser.open(str("res://LevelTools/AdventureLevels/",level[0]))
+		$Label.text = "Level "+str(Global.adventure_mode_level_num)+"/10"
+		$Label.visible = true
 	elif Global.custom_level_on :
 		parser.open(str("user://levels/"+level[0]))
 	elif level[1].begins_with("T"):
@@ -202,7 +204,7 @@ func finish():
 				Global.current_level = Global.h_levels.pick_random()
 				print("hard")
 			Global.adventure_mode_level_num += 1
-			if Global.adventure_mode_level_num == 21:
+			if Global.adventure_mode_level_num == 11:
 				Global.goto_scene("res://Menus/credits.tscn")
 			Global.goto_scene("res://LevelTools/level.tscn")
 	else:
