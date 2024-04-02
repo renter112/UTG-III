@@ -9,7 +9,7 @@ func _on_level_select_button_pressed():
 
 
 func _on_adventure_button_pressed():
-	print("do later tbh")
+	Global.goto_scene("res://Menus/adventure_mode_menu.tscn")
 	pass # Replace with function body.
 
 

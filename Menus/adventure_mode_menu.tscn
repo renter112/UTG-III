@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4y0hby12frp"]
+[gd_scene load_steps=9 format=3 uid="uid://c4y0hby12frp"]
 
 [ext_resource type="Theme" uid="uid://tjw11djg71fg" path="res://Menus/Assets/custom_menu_theme.tres" id="1_3g5s3"]
+[ext_resource type="Script" path="res://Menus/Scripts/adventure_mode_menu.gd" id="1_o4pn8"]
 [ext_resource type="Theme" uid="uid://dnii5kb4mtk7p" path="res://Menus/Assets/levelSelectButtons.tres" id="2_lcisj"]
 [ext_resource type="FontFile" uid="uid://n7lo661wrh6j" path="res://Menus/Assets/PixCon.ttf" id="3_ny8py"]
 [ext_resource type="Texture2D" uid="uid://bcc8pp3fyixh6" path="res://Menus/Assets/selector_normal.png" id="4_6wx2s"]
@@ -19,6 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_o4pn8")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -77,7 +79,7 @@ theme_override_constants/margin_bottom = 50
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_ny8py")
 theme_override_font_sizes/font_size = 25
-text = "30 levels in one run, upgrades throughout, good luck"
+text = "20 levels in one run, upgrades throughout, good luck"
 horizontal_alignment = 1
 
 [node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
@@ -133,16 +135,20 @@ layout_mode = 2
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_bottom = 60
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer2"]
+[node name="InfoLabel" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer2"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_ny8py")
 theme_override_font_sizes/font_size = 25
-text = "A fair selection of levels, with evenly placed upgrade rooms"
+text = "A fair selection of levels, with evenly placed upgrades"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(400, 125)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_lcisj")
 text = "Play"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
