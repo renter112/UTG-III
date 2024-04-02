@@ -204,7 +204,8 @@ func finish():
 				Global.current_level = Global.h_levels.pick_random()
 				print("hard")
 			Global.adventure_mode_level_num += 1
-			if Global.adventure_mode_level_num == 11:
+			print(Global.adventure_mode_level_num)
+			if Global.adventure_mode_level_num >= 10:
 				Global.goto_scene("res://Menus/credits.tscn")
 			Global.goto_scene("res://LevelTools/level.tscn")
 	else:
