@@ -52,7 +52,7 @@ var camera_zoom = Vector2(1,1)
 var adventureMode = false
 var adventure_mode_level_num = 0
 # easy % , med %, hard %, item room every X
-var adventure_mode_difficulty = [[60,30,10,3],[40,40,20,4],[30,40,30,5],[25,35,40,6],[10,10,80,7],[0,0,100,10]]
+var adventure_mode_difficulty = [[80,20,0,3],[40,40,20,4],[30,40,30,5],[25,35,40,6],[10,10,80,7],[0,0,100,10]]
 var adventure_mode_diff_selected : Array
 
 func save_config():
