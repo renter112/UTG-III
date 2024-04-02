@@ -36,9 +36,7 @@ var time_taken = 0
 var level_success = false
 
 var tank_controls_classic = true
-var adventureMode = false
 var custom_level_on = false
-
 var level_err = false
 var notif_message = false
 var played_game_before = false
@@ -50,6 +48,12 @@ var sounds_v = 0
 var fullScreen = false
 var inGame = false
 var camera_zoom = Vector2(1,1)
+
+var adventureMode = false
+var adventure_mode_level_num = 0
+# easy % , med %, hard %, item room every X
+var adventure_mode_difficulty = [[60,30,10,3],[40,40,20,4],[30,40,30,5],[25,35,40,6],[10,10,80,7],[0,0,100,10]]
+var adventure_mode_diff_selected : Array
 
 func save_config():
 	var config = ConfigFile.new()
@@ -236,6 +240,29 @@ var t_levels = [
 ["T8.xml","T8","6mjj5rapb9hvi28sei2rcmr9g4ano4fd",0]
 ]
 
+var e_levels = [
+["e1.utg2", "e1", "f9mud03zstwztylj8pugibyrs8415hu8", 0],
+["e2.utg2", "e2", "7796rwc27j63gugayza1qlit0txmnvpo", 0],
+["e3.utg2", "e3", "popyueq2v892ipey5svyijj35n46a708", 0],
+["e4.utg2", "e4", "bh4yd2u1esgbj513xmzph3wx7sl7njja", 0],
+["e5.utg2", "e5", "qpc4zbj8o0hhd2cqawnchdovhwjzi8lq", 0],
+["e6.utg2", "e6", "b6lq45fuqhs9ym3s83b0k7jqm9h0w8u2", 0],
+["e7.utg2", "e7", "feebdsw67z6zfbqc7wl6eyb59uk06wm6", 0],
+["e8.utg2", "e8", "kb077eb9muepyktrtosmej9om01kifo4", 0],
+["e9.utg2", "e9", "kfs523nlajmeuqaayi13afhtww8nc5pq", 0],
+["e10.utg2", "e10", "pyilxgrjzqp8f0pddom1xpi77w2g9p5k", 0]]
+var m_levels = [
+["m1.utg2", "m1", "d7jmz8qsz523jhje6wcld2eioe6s5gp8", 0],
+["m2.utg2", "m2", "cusscqkp2rxmlwxj4nw0atjlk8h6zywd", 0],
+["m3.utg2", "m3", "wsx8lyu3tsrbfozlxx70qi04k2om4xw2", 0],
+["m4.utg2", "m4", "jbm13hj2kikdmbfybe5jgqeedu3ohfyh", 0],
+["m5.utg2", "m5", "n9dzrz8lmfqxu6nrqgx8zeq4jzexjvk7", 0],
+["m6.utg2", "m6", "11bzgmdyypdpz46fmc5g4f8kry6fuzxn", 0],
+["m7.utg2", "m7", "7ybyiujn9we1jb7byn20is0olhljfjh2", 0],
+["m8.utg2", "m8", "y0idapd7xvbqejzix1zr9ra8uhx3kx4l", 0],
+["m9.utg2", "m9", "1lpzp52gu83r2ro7f4scj54k1opu24p0", 0],
+["m10.utg2", "m10", "6ojy0w2gzby6lmtuuct44azugiij2vr7", 0]]
+
 func move_to_custom(files):
 	var check = DirAccess.open("user://")
 	if not check.dir_exists("levels"):
@@ -285,3 +312,42 @@ func push_notif(msg):
 	var notif = load("res://Menus/Assets/import_notification.tscn")
 	var notif2 = notif.instantiate() 
 	get_tree().root.add_child.call_deferred(notif2)
+
+var levels_to_print = []
+func print_level_array():
+	var path = "res://LevelTools/AdventureLevels/"
+	var dir = DirAccess.open(path)
+	if dir:
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		while file_name != "":
+			if dir.current_is_dir():
+				print("Found directory: " + file_name)
+			else:
+				if file_name.ends_with(".utg2"):
+					print_levels_xml(path,file_name)
+			file_name = dir.get_next()
+	else:
+		print("An error occurred when trying to access the path.")
+	levels_to_print.sort_custom(func(a, b): return a[1].naturalnocasecmp_to(b[1]) < 0)
+
+
+# this is used to read the xml for each level
+func print_levels_xml(path,file_name):
+	var parser = XMLParser.new()
+	var n = "LEVEL_NAME_BAD"
+	var s = "SEED_BAD"
+	parser.open(path+"/"+file_name)
+	while parser.read() != ERR_FILE_EOF:
+		if parser.get_node_type() == XMLParser.NODE_ELEMENT:
+			var node_name = parser.get_node_name()
+			var attributes_dict = {}
+			for idx in range(parser.get_attribute_count()):
+				attributes_dict[parser.get_attribute_name(idx)] = parser.get_attribute_value(idx)
+			if(node_name == "levelName"):
+				if attributes_dict.has("name"):
+					n = attributes_dict["name"]
+			elif(node_name == "levelSeed"):
+				if attributes_dict.has("seed"):
+					s = attributes_dict["seed"]
+	levels_to_print.push_back([file_name,n,s,0])

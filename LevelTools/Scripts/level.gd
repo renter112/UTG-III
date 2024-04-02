@@ -3,7 +3,6 @@ extends Node2D
 var baseGrid = Vector2(0,0)
 var playerPos = Vector2(0,0)
 var blockList = []
-var blockList2 = []
 var enemyDetails = []
 var enemies = 0
 var scaler = 64 as int
@@ -39,7 +38,7 @@ func parseXML():
 		return false
 	print("level loading is: ",level)
 	if Global.adventureMode :
-		parser.open("res://LevelTools/AdventureLevels/"+str(level)+".xml")
+		parser.open(str("res://LevelTools/AdventureLevels/",level[0]))
 	elif Global.custom_level_on :
 		parser.open(str("user://levels/"+level[0]))
 	elif level[1].begins_with("T"):
@@ -122,7 +121,6 @@ func build_objects():
 			3.0:
 				create_grid_element(obj.x,obj.y,5,1,1)
 				$Map.erase_cell(0,Vector2(obj.x,obj.y))
-				blockList2.push_back(Vector2(obj.x,obj.y))
 			4.0:
 				create_grid_element(obj.x,obj.y,5,2,1)
 				$Map.erase_cell(0,Vector2(obj.x,obj.y))
@@ -188,8 +186,11 @@ func _on_tank_hull_level_finish():
 func finish():
 	DiscordSDK.state = "Idle"
 	DiscordSDK.refresh() 
-	if Global.adventureMode && str(Global.get_level()).begins_with("h"):
-		Global.goto_scene("res://Menus/main_menu.tscn")
+	if Global.adventureMode:
+		if not Global.level_success :
+			Global.goto_scene("res://Menus/adventure_mode_menu.tscn")
+		else:
+			print("LOAD NEXT LEVEL")
 	else:
 		if (timer as int % 60) as int < 10:
 			Global.time_taken = str( (timer / 60) as int) + ":0" + str((timer as int % 60) as int)
