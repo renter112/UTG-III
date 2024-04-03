@@ -208,6 +208,7 @@ func finish():
 			print(Global.adventure_mode_level_num)
 			if Global.adventure_mode_level_num >= 10:
 				Global.goto_scene("res://Menus/credits.tscn")
+				return
 			Global.goto_scene("res://LevelTools/level.tscn")
 	else:
 		if (timer as int % 60) as int < 10:

@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var tank
 var bullet = preload("res://Items/bullet_big.tscn")
-var movement_speed: float = 120
+var movement_speed: float = 100
 var movement_target_position: Vector2
 
 @onready var nav: NavigationAgent2D = $NavigationAgent2D
