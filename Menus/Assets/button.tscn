@@ -1,13 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://cxkkcepd10qbx"]
 
-[ext_resource type="Theme" uid="uid://dnii5kb4mtk7p" path="res://Menus/Assets/levelSelectButtons.tres" id="1_thbi1"]
+[ext_resource type="Theme" uid="uid://ctl7ud287nf8v" path="res://Menus/Assets/new_theme_2.tres" id="1_txcgo"]
 [ext_resource type="Script" path="res://Menus/Assets/button.gd" id="2_rsoep"]
 
 [node name="Button" type="Button"]
 custom_minimum_size = Vector2(150, 150)
 offset_right = 8.0
 offset_bottom = 8.0
-theme = ExtResource("1_thbi1")
+theme = ExtResource("1_txcgo")
+theme_override_font_sizes/font_size = 55
 text = "1
 "
 script = ExtResource("2_rsoep")

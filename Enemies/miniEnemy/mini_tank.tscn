@@ -46,7 +46,6 @@ frame_progress = 0.114691
 shape = SubResource("RectangleShape2D_nhq0u")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-navigation_layers = 3
 path_postprocessing = 1
 
 [node name="Timer" type="Timer" parent="."]

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<level version="2">
+<levelName name="L29"></levelName>
+<levelSeed seed="z9nz7po235s9ui59d3fwaikvujlgabdo"></levelSeed>
+<grid x="20" y="11"></grid>
+<author user=" utg-2 "></author >
+	<objects>
+		<coord x="15" y="3" type="block"></coord>
+		<coord x="16" y="4" type="block"></coord>
+		<coord x="3" y="6" type="block"></coord>
+		<coord x="3" y="7" type="finish"></coord>
+		<coord x="4" y="7" type="block"></coord>
+	</objects>
+	<enemies>
+		<turret x="5" y="2" type="cyan"></turret>
+		<player x="17" y="2" dir="l" type="p1"></player>
+		<turret x="2" y="8" type="purple"></turret>
+		<turret x="14" y="8" type="cyan"></turret>
+	</enemies>
+</level>

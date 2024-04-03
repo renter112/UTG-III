@@ -56,7 +56,7 @@ func create_buttons(start,end):
 			b.level_to_load = Global.t_levels[n -1]
 		else:
 			b.text = str(n)
-			if Global.levels.size() <= n:
+			if Global.levels.size()+1 <= n:
 				b.level_to_load = []
 			else:
 				print(Global.levels[n-1])

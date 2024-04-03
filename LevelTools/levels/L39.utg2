@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<level version="2">
+<levelName name="L39"></levelName>
+<levelSeed seed="bk15g54f0noaon9skyz1mummm1ch6uei"></levelSeed>
+<grid x="20" y="11"></grid>
+<author user=" utg-2 "></author >
+	<objects>
+		<coord x="17" y="2" type="finish"></coord>
+		<coord x="5" y="3" type="block"></coord>
+		<coord x="13" y="3" type="block"></coord>
+		<coord x="4" y="7" type="block"></coord>
+		<coord x="4" y="8" type="block"></coord>
+		<coord x="11" y="8" type="block"></coord>
+		<coord x="16" y="8" type="block"></coord>
+		<coord x="4" y="9" type="block"></coord>
+	</objects>
+	<enemies>
+		<tank x="16" y="2" type="red"></tank>
+		<tank x="7" y="3" type="red"></tank>
+		<player x="2" y="8" dir="u" type="p1"></player>
+		<tank x="14" y="9" type="red"></tank>
+	</enemies>
+</level>

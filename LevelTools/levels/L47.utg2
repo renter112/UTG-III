@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<level version="2">
+<levelName name="L47"></levelName>
+<levelSeed seed="36c7b53xdjxi5oqqzisr26hy53jy1gfa"></levelSeed>
+<grid x="20" y="11"></grid>
+<author user=" utg-2 "></author >
+	<objects>
+		<coord x="4" y="3" type="block"></coord>
+		<coord x="5" y="3" type="block"></coord>
+		<coord x="6" y="3" type="block"></coord>
+		<coord x="7" y="3" type="block"></coord>
+		<coord x="8" y="3" type="block"></coord>
+		<coord x="9" y="3" type="block"></coord>
+		<coord x="10" y="3" type="block"></coord>
+		<coord x="11" y="3" type="block"></coord>
+		<coord x="12" y="3" type="block"></coord>
+		<coord x="13" y="3" type="block"></coord>
+		<coord x="14" y="3" type="block"></coord>
+		<coord x="15" y="3" type="block"></coord>
+		<coord x="4" y="4" type="block"></coord>
+		<coord x="4" y="5" type="block"></coord>
+		<coord x="6" y="5" type="finish"></coord>
+		<coord x="4" y="6" type="block"></coord>
+		<coord x="4" y="7" type="block"></coord>
+		<coord x="5" y="7" type="block"></coord>
+		<coord x="6" y="7" type="block"></coord>
+		<coord x="7" y="7" type="block"></coord>
+		<coord x="8" y="7" type="block"></coord>
+		<coord x="9" y="7" type="block"></coord>
+		<coord x="10" y="7" type="block"></coord>
+		<coord x="11" y="7" type="block"></coord>
+		<coord x="12" y="7" type="block"></coord>
+		<coord x="13" y="7" type="block"></coord>
+		<coord x="14" y="7" type="block"></coord>
+		<coord x="15" y="7" type="block"></coord>
+	</objects>
+	<enemies>
+		<tank x="5" y="4" type="mini"></tank>
+		<tank x="6" y="4" type="mini"></tank>
+		<tank x="7" y="4" type="mini"></tank>
+		<tank x="8" y="4" type="mini"></tank>
+		<player x="1" y="5" dir="r" type="p1"></player>
+		<turret x="8" y="5" type="boss"></turret>
+		<tank x="5" y="6" type="mini"></tank>
+		<tank x="6" y="6" type="mini"></tank>
+		<tank x="7" y="6" type="mini"></tank>
+		<tank x="8" y="6" type="mini"></tank>
+	</enemies>
+</level>

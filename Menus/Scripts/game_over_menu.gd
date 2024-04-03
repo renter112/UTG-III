@@ -3,7 +3,7 @@ extends Control
 var level_b
 
 func _ready():
-
+	
 	# If level successful 
 	if Global.level_success:
 		if Global.custom_level_on:
@@ -20,8 +20,9 @@ func _ready():
 			print("next level is: ",level_b)
 		elif Global.levels.has(Global.current_level):
 			print("save level??")
-			if Global.levels.back() == Global.current_level:
+			if Global.levels.back()[2] == Global.current_level[2]:
 				Global.goto_scene("res://Menus/credits.tscn")
+				return
 			level_b = Global.levels[Global.levels.find(Global.current_level) +1]
 			Global.levels[Global.levels.find(Global.current_level)][3] = 1
 			Global.save_levels()

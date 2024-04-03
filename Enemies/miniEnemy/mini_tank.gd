@@ -13,7 +13,6 @@ func _ready():
 	pass
 
 func _process(_delta):
-
 	if  global_position.distance_to(tank.global_position) < 128 && not oneshot:
 		print("soon?")
 		oneshot = true

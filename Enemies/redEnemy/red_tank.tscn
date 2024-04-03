@@ -66,7 +66,6 @@ offset = Vector2(19, 0)
 position = Vector2(60.2857, -0.000264792)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-navigation_layers = 3
 path_postprocessing = 1
 avoidance_layers = 7
 avoidance_mask = 7

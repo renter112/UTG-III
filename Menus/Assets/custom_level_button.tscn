@@ -1,13 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://dsiotq36sjo5w"]
 
+[ext_resource type="Theme" uid="uid://ctl7ud287nf8v" path="res://Menus/Assets/new_theme_2.tres" id="1_6ugj4"]
 [ext_resource type="Script" path="res://Menus/Scripts/custom_level_button.gd" id="1_51or6"]
-[ext_resource type="Theme" uid="uid://b5dpw57epf28s" path="res://Menus/Assets/optionsToggleButtons.tres" id="1_bvy6u"]
 
 [node name="CustomLevelButton" type="Button"]
-custom_minimum_size = Vector2(550, 150)
-offset_right = 392.0
-offset_bottom = 93.0
-theme = ExtResource("1_bvy6u")
+offset_right = 550.0
+offset_bottom = 150.0
+theme = ExtResource("1_6ugj4")
 text = "Level:"
 script = ExtResource("1_51or6")
 

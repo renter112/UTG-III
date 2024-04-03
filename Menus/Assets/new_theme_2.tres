@@ -1,0 +1,73 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://ctl7ud287nf8v"]
+
+[ext_resource type="FontFile" uid="uid://n7lo661wrh6j" path="res://Menus/Assets/PixCon.ttf" id="1_gtwt5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jhtxf"]
+bg_color = Color(0.0901961, 0.290196, 0.168627, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m4ajk"]
+bg_color = Color(0.184314, 0.517647, 0.317647, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 8
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a6310"]
+bg_color = Color(0.145098, 0.419608, 0.254902, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sjpmu"]
+bg_color = Color(0.12549, 0.372549, 0.223529, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 4
+shadow_offset = Vector2(1, 1)
+
+[resource]
+Button/colors/font_color = Color(0.905882, 0.870588, 0.803922, 1)
+Button/colors/font_disabled_color = Color(0.00392157, 0.00392157, 0.00392157, 0.501961)
+Button/colors/font_focus_color = Color(0.905882, 0.870588, 0.803922, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_gtwt5")
+Button/styles/disabled = SubResource("StyleBoxFlat_jhtxf")
+Button/styles/hover = SubResource("StyleBoxFlat_m4ajk")
+Button/styles/normal = SubResource("StyleBoxFlat_a6310")
+Button/styles/pressed = SubResource("StyleBoxFlat_sjpmu")

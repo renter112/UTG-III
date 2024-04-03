@@ -66,3 +66,13 @@ func _on_play_button_pressed():
 	Global.custom_level_on = true
 	Global.goto_scene("res://LevelTools/level.tscn")
 	pass # Replace with function body.
+
+
+func _on_delete_button_pressed():
+	var dir = DirAccess.open("user://levels/")
+	dir.remove(Global.current_level[0])
+	Global.custom_levels = []
+	clear_buttons()
+	Global.load_custom_levels()
+	create_buttons()
+	pass # Replace with function body.

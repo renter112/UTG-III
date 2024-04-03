@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://donjb1ch00a52"]
+[gd_scene load_steps=6 format=3 uid="uid://donjb1ch00a52"]
 
 [ext_resource type="Theme" uid="uid://dpy8lokjdhd4m" path="res://Menus/Assets/menuTheme.tres" id="1_vmiof"]
 [ext_resource type="Script" path="res://Menus/Scripts/main_menu.gd" id="2_fvmtf"]
 [ext_resource type="Theme" uid="uid://dnii5kb4mtk7p" path="res://Menus/Assets/levelSelectButtons.tres" id="2_n15jf"]
 [ext_resource type="Texture2D" uid="uid://cbouloeico07p" path="res://Menus/Assets/mainMenuScreenShot-1.png" id="4_6f1k0"]
+[ext_resource type="Theme" uid="uid://ctl7ud287nf8v" path="res://Menus/Assets/new_theme_2.tres" id="4_7y3y1"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -66,20 +67,24 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
+theme = ExtResource("4_7y3y1")
 
 [node name="PlayButton" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(450, 125)
 layout_mode = 2
+theme_override_font_sizes/font_size = 50
 text = "Play"
 
 [node name="OptionButton" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(450, 125)
 layout_mode = 2
+theme_override_font_sizes/font_size = 50
 text = "Options"
 
 [node name="ExitButton" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(450, 125)
 layout_mode = 2
+theme_override_font_sizes/font_size = 50
 text = "EXIT"
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer"]

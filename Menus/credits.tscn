@@ -34,13 +34,11 @@ color = Color(0, 0, 0, 1)
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(600, 4000)
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 900.0
-offset_bottom = 8471.0
+offset_top = 896.0
+offset_bottom = 10959.0
 grow_horizontal = 2
-grow_vertical = 2
 theme = SubResource("Theme_f2wn6")
 bbcode_enabled = true
 text = "[center]
@@ -209,3 +207,5 @@ Lakehead University
 | ||
  || |_
 "
+fit_content = true
+scroll_active = false

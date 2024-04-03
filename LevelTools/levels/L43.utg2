@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<level version="2">
+<levelName name="L43"></levelName>
+<levelSeed seed="lhtcwv2egtwpfbewn3i66fpogotbc85u"></levelSeed>
+<grid x="20" y="11"></grid>
+<author user=" utg-2 "></author >
+	<objects>
+		<coord x="8" y="3" type="block"></coord>
+		<coord x="9" y="3" type="hole"></coord>
+		<coord x="10" y="3" type="hole"></coord>
+		<coord x="11" y="3" type="hole"></coord>
+		<coord x="12" y="3" type="hole"></coord>
+		<coord x="13" y="3" type="block"></coord>
+		<coord x="8" y="4" type="block"></coord>
+		<coord x="13" y="4" type="block"></coord>
+		<coord x="8" y="5" type="block"></coord>
+		<coord x="13" y="5" type="block"></coord>
+		<coord x="3" y="6" type="block"></coord>
+		<coord x="4" y="6" type="block"></coord>
+		<coord x="5" y="6" type="block"></coord>
+		<coord x="6" y="6" type="block"></coord>
+		<coord x="7" y="6" type="block"></coord>
+		<coord x="8" y="6" type="block"></coord>
+		<coord x="9" y="6" type="hole"></coord>
+		<coord x="10" y="6" type="hole"></coord>
+		<coord x="11" y="6" type="hole"></coord>
+		<coord x="12" y="6" type="hole"></coord>
+		<coord x="13" y="6" type="block"></coord>
+		<coord x="14" y="6" type="block"></coord>
+		<coord x="15" y="6" type="block"></coord>
+		<coord x="16" y="6" type="block"></coord>
+		<coord x="17" y="6" type="block"></coord>
+		<coord x="18" y="6" type="block"></coord>
+		<coord x="17" y="8" type="finish"></coord>
+	</objects>
+	<enemies>
+		<player x="16" y="4" dir="u" type="p1"></player>
+		<turret x="10" y="5" type="cyan"></turret>
+		<turret x="11" y="5" type="cyan"></turret>
+		<turret x="15" y="8" type="boss"></turret>
+	</enemies>
+</level>

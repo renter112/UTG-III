@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<level version="2">
+<levelName name="L18"></levelName>
+<levelSeed seed="gjog54qvg409a4q7kqk7yiusdfklrmae"></levelSeed>
+<grid x="20" y="11"></grid>
+<author user=" utg-2 "></author >
+	<objects>
+		<coord x="6" y="3" type="block"></coord>
+		<coord x="16" y="3" type="block"></coord>
+		<coord x="6" y="4" type="block"></coord>
+		<coord x="15" y="4" type="block"></coord>
+		<coord x="6" y="5" type="block"></coord>
+		<coord x="14" y="5" type="block"></coord>
+		<coord x="17" y="5" type="finish"></coord>
+		<coord x="6" y="6" type="block"></coord>
+		<coord x="15" y="6" type="block"></coord>
+		<coord x="6" y="7" type="block"></coord>
+		<coord x="16" y="7" type="block"></coord>
+	</objects>
+	<enemies>
+		<tank x="16" y="5" type="cyan"></tank>
+		<player x="2" y="8" dir="u" type="p1"></player>
+	</enemies>
+</level>

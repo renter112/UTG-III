@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://blvx75g1xfqcb"]
+[gd_scene load_steps=6 format=3 uid="uid://blvx75g1xfqcb"]
 
 [ext_resource type="Theme" uid="uid://dnii5kb4mtk7p" path="res://Menus/Assets/levelSelectButtons.tres" id="1_aldb7"]
 [ext_resource type="Script" path="res://Menus/Scripts/level_select.gd" id="1_t4i6d"]
 [ext_resource type="Texture2D" uid="uid://brdig5meii7vn" path="res://Menus/Assets/custom_background.png" id="3_01fcr"]
 [ext_resource type="Theme" uid="uid://tjw11djg71fg" path="res://Menus/Assets/custom_menu_theme.tres" id="3_8jfrc"]
+[ext_resource type="Theme" uid="uid://ctl7ud287nf8v" path="res://Menus/Assets/new_theme_2.tres" id="4_uoy7c"]
 
 [node name="level_select" type="Control"]
 layout_mode = 3
@@ -47,7 +48,8 @@ theme = ExtResource("3_8jfrc")
 [node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
-theme = ExtResource("1_aldb7")
+theme = ExtResource("4_uoy7c")
+theme_override_font_sizes/font_size = 65
 text = "<<"
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
@@ -59,7 +61,7 @@ theme_override_constants/margin_right = 130
 layout_mode = 2
 size_flags_horizontal = 4
 bbcode_enabled = true
-text = "[center]Custom Levels"
+text = "[center]Level Select"
 fit_content = true
 autowrap_mode = 0
 
@@ -74,6 +76,7 @@ expand_mode = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/CenterContainer"]
 layout_mode = 2
+theme = ExtResource("4_uoy7c")
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer/CenterContainer/HBoxContainer"]
 layout_mode = 2
@@ -81,6 +84,7 @@ layout_mode = 2
 [node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/CenterContainer/HBoxContainer/CenterContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+theme_override_font_sizes/font_size = 50
 text = "<"
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/CenterContainer/HBoxContainer"]
@@ -99,6 +103,7 @@ layout_mode = 2
 [node name="ForwardButton" type="Button" parent="MarginContainer/VBoxContainer/CenterContainer/HBoxContainer/CenterContainer2"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+theme_override_font_sizes/font_size = 50
 text = ">"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/BackButton" to="." method="_on_return_button_pressed"]

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<level version="2">
+<levelName name="L19"></levelName>
+<levelSeed seed="5dmmhlyfseup97tm36b5wrco8kq0ff4q"></levelSeed>
+<grid x="20" y="11"></grid>
+<author user=" utg-2 "></author >
+	<objects>
+		<coord x="8" y="3" type="block"></coord>
+		<coord x="9" y="3" type="block"></coord>
+		<coord x="10" y="3" type="block"></coord>
+		<coord x="11" y="3" type="block"></coord>
+		<coord x="12" y="3" type="block"></coord>
+		<coord x="13" y="3" type="block"></coord>
+		<coord x="7" y="4" type="block"></coord>
+		<coord x="6" y="5" type="block"></coord>
+		<coord x="17" y="5" type="finish"></coord>
+		<coord x="7" y="6" type="block"></coord>
+		<coord x="8" y="7" type="block"></coord>
+		<coord x="9" y="7" type="block"></coord>
+		<coord x="10" y="7" type="block"></coord>
+		<coord x="11" y="7" type="block"></coord>
+		<coord x="12" y="7" type="block"></coord>
+		<coord x="13" y="7" type="block"></coord>
+	</objects>
+	<enemies>
+		<turret x="14" y="2" type="red"></turret>
+		<player x="2" y="5" dir="r" type="p1"></player>
+		<tank x="10" y="5" type="orange"></tank>
+		<turret x="14" y="8" type="red"></turret>
+	</enemies>
+</level>

@@ -116,14 +116,15 @@ func load_levels():
 			if dir.current_is_dir():
 				print("Found directory: " + file_name)
 			else:
-				if file_name.ends_with(".xml"):
+				print(file_name)
+				if file_name.ends_with(".utg2"):
 					load_levels_xml(path,file_name)
 			file_name = dir.get_next()
 	else:
 		print("An error occurred when trying to access the path.")
 	load_levels_beaten()
 	levels.sort_custom(func(a, b): return a[1].naturalnocasecmp_to(b[1]) < 0)
-
+	print(levels)
 
 # this is used to read the xml for each level
 func load_levels_xml(path,file_name):

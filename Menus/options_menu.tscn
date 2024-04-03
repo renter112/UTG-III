@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://n7lo661wrh6j" path="res://Menus/Assets/PixCon.ttf" id="1_0ewri"]
 [ext_resource type="Script" path="res://Menus/Scripts/options_menu.gd" id="1_r7rsf"]
-[ext_resource type="Theme" uid="uid://b5dpw57epf28s" path="res://Menus/Assets/optionsToggleButtons.tres" id="2_eobug"]
+[ext_resource type="Theme" uid="uid://ctl7ud287nf8v" path="res://Menus/Assets/new_theme_2.tres" id="2_wl5ri"]
 [ext_resource type="Theme" uid="uid://dpy8lokjdhd4m" path="res://Menus/Assets/menuTheme.tres" id="4_4fas8"]
 
 [node name="OptionsMenu" type="Control"]
@@ -47,6 +47,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_wl5ri")
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 5
@@ -72,6 +73,7 @@ fit_content = true
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_wl5ri")
 theme_override_constants/margin_left = 100
 theme_override_constants/margin_right = 100
 
@@ -82,17 +84,19 @@ color = Color(0.329412, 0.329412, 0.329412, 1)
 [node name="GridContainer" type="GridContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer"]
 visible = false
 layout_mode = 2
-theme = ExtResource("2_eobug")
+theme = ExtResource("2_wl5ri")
 columns = 3
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer"]
 custom_minimum_size = Vector2(0, 500)
 layout_mode = 2
+theme = ExtResource("2_wl5ri")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer"]
 custom_minimum_size = Vector2(1200, 0)
 layout_mode = 2
-theme_override_constants/separation = 5
+theme = ExtResource("2_wl5ri")
+theme_override_constants/separation = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -112,9 +116,10 @@ value = 1.0
 tick_count = 10
 
 [node name="MusicButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(150, 75)
+custom_minimum_size = Vector2(150, 80)
 layout_mode = 2
-theme = ExtResource("2_eobug")
+size_flags_vertical = 4
+theme = ExtResource("2_wl5ri")
 toggle_mode = true
 text = "Mute
 "
@@ -137,9 +142,10 @@ value = 1.0
 tick_count = 10
 
 [node name="SoundsButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(150, 100)
+custom_minimum_size = Vector2(150, 80)
 layout_mode = 2
-theme = ExtResource("2_eobug")
+size_flags_vertical = 4
+theme = ExtResource("2_wl5ri")
 toggle_mode = true
 text = "Mute"
 
@@ -153,44 +159,58 @@ theme = ExtResource("4_4fas8")
 text = "    Controls:   "
 
 [node name="ControlsButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(300, 100)
+custom_minimum_size = Vector2(300, 80)
 layout_mode = 2
-theme = ExtResource("2_eobug")
+size_flags_horizontal = 5
+size_flags_vertical = 5
+theme = ExtResource("2_wl5ri")
 text = "Classic"
 
 [node name="ControlsViewButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(300, 100)
+custom_minimum_size = Vector2(300, 80)
 layout_mode = 2
-theme = ExtResource("2_eobug")
+size_flags_horizontal = 5
+size_flags_vertical = 5
+theme = ExtResource("2_wl5ri")
 text = "Mapping"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 11
+alignment = 1
 
 [node name="OsakaButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
-custom_minimum_size = Vector2(300, 100)
+custom_minimum_size = Vector2(300, 80)
 layout_mode = 2
-theme = ExtResource("2_eobug")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wl5ri")
 toggle_mode = true
 text = "Secret Mode"
 
 [node name="FullScreenButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
-custom_minimum_size = Vector2(300, 100)
+custom_minimum_size = Vector2(300, 80)
 layout_mode = 2
-theme = ExtResource("2_eobug")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wl5ri")
 toggle_mode = true
 text = "Fullscreen"
 
 [node name="CreditsButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
-custom_minimum_size = Vector2(250, 100)
+custom_minimum_size = Vector2(250, 80)
 layout_mode = 2
-theme = ExtResource("2_eobug")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wl5ri")
 text = "Credits"
 
 [node name="ResetButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
-custom_minimum_size = Vector2(250, 100)
+custom_minimum_size = Vector2(250, 80)
 layout_mode = 2
-theme = ExtResource("2_eobug")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wl5ri")
 text = "Reset"
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer"]
@@ -204,7 +224,7 @@ custom_minimum_size = Vector2(250, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource("2_eobug")
+theme = ExtResource("2_wl5ri")
 text = "back"
 
 [connection signal="drag_ended" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/MusicHSlider" to="." method="_on_music_h_slider_drag_ended"]

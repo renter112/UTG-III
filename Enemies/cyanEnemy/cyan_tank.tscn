@@ -39,6 +39,7 @@ animations = [{
 size = Vector2(51, 52)
 
 [node name="cyan_tank" type="CharacterBody2D"]
+collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_4udia")
 
@@ -64,5 +65,5 @@ one_shot = true
 autostart = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-navigation_layers = 3
+navigation_layers = 7
 path_postprocessing = 1

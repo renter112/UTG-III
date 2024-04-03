@@ -34,6 +34,7 @@ func _ready():
 func parseXML():
 	var parser = XMLParser.new()
 	var level = Global.current_level
+	print(level)
 	if level.is_empty():
 		return false
 	print("level loading is: ",level)

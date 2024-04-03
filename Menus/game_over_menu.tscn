@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqrvjq6rhl2xn"]
+[gd_scene load_steps=7 format=3 uid="uid://dqrvjq6rhl2xn"]
 
 [ext_resource type="Script" path="res://Menus/Scripts/game_over_menu.gd" id="1_x1fdu"]
 [ext_resource type="Theme" uid="uid://dpy8lokjdhd4m" path="res://Menus/Assets/menuTheme.tres" id="1_yn4k4"]
 [ext_resource type="FontFile" uid="uid://n7lo661wrh6j" path="res://Menus/Assets/PixCon.ttf" id="2_b4154"]
 [ext_resource type="Texture2D" uid="uid://duosag1gr12na" path="res://Menus/Assets/result_fail.png" id="2_psyd3"]
 [ext_resource type="AudioStream" uid="uid://b37hgc1j8a0i5" path="res://Menus/Assets/Brookes_Triumphal_March_-_United_States_Marine_Band.mp3" id="4_ba88t"]
+[ext_resource type="Theme" uid="uid://ctl7ud287nf8v" path="res://Menus/Assets/new_theme_2.tres" id="5_nlf2j"]
 
 [node name="GameOverMenu" type="Control"]
 layout_mode = 3
@@ -86,13 +87,13 @@ theme_override_constants/margin_top = 325
 [node name="ButtonsCon" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme = ExtResource("1_yn4k4")
+theme = ExtResource("5_nlf2j")
 theme_override_constants/separation = 175
 
 [node name="RetryButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/ButtonsCon"]
 custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
-theme = ExtResource("1_yn4k4")
+theme = ExtResource("5_nlf2j")
 theme_override_font_sizes/font_size = 25
 text = "Try Again"
 
@@ -105,6 +106,7 @@ text = "Menu"
 [node name="NextButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/ButtonsCon"]
 custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
+theme = ExtResource("5_nlf2j")
 theme_override_font_sizes/font_size = 25
 disabled = true
 text = "Next Level"

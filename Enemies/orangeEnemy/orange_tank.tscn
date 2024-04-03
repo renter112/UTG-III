@@ -71,5 +71,4 @@ position = Vector2(47, -28)
 position = Vector2(47, 28)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-navigation_layers = 3
 path_postprocessing = 1
