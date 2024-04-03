@@ -26,6 +26,6 @@
 		<turret x="3" y="3" type="red"></turret>
 		<tank x="15" y="3" type="mini"></tank>
 		<player x="3" y="7" dir="r" type="p1"></player>
-		<turret x="14" y="8" type="purple"></turret>
+		<turret x="15" y="8" type="purple"></turret>
 	</enemies>
 </level>
