@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<level version="2">
+<levelName name="h41"></levelName>
+<levelSeed seed="ctutj5y5je8pwn448061e3q0pxuedd3r"></levelSeed>
+<grid x="20" y="11"></grid>
+<author user=" utg-2 "></author >
+	<objects>
+		<coord x="8" y="3" type="hole"></coord>
+		<coord x="9" y="3" type="hole"></coord>
+		<coord x="10" y="3" type="hole"></coord>
+		<coord x="11" y="3" type="hole"></coord>
+		<coord x="4" y="4" type="block"></coord>
+		<coord x="8" y="4" type="hole"></coord>
+		<coord x="11" y="4" type="hole"></coord>
+		<coord x="16" y="4" type="block"></coord>
+		<coord x="4" y="5" type="block"></coord>
+		<coord x="8" y="5" type="hole"></coord>
+		<coord x="11" y="5" type="hole"></coord>
+		<coord x="16" y="5" type="block"></coord>
+		<coord x="17" y="5" type="finish"></coord>
+		<coord x="4" y="6" type="block"></coord>
+		<coord x="8" y="6" type="hole"></coord>
+		<coord x="11" y="6" type="hole"></coord>
+		<coord x="16" y="6" type="block"></coord>
+		<coord x="8" y="7" type="hole"></coord>
+		<coord x="9" y="7" type="hole"></coord>
+		<coord x="10" y="7" type="hole"></coord>
+		<coord x="11" y="7" type="hole"></coord>
+	</objects>
+	<enemies>
+		<turret x="16" y="1" type="yellow"></turret>
+		<player x="2" y="5" dir="r" type="p1"></player>
+		<turret x="9" y="5" type="yellow"></turret>
+		<turret x="16" y="9" type="yellow"></turret>
+	</enemies>
+</level>

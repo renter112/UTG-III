@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<level version="2">
+<levelName name="m19"></levelName>
+<levelSeed seed="jarsofxpubmyd7in0b99pbdgbp01amh2"></levelSeed>
+<grid x="20" y="11"></grid>
+<author user=" utg-2 "></author >
+	<objects>
+		<coord x="11" y="2" type="block"></coord>
+		<coord x="10" y="3" type="block"></coord>
+		<coord x="10" y="4" type="block"></coord>
+		<coord x="10" y="5" type="block"></coord>
+		<coord x="17" y="5" type="finish"></coord>
+		<coord x="10" y="6" type="block"></coord>
+		<coord x="10" y="7" type="block"></coord>
+		<coord x="11" y="8" type="block"></coord>
+	</objects>
+	<enemies>
+		<turret x="11" y="3" type="cyan"></turret>
+		<player x="2" y="5" dir="r" type="p1"></player>
+		<tank x="15" y="5" type="random"></tank>
+		<turret x="11" y="7" type="cyan"></turret>
+	</enemies>
+</level>

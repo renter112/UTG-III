@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<level version="2">
+<levelName name="h23"></levelName>
+<levelSeed seed="0vy53pjp7mvcxf6wuajt6me81ifn27vs"></levelSeed>
+<grid x="20" y="11"></grid>
+<author user=" utg-2 "></author >
+	<objects>
+		<coord x="12" y="2" type="hole"></coord>
+		<coord x="12" y="3" type="hole"></coord>
+		<coord x="12" y="4" type="hole"></coord>
+		<coord x="8" y="5" type="block"></coord>
+		<coord x="9" y="5" type="block"></coord>
+		<coord x="10" y="5" type="block"></coord>
+		<coord x="16" y="5" type="finish"></coord>
+		<coord x="12" y="6" type="hole"></coord>
+		<coord x="12" y="7" type="hole"></coord>
+		<coord x="12" y="8" type="hole"></coord>
+	</objects>
+	<enemies>
+		<turret x="14" y="2" type="orange"></turret>
+		<turret x="14" y="4" type="orange"></turret>
+		<player x="3" y="5" dir="r" type="p1"></player>
+		<turret x="14" y="6" type="orange"></turret>
+		<turret x="14" y="8" type="orange"></turret>
+	</enemies>
+</level>

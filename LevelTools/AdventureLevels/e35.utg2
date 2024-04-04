@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<level version="2">
+<levelName name="e35"></levelName>
+<levelSeed seed="hp6jo74m07juh1n5j2kuuaen7295k1ug"></levelSeed>
+<grid x="20" y="11"></grid>
+<author user=" utg-2 "></author >
+	<objects>
+		<coord x="6" y="1" type="hole"></coord>
+		<coord x="6" y="2" type="hole"></coord>
+		<coord x="6" y="3" type="hole"></coord>
+		<coord x="6" y="4" type="hole"></coord>
+		<coord x="13" y="4" type="hole"></coord>
+		<coord x="6" y="5" type="hole"></coord>
+		<coord x="13" y="5" type="hole"></coord>
+		<coord x="6" y="6" type="hole"></coord>
+		<coord x="13" y="6" type="hole"></coord>
+		<coord x="13" y="7" type="hole"></coord>
+		<coord x="16" y="7" type="finish"></coord>
+		<coord x="13" y="8" type="hole"></coord>
+		<coord x="13" y="9" type="hole"></coord>
+	</objects>
+	<enemies>
+		<player x="3" y="1" dir="d" type="p1"></player>
+		<tank x="16" y="2" type="random"></tank>
+		<turret x="9" y="8" type="red"></turret>
+	</enemies>
+</level>

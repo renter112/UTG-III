@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<level version="2">
+<levelName name="h40"></levelName>
+<levelSeed seed="2n3f3wpdngkfw3h9wrnip1avbcp0oub3"></levelSeed>
+<grid x="20" y="11"></grid>
+<author user=" utg-2 "></author >
+	<objects>
+		<coord x="4" y="3" type="hole"></coord>
+		<coord x="8" y="3" type="hole"></coord>
+		<coord x="9" y="3" type="hole"></coord>
+		<coord x="10" y="3" type="hole"></coord>
+		<coord x="11" y="3" type="hole"></coord>
+		<coord x="16" y="3" type="hole"></coord>
+		<coord x="4" y="4" type="hole"></coord>
+		<coord x="8" y="4" type="hole"></coord>
+		<coord x="11" y="4" type="hole"></coord>
+		<coord x="16" y="4" type="hole"></coord>
+		<coord x="4" y="5" type="hole"></coord>
+		<coord x="8" y="5" type="hole"></coord>
+		<coord x="11" y="5" type="hole"></coord>
+		<coord x="16" y="5" type="hole"></coord>
+		<coord x="17" y="5" type="finish"></coord>
+		<coord x="4" y="6" type="hole"></coord>
+		<coord x="8" y="6" type="hole"></coord>
+		<coord x="11" y="6" type="hole"></coord>
+		<coord x="16" y="6" type="hole"></coord>
+		<coord x="4" y="7" type="hole"></coord>
+		<coord x="8" y="7" type="hole"></coord>
+		<coord x="9" y="7" type="hole"></coord>
+		<coord x="10" y="7" type="hole"></coord>
+		<coord x="11" y="7" type="hole"></coord>
+		<coord x="16" y="7" type="hole"></coord>
+	</objects>
+	<enemies>
+		<player x="2" y="5" dir="r" type="p1"></player>
+		<tank x="12" y="5" type="random"></tank>
+		<tank x="18" y="5" type="random"></tank>
+	</enemies>
+</level>

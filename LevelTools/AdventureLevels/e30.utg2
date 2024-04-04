@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<level version="2">
+<levelName name="e30"></levelName>
+<levelSeed seed="s94wsquicppybtx6gbkna9hkz0y8dcvu"></levelSeed>
+<grid x="20" y="11"></grid>
+<author user=" utg-2 "></author >
+	<objects>
+		<coord x="4" y="4" type="hole"></coord>
+		<coord x="8" y="4" type="block"></coord>
+		<coord x="9" y="4" type="hole"></coord>
+		<coord x="10" y="4" type="hole"></coord>
+		<coord x="11" y="4" type="block"></coord>
+		<coord x="15" y="4" type="hole"></coord>
+		<coord x="4" y="5" type="hole"></coord>
+		<coord x="8" y="5" type="block"></coord>
+		<coord x="11" y="5" type="block"></coord>
+		<coord x="15" y="5" type="hole"></coord>
+		<coord x="17" y="5" type="finish"></coord>
+		<coord x="4" y="6" type="hole"></coord>
+		<coord x="8" y="6" type="block"></coord>
+		<coord x="9" y="6" type="hole"></coord>
+		<coord x="10" y="6" type="hole"></coord>
+		<coord x="11" y="6" type="block"></coord>
+		<coord x="15" y="6" type="hole"></coord>
+	</objects>
+	<enemies>
+		<player x="2" y="5" dir="r" type="p1"></player>
+		<tank x="7" y="5" type="random"></tank>
+		<tank x="16" y="5" type="random"></tank>
+	</enemies>
+</level>

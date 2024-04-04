@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<level version="2">
+<levelName name="m13"></levelName>
+<levelSeed seed="ejuybjc9u8q1xnikrzt1p6wbkp0fydke"></levelSeed>
+<grid x="20" y="11"></grid>
+<author user=" utg-2 "></author >
+	<objects>
+		<coord x="14" y="2" type="block"></coord>
+		<coord x="6" y="3" type="block"></coord>
+		<coord x="10" y="5" type="block"></coord>
+		<coord x="17" y="5" type="finish"></coord>
+		<coord x="4" y="8" type="block"></coord>
+		<coord x="11" y="8" type="block"></coord>
+	</objects>
+	<enemies>
+		<turret x="16" y="2" type="random"></turret>
+		<player x="2" y="5" dir="r" type="p1"></player>
+		<turret x="10" y="9" type="random"></turret>
+	</enemies>
+</level>
