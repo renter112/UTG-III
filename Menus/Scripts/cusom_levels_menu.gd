@@ -12,6 +12,7 @@ func _ready():
 func pick_random():
 	var buttons = $MarginContainer/VBoxContainer2/HBoxContainer2/MarginContainer2/ScrollContainer/VBoxContainer.get_children()
 	var button = buttons.pick_random()
+	print(button)
 	button.emit_signal("pressed")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -75,4 +76,5 @@ func _on_delete_button_pressed():
 	clear_buttons()
 	Global.load_custom_levels()
 	create_buttons()
+	pick_random()
 	pass # Replace with function body.
