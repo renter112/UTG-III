@@ -40,6 +40,7 @@ func _on_play_button_pressed():
 	else :
 		Global.current_level = Global.h_levels.pick_random()
 		print("hard")
+	Global.lives = 3
 	Global.goto_scene("res://LevelTools/level.tscn")
 	# my idea:
 	#have bunch of hard / med / easy levels

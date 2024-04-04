@@ -55,6 +55,10 @@ var adventure_mode_level_num = 0
 var adventure_mode_difficulty = [[80,20,0,3],[40,40,20,4],[30,40,30,5],[25,35,40,6],[10,10,80,7],[0,0,100,10]]
 var adventure_mode_diff_selected : Array
 
+var speed_upgrade = 3
+var gun_upgrade = 3
+var lives = 1
+
 func save_config():
 	var config = ConfigFile.new()
 	config.set_value("Options","music",music )

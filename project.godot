@@ -14,7 +14,7 @@ config/name="UTG - III"
 run/main_scene="res://Menus/main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/show_image=false
-config/icon="res://icon.svg"
+config/icon="res://Menus/Assets/test_logo_4.png"
 
 [autoload]
 

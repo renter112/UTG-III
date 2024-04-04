@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7bficc1fadqj"]
+
+[ext_resource type="Texture2D" uid="uid://bifn0f6vax0v0" path="res://Items/Assets/gun_1.png" id="1_c7kfg"]
+[ext_resource type="Script" path="res://Items/Scripts/gun_upgrade.gd" id="2_o5kdy"]
+
+[node name="GunUpgrade" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_c7kfg")
+script = ExtResource("2_o5kdy")

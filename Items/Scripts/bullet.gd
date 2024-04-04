@@ -12,7 +12,6 @@ func _on_Bullet_body_entered(body):
 		body.queue_free()
 		Global.enemies -= 1
 	#if body.name == "Map":
-
 	queue_free()
 
 

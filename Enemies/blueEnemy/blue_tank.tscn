@@ -35,8 +35,8 @@ animations = [{
 "speed": 20.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l350e"]
-size = Vector2(53, 52)
+[sub_resource type="CircleShape2D" id="CircleShape2D_cw8g2"]
+radius = 25.0799
 
 [node name="blue_tank" type="CharacterBody2D"]
 script = ExtResource("1_i0s1i")
@@ -50,7 +50,7 @@ sprite_frames = SubResource("SpriteFrames_o6lfr")
 frame_progress = 0.888709
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_l350e")
+shape = SubResource("CircleShape2D_cw8g2")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
@@ -58,6 +58,7 @@ one_shot = true
 autostart = true
 
 [node name="turret" type="Sprite2D" parent="."]
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("8_m0hov")
 offset = Vector2(16, 0)
 
@@ -66,3 +67,5 @@ position = Vector2(61, 0)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_postprocessing = 1
+avoidance_enabled = true
+radius = 42.26

@@ -30,3 +30,7 @@ offset = Vector2(16, 0)
 
 [node name="Marker2D" type="Marker2D" parent="turret"]
 position = Vector2(58, 0)
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
+radius = 32.0
+avoidance_layers = 3

@@ -3,7 +3,8 @@ extends Control
 func _ready():
 	Global.custom_level_on = false
 	Global.adventureMode = false
-
+	Global.lives = 1
+	
 func _on_level_select_button_pressed():
 	Global.goto_scene("res://Menus/level_select.tscn")
 	pass # Replace with function body.

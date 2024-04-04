@@ -12,7 +12,8 @@ var tank_types = ["red","blue","yellow","mini","cyan","orange"]
 var turret_types = ["red","blue","yellow","boss","cyan","orange","purple"]
 
 var pause_menu = preload("res://Menus/pause_menu.tscn")
-
+var g_i = preload("res://Items/gun_upgrade.tscn")
+var s_i = preload("res://Items/speed_upgrade.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if parseXML():
@@ -20,9 +21,11 @@ func _ready():
 		Global.shots_taken = 0
 		$cam.zoom = Vector2(min(1600/(baseGrid.x*scaler),896/(baseGrid.y*scaler)),min(1600/(baseGrid.x*scaler),896/(baseGrid.y*scaler)))
 		Global.camera_zoom = $cam.zoom
+		$Label2.position = Vector2(baseGrid.x*scaler - 275,0)
 		build_grid()
 		build_objects()
 		build_enemies()
+		set_upgrades()
 		Global.enemies = enemies
 		DiscordSDK.state = "Playing Level " + Global.current_level[1]
 		DiscordSDK.refresh() 
@@ -42,6 +45,8 @@ func parseXML():
 		parser.open(str("res://LevelTools/AdventureLevels/",level[0]))
 		$Label.text = "Level "+str(Global.adventure_mode_level_num)+"/10"
 		$Label.visible = true
+		$Label2.text = "Lives "+str(Global.lives)
+		$Label2.visible = true
 	elif Global.custom_level_on :
 		parser.open(str("user://levels/"+level[0]))
 	elif level[1].begins_with("T"):
@@ -164,6 +169,25 @@ func build_enemies():
 			enemies += 1
 		e2.add_to_group("enemies")
 
+var upgrade_loc = Vector2(3,64)
+func set_upgrades():
+	var s = Global.speed_upgrade
+	var g = Global.gun_upgrade
+	if g > 0 :
+		$tank_hull/tank_turret.bullet_delay -= g/10
+		$tank_hull/tank_turret.bullet_speed += s*15
+		var g_l = g_i.instantiate()
+		g_l.position = upgrade_loc
+		add_child(g_l)
+		upgrade_loc += Vector2(0,64)
+	if s > 0:
+		$tank_hull.speed += 22*s
+		$tank_hull.rotation_speed += s/3
+		var s_l = s_i.instantiate()
+		s_l.position = upgrade_loc
+		add_child(s_l)
+		
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -191,6 +215,11 @@ func finish():
 	DiscordSDK.refresh() 
 	if Global.adventureMode:
 		if not Global.level_success :
+			print(Global.lives)
+			if Global.lives > 1:
+				Global.lives -= 1
+				Global.goto_scene("res://LevelTools/level.tscn")
+				return
 			Global.goto_scene("res://Menus/adventure_mode_menu.tscn")
 		else:
 			print("LOAD NEXT LEVEL")

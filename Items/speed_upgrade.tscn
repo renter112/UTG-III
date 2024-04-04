@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bh1mqiorv32b6"]
+
+[ext_resource type="Texture2D" uid="uid://bifn0f6vax0v0" path="res://Items/Assets/gun_1.png" id="1_dvady"]
+[ext_resource type="Script" path="res://Items/Scripts/speed_upgrade.gd" id="2_4235n"]
+
+[node name="SpeedUpgrade" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_dvady")
+script = ExtResource("2_4235n")

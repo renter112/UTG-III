@@ -24,12 +24,26 @@ position = Vector2(68, 97)
 anchor_mode = 0
 
 [node name="Label" type="Label" parent="."]
-visible = false
 offset_right = 221.0
 offset_bottom = 89.0
 theme_override_fonts/font = ExtResource("5_2hv73")
 theme_override_font_sizes/font_size = 30
 text = "Level 0/20"
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 722.0
+offset_top = 1.0
+offset_right = 972.0
+offset_bottom = 70.0
+grow_horizontal = 0
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("5_2hv73")
+theme_override_font_sizes/font_size = 30
+text = "Lives: 1"
+horizontal_alignment = 2
 
 [connection signal="level_finish" from="finish_button" to="." method="_on_finish_button_level_finish"]
 [connection signal="level_finish" from="tank_hull" to="." method="_on_tank_hull_level_finish"]

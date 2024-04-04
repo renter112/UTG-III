@@ -8,7 +8,7 @@ func _ready():
 	$RayCast2D.add_exception(tank)
 	pass
 	
-func _process(delta):
+func _process(_delta):
 	$turret.rotation = (tank.position - position).angle()
 	$RayCast2D.target_position = tank.position - position
 	if $Timer.is_stopped() && $RayCast2D.is_colliding() != true:
