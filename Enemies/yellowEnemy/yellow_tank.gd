@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var tank
 var bullet = preload("res://Items/bullet.tscn")
-var movement_speed: float = 120
+var movement_speed: float = 140
 var movement_target_position: Vector2
 
 @onready var nav: NavigationAgent2D = $NavigationAgent2D
@@ -22,7 +22,7 @@ func _process(delta):
 
 func shoot():
 	var b = bullet.instantiate()
-	b.speed *= 2
+	b.speed = 350
 	get_tree().get_root().get_node("/root/level").add_child(b)
 	b.transform = $turret/Marker2D.global_transform
 
