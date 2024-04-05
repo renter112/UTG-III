@@ -57,6 +57,9 @@ var adventure_mode_diff_selected : Array
 
 var lives = 1
 var upgrade_list = {"gun":0,"speed":0,"side_armor":0}
+func reset_upgrade_list():
+	upgrade_list = {"gun":0,"speed":0,"side_armor":0}
+
 
 func save_config():
 	var config = ConfigFile.new()

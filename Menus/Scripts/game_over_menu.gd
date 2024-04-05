@@ -3,9 +3,9 @@ extends Control
 var level_b
 
 func _ready():
-	
 	# If level successful 
 	if Global.level_success:
+		$VictoryMusic.playing = true
 		if Global.custom_level_on:
 			for level in Global.custom_levels:
 				if level[2] == Global.current_level[2]:
@@ -30,12 +30,9 @@ func _ready():
 		$MarginContainer/VBoxContainer/Label.text = "SUCCESS"
 		$MarginContainer/TextureRect.texture = preload("res://Menus/Assets/result_success.png")
 		$MarginContainer/VBoxContainer/MarginContainer/ButtonsCon/NextButton.disabled = false
-		# level success, not adventure
-		if not Global.adventureMode :
-			$AudioStreamPlayer2D.playing = true
 	# level fail
 	else :
-		$AudioStreamPlayer2D.playing = false
+		$DefeatMusic.playing = true
 		$MarginContainer/VBoxContainer/Label.text = "FAILURE"
 		$MarginContainer/TextureRect.texture = preload("res://Menus/Assets/result_fail.png")
 		$MarginContainer/VBoxContainer/MarginContainer/ButtonsCon/NextButton.disabled = true
@@ -63,9 +60,8 @@ func _on_retry_button_pressed():
 
 
 func _on_quit_button_pressed():
-	if Global.adventureMode:
-		Global.goto_scene("res://Menus/main_menu.tscn")
-	elif Global.custom_level_on:
+	AudioStreamPlayer2d.playing = true
+	if Global.custom_level_on:
 		Global.goto_scene("res://Menus/custom_levels_menu.tscn")
 	else:
 		Global.goto_scene("res://Menus/level_select.tscn")

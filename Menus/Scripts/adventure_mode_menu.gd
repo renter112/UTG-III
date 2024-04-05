@@ -9,6 +9,7 @@ const info_text = [
 var val = 2
 
 func _ready():
+	Global.reset_upgrade_list()
 	Global.adventure_mode_level_num = 0
 	Global.adventureMode = false
 	

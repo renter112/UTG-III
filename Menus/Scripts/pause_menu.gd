@@ -5,6 +5,8 @@ func _ready():
 
 func _on_quit_button_pressed():
 	get_tree().paused = false
+	AudioStreamPlayer2d.playing = true
+	Global.reset_upgrade_list()
 	if Global.adventureMode:
 		Global.goto_scene("res://Menus/main_menu.tscn")
 		queue_free()

@@ -20,6 +20,7 @@ config/icon="res://Menus/Assets/test_logo_4.png"
 
 Global="*res://global.gd"
 DiscordSDKLoader="*res://addons/discord-sdk-gd/nodes/discord_autoload.gd"
+AudioStreamPlayer2d="*res://Menus/Assets/audio/audio_stream_player_2d.tscn"
 
 [display]
 

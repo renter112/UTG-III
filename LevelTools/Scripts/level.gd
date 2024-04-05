@@ -16,6 +16,7 @@ var g_i = preload("res://Items/gun_upgrade.tscn")
 var s_i = preload("res://Items/speed_upgrade.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	AudioStreamPlayer2d.playing = false
 	if parseXML():
 		Global.attempts_taken += 1
 		Global.shots_taken = 0
