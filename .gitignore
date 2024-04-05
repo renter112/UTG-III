@@ -13,3 +13,4 @@ export_presets.cfg
 .mono/
 data_*/
 mono_crash.*.json
+addons/discord-sdk-gd/bin/windows/~discord_game_sdk_binding_debug.dll
