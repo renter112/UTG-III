@@ -10,10 +10,11 @@ config_version=5
 
 [application]
 
-config/name="UTG - III"
+config/name="UTG - II"
+config/version="2.0.0"
 run/main_scene="res://Menus/main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-boot_splash/show_image=false
+boot_splash/image="res://Menus/Assets/logo_test_5.png"
 config/icon="res://Menus/Assets/test_logo_4.png"
 
 [autoload]
