@@ -130,6 +130,7 @@ theme_override_constants/separation = 60
 layout_mode = 2
 text = "Level_Name"
 horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="AuthorLabel" type="Label" parent="MarginContainer/VBoxContainer2/HBoxContainer2/MarginContainer/VBoxContainer"]
 layout_mode = 2

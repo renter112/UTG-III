@@ -124,14 +124,19 @@ func _on_save_button_pressed():
 func save_xml():
 	var check = DirAccess.open("user://")
 	var seed = ""+str(randi())+""+str(randi())
+	var name = "Unnamed_level"
+	if $TabContainer/Required/NameLineEdit.text != "":
+		name = $TabContainer/Required/NameLineEdit.text
+	var filename = name
 	if not check.dir_exists("levels"):
 		check.make_dir("user://levels")
-	var name1 = $TabContainer/Required/NameLineEdit.text + "_level"
 	var user = "UTG2-Editor"
-	var file = FileAccess.open(str("user://levels/"+name1+".utg2"), FileAccess.WRITE)
+	if FileAccess.file_exists("user://levels/"+name+".utg2"):
+		filename = name + str(seed)
+	var file = FileAccess.open(str("user://levels/"+filename+".utg2"), FileAccess.WRITE)
 	file.store_line("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>")
 	file.store_line("<level>")
-	file.store_line(str("<levelName name=\""+name1+"\"></levelName> "))
+	file.store_line(str("<levelName name=\""+name+"\"></levelName> "))
 	file.store_line(str("<levelSeed seed=\""+ seed+"\"></levelSeed> "))
 	file.store_line(str("<author user=\""+ user+"\"></author> "))
 	file.store_line("<grid x=\""+ str(+baseGrid.x) +"\" y=\""+ str(baseGrid.y) +"\"></seed> ")
@@ -145,7 +150,7 @@ func save_xml():
 		if el.begins_with("<player") or el.begins_with("<tank") or el.begins_with("<turret"):
 			file.store_line(el)
 	file.store_line("</enemies>")
-	cur_level = [str(name1)+".utg2",name1,seed,0]
+	cur_level = [str(filename)+".utg2",name,seed,0]
 	$Label.visible = true
 	$Label.text = "LEVEL SAVED"
 	$Label/Timer.start(2)
