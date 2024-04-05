@@ -7,8 +7,12 @@ var rotation_dir = 0
 var controls_classic = Global.tank_controls_classic
 var mine = preload("res://Items/mine.tscn")
 var mine_amount = 0
+var side_armour = preload("res://Items/side_armour_upgrade.tscn")
 
-
+func _ready():
+	if Global.upgrade_list.get("side_armor") == 1:
+		var s = side_armour.instantiate()
+		add_child(s)
 func get_input():
 	if controls_classic:
 		rotation_dir = Input.get_axis("move_left","move_right")

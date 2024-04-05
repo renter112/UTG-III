@@ -21,6 +21,7 @@ func _on_armour_left_body_entered(body):
 
 func check_alive():
 	if health == 0:
+		Global.upgrade_list["side_armor"] = 0
 		queue_free()
 
 

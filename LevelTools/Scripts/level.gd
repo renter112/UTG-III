@@ -43,7 +43,7 @@ func parseXML():
 	print("level loading is: ",level)
 	if Global.adventureMode :
 		parser.open(str("res://LevelTools/AdventureLevels/",level[0]))
-		$Label.text = "Level "+str(Global.adventure_mode_level_num)+"/10"
+		$Label.text = "Level "+str(Global.adventure_mode_level_num)+"/"+str(Global.adventure_mode_diff_selected[4])
 		$Label.visible = true
 		$Label2.text = "Lives "+str(Global.lives)
 		$Label2.visible = true
@@ -171,8 +171,8 @@ func build_enemies():
 
 var upgrade_loc = Vector2(3,64)
 func set_upgrades():
-	var s = Global.speed_upgrade
-	var g = Global.gun_upgrade
+	var s = Global.upgrade_list.get("speed")
+	var g = Global.upgrade_list.get("gun")
 	if g > 0 :
 		$tank_hull/tank_turret.bullet_delay -= g/10
 		$tank_hull/tank_turret.bullet_speed += s*15
@@ -235,8 +235,11 @@ func finish():
 				print("hard")
 			Global.adventure_mode_level_num += 1
 			print(Global.adventure_mode_level_num)
-			if Global.adventure_mode_level_num >= 10:
+			if Global.adventure_mode_level_num >= Global.adventure_mode_diff_selected[4]:
 				Global.goto_scene("res://Menus/credits.tscn")
+				return
+			if Global.adventure_mode_level_num % Global.adventure_mode_diff_selected[3] == 0:
+				Global.goto_scene("res://LevelTools/upgrade_menu.tscn")
 				return
 			Global.goto_scene("res://LevelTools/level.tscn")
 	else:
