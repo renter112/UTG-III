@@ -14,6 +14,8 @@ func _ready():
 	current_scene = root.get_child(root.get_child_count() - 1)
 	load_save_config()
 	load_levels()
+	#print_level_array()
+	#print(levels_to_print)
 	
 func on_files_dropped(files):
 	move_to_custom(files)
@@ -52,8 +54,14 @@ var page_2 = false
 
 var adventureMode = false
 var adventure_mode_level_num = 0
-# easy % , med %, hard %, item room every X
-var adventure_mode_difficulty = [[80,20,0,3,10],[40,40,20,4,10],[30,40,30,5,15],[25,35,40,6,20],[10,10,80,7,25],[0,0,100,10,50]]
+# beg %, easy % , med %, hard %, item room every X, length
+var adventure_mode_difficulty = [
+	[60,40,00,0,2,10], #bab
+	[35,40,25,0,4,15], #eas
+	[05,25,50,20,5,20], #med
+	[00,10,40,50,6,25], #hard
+	[00,00,30,70,7,30], #ext
+	[00,00,0,100,10,50]] #not in game
 var adventure_mode_diff_selected : Array
 
 var lives = 1
@@ -337,6 +345,13 @@ var t_levels = [
 ["T7.xml","T7","38ounj0t87hker1274k6r3c8035jbech",0],
 ["T8.xml","T8","6mjj5rapb9hvi28sei2rcmr9g4ano4fd",0]
 ]
+
+var b_levels_play
+var e_levels_play
+var m_levels_play
+var h_levels_play
+
+var b_levels = [["b1.utg2", "b1", "to0gclopumfkvgu4gawpjvdr943fj993", 0], ["b2.utg2", "b2", "67am0o4feezo1q2d423igqgaenxlhvpi", 0], ["b3.utg2", "b3", "a6uvosxr41qjp65el6rdd5ozm5kpegz3", 0], ["b4.utg2", "b4", "nxxu5x5cjnvn0h8dkpnpx9k6pciy2z9o", 0], ["b5.utg2", "b5", "k80eetsrscrjxfrgdwc8dujvf4rqftyh", 0], ["b6.utg2", "b6", "j5m4ysct1dyxn706uk65lpmr0f1vt3sh", 0], ["b7.utg2", "b7", "92yqnlkyj7b05k4veskhp1s93ou0riq2", 0], ["b8.utg2", "b8", "fkc16dtgvvne9efchgdy2q22trlj4ydl", 0], ["b9.utg2", "b9", "99q6fupvhogznhtjudo5w5l8d16br8ne", 0], ["b10.utg2", "b10", "xzsp934nkb495epi9yzl80lg6m4po4if", 0], ["b11.utg2", "b11", "fxuqe6ihwchohlqijgwjfhcak2xha0yl", 0], ["b12.utg2", "b12", "vzc67a8ypzhpel0ba7l8sduccfhamctv", 0], ["b13.utg2", "b13", "g0m0kmcgaij5zd038d4pjy9dcdtkvomb", 0], ["b14.utg2", "b14", "eg8nwg6i011w2pspdb95ftxntt57oaxz", 0], ["b15.utg2", "b15", "jlazeziqh6dcqtf2fjjxrlx86s8ufm8k", 0], ["b16.utg2", "b16", "s3it239sa4hpghkbets3psh2p2fbqa46", 0], ["b17.utg2", "b17", "h1kr3kv2o8ked25yczhk2p1ps4ckyznt", 0], ["b18(1).utg2", "b18", "4jh84cd0ii5t0z086ubiec61jh0qg7e0", 0], ["b18.utg2", "b18", "idwgjzczy9zjfxkqudbffo5ea4iyq7n3", 0], ["b19.utg2", "b19", "p4w5bmds2yk2tvkconz0f40t0cj53rqc", 0], ["b20.utg2", "b20", "1yuru7xs7mejc3q3xtcrb1bzv3wynfvx", 0], ["b21.utg2", "b21", "4yyo5fka3muqyx616hlx596okp6sqfaq", 0], ["b22.utg2", "b22", "raix1xoqiv3adotyjm71vfneuolplq8u", 0], ["b23.utg2", "b23", "xcjbbo3s70r39ckg9m0rm846s67tsr85", 0], ["b24.utg2", "b24", "3denx535hk0l2st79u8m79oei8huynhn", 0], ["b25.utg2", "b25", "yw2g73ves6ciz6rkiixqwok9t8fdv1de", 0], ["b26.utg2", "b26", "041o8q2jrdow2yhgyfund4a2ff2khyjz", 0], ["b27.utg2", "b27", "ykwedg46ngtbwr3zdcspluv45w0o948z", 0], ["b28.utg2", "b28", "okxr2t8l7tu0exxuj1mjs8jw3ox5y9oh", 0], ["b29.utg2", "b29", "gzx44mdmkvkr9g5skc67ht4r5ebtz8xi", 0], ["b30.utg2", "b30", "hz3wbju00zkqt0i302834s95pkltluls", 0], ["b31.utg2", "b31", "0wbfxszpq7hksbva6sfw2cims7isphsd", 0], ["b32.utg2", "b32", "me90w3mkzv3j0f2xuavfw594w5pbyhpd", 0], ["b33.utg2", "b33", "u5ligkl48it6osefgt1ag4kjwwohdnvr", 0], ["b34.utg2", "b34", "xb3im8d2zo7qc7duugtwpvu4nv3lmjf3", 0], ["b35.utg2", "b35", "nqgqcumuo3hv0xrxnqewqfbo9fx8qb6n", 0], ["b36.utg2", "b36", "124ws07kextjuymehstn7jkvlqqw7hy3", 0], ["b37(1).utg2", "b37", "rypmy6x62n6f1mze7g0huecm7k9neb6s", 0], ["b37.utg2", "b37", "jz9kmv48uxp5kaloqm2f8y1qhrhypcsb", 0], ["b38.utg2", "b38", "ym0jqvb1hiu5y518o65nbetfzruag9fp", 0], ["b39.utg2", "b39", "v21mci6nxbxqthaz9kekg9efv5ia782d", 0], ["b40.utg2", "b40", "u8slpasg7c4eb9bdkj210j0jv95og9m6", 0], ["b41.utg2", "b41", "j7t22fcsu32u93dyotbi7nxyhd0osgln", 0], ["b42.utg2", "b42", "tzepon05wulcmacyjdpg06h3650pjoob", 0], ["b43.utg2", "b43", "1zevloxfyzykf3mukybhjysqrbjsoa2m", 0], ["b44.utg2", "b44", "cs2sgzg51hu4jgwub9c7su16nll2e15r", 0], ["b45.utg2", "b45", "q78q3392xlnm3vzouejbbn1dr8ezyqyo", 0], ["b46.utg2", "b46", "korkeh2ftofhom7xg4viznl6w5vqi943", 0], ["b47.utg2", "b47", "lyapjyyfhemaod3bmgpd89456kr8tv08", 0], ["b48.utg2", "b48", "0hf4qgh4rvat4bkuetn9d2li8spvltnc", 0], ["b49.utg2", "b49", "53ojsqzzk57kfl1yn29rz8mw14ns9057", 0], ["b50.utg2", "b50", "6eb02ckj7isi5k0ax50se2t7hb0azmg1", 0]]
 
 var e_levels = [
 ["e1.utg2", "e1", "f9mud03zstwztylj8pugibyrs8415hu8", 0], 

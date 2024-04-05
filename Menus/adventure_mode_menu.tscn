@@ -145,7 +145,7 @@ theme_override_constants/margin_bottom = 60
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_ny8py")
 theme_override_font_sizes/font_size = 25
-text = "A fair selection of 15 levels, with evenly placed upgrades"
+text = "A fair selection of 20 levels, with evenly placed upgrades"
 horizontal_alignment = 1
 
 [node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer"]

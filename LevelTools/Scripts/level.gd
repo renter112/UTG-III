@@ -44,7 +44,7 @@ func parseXML():
 	print("level loading is: ",level)
 	if Global.adventureMode :
 		parser.open(str("res://LevelTools/AdventureLevels/",level[0]))
-		$Label.text = "Level "+str(Global.adventure_mode_level_num)+"/"+str(Global.adventure_mode_diff_selected[4])
+		$Label.text = "Level "+str(Global.adventure_mode_level_num)+"/"+str(Global.adventure_mode_diff_selected[5])
 		$Label.visible = true
 		$Label2.text = "Lives "+str(Global.lives)
 		$Label2.visible = true
@@ -227,19 +227,25 @@ func finish():
 			var rng = RandomNumberGenerator.new()
 			var a = rng.randi_range(0, 100)
 			if Global.adventure_mode_diff_selected[0] > a and a > 0 :
-				Global.current_level = Global.e_levels.pick_random()
+				Global.current_level = Global.b_levels_play.pick_random()
+				Global.b_levels_play.erase(Global.current_level)
 			elif Global.adventure_mode_diff_selected[0]+Global.adventure_mode_diff_selected[1] > a :
-				Global.current_level = Global.m_levels.pick_random()
+				Global.current_level = Global.e_levels_play.pick_random()
+				Global.e_levels_play.erase(Global.current_level)
+			elif Global.adventure_mode_diff_selected[0]+Global.adventure_mode_diff_selected[1]+Global.adventure_mode_diff_selected[2] > a :
+				Global.current_level = Global.m_levels_play.pick_random()	
+				Global.m_levels_play.erase(Global.current_level)
 				print("med")
 			else :
-				Global.current_level = Global.h_levels.pick_random()
+				Global.current_level = Global.h_levels_play.pick_random()
+				Global.h_levels_play.erase(Global.current_level)
 				print("hard")
 			Global.adventure_mode_level_num += 1
 			print(Global.adventure_mode_level_num)
-			if Global.adventure_mode_level_num >= Global.adventure_mode_diff_selected[4]:
+			if Global.adventure_mode_level_num >= Global.adventure_mode_diff_selected[5]:
 				Global.goto_scene("res://Menus/credits.tscn")
 				return
-			if Global.adventure_mode_level_num % Global.adventure_mode_diff_selected[3] == 0:
+			if Global.adventure_mode_level_num % Global.adventure_mode_diff_selected[4] == 0:
 				Global.goto_scene("res://LevelTools/upgrade_menu.tscn")
 				return
 			Global.goto_scene("res://LevelTools/level.tscn")
