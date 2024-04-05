@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cce35jm44ajb4"]
+[gd_scene load_steps=7 format=3 uid="uid://cce35jm44ajb4"]
 
 [ext_resource type="Theme" uid="uid://dpy8lokjdhd4m" path="res://Menus/Assets/menuTheme.tres" id="1_fi6f0"]
 [ext_resource type="Script" path="res://Menus/Scripts/level_selector_menu_menu.gd" id="2_4456o"]
 [ext_resource type="Theme" uid="uid://ctl7ud287nf8v" path="res://Menus/Assets/new_theme_2.tres" id="3_6dn3u"]
 [ext_resource type="Theme" uid="uid://tjw11djg71fg" path="res://Menus/Assets/custom_menu_theme.tres" id="3_7gl4s"]
+[ext_resource type="Shortcut" uid="uid://ds21gfbs85jjs" path="res://Menus/Assets/esc_shortcut.tres" id="4_47ee5"]
 [ext_resource type="Texture2D" uid="uid://brdig5meii7vn" path="res://Menus/Assets/custom_background.png" id="4_pmwsl"]
 
 [node name="LevelSelectorMenuMenu" type="Control"]
@@ -50,6 +51,7 @@ custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
 theme = ExtResource("3_6dn3u")
 theme_override_font_sizes/font_size = 65
+shortcut = ExtResource("4_47ee5")
 text = "<<"
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]

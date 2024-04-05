@@ -1,11 +1,11 @@
 extends Control
 
 const info_text = [
-"Easier levels, plenty of upgrades"
-,"Less challenging levels, more upgrades"
-,"A fair selection of levels, with evenly placed upgrades"
-,"Harder levels, less upgrades"
-,"The toughest levels, fewest upgrades"]
+"10 easy levels, plenty of upgrades"
+,"10 less challenging levels, more upgrades"
+,"A fair selection of 15 levels, with evenly placed upgrades"
+,"Harder levels, less upgrades, 20 of them"
+,"25 of the toughest levels, fewest upgrades"]
 var val = 2
 
 func _ready():

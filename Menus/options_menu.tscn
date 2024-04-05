@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://jcox4gu3vgc7"]
+[gd_scene load_steps=6 format=3 uid="uid://jcox4gu3vgc7"]
 
 [ext_resource type="FontFile" uid="uid://n7lo661wrh6j" path="res://Menus/Assets/PixCon.ttf" id="1_0ewri"]
 [ext_resource type="Script" path="res://Menus/Scripts/options_menu.gd" id="1_r7rsf"]
 [ext_resource type="Theme" uid="uid://ctl7ud287nf8v" path="res://Menus/Assets/new_theme_2.tres" id="2_wl5ri"]
 [ext_resource type="Theme" uid="uid://dpy8lokjdhd4m" path="res://Menus/Assets/menuTheme.tres" id="4_4fas8"]
+[ext_resource type="Shortcut" uid="uid://ds21gfbs85jjs" path="res://Menus/Assets/esc_shortcut.tres" id="5_w4oxc"]
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -225,6 +226,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("2_wl5ri")
+shortcut = ExtResource("5_w4oxc")
 text = "back"
 
 [connection signal="drag_ended" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/MusicHSlider" to="." method="_on_music_h_slider_drag_ended"]

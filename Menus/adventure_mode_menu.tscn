@@ -1,12 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4y0hby12frp"]
+[gd_scene load_steps=11 format=3 uid="uid://c4y0hby12frp"]
 
 [ext_resource type="Theme" uid="uid://tjw11djg71fg" path="res://Menus/Assets/custom_menu_theme.tres" id="1_3g5s3"]
 [ext_resource type="Script" path="res://Menus/Scripts/adventure_mode_menu.gd" id="1_o4pn8"]
 [ext_resource type="FontFile" uid="uid://n7lo661wrh6j" path="res://Menus/Assets/PixCon.ttf" id="3_ny8py"]
 [ext_resource type="Theme" uid="uid://ctl7ud287nf8v" path="res://Menus/Assets/new_theme_2.tres" id="3_q12hv"]
 [ext_resource type="Texture2D" uid="uid://bcc8pp3fyixh6" path="res://Menus/Assets/selector_normal.png" id="4_6wx2s"]
+[ext_resource type="Shortcut" uid="uid://ds21gfbs85jjs" path="res://Menus/Assets/esc_shortcut.tres" id="4_x7jjv"]
 [ext_resource type="StyleBox" uid="uid://dse1i5oeiktwc" path="res://Menus/Assets/title_design.tres" id="5_1s2we"]
 [ext_resource type="Texture2D" uid="uid://clh7w0svax5yv" path="res://Menus/Assets/selector_highlight.png" id="5_qmvdw"]
+[ext_resource type="Shortcut" uid="uid://d05da2dxln7mm" path="res://Menus/Assets/enter_shortcut.tres" id="9_jhuri"]
 
 [sub_resource type="Theme" id="Theme_2rb81"]
 Label/font_sizes/font_size = 20
@@ -56,6 +58,7 @@ custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
 theme = ExtResource("3_q12hv")
 theme_override_font_sizes/font_size = 65
+shortcut = ExtResource("4_x7jjv")
 text = "<<"
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
@@ -80,7 +83,8 @@ theme_override_constants/margin_bottom = 50
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_ny8py")
 theme_override_font_sizes/font_size = 25
-text = "20 levels in one run, upgrades throughout, good luck"
+text = "A collection of levels with no breaks
+ upgrades throughout, good luck"
 horizontal_alignment = 1
 
 [node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
@@ -140,7 +144,7 @@ theme_override_constants/margin_bottom = 60
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_ny8py")
 theme_override_font_sizes/font_size = 25
-text = "A fair selection of levels, with evenly placed upgrades"
+text = "A fair selection of 15 levels, with evenly placed upgrades"
 horizontal_alignment = 1
 
 [node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer"]
@@ -149,6 +153,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("3_q12hv")
 theme_override_font_sizes/font_size = 50
+shortcut = ExtResource("9_jhuri")
 text = "Play"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
