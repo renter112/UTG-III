@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<level version="2">
+<levelName name="b5"></levelName>
+<levelSeed seed="k80eetsrscrjxfrgdwc8dujvf4rqftyh"></levelSeed>
+<grid x="20" y="11"></grid>
+<author user=" utg-2 "></author >
+	<objects>
+		<coord x="14" y="5" type="finish"></coord>
+	</objects>
+	<enemies>
+		<player x="3" y="5" dir="r" type="p1"></player>
+		<turret x="9" y="5" type="red"></turret>
+	</enemies>
+</level>

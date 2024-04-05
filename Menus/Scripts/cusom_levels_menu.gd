@@ -19,6 +19,13 @@ func _process(_delta):
 	pass
 
 func create_buttons():
+	if Global.custom_levels.is_empty():
+		$MarginContainer/VBoxContainer2/HBoxContainer2/MarginContainer/VBoxContainer.visible = false
+		$MarginContainer/VBoxContainer2/HBoxContainer2/MarginContainer2/ScrollContainer/VBoxContainer/Label.visible = true
+		return
+	$MarginContainer/VBoxContainer2/HBoxContainer2/MarginContainer/VBoxContainer.visible = true
+	$MarginContainer/VBoxContainer2/HBoxContainer2/MarginContainer2/ScrollContainer/VBoxContainer/Label.visible = false
+	
 	for level in Global.custom_levels:
 		var level_button = preload("res://Menus/Assets/custom_level_button.tscn").instantiate()
 		level_button.level_to_load = level
@@ -30,7 +37,8 @@ func create_buttons():
 func clear_buttons():
 	var bs = $MarginContainer/VBoxContainer2/HBoxContainer2/MarginContainer2/ScrollContainer/VBoxContainer.get_children()
 	for b in bs:
-		b.queue_free()
+		if b is Button:
+			b.queue_free()
 
 
 func _on_button_pressed():
@@ -75,6 +83,7 @@ func _on_delete_button_pressed():
 	Global.custom_levels = []
 	clear_buttons()
 	Global.load_custom_levels()
+
 	create_buttons()
 	pick_random()
 	pass # Replace with function body.
