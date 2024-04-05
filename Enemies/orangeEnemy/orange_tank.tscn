@@ -74,4 +74,3 @@ position = Vector2(47, 28)
 path_postprocessing = 1
 avoidance_enabled = true
 radius = 32.0
-debug_enabled = true

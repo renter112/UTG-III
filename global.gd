@@ -48,6 +48,7 @@ var sounds_v = 0
 var fullScreen = false
 var inGame = false
 var camera_zoom = Vector2(1,1)
+var page_2 = false
 
 var adventureMode = false
 var adventure_mode_level_num = 0

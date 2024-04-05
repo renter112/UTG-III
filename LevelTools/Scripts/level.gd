@@ -90,11 +90,11 @@ func parseXML():
 					return false
 				if att_dict.has("dir"):
 					if att_dict["dir"] == "u":
-						$tank_hull.rotation = -90
+						$tank_hull.rotation = deg_to_rad(270)
 					elif att_dict["dir"] == "d":
-						$tank_hull.rotation = 90
+						$tank_hull.rotation = deg_to_rad(90)
 					elif att_dict["dir"] == "l":
-						$tank_hull.rotation = 180
+						$tank_hull.rotation = deg_to_rad(180)
 			elif node_name == "turret":
 				if att_dict.has("type") && att_dict.has("y") && att_dict.has("x"):
 					enemyDetails.push_back( [att_dict["type"],att_dict["x"] as float, att_dict["y"] as float, 1] )

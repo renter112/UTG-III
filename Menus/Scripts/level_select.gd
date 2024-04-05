@@ -9,7 +9,10 @@ func _ready():
 	Global.time_taken = 0
 
 	if Global.played_game_before:
-		create_buttons(1,25)
+		if Global.page_2:
+			create_buttons(25,49)
+		else:
+			create_buttons(1,25)
 	else:
 		create_buttons(1,9)
 	Global.played_game_before = true
@@ -49,6 +52,10 @@ func _on_forward_button_pressed():
 	pass # Replace with function body.
 
 func create_buttons(start,end):
+	if start == 25:
+		Global.page_2 = true
+	else:
+		Global.page_2 = false
 	for n in range(start,end):
 		var b = button.instantiate()
 		if end == 9:
