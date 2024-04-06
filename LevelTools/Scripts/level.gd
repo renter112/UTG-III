@@ -28,8 +28,6 @@ func _ready():
 		build_enemies()
 		set_upgrades()
 		Global.enemies = enemies
-		DiscordSDK.state = "Playing Level " + Global.current_level[1]
-		DiscordSDK.refresh() 
 	else:
 		Global.level_err = true
 		Global.goto_scene("res://Menus/main_menu.tscn")
@@ -212,8 +210,6 @@ func _on_tank_hull_level_finish():
 	pass # Replace with function body.
 	
 func finish():
-	DiscordSDK.state = "Idle"
-	DiscordSDK.refresh() 
 	if Global.adventureMode:
 		if not Global.level_success :
 			print(Global.lives)

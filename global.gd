@@ -4,12 +4,6 @@ var current_scene = null
 
 func _ready():
 	get_viewport().files_dropped.connect(on_files_dropped)
-	DiscordSDK.app_id = 1221336911730311238
-	print("Discord working: " + str(DiscordSDK.get_is_discord_working()))
-	DiscordSDK.state = "Idle"
-	DiscordSDK.large_image = "old-icon"
-	DiscordSDK.start_timestamp = int(Time.get_unix_time_from_system())
-	DiscordSDK.refresh() 
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)
 	load_save_config()

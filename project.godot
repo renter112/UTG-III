@@ -20,7 +20,6 @@ config/icon="res://Menus/Assets/test_logo_4.png"
 [autoload]
 
 Global="*res://global.gd"
-DiscordSDKLoader="*res://addons/discord-sdk-gd/nodes/discord_autoload.gd"
 AudioStreamPlayer2d="*res://Menus/Assets/audio/audio_stream_player_2d.tscn"
 
 [display]
@@ -35,7 +34,7 @@ project/assembly_name="UTG - III"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/discord-sdk-gd/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 
