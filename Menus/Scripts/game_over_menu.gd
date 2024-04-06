@@ -20,12 +20,12 @@ func _ready():
 			print("next level is: ",level_b)
 		elif Global.levels.has(Global.current_level):
 			print("save level??")
+			Global.levels[Global.levels.find(Global.current_level)][3] = 1
+			Global.save_levels()
 			if Global.levels.back()[2] == Global.current_level[2]:
 				Global.goto_scene("res://Menus/credits.tscn")
 				return
 			level_b = Global.levels[Global.levels.find(Global.current_level) +1]
-			Global.levels[Global.levels.find(Global.current_level)][3] = 1
-			Global.save_levels()
 
 		$MarginContainer/VBoxContainer/Label.text = "SUCCESS"
 		$MarginContainer/TextureRect.texture = preload("res://Menus/Assets/result_success.png")
@@ -69,18 +69,10 @@ func _on_quit_button_pressed():
 
 
 func _on_next_button_pressed():
-	if Global.adventureMode:
-		# ADVENTURE MODE IS TRUE
-		if str(Global.get_level()).begins_with("e"):
-			Global.set_level("m" + str(randi_range(1, 3)))
-		elif str(Global.get_level()).begins_with("m"):
-			Global.set_level("h" + str(randi_range(1, 3)))
-		Global.goto_scene("res://LevelTools/level.tscn")
-	else:
-		# ADVENTURE MODE IS FALSE
-		Global.attempts_taken = 0
-		#Global.level = int(Global.level.get_basename()) +1 )+".xml"
-		Global.current_level = level_b
-		Global.goto_scene("res://LevelTools/level.tscn")
-	
+	# ADVENTURE MODE IS FALSE
+	Global.attempts_taken = 0
+	#Global.level = int(Global.level.get_basename()) +1 )+".xml"
+	Global.current_level = level_b
+	Global.goto_scene("res://LevelTools/level.tscn")
+
 	pass # Replace with function body.
