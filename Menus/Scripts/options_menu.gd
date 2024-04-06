@@ -8,8 +8,6 @@ func _ready():
 	else:
 		$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/ControlsButton.text = "MODERN"
 
-	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/MusicButton.set_pressed_no_signal(!Global.music)
-	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2/SoundsButton.set_pressed_no_signal(!Global.sounds)
 	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4/OsakaButton.set_pressed_no_signal(!Global.osaka_mode_on)
 	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4/FullScreenButton.set_pressed_no_signal(!Global.fullScreen)
 	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/MusicHSlider.value = db_to_linear(Global.music_v)
@@ -38,24 +36,6 @@ func _on_control_button_pressed():
 		Global.tank_controls_classic = true
 	pass # Replace with function body.
 
-func _on_music_button_toggled(toggled_on):
-	if not toggled_on:
-		Global.music = true
-	else :
-		Global.music = false
-	Global.update_settings()
-	update_back_button()
-	pass # Replace with function body.
-
-
-func _on_sounds_button_toggled(toggled_on):
-	if not toggled_on:
-		Global.sounds = true
-	else :
-		Global.sounds = false
-	Global.update_settings()
-	update_back_button()
-	pass # Replace with function body.
 
 
 func _on_full_screen_button_toggled(toggled_on):
@@ -91,27 +71,16 @@ func _on_reset_button_pressed():
 
 
 func _on_h_slider_value_changed(value):
-	if value == 0:
-		if not Global.music:
-			Global.music = true
-		else :
-			Global.music = false
-		Global.update_settings()
 	Global.music_v = linear_to_db(value)
 
-
 func _on_music_h_slider_drag_ended(value_changed):
+	Global.update_settings()
 	update_back_button()
 
 func _on_sfxh_slider_drag_ended(value_changed):
+	Global.update_settings()
 	update_back_button()
 
 
 func _on_sfxh_slider_value_changed(value):
-	if value == 0:
-		if not Global.sounds:
-			Global.sounds = true
-		else :
-			Global.sounds = false
-		Global.update_settings()
 	Global.sounds_v = linear_to_db(value)

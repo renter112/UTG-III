@@ -13,6 +13,7 @@ func _ready():
 	if Global.upgrade_list.get("side_armor") == 1:
 		var s = side_armour.instantiate()
 		add_child(s)
+		move_child(s,2)
 func get_input():
 	if controls_classic:
 		rotation_dir = Input.get_axis("move_left","move_right")

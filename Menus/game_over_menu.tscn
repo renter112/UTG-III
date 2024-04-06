@@ -55,7 +55,7 @@ theme_override_constants/separation = 50
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_yn4k4")
-theme_override_colors/font_color = Color(0, 0.411765, 0, 1)
+theme_override_colors/font_color = Color(0.145098, 0.419608, 0.254902, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 6
 theme_override_constants/shadow_offset_y = 6

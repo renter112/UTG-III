@@ -9,7 +9,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$RichTextLabel.position.y -= 0.5
+	$RichTextLabel.position.y -= 1
 	if $RichTextLabel.position.y <= -8700 :
 		AudioStreamPlayer2d.playing = true
 		Global.goto_scene("res://Menus/main_menu.tscn")

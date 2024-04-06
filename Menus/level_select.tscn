@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://blvx75g1xfqcb"]
+[gd_scene load_steps=8 format=3 uid="uid://blvx75g1xfqcb"]
 
 [ext_resource type="Theme" uid="uid://dnii5kb4mtk7p" path="res://Menus/Assets/levelSelectButtons.tres" id="1_aldb7"]
 [ext_resource type="Script" path="res://Menus/Scripts/level_select.gd" id="1_t4i6d"]
@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://tjw11djg71fg" path="res://Menus/Assets/custom_menu_theme.tres" id="3_8jfrc"]
 [ext_resource type="Theme" uid="uid://ctl7ud287nf8v" path="res://Menus/Assets/new_theme_2.tres" id="4_uoy7c"]
 [ext_resource type="Shortcut" uid="uid://ds21gfbs85jjs" path="res://Menus/Assets/esc_shortcut.tres" id="5_y4u1y"]
+[ext_resource type="Theme" uid="uid://bac8sgdadgnsw" path="res://Menus/Assets/title.tres" id="6_eqn4r"]
 
 [node name="level_select" type="Control"]
 layout_mode = 3
@@ -62,6 +63,7 @@ theme_override_constants/margin_right = 130
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("6_eqn4r")
 bbcode_enabled = true
 text = "[center]Level Select"
 fit_content = true

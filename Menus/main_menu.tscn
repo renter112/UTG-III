@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://donjb1ch00a52"]
+[gd_scene load_steps=9 format=3 uid="uid://donjb1ch00a52"]
 
 [ext_resource type="Theme" uid="uid://dpy8lokjdhd4m" path="res://Menus/Assets/menuTheme.tres" id="1_vmiof"]
 [ext_resource type="Script" path="res://Menus/Scripts/main_menu.gd" id="2_fvmtf"]
-[ext_resource type="Theme" uid="uid://dnii5kb4mtk7p" path="res://Menus/Assets/levelSelectButtons.tres" id="2_n15jf"]
+[ext_resource type="Theme" uid="uid://bac8sgdadgnsw" path="res://Menus/Assets/title.tres" id="3_th7w3"]
 [ext_resource type="Texture2D" uid="uid://cbouloeico07p" path="res://Menus/Assets/mainMenuScreenShot-1.png" id="4_6f1k0"]
 [ext_resource type="Theme" uid="uid://ctl7ud287nf8v" path="res://Menus/Assets/new_theme_2.tres" id="4_7y3y1"]
 [ext_resource type="Shortcut" uid="uid://d05da2dxln7mm" path="res://Menus/Assets/enter_shortcut.tres" id="5_2s0e3"]
 [ext_resource type="Shortcut" uid="uid://ds21gfbs85jjs" path="res://Menus/Assets/esc_shortcut.tres" id="6_fyd12"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g1awk"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -58,7 +60,9 @@ theme_override_constants/separation = 69
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_n15jf")
+theme = ExtResource("3_th7w3")
+theme_override_font_sizes/normal_font_size = 85
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g1awk")
 bbcode_enabled = true
 text = "[center]UTG-II"
 fit_content = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4y0hby12frp"]
+[gd_scene load_steps=12 format=3 uid="uid://c4y0hby12frp"]
 
 [ext_resource type="Theme" uid="uid://tjw11djg71fg" path="res://Menus/Assets/custom_menu_theme.tres" id="1_3g5s3"]
 [ext_resource type="Script" path="res://Menus/Scripts/adventure_mode_menu.gd" id="1_o4pn8"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bcc8pp3fyixh6" path="res://Menus/Assets/selector_normal.png" id="4_6wx2s"]
 [ext_resource type="Shortcut" uid="uid://ds21gfbs85jjs" path="res://Menus/Assets/esc_shortcut.tres" id="4_x7jjv"]
 [ext_resource type="StyleBox" uid="uid://dse1i5oeiktwc" path="res://Menus/Assets/title_design.tres" id="5_1s2we"]
+[ext_resource type="Theme" uid="uid://bac8sgdadgnsw" path="res://Menus/Assets/title.tres" id="5_7epd2"]
 [ext_resource type="Texture2D" uid="uid://clh7w0svax5yv" path="res://Menus/Assets/selector_highlight.png" id="5_qmvdw"]
 [ext_resource type="Shortcut" uid="uid://d05da2dxln7mm" path="res://Menus/Assets/enter_shortcut.tres" id="9_jhuri"]
 
@@ -70,6 +71,7 @@ theme_override_constants/margin_right = 130
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("5_7epd2")
 bbcode_enabled = true
 text = "[center]Adventure mode"
 fit_content = true

@@ -37,10 +37,8 @@ var level_err = false
 var notif_message = false
 var played_game_before = false
 var osaka_mode_on = false
-var music = true
-var music_v = 0
-var sounds = true
-var sounds_v = 0
+var music_v = 1.0
+var sounds_v = 1.0
 var fullScreen = false
 var inGame = false
 var camera_zoom = Vector2(1,1)
@@ -59,16 +57,14 @@ var adventure_mode_difficulty = [
 var adventure_mode_diff_selected : Array
 
 var lives = 1
-var upgrade_list = {"gun":0,"speed":0,"side_armor":0}
+var upgrade_list = {"gun":0.0,"speed":0.0,"side_armor":0}
 func reset_upgrade_list():
-	upgrade_list = {"gun":0,"speed":0,"side_armor":0}
+	upgrade_list = {"gun":0.0,"speed":0.0,"side_armor":0}
 
 
 func save_config():
 	var config = ConfigFile.new()
-	config.set_value("Options","music",music )
 	config.set_value("Options","music_v",music_v)
-	config.set_value("Options","sounds",sounds)
 	config.set_value("Options","sounds_v",sounds_v)
 	config.set_value("Options","osaka",osaka_mode_on)
 	config.set_value("Options","fullScreen",fullScreen)
@@ -81,21 +77,17 @@ func load_save_config():
 	if err != OK:
 		return
 	for opt in config.get_sections():
-		music = config.get_value(opt, "music", true)
-		music_v = config.get_value(opt, "music_v", 0)
-		sounds = config.get_value(opt, "sounds", true)
-		sounds_v = config.get_value(opt, "sounds_v", 0)
+		music_v = config.get_value(opt, "music_v", 1.0)
+		sounds_v = config.get_value(opt, "sounds_v", 1.0)
 		osaka_mode_on = config.get_value(opt, "osaka", false)
 		played_game_before = config.get_value(opt,"played_before", false)
 		fullScreen = config.get_value(opt, "fullScreen", false)
 	update_settings()
 
 func update_settings():
-	print("sounds true?: ",sounds)
-	print("music true?: ",music)
+	print("sounds volume?: ",sounds_v)
+	print("music voume?: ",music_v)
 	print("full? ",fullScreen)
-	AudioServer.set_bus_mute(2,not sounds)
-	AudioServer.set_bus_mute(1,not music)
 	AudioServer.set_bus_volume_db(1,music_v)
 	AudioServer.set_bus_volume_db(2,sounds_v)
 	if fullScreen:

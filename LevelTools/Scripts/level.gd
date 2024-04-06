@@ -173,8 +173,8 @@ func set_upgrades():
 	var s = Global.upgrade_list.get("speed")
 	var g = Global.upgrade_list.get("gun")
 	if g > 0 :
-		$tank_hull/tank_turret.bullet_delay -= g/10
-		$tank_hull/tank_turret.bullet_speed += s*15
+		$tank_hull/tank_turret.bullet_delay -= g/15
+		$tank_hull/tank_turret.bullet_speed += g*20
 		var g_l = g_i.instantiate()
 		g_l.position = upgrade_loc
 		add_child(g_l)

@@ -30,9 +30,6 @@ func _on_body_entered(body):
 	elif body.get_node_or_null("turret"):
 		body.queue_free()
 		Global.enemies -= 1
-	elif body.get_node_or_null("tank"):
-		body.queue_free()
-		Global.enemies -=1
 
 	queue_free()
 	pass # Replace with function body.

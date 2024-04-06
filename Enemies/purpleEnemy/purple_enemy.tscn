@@ -26,3 +26,5 @@ offset = Vector2(14, 0)
 
 [node name="Marker2D" type="Marker2D" parent="turret"]
 position = Vector2(51, 0)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

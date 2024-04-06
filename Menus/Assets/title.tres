@@ -1,0 +1,14 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bac8sgdadgnsw"]
+
+[ext_resource type="FontFile" uid="uid://n7lo661wrh6j" path="res://Menus/Assets/PixCon.ttf" id="1_llmjh"]
+[ext_resource type="StyleBox" uid="uid://dse1i5oeiktwc" path="res://Menus/Assets/title_design.tres" id="2_1v85t"]
+
+[resource]
+RichTextLabel/colors/default_color = Color(0.145098, 0.419608, 0.254902, 1)
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 1)
+RichTextLabel/constants/shadow_offset_x = 6
+RichTextLabel/constants/shadow_offset_y = 6
+RichTextLabel/font_sizes/normal_font_size = 60
+RichTextLabel/fonts/normal_font = ExtResource("1_llmjh")
+RichTextLabel/styles/normal = ExtResource("2_1v85t")

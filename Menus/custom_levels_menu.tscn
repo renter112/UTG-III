@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b05h834h36pfs"]
+[gd_scene load_steps=11 format=3 uid="uid://b05h834h36pfs"]
 
 [ext_resource type="Script" path="res://Menus/Scripts/cusom_levels_menu.gd" id="1_1yvtt"]
 [ext_resource type="Theme" uid="uid://tjw11djg71fg" path="res://Menus/Assets/custom_menu_theme.tres" id="1_e4gyx"]
 [ext_resource type="Shortcut" uid="uid://ds21gfbs85jjs" path="res://Menus/Assets/esc_shortcut.tres" id="4_dik56"]
 [ext_resource type="Theme" uid="uid://ctl7ud287nf8v" path="res://Menus/Assets/new_theme_2.tres" id="5_fwh2u"]
+[ext_resource type="Theme" uid="uid://bac8sgdadgnsw" path="res://Menus/Assets/title.tres" id="5_i3esi"]
 [ext_resource type="Texture2D" uid="uid://brdig5meii7vn" path="res://Menus/Assets/custom_background.png" id="5_k018e"]
 [ext_resource type="Shortcut" uid="uid://d05da2dxln7mm" path="res://Menus/Assets/enter_shortcut.tres" id="6_1dl4e"]
 [ext_resource type="StyleBox" uid="uid://dj6jb72kqpblx" path="res://Menus/Assets/delete_button_style_box.tres" id="6_7osra"]
@@ -70,6 +71,7 @@ theme_override_constants/margin_right = 130
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer2/HBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("5_i3esi")
 bbcode_enabled = true
 text = "[center]Custom Levels"
 fit_content = true

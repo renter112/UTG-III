@@ -66,7 +66,6 @@ func create_buttons(start,end):
 			if Global.levels.size()+1 <= n:
 				b.level_to_load = []
 			else:
-				print(Global.levels[n-1])
 				b.level_to_load = Global.levels[n -1]
 		$MarginContainer/VBoxContainer/CenterContainer/HBoxContainer/MarginContainer/CenterContainer/GridContainer.add_child(b)
 		
