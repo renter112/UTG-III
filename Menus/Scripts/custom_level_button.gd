@@ -3,7 +3,6 @@ extends Button
 var level_to_load = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(level_to_load)
 	if not level_to_load[3].is_empty():
 		add_theme_color_override("font_color",Color(0,1,0))
 	pass # Replace with function body.
@@ -15,6 +14,7 @@ func _ready():
 
 
 func _on_pressed():
+	print("pressed"+str(level_to_load))
 	Global.current_level = level_to_load
 	name_label.text = level_to_load[1]
 	author_label.text = level_to_load[4]
