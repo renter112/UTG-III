@@ -2,16 +2,11 @@ extends Control
 
 func _ready():
 	Global.inGame = false
-	
-	if(Global.tank_controls_classic):
-		$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/ControlsButton.text = "CLASSIC"
-	else:
-		$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/ControlsButton.text = "MODERN"
 
-	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4/OsakaButton.set_pressed_no_signal(!Global.osaka_mode_on)
-	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4/FullScreenButton.set_pressed_no_signal(!Global.fullScreen)
-	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/MusicHSlider.value = db_to_linear(Global.music_v)
-	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2/SFXHSlider.value = db_to_linear(Global.sounds_v)
+	$MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4/OsakaButton.set_pressed_no_signal(!Global.osaka_mode_on)
+	$MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4/FullScreenButton.set_pressed_no_signal(!Global.fullScreen)
+	$MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/MusicHSlider.value = db_to_linear(Global.music_v)
+	$MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2/SFXHSlider.value = db_to_linear(Global.sounds_v)
 	
 func _on_back_button_pressed():
 	if need_saved:
@@ -27,14 +22,7 @@ func _on_osaka_button_toggled(toggled_on):
 	update_back_button()
 	pass # Replace with function body.
 
-func _on_control_button_pressed():
-	if($MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/ControlsButton.text == "CLASSIC"):
-		$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/ControlsButton.text = "MODERN"
-		Global.tank_controls_classic = false
-	else:
-		$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/ControlsButton.text = "CLASSIC"
-		Global.tank_controls_classic = true
-	pass # Replace with function body.
+
 
 
 
@@ -54,8 +42,8 @@ func _on_credits_button_pressed():
 
 var need_saved = false
 func update_back_button():
-	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer2/BackButton.text = "Save"
-	$MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer2/BackButton.add_theme_color_override("font_color",Color(0,.7,0))
+	$MarginContainer/MarginContainer/VBoxContainer/MarginContainer2/BackButton.text = "Save"
+	$MarginContainer/MarginContainer/VBoxContainer/MarginContainer2/BackButton.add_theme_color_override("font_color",Color(0,.7,0))
 	need_saved = true
 
 

@@ -137,14 +137,6 @@ layout_mode = 2
 theme = ExtResource("4_4fas8")
 text = "    Controls:   "
 
-[node name="ControlsButton" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(300, 80)
-layout_mode = 2
-size_flags_horizontal = 5
-size_flags_vertical = 5
-theme = ExtResource("2_wl5ri")
-text = "Classic"
-
 [node name="ControlsViewButton" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(300, 80)
 layout_mode = 2
@@ -211,7 +203,6 @@ text = "back"
 [connection signal="value_changed" from="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/MusicHSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="drag_ended" from="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2/SFXHSlider" to="." method="_on_sfxh_slider_drag_ended"]
 [connection signal="value_changed" from="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2/SFXHSlider" to="." method="_on_sfxh_slider_value_changed"]
-[connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/ControlsButton" to="." method="_on_control_button_pressed"]
 [connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/ControlsViewButton" to="." method="_on_controls_view_button_pressed"]
 [connection signal="toggled" from="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4/OsakaButton" to="." method="_on_osaka_button_toggled"]
 [connection signal="toggled" from="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4/FullScreenButton" to="." method="_on_full_screen_button_toggled"]
