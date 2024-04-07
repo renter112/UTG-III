@@ -1,12 +1,13 @@
 extends Control
 
+@onready var skin_label = get_node("MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4/SkinLabel")
+
 func _ready():
 	Global.inGame = false
-
-	$MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4/OsakaButton.set_pressed_no_signal(!Global.osaka_mode_on)
-	$MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4/FullScreenButton.set_pressed_no_signal(!Global.fullScreen)
+	$MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer5/FullScreenButton.set_pressed_no_signal(!Global.fullScreen)
 	$MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/MusicHSlider.value = db_to_linear(Global.music_v)
 	$MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2/SFXHSlider.value = db_to_linear(Global.sounds_v)
+	update_skin_label()
 	
 func _on_back_button_pressed():
 	if need_saved:
@@ -14,15 +15,24 @@ func _on_back_button_pressed():
 	Global.goto_scene("res://Menus/main_menu.tscn")
 	pass # Replace with function body.
 
-func _on_osaka_button_toggled(toggled_on):
-	if not toggled_on :
-		Global.osaka_mode_on = true
-	else :
-		Global.osaka_mode_on = false
+func _on_osaka_button():
+	Global.tile_set_sel += 1
+	if Global.tile_set_sel == 4:
+		Global.tile_set_sel = 0
+	update_skin_label()
 	update_back_button()
 	pass # Replace with function body.
 
-
+func update_skin_label():
+	match Global.tile_set_sel:
+		0:
+			skin_label.text = "Toy Box"
+		1:
+			skin_label.text = "Special"
+		2:
+			skin_label.text = "Default"
+		3:
+			skin_label.text = "Icy"
 
 
 

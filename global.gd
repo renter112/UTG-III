@@ -37,6 +37,7 @@ var level_err = false
 var notif_message = false
 var played_game_before = false
 var osaka_mode_on = false
+var tile_set_sel = 2
 var music_v = 1.0
 var sounds_v = 1.0
 var fullScreen = false
@@ -69,6 +70,7 @@ func save_config():
 	config.set_value("Options","osaka",osaka_mode_on)
 	config.set_value("Options","fullScreen",fullScreen)
 	config.set_value("Options","played_before",played_game_before)
+	config.set_value("Options","tile_select",tile_set_sel)
 	config.save("user://opt.cfg")
 
 func load_save_config():
@@ -82,6 +84,7 @@ func load_save_config():
 		osaka_mode_on = config.get_value(opt, "osaka", false)
 		played_game_before = config.get_value(opt,"played_before", false)
 		fullScreen = config.get_value(opt, "fullScreen", false)
+		tile_set_sel = config.get_value(opt,"tile_select",2)
 	update_settings()
 
 func update_settings():

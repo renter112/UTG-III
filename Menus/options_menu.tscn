@@ -86,7 +86,7 @@ theme = ExtResource("2_wl5ri")
 custom_minimum_size = Vector2(1200, 0)
 layout_mode = 2
 theme = ExtResource("2_wl5ri")
-theme_override_constants/separation = 20
+theme_override_constants/separation = 25
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -148,7 +148,16 @@ text = "Mapping"
 [node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 11
-alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme = ExtResource("4_4fas8")
+text = "Selected Skin: "
+
+[node name="SkinLabel" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme = ExtResource("4_4fas8")
+text = "Default"
 
 [node name="OsakaButton" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
 custom_minimum_size = Vector2(300, 80)
@@ -156,10 +165,12 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("2_wl5ri")
-toggle_mode = true
-text = "Secret Mode"
+text = "Change"
 
-[node name="FullScreenButton" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
+[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="FullScreenButton" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer5"]
 custom_minimum_size = Vector2(300, 80)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -168,7 +179,7 @@ theme = ExtResource("2_wl5ri")
 toggle_mode = true
 text = "Fullscreen"
 
-[node name="CreditsButton" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
+[node name="CreditsButton" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer5"]
 custom_minimum_size = Vector2(250, 80)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -176,7 +187,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_wl5ri")
 text = "Credits"
 
-[node name="ResetButton" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
+[node name="ResetButton" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer5"]
 custom_minimum_size = Vector2(250, 80)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -204,8 +215,8 @@ text = "back"
 [connection signal="drag_ended" from="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2/SFXHSlider" to="." method="_on_sfxh_slider_drag_ended"]
 [connection signal="value_changed" from="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2/SFXHSlider" to="." method="_on_sfxh_slider_value_changed"]
 [connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/ControlsViewButton" to="." method="_on_controls_view_button_pressed"]
-[connection signal="toggled" from="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4/OsakaButton" to="." method="_on_osaka_button_toggled"]
-[connection signal="toggled" from="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4/FullScreenButton" to="." method="_on_full_screen_button_toggled"]
-[connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4/CreditsButton" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4/ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4/OsakaButton" to="." method="_on_osaka_button"]
+[connection signal="toggled" from="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer5/FullScreenButton" to="." method="_on_full_screen_button_toggled"]
+[connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer5/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer5/ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/MarginContainer2/BackButton" to="." method="_on_back_button_pressed"]

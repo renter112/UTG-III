@@ -7,6 +7,7 @@ var enemyDetails = []
 var enemies = 0
 var scaler = 64 as int
 var timer = 0 
+var tile_sel = Global.tile_set_sel
 
 var tank_types = ["red","blue","yellow","mini","cyan","orange"]
 var turret_types = ["red","blue","yellow","boss","cyan","orange","purple"]
@@ -135,16 +136,11 @@ func build_objects():
 				print("uh oh")
 
 func create_grid_element(x,y,tx,ty,l):
-	if Global.osaka_mode_on:
-		$Map.set_cell(l,Vector2i(x,y),1,Vector2i(tx,ty),0)
-	else:
-		$Map.set_cell(l,Vector2i(x,y),2,Vector2i(tx,ty),0)
+	$Map.set_cell(l,Vector2i(x,y),tile_sel,Vector2i(tx,ty),0)
 	pass
+	
 func create_grid_element_a(x,y,tx,ty,l,a):
-	if Global.osaka_mode_on:
-		$Map.set_cell(l,Vector2i(x,y),1,Vector2i(tx,ty),a)
-	else:
-		$Map.set_cell(l,Vector2i(x,y),2,Vector2i(tx,ty),a)
+	$Map.set_cell(l,Vector2i(x,y),tile_sel,Vector2i(tx,ty),a)
 	pass
 
 func build_enemies():
