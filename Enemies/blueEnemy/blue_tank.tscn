@@ -39,15 +39,20 @@ animations = [{
 radius = 25.0799
 
 [node name="blue_tank" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 17
+motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_i0s1i")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 
 [node name="enemyhull" type="AnimatedSprite2D" parent="."]
-position = Vector2(-6, 0)
+position = Vector2(5.96046e-08, 0)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_o6lfr")
 frame_progress = 0.888709
+offset = Vector2(-7.5, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cw8g2")
@@ -66,6 +71,7 @@ offset = Vector2(16, 0)
 position = Vector2(61, 0)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 40.0
 path_postprocessing = 1
 avoidance_enabled = true
 radius = 42.26

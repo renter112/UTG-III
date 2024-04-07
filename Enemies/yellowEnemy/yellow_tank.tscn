@@ -35,21 +35,25 @@ animations = [{
 "speed": 20.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0147e"]
-size = Vector2(52, 52)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ul56u"]
+radius = 25.0799
 
 [node name="yellow_tank" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 17
+motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_nn2ia")
 
 [node name="enemyhull" type="AnimatedSprite2D" parent="."]
-position = Vector2(5.96046e-08, 0)
+position = Vector2(-3.8147e-06, 0)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_bgiub")
 frame_progress = 0.0864633
-offset = Vector2(-7.5, 0)
+offset = Vector2(-6.24999, 1.90735e-06)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_0147e")
+shape = SubResource("CircleShape2D_ul56u")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 1.5
@@ -57,13 +61,15 @@ one_shot = true
 autostart = true
 
 [node name="turret" type="Sprite2D" parent="."]
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("2_0jiw7")
-offset = Vector2(15, 0)
+offset = Vector2(16.1111, 0)
 
 [node name="Marker2D" type="Marker2D" parent="turret"]
-position = Vector2(64, 1)
+position = Vector2(64, -0.111111)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 40.0
 path_postprocessing = 1

@@ -7,7 +7,7 @@ func _ready():
 	tank =  get_node("../tank_hull")
 	pass
 	
-func _process(delta):
+func _process(_delta):
 	$turret.rotation = (tank.position - position).angle()
 	if $Timer.is_stopped():
 			shoot()

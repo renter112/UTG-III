@@ -36,6 +36,8 @@ radius = 28.0
 scale = Vector2(1.5, 1.5)
 collision_layer = 8
 collision_mask = 17
+motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_lxt0a")
 
 [node name="turret" type="AnimatedSprite2D" parent="."]
@@ -46,6 +48,7 @@ frame_progress = 0.114691
 shape = SubResource("RectangleShape2D_nhq0u")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 32.0
 path_postprocessing = 1
 
 [node name="Timer" type="Timer" parent="."]

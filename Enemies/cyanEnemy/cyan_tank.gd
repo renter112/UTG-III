@@ -12,7 +12,7 @@ func _ready():
 	nav.target_position = tank.global_position
 	pass
 	
-func _process(delta):
+func _process(_delta):
 
 	$turret.rotation = (tank.position - position).angle()
 	if $Timer.is_stopped():

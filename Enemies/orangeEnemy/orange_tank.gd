@@ -14,7 +14,7 @@ func _ready():
 	pass
 	
 	
-func _process(delta):
+func _process(_delta):
 	$RayCast2D.target_position = tank.global_position - global_position
 	$turret.rotation = (tank.position - position).angle()
 	if $Timer.is_stopped() && $RayCast2D.is_colliding() != true:
