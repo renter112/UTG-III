@@ -6,6 +6,7 @@ var tank
 
 func _ready():
 	tank =  get_node("../tank_hull")
+	nav.set_navigation_layer_value(2,true)
 
 func _physics_process(delta):
 	nav.target_position = tank.global_position
