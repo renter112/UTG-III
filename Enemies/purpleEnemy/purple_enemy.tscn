@@ -28,4 +28,3 @@ offset = Vector2(14, 0)
 position = Vector2(51, 0)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-navigation_layers = 3
