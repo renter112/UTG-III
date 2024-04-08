@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://duosag1gr12na" path="res://Menus/Assets/result_fail.png" id="2_psyd3"]
 [ext_resource type="Theme" uid="uid://ctl7ud287nf8v" path="res://Menus/Assets/new_theme_2.tres" id="5_nlf2j"]
 [ext_resource type="AudioStream" uid="uid://bh84supdxbkih" path="res://Menus/Assets/audio/Victory.wav" id="6_80jk6"]
-[ext_resource type="Shortcut" uid="uid://ds21gfbs85jjs" path="res://Menus/Assets/esc_shortcut.tres" id="6_vyp1n"]
+[ext_resource type="Shortcut" uid="uid://bxhii5ft060ju" path="res://Menus/Assets/esc_shortcut.tres" id="6_vyp1n"]
 [ext_resource type="AudioStream" uid="uid://ux8i2wqiw8hs" path="res://Menus/Assets/audio/defeat.ogg" id="7_2oeoa"]
-[ext_resource type="Shortcut" uid="uid://d05da2dxln7mm" path="res://Menus/Assets/enter_shortcut.tres" id="7_aejbo"]
+[ext_resource type="Shortcut" uid="uid://bn0m5b5lyaepg" path="res://Menus/Assets/enter_shortcut.tres" id="7_aejbo"]
 
 [node name="GameOverMenu" type="Control"]
 layout_mode = 3

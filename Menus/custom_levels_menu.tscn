@@ -1,12 +1,12 @@
 [gd_scene load_steps=13 format=3 uid="uid://b05h834h36pfs"]
 
 [ext_resource type="Script" path="res://Menus/Scripts/cusom_levels_menu.gd" id="1_1yvtt"]
-[ext_resource type="Theme" uid="uid://tjw11djg71fg" path="res://Menus/Assets/custom_menu_theme.tres" id="1_e4gyx"]
-[ext_resource type="Shortcut" uid="uid://ds21gfbs85jjs" path="res://Menus/Assets/esc_shortcut.tres" id="4_dik56"]
+[ext_resource type="Theme" path="res://Menus/Assets/custom_menu_theme.tres" id="1_e4gyx"]
+[ext_resource type="Shortcut" uid="uid://bxhii5ft060ju" path="res://Menus/Assets/esc_shortcut.tres" id="4_dik56"]
 [ext_resource type="Theme" uid="uid://ctl7ud287nf8v" path="res://Menus/Assets/new_theme_2.tres" id="5_fwh2u"]
-[ext_resource type="Theme" uid="uid://bac8sgdadgnsw" path="res://Menus/Assets/title.tres" id="5_i3esi"]
+[ext_resource type="Theme" path="res://Menus/Assets/title.tres" id="5_i3esi"]
 [ext_resource type="Texture2D" uid="uid://brdig5meii7vn" path="res://Menus/Assets/custom_background.png" id="5_k018e"]
-[ext_resource type="Shortcut" uid="uid://d05da2dxln7mm" path="res://Menus/Assets/enter_shortcut.tres" id="6_1dl4e"]
+[ext_resource type="Shortcut" uid="uid://bn0m5b5lyaepg" path="res://Menus/Assets/enter_shortcut.tres" id="6_1dl4e"]
 [ext_resource type="StyleBox" uid="uid://dj6jb72kqpblx" path="res://Menus/Assets/delete_button_style_box.tres" id="6_7osra"]
 [ext_resource type="FontFile" uid="uid://n7lo661wrh6j" path="res://Menus/Assets/PixCon.ttf" id="6_mhlu0"]
 
