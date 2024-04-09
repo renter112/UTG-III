@@ -35,7 +35,7 @@
 		<coord x="14" y="9" type="block"></coord>
 	</objects>
 	<enemies>
-		<turret x="9" y="5" type="random"></turret>
+		<turret x="9" y="5" type="yellow"></turret>
 		<player x="16" y="9" dir="u" type="p1"></player>
 	</enemies>
 </level>

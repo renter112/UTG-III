@@ -29,7 +29,7 @@
 	</objects>
 	<enemies>
 		<turret x="16" y="2" type="random"></turret>
-		<turret x="8" y="8" type="random"></turret>
+		<turret x="12" y="8" type="random"></turret>
 		<player x="1" y="9" dir="r" type="p1"></player>
 	</enemies>
 </level>

@@ -39,8 +39,8 @@
 		<coord x="17" y="6" type="block"></coord>
 	</objects>
 	<enemies>
-		<tank x="10" y="5" type="random"></tank>
-		<tank x="12" y="5" type="random"></tank>
+		<turret x="10" y="5" type="random"></turret>
+		<turret x="12" y="5" type="random"></turret>
 		<player x="17" y="8" dir="l" type="p1"></player>
 	</enemies>
 </level>
