@@ -23,9 +23,7 @@
 	<enemies>
 		<player x="2" y="2" dir="u" type="p1"></player>
 		<turret x="10" y="3" type="boss"></turret>
-		<turret x="17" y="3" type="boss"></turret>
 		<tank x="6" y="6" type="orange"></tank>
-		<turret x="4" y="7" type="boss"></turret>
 		<turret x="12" y="9" type="boss"></turret>
 	</enemies>
 </level>
