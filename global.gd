@@ -48,7 +48,7 @@ var page_2 = false
 var score = 0
 var adventureMode = false
 var adventure_mode_level_num = 0
-# beg %, easy % , med %, hard %, item room every X, length
+# beg %, easy % , med %, hard %, item room every X, length, score multiplier
 var adventure_mode_difficulty = [
 	[60,40,00,0,2,10,1], #bab
 	[35,40,25,0,4,15,1.5], #eas
@@ -57,7 +57,7 @@ var adventure_mode_difficulty = [
 	[00,00,30,70,7,30,3], #ext
 	[00,00,0,100,10,50,4]] #not in game
 var adventure_mode_diff_selected : Array
-
+var adventure_mode_name = ""
 var lives = 1
 var upgrade_list = {"gun":0.0,"speed":0.0,"side_armor":0}
 func reset_upgrade_list():
@@ -99,7 +99,23 @@ func update_settings():
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
+var scores = []
 
+func save_scores():
+	var save_file = FileAccess.open("user://scores.save",FileAccess.WRITE)
+	for l in scores:
+		save_file.store_line(str(l[0]) + " " + str(l[1]))
+		
+func load_scores():
+	scores = []
+	if not FileAccess.file_exists("user://scores.save"):
+		return
+	var save_file = FileAccess.open("user://scores.save",FileAccess.READ)
+	while save_file.get_position() < save_file.get_length():
+			var vals = save_file.get_line().split(" ")
+			scores.push_back([vals[0],vals[1]])
+	scores.sort_custom(func(a, b): return int(a[0]) > int(b[0]))
+	pass
 
 # this is the ultimate level storage device
 # the goal is to phase out level, level_dict and levels_cleared

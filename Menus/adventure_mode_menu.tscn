@@ -5,11 +5,11 @@
 [ext_resource type="FontFile" uid="uid://n7lo661wrh6j" path="res://Menus/Assets/PixCon.ttf" id="3_ny8py"]
 [ext_resource type="Theme" uid="uid://ctl7ud287nf8v" path="res://Menus/Assets/new_theme_2.tres" id="3_q12hv"]
 [ext_resource type="Texture2D" uid="uid://bcc8pp3fyixh6" path="res://Menus/Assets/selector_normal.png" id="4_6wx2s"]
-[ext_resource type="Shortcut" uid="uid://ds21gfbs85jjs" path="res://Menus/Assets/esc_shortcut.tres" id="4_x7jjv"]
+[ext_resource type="Shortcut" uid="uid://bxhii5ft060ju" path="res://Menus/Assets/esc_shortcut.tres" id="4_x7jjv"]
 [ext_resource type="StyleBox" uid="uid://dse1i5oeiktwc" path="res://Menus/Assets/title_design.tres" id="5_1s2we"]
 [ext_resource type="Theme" uid="uid://bac8sgdadgnsw" path="res://Menus/Assets/title.tres" id="5_7epd2"]
 [ext_resource type="Texture2D" uid="uid://clh7w0svax5yv" path="res://Menus/Assets/selector_highlight.png" id="5_qmvdw"]
-[ext_resource type="Shortcut" uid="uid://d05da2dxln7mm" path="res://Menus/Assets/enter_shortcut.tres" id="9_jhuri"]
+[ext_resource type="Shortcut" uid="uid://bn0m5b5lyaepg" path="res://Menus/Assets/enter_shortcut.tres" id="9_jhuri"]
 
 [sub_resource type="Theme" id="Theme_2rb81"]
 Label/font_sizes/font_size = 20
@@ -66,7 +66,7 @@ text = "<<"
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/margin_right = 130
+theme_override_constants/margin_left = 35
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer"]
 layout_mode = 2
@@ -76,6 +76,12 @@ bbcode_enabled = true
 text = "[center]Adventure mode"
 fit_content = true
 autowrap_mode = 0
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(165, 0)
+layout_mode = 2
+theme = ExtResource("3_q12hv")
+text = "Score"
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -160,5 +166,6 @@ shortcut = ExtResource("9_jhuri")
 text = "Play"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]

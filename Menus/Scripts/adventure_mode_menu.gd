@@ -7,7 +7,7 @@ const info_text = [
 ,"Harder levels, less upgrades, 25 of them"
 ,"30 of the toughest levels, fewest upgrades"]
 var val = 2
-
+var names = {"0":"Baby","1":"Easy","2":"Medium","3":"Hard","4":"Extreme"}
 func _ready():
 	Global.reset_upgrade_list()
 	Global.adventure_mode_level_num = 0
@@ -33,6 +33,8 @@ func _on_play_button_pressed():
 	var diff = Global.adventure_mode_difficulty[val]
 	print(diff)
 	Global.adventure_mode_diff_selected = diff
+	Global.adventure_mode_name = names.get(str(val))
+	print(names.get(str(val)))
 	Global.adventureMode = true
 	Global.score = 0
 	var rng = RandomNumberGenerator.new()
@@ -62,4 +64,9 @@ func _on_play_button_pressed():
 	# after X rooms, "upgrade room" to increase player stats / health / armour
 	# no between level result screen, just load next level
 	# switch scene -> ready func picks level -> switch back to level
+	pass # Replace with function body.
+
+
+func _on_button_pressed():
+	Global.goto_scene("res://Menus/score_menu.tscn")
 	pass # Replace with function body.

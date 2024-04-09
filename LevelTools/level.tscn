@@ -48,6 +48,7 @@ text = "Lives: 1"
 horizontal_alignment = 2
 
 [node name="Label3" type="Label" parent="."]
+visible = false
 custom_minimum_size = Vector2(0, 100)
 anchors_preset = 2
 anchor_top = 1.0

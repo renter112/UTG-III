@@ -239,8 +239,9 @@ func finish():
 				Global.h_levels_play.erase(Global.current_level)
 				print("hard")
 			Global.adventure_mode_level_num += 1
-			print(Global.adventure_mode_level_num)
 			if Global.adventure_mode_level_num >= Global.adventure_mode_diff_selected[5]:
+				Global.scores.push_back([Global.score, Global.adventure_mode_name])
+				Global.save_scores()
 				Global.goto_scene("res://Menus/credits.tscn")
 				return
 			if Global.adventure_mode_level_num % Global.adventure_mode_diff_selected[4] == 0:
