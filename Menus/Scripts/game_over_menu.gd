@@ -48,8 +48,6 @@ func _ready():
 	$MarginContainer/VBoxContainer/InfoCon/AttemptsLabel.text = "Attempts: " + str(Global.attempts_taken)
 	$MarginContainer/VBoxContainer/InfoCon/TimeLabel.text = "Timer: " + str(Global.time_taken)
 	$MarginContainer/VBoxContainer/InfoCon/ShotsLabel.text = "Shots Fired: " + str(Global.shots_taken)
-	if Global.osaka_mode_on :
-		$MarginContainer/TextureRect.texture = preload("res://Menus/Assets/osaka-100-yard-stare-by-me-v0-b064yxmkl0zb1.png")
 	pass # Replace with function body.
 
 

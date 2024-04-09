@@ -8,6 +8,7 @@ var movement_target_position: Vector2
 @onready var nav: NavigationAgent2D = $NavigationAgent2D
 
 func _ready():
+	$enemyhull.play()
 	tank =  get_node("../tank_hull")
 	nav.target_position = tank.global_position
 	pass

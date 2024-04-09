@@ -10,10 +10,10 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_n41i4")
+"texture": ExtResource("2_p0e4c")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_p0e4c")
+"texture": ExtResource("1_n41i4")
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_luen0")
@@ -42,7 +42,7 @@ script = ExtResource("1_lxt0a")
 
 [node name="turret" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b83wt")
-frame_progress = 0.114691
+frame_progress = 0.236559
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_nhq0u")

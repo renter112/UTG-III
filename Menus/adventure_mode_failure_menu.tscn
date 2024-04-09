@@ -1,0 +1,91 @@
+[gd_scene load_steps=6 format=3 uid="uid://25uajc7xa475"]
+
+[ext_resource type="Script" path="res://Menus/Scripts/adventure_mode_failure_menu.gd" id="1_lwuob"]
+[ext_resource type="Texture2D" uid="uid://duosag1gr12na" path="res://Menus/Assets/result_fail.png" id="2_ljy3k"]
+[ext_resource type="Theme" uid="uid://dpy8lokjdhd4m" path="res://Menus/Assets/menuTheme.tres" id="3_po0ju"]
+[ext_resource type="FontFile" uid="uid://n7lo661wrh6j" path="res://Menus/Assets/PixCon.ttf" id="4_wq731"]
+[ext_resource type="Theme" uid="uid://ctl7ud287nf8v" path="res://Menus/Assets/new_theme_2.tres" id="5_83wej"]
+
+[node name="AdventureModeFailureMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lwuob")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0.466667, 0.466667, 0.466667, 1)
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_ljy3k")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_po0ju")
+theme_override_colors/font_color = Color(0.145098, 0.419608, 0.254902, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("4_wq731")
+theme_override_font_sizes/font_size = 100
+text = "FAILURE"
+horizontal_alignment = 1
+
+[node name="InfoCon" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_po0ju")
+theme_override_constants/separation = 70
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer/VBoxContainer/InfoCon"]
+layout_mode = 2
+text = "Score: 0"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 325
+
+[node name="ButtonsCon" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("5_83wej")
+theme_override_constants/separation = 175
+
+[node name="RetryButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/ButtonsCon"]
+custom_minimum_size = Vector2(250, 75)
+layout_mode = 2
+theme = ExtResource("5_83wej")
+theme_override_font_sizes/font_size = 25
+text = "Back"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/ButtonsCon/RetryButton" to="." method="_on_retry_button_pressed"]

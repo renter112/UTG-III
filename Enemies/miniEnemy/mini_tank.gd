@@ -8,6 +8,7 @@ var oneshot = false
 @onready var nav: NavigationAgent2D = $NavigationAgent2D
 
 func _ready():
+	$turret.play()
 	tank =  get_node("../tank_hull")
 	nav.target_position = tank.global_position
 	pass

@@ -10,7 +10,7 @@ var timer = 0
 var tile_sel = Global.tile_set_sel
 
 var tank_types = ["red","blue","yellow","mini","cyan","orange"]
-var turret_types = ["red","blue","yellow","boss","cyan","orange","purple"]
+var turret_types = ["red","blue","yellow","orange","purple"]
 
 var pause_menu = preload("res://Menus/pause_menu.tscn")
 var g_i = preload("res://Items/gun_upgrade.tscn")
@@ -219,7 +219,7 @@ func finish():
 				Global.lives -= 1
 				Global.goto_scene("res://LevelTools/level.tscn")
 				return
-			Global.goto_scene("res://Menus/adventure_mode_menu.tscn")
+			Global.goto_scene("res://Menus/adventure_mode_failure_menu.tscn")
 		else:
 			print("LOAD NEXT LEVEL")
 			var rng = RandomNumberGenerator.new()

@@ -26,7 +26,7 @@ func _on_osaka_button():
 func update_skin_label():
 	match Global.tile_set_sel:
 		0:
-			skin_label.text = "Toy Box"
+			skin_label.text = "Sand Box"
 		1:
 			skin_label.text = "Special"
 		2:
