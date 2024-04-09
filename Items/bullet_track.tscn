@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://b1j3n8ln51mav" path="res://Items/Assets/bullet.png" id="1_gxsn4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q1q1g"]
-radius = 8.0
-height = 36.0
+radius = 4.0
+height = 16.0
 
 [node name="BulletTrack" type="Area2D"]
 collision_layer = 2
@@ -17,7 +17,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("1_gxsn4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4, 0)
+position = Vector2(12, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_q1q1g")
 

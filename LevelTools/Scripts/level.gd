@@ -24,6 +24,7 @@ func _ready():
 		$cam.zoom = Vector2(min(1600/(baseGrid.x*scaler),896/(baseGrid.y*scaler)),min(1600/(baseGrid.x*scaler),896/(baseGrid.y*scaler)))
 		Global.camera_zoom = $cam.zoom
 		$Label2.position = Vector2(baseGrid.x*scaler - 275,0)
+		$Label3.position = Vector2(0,baseGrid.y*scaler - 64)
 		build_grid()
 		build_objects()
 		build_enemies()
@@ -47,6 +48,8 @@ func parseXML():
 		$Label.visible = true
 		$Label2.text = "Lives "+str(Global.lives)
 		$Label2.visible = true
+		$Label3.visible = true
+		$Label3.text = "Score "+str(Global.score)
 	elif Global.custom_level_on :
 		parser.open(str("user://levels/"+level[0]))
 	elif level[1].begins_with("T"):
@@ -119,6 +122,9 @@ func build_grid():
 		for y in range(1,b_y -1):
 			create_grid_element(x,y,2,2,0)
 	pass
+
+func update_score():
+	$Label3.text = "Score: "+str(Global.score)
 
 func build_objects():
 	for obj in blockList:
@@ -240,6 +246,7 @@ func finish():
 			if Global.adventure_mode_level_num % Global.adventure_mode_diff_selected[4] == 0:
 				Global.goto_scene("res://LevelTools/upgrade_menu.tscn")
 				return
+			Global.score += (1000 * Global.adventure_mode_diff_selected[6])
 			Global.goto_scene("res://LevelTools/level.tscn")
 	else:
 		if (timer as int % 60) as int < 10:

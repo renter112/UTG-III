@@ -45,16 +45,17 @@ var inGame = false
 var camera_zoom = Vector2(1,1)
 var page_2 = false
 
+var score = 0
 var adventureMode = false
 var adventure_mode_level_num = 0
 # beg %, easy % , med %, hard %, item room every X, length
 var adventure_mode_difficulty = [
-	[60,40,00,0,2,10], #bab
-	[35,40,25,0,4,15], #eas
-	[05,25,50,20,5,20], #med
-	[00,10,40,50,6,25], #hard
-	[00,00,30,70,7,30], #ext
-	[00,00,0,100,10,50]] #not in game
+	[60,40,00,0,2,10,1], #bab
+	[35,40,25,0,4,15,1.5], #eas
+	[05,25,50,20,5,20,2], #med
+	[00,10,40,50,6,25,2.5], #hard
+	[00,00,30,70,7,30,3], #ext
+	[00,00,0,100,10,50,4]] #not in game
 var adventure_mode_diff_selected : Array
 
 var lives = 1

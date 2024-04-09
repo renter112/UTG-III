@@ -34,6 +34,7 @@ func _on_play_button_pressed():
 	print(diff)
 	Global.adventure_mode_diff_selected = diff
 	Global.adventureMode = true
+	Global.score = 0
 	var rng = RandomNumberGenerator.new()
 	var a = rng.randi_range(0, 70)
 	if diff[0] > a and a > 0 :
