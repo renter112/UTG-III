@@ -4,7 +4,7 @@ func _ready():
 	Global.load_scores()
 	for score in Global.scores:
 		var lbl = Label.new()
-		lbl.text = str(score[0]) + "  " + str(score[1])
+		lbl.text = str(score[0]) + " - " + str(score[1])
 		$MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer.add_child(lbl)
 
 

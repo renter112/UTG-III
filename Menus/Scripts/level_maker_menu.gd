@@ -112,14 +112,20 @@ func _on_save_button_pressed():
 					type = type.split("_")
 					xml_elements.push_back("<"+str(type[1])+" x=\""+str(x)+"\" y=\""+str(y)+"\" type=\""+type[0]+"\"></"+type[1]+">")
 					
-	if not player_check == 1 or not finish_check == 1:
-		$Label.visible = true
-		$Label.text = "Missing Requirements"
-		$Label/Timer.start(2)
+	if player_check == 0 or player_check > 1:
+		notif("You need 1 player")
+	elif finish_check == 0 or finish_check > 1:
+		notif("You need 1 finish")
 	else:
 		save_xml()
 	print(xml_elements)
 	pass # Replace with function body.
+
+func notif(ntn):
+	$Label.visible = true
+	$Label.text = str(ntn)
+	$Label/Timer.start(2)
+	
 
 func save_xml():
 	var check = DirAccess.open("user://")

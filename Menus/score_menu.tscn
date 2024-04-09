@@ -69,6 +69,16 @@ text = "[center]Scores"
 fit_content = true
 autowrap_mode = 0
 
+[node name="HBoxContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 310
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("7_o8672")
+text = "Score - Difficulty"
+vertical_alignment = 2
+
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 450)
 layout_mode = 2
