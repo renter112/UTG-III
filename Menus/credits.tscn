@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://qhxjbvtj0tay"]
+[gd_scene load_steps=6 format=3 uid="uid://qhxjbvtj0tay"]
 
 [ext_resource type="FontFile" uid="uid://n7lo661wrh6j" path="res://Menus/Assets/PixCon.ttf" id="1_07iw0"]
 [ext_resource type="Script" path="res://Menus/Scripts/credits.gd" id="1_buk46"]
 [ext_resource type="AudioStream" uid="uid://cv32i4hof5yah" path="res://Menus/Assets/audio/credit.ogg" id="3_8v22e"]
+[ext_resource type="Theme" uid="uid://dpy8lokjdhd4m" path="res://Menus/Assets/menuTheme.tres" id="4_nriwe"]
 
 [sub_resource type="Theme" id="Theme_f2wn6"]
 RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
@@ -183,3 +184,16 @@ scroll_active = false
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_8v22e")
 autoplay = true
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_right = 80.0
+offset_bottom = 46.0
+grow_horizontal = 2
+theme = ExtResource("4_nriwe")
+text = "Score = "

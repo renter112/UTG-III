@@ -4,6 +4,9 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	AudioStreamPlayer2d.playing = false
+	if Global.adventureMode:
+		$Label.visibile = true
+		$Label.text = "Score = " + str(Global.score)
 	pass # Replace with function body.
 
 

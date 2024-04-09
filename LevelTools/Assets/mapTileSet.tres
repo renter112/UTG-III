@@ -525,10 +525,10 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -32, 32, -32, 32, 
 source_geometry_group_name = &"navigation_polygon_source_group"
 agent_radius = 0.0
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_fjxoj"]
-vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)])
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_g51rx"]
+vertices = PackedVector2Array(32, -21, 32, 24, 23, 32, -25, 32, -32, 21, -32, -22, -20, -32, 23, -32)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-20, -32, 22.5, -32, 32, -21, 32, 24, 22.5, 32, -25, 32, -32, 21, -32, -21.5)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 agent_radius = 0.0
 
@@ -597,7 +597,7 @@ texture_region_size = Vector2i(64, 64)
 2:2/0/physics_layer_0/angular_velocity = 0.0
 2:2/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 2:2/0/physics_layer_1/angular_velocity = 0.0
-2:2/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_fjxoj")
+2:2/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_g51rx")
 2:2/1 = 1
 2:2/1/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:2/1/physics_layer_0/angular_velocity = 0.0
