@@ -13,7 +13,7 @@ This project is a 2D top-down sprite-based tank game developed in Godot 4.2. The
 
 ## Release
 
-Check out our [release page](https://github.com/ALentini222/Untitled_tank_game/releases/tag/v1.0.0) or [download here](https://github.com/ALentini222/Untitled_tank_game/releases/latest/download/UTG-II.zip)
+Check out our [release page](https://github.com/renter112/UTG-III/releases/tag/v2.1.5.6) or [download here](https://github.com/renter112/UTG-III/releases/download/v2.1.5.6/UTG-2.exe)
 
 
 ## Installation
