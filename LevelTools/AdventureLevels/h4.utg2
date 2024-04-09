@@ -38,6 +38,5 @@
 		<tank x="17" y="5" type="mini"></tank>
 		<tank x="17" y="6" type="mini"></tank>
 		<turret x="8" y="8" type="blue"></turret>
-		<turret x="17" y="8" type="purple"></turret>
 	</enemies>
 </level>
