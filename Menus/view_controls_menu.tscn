@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dxl0h5ixnqdum"]
 
 [ext_resource type="Script" path="res://Menus/Scripts/ViewControls.gd" id="1_eggcq"]
-[ext_resource type="Theme" uid="uid://dnii5kb4mtk7p" path="res://Menus/Assets/levelSelectButtons.tres" id="2_te4de"]
+[ext_resource type="Theme" path="res://Menus/Assets/title.tres" id="2_fhls5"]
 [ext_resource type="Texture2D" uid="uid://dteploo0c6exn" path="res://Menus/Assets/controls.png" id="3_3kpf3"]
 [ext_resource type="Theme" uid="uid://ctl7ud287nf8v" path="res://Menus/Assets/new_theme_2.tres" id="4_munwj"]
 
@@ -40,7 +40,8 @@ layout_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_te4de")
+size_flags_horizontal = 4
+theme = ExtResource("2_fhls5")
 theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
 text = "[center]Controls"

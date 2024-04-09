@@ -5,7 +5,7 @@
 [ext_resource type="Theme" uid="uid://ctl7ud287nf8v" path="res://Menus/Assets/new_theme_2.tres" id="3_6dn3u"]
 [ext_resource type="Shortcut" uid="uid://bxhii5ft060ju" path="res://Menus/Assets/esc_shortcut.tres" id="4_47ee5"]
 [ext_resource type="Texture2D" uid="uid://brdig5meii7vn" path="res://Menus/Assets/custom_background.png" id="4_pmwsl"]
-[ext_resource type="Theme" uid="uid://bac8sgdadgnsw" path="res://Menus/Assets/title.tres" id="5_nab2m"]
+[ext_resource type="Theme" path="res://Menus/Assets/title.tres" id="5_nab2m"]
 
 [node name="LevelSelectorMenuMenu" type="Control"]
 layout_mode = 3
@@ -92,13 +92,13 @@ theme_override_constants/separation = 100
 custom_minimum_size = Vector2(450, 125)
 layout_mode = 2
 theme = ExtResource("3_6dn3u")
-text = "Level Select"
+text = "Arcade"
 
 [node name="AdventureButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(450, 125)
 layout_mode = 2
 theme = ExtResource("3_6dn3u")
-text = "Adventure Mode"
+text = "Adventure"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -108,13 +108,13 @@ theme_override_constants/separation = 100
 custom_minimum_size = Vector2(450, 125)
 layout_mode = 2
 theme = ExtResource("3_6dn3u")
-text = "Custom Levels"
+text = "Custom"
 
 [node name="MapBuilderButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(450, 125)
 layout_mode = 2
 theme = ExtResource("3_6dn3u")
-text = "Map Builder"
+text = "Builder"
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
