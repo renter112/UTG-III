@@ -30,10 +30,10 @@
 		<coord x="10" y="9" type="block"></coord>
 	</objects>
 	<enemies>
-		<turret x="13" y="2" type="cyan"></turret>
+		<turret x="13" y="2" type="red"></turret>
 		<player x="2" y="5" dir="r" type="p1"></player>
 		<turret x="6" y="5" type="blue"></turret>
 		<turret x="16" y="5" type="cyan"></turret>
-		<turret x="13" y="8" type="cyan"></turret>
+		<turret x="13" y="8" type="red"></turret>
 	</enemies>
 </level>

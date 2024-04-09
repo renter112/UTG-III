@@ -56,13 +56,9 @@
 	</objects>
 	<enemies>
 		<tank x="15" y="1" type="mini"></tank>
-		<turret x="18" y="1" type="boss"></turret>
 		<player x="1" y="2" dir="r" type="p1"></player>
 		<turret x="11" y="4" type="boss"></turret>
-		<turret x="1" y="5" type="boss"></turret>
 		<tank x="2" y="5" type="mini"></tank>
-		<turret x="6" y="7" type="boss"></turret>
-		<turret x="12" y="9" type="boss"></turret>
 		<tank x="17" y="9" type="mini"></tank>
 		<turret x="18" y="9" type="boss"></turret>
 	</enemies>

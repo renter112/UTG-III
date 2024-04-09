@@ -34,9 +34,7 @@
 	</objects>
 	<enemies>
 		<tank x="16" y="2" type="random"></tank>
-		<tank x="16" y="4" type="random"></tank>
 		<player x="3" y="5" dir="r" type="p1"></player>
-		<tank x="16" y="6" type="random"></tank>
 		<tank x="16" y="8" type="random"></tank>
 	</enemies>
 </level>

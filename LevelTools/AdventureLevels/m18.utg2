@@ -16,10 +16,8 @@
 	</objects>
 	<enemies>
 		<turret x="10" y="2" type="red"></turret>
-		<turret x="15" y="2" type="red"></turret>
 		<player x="2" y="5" dir="r" type="p1"></player>
 		<turret x="9" y="5" type="red"></turret>
-		<turret x="15" y="5" type="red"></turret>
 		<turret x="10" y="8" type="red"></turret>
 		<turret x="15" y="8" type="red"></turret>
 	</enemies>

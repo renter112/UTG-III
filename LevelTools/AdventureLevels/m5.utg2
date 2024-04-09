@@ -22,12 +22,10 @@
 		<coord x="16" y="7" type="finish"></coord>
 	</objects>
 	<enemies>
-		<turret x="17" y="2" type="red"></turret>
 		<player x="3" y="3" dir="r" type="p1"></player>
 		<turret x="15" y="5" type="red"></turret>
 		<turret x="17" y="5" type="red"></turret>
 		<turret x="14" y="6" type="red"></turret>
-		<turret x="2" y="8" type="red"></turret>
 		<turret x="14" y="8" type="red"></turret>
 	</enemies>
 </level>

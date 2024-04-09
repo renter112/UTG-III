@@ -24,7 +24,6 @@
 	<enemies>
 		<turret x="15" y="2" type="random"></turret>
 		<player x="3" y="5" dir="r" type="p1"></player>
-		<turret x="10" y="5" type="random"></turret>
 		<turret x="15" y="8" type="random"></turret>
 	</enemies>
 </level>

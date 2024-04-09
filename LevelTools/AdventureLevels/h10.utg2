@@ -45,13 +45,9 @@
 	</objects>
 	<enemies>
 		<turret x="9" y="4" type="random"></turret>
-		<turret x="10" y="4" type="random"></turret>
-		<turret x="11" y="4" type="random"></turret>
 		<tank x="7" y="5" type="random"></tank>
 		<tank x="13" y="5" type="random"></tank>
 		<turret x="9" y="6" type="random"></turret>
-		<turret x="10" y="6" type="random"></turret>
-		<turret x="11" y="6" type="random"></turret>
 		<player x="10" y="9" dir="u" type="p1"></player>
 	</enemies>
 </level>

@@ -32,8 +32,8 @@
 		<coord x="11" y="9" type="block"></coord>
 	</objects>
 	<enemies>
-		<turret x="8" y="2" type="blue"></turret>
-		<turret x="17" y="2" type="purple"></turret>
+		<turret x="17" y="2" type="blue"></turret>
+		<turret x="8" y="2" type="purple"></turret>
 		<player x="2" y="5" dir="r" type="p1"></player>
 		<tank x="17" y="5" type="mini"></tank>
 		<tank x="17" y="6" type="mini"></tank>

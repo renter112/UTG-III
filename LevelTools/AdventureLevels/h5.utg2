@@ -46,7 +46,5 @@
 		<turret x="15" y="6" type="cyan"></turret>
 		<turret x="15" y="8" type="orange"></turret>
 		<player x="2" y="9" dir="u" type="p1"></player>
-		<turret x="8" y="9" type="cyan"></turret>
-		<turret x="9" y="9" type="cyan"></turret>
 	</enemies>
 </level>

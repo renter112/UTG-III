@@ -23,10 +23,6 @@
 	<enemies>
 		<turret x="7" y="2" type="random"></turret>
 		<turret x="14" y="2" type="random"></turret>
-		<turret x="2" y="4" type="random"></turret>
-		<turret x="7" y="5" type="random"></turret>
-		<turret x="13" y="5" type="random"></turret>
-		<turret x="17" y="5" type="random"></turret>
 		<turret x="12" y="7" type="random"></turret>
 		<turret x="3" y="8" type="random"></turret>
 		<player x="9" y="9" dir="u" type="p1"></player>

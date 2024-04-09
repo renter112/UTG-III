@@ -19,10 +19,10 @@
 		<coord x="10" y="9" type="block"></coord>
 	</objects>
 	<enemies>
-		<turret x="12" y="2" type="cyan"></turret>
+		<turret x="12" y="2" type="red"></turret>
 		<player x="3" y="5" dir="r" type="p1"></player>
-		<turret x="15" y="5" type="cyan"></turret>
+		<turret x="15" y="5" type="red"></turret>
 		<turret x="17" y="5" type="red"></turret>
-		<turret x="12" y="8" type="cyan"></turret>
+		<turret x="12" y="8" type="red"></turret>
 	</enemies>
 </level>

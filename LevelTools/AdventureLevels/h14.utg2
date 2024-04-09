@@ -20,11 +20,9 @@
 		<coord x="6" y="7" type="block"></coord>
 	</objects>
 	<enemies>
-		<tank x="11" y="1" type="blue"></tank>
 		<turret x="7" y="3" type="random"></turret>
 		<tank x="16" y="5" type="blue"></tank>
 		<turret x="7" y="6" type="random"></turret>
-		<turret x="12" y="7" type="random"></turret>
 		<player x="2" y="8" dir="r" type="p1"></player>
 	</enemies>
 </level>

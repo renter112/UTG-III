@@ -16,7 +16,6 @@
 		<turret x="18" y="1" type="yellow"></turret>
 		<turret x="12" y="3" type="yellow"></turret>
 		<turret x="6" y="4" type="yellow"></turret>
-		<turret x="9" y="6" type="yellow"></turret>
 		<player x="2" y="7" dir="r" type="p1"></player>
 		<turret x="16" y="7" type="yellow"></turret>
 		<turret x="5" y="9" type="yellow"></turret>
