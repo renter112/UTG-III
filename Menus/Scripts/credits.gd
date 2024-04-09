@@ -5,7 +5,7 @@ extends Control
 func _ready():
 	AudioStreamPlayer2d.playing = false
 	if Global.adventureMode:
-		$Label.visibile = true
+		$Label.visible = true
 		$Label.text = "Score = " + str(Global.score)
 	pass # Replace with function body.
 

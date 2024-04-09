@@ -38,8 +38,8 @@ var notif_message = false
 var played_game_before = false
 var osaka_mode_on = false
 var tile_set_sel = 2
-var music_v = 1.0
-var sounds_v = 1.0
+var music_v = 0.5
+var sounds_v = 0.5
 var fullScreen = false
 var inGame = false
 var camera_zoom = Vector2(1,1)
@@ -80,8 +80,8 @@ func load_save_config():
 	if err != OK:
 		return
 	for opt in config.get_sections():
-		music_v = config.get_value(opt, "music_v", 1.0)
-		sounds_v = config.get_value(opt, "sounds_v", 1.0)
+		music_v = config.get_value(opt, "music_v", 0.5)
+		sounds_v = config.get_value(opt, "sounds_v", 0.5)
 		osaka_mode_on = config.get_value(opt, "osaka", false)
 		played_game_before = config.get_value(opt,"played_before", false)
 		fullScreen = config.get_value(opt, "fullScreen", false)

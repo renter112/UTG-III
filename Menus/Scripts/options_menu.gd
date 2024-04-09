@@ -65,6 +65,7 @@ func _on_controls_view_button_pressed():
 func _on_reset_button_pressed():
 	var save_file = FileAccess.open("user://save.save",FileAccess.WRITE)
 	save_file.store_line("")
+	Global.load_save_config()
 	pass # Replace with function body.
 
 

@@ -3,6 +3,8 @@ extends Control
 @onready var error_notif = preload("res://Menus/Assets/import_notification.tscn")
 
 func _ready():
+	Global.adventureMode = false
+	Global.custom_level_on = false
 	if Global.level_err:
 		Global.push_notif("ERROR LOADING LEVEL")
 
