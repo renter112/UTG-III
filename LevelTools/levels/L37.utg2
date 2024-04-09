@@ -11,22 +11,32 @@
 		<coord x="11" y="2" type="block"></coord>
 		<coord x="12" y="2" type="block"></coord>
 		<coord x="13" y="2" type="block"></coord>
+		<coord x="3" y="3" type="block"></coord>
 		<coord x="4" y="3" type="block"></coord>
 		<coord x="5" y="3" type="block"></coord>
 		<coord x="6" y="3" type="block"></coord>
 		<coord x="7" y="3" type="block"></coord>
+		<coord x="8" y="3" type="block"></coord>
+		<coord x="2" y="4" type="block"></coord>
 		<coord x="3" y="4" type="block"></coord>
 		<coord x="8" y="4" type="block"></coord>
+		<coord x="9" y="4" type="block"></coord>
+		<coord x="15" y="4" type="block"></coord>
 		<coord x="16" y="4" type="block"></coord>
+		<coord x="1" y="5" type="block"></coord>
 		<coord x="2" y="5" type="block"></coord>
 		<coord x="9" y="5" type="block"></coord>
+		<coord x="10" y="5" type="block"></coord>
 		<coord x="15" y="5" type="block"></coord>
 		<coord x="1" y="6" type="block"></coord>
 		<coord x="10" y="6" type="block"></coord>
+		<coord x="11" y="6" type="block"></coord>
 		<coord x="14" y="6" type="block"></coord>
+		<coord x="13" y="6" type="block"></coord>
 		<coord x="11" y="7" type="block"></coord>
 		<coord x="12" y="7" type="block"></coord>
 		<coord x="13" y="7" type="block"></coord>
+		<coord x="14" y="5" type="block"></coord>
 		<coord x="4" y="8" type="block"></coord>
 		<coord x="5" y="8" type="block"></coord>
 		<coord x="6" y="8" type="block"></coord>

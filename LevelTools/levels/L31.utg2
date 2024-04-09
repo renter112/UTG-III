@@ -15,12 +15,16 @@
 		<coord x="13" y="3" type="block"></coord>
 		<coord x="14" y="3" type="block"></coord>
 		<coord x="15" y="3" type="block"></coord>
-		<coord x="16" y="3" type="block"></coord>
+		<coord x="16" y="3" type="block"></coord>			<coord x="5" y="3" type="block"></coord>
 		<coord x="5" y="4" type="block"></coord>
+	
+		<coord x="6" y="4" type="block"></coord>
 		<coord x="16" y="4" type="block"></coord>
 		<coord x="6" y="5" type="block"></coord>
+		<coord x="7" y="5" type="block"></coord>
 		<coord x="16" y="5" type="block"></coord>
 		<coord x="7" y="6" type="block"></coord>
+		<coord x="8" y="6" type="block"></coord>
 		<coord x="16" y="6" type="block"></coord>
 		<coord x="8" y="7" type="block"></coord>
 		<coord x="9" y="7" type="block"></coord>
