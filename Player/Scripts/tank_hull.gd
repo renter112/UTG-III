@@ -14,13 +14,10 @@ func _ready():
 		var s = side_armour.instantiate()
 		add_child(s)
 		move_child(s,2)
+		
 func get_input():
-	if controls_classic:
-		rotation_dir = Input.get_axis("move_left","move_right")
-		velocity = transform.x * Input.get_axis("move_down","move_up") * speed
-	else:
-		var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-		velocity = input_direction * speed
+	rotation_dir = Input.get_axis("move_left","move_right")
+	velocity = transform.x * Input.get_axis("move_down","move_up") * speed
 	if Input.is_anything_pressed():
 		$Sprite2D.play()
 	if Input.is_action_pressed("mine") && mine_amount < 4 && $Timer.is_stopped():
@@ -38,7 +35,10 @@ func _physics_process(delta):
 
 func _process(_delta):
 	if visible == false:
-		killed()
+		if Global.upgrade_list["invincible"] != 0.0:
+			visible = true
+		else:
+			killed()
 	pass
 	
 func killed():

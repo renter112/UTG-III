@@ -5,7 +5,7 @@
 [ext_resource type="Theme" uid="uid://ctl7ud287nf8v" path="res://Menus/Assets/new_theme_2.tres" id="3_6dn3u"]
 [ext_resource type="Shortcut" uid="uid://bxhii5ft060ju" path="res://Menus/Assets/esc_shortcut.tres" id="4_47ee5"]
 [ext_resource type="Texture2D" uid="uid://brdig5meii7vn" path="res://Menus/Assets/custom_background.png" id="4_pmwsl"]
-[ext_resource type="Theme" path="res://Menus/Assets/title.tres" id="5_nab2m"]
+[ext_resource type="Theme" uid="uid://bac8sgdadgnsw" path="res://Menus/Assets/title.tres" id="5_nab2m"]
 
 [node name="LevelSelectorMenuMenu" type="Control"]
 layout_mode = 3

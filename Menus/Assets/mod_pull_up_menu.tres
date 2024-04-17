@@ -1,0 +1,19 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://b8vxlh8en3bjq"]
+
+[ext_resource type="Texture2D" uid="uid://cjywn45v77thm" path="res://Menus/Assets/toggle_on.png" id="1_7xpu5"]
+[ext_resource type="FontFile" uid="uid://n7lo661wrh6j" path="res://Menus/Assets/PixCon.ttf" id="1_ox1y8"]
+[ext_resource type="Texture2D" uid="uid://bddnanvqngol3" path="res://Menus/Assets/toggle_off.png" id="2_cpw4q"]
+[ext_resource type="Texture2D" uid="uid://bcc8pp3fyixh6" path="res://Menus/Assets/selector_normal.png" id="2_ih4im"]
+[ext_resource type="Texture2D" uid="uid://clh7w0svax5yv" path="res://Menus/Assets/selector_highlight.png" id="3_iqt8n"]
+
+[resource]
+Button/font_sizes/font_size = 25
+Button/fonts/font = ExtResource("1_ox1y8")
+CheckButton/font_sizes/font_size = 25
+CheckButton/fonts/font = ExtResource("1_ox1y8")
+CheckButton/icons/checked = ExtResource("1_7xpu5")
+CheckButton/icons/unchecked = ExtResource("2_cpw4q")
+HSlider/icons/grabber = ExtResource("2_ih4im")
+HSlider/icons/grabber_highlight = ExtResource("3_iqt8n")
+Label/font_sizes/font_size = 25
+Label/fonts/font = ExtResource("1_ox1y8")

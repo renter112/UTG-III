@@ -1,0 +1,121 @@
+[gd_scene load_steps=8 format=3 uid="uid://bmvdlkrq7j4d7"]
+
+[ext_resource type="Theme" uid="uid://b8vxlh8en3bjq" path="res://Menus/Assets/mod_pull_up_menu.tres" id="1_vgwtl"]
+[ext_resource type="Script" path="res://Menus/Scripts/mod_pull_up_menu.gd" id="2_jccyn"]
+[ext_resource type="Texture2D" uid="uid://cjywn45v77thm" path="res://Menus/Assets/toggle_on.png" id="2_vo5io"]
+[ext_resource type="Texture2D" uid="uid://bddnanvqngol3" path="res://Menus/Assets/toggle_off.png" id="3_hxsyv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a828q"]
+bg_color = Color(0.121569, 0.121569, 0.121569, 0.839216)
+
+[sub_resource type="Theme" id="Theme_78xg1"]
+Button/styles/normal = SubResource("StyleBoxFlat_a828q")
+
+[sub_resource type="Theme" id="Theme_21r45"]
+CheckButton/icons/checked = ExtResource("2_vo5io")
+CheckButton/icons/unchecked = ExtResource("3_hxsyv")
+
+[node name="ModPullUpMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 896.0
+offset_bottom = 896.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_vgwtl")
+script = ExtResource("2_jccyn")
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 1
+offset_top = -60.0
+offset_right = 200.0
+size_flags_horizontal = 0
+theme = SubResource("Theme_78xg1")
+text = "Mods"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_bottom = 700
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0.121569, 0.121569, 0.121569, 0.839216)
+
+[node name="modMenu" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 200
+alignment = 1
+
+[node name="togglesMenu" type="VBoxContainer" parent="MarginContainer/modMenu"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/modMenu/togglesMenu"]
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="MarginContainer/modMenu/togglesMenu/HBoxContainer"]
+layout_mode = 2
+text = "Side Armour: "
+
+[node name="sideCheck" type="CheckButton" parent="MarginContainer/modMenu/togglesMenu/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_21r45")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/modMenu/togglesMenu"]
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="MarginContainer/modMenu/togglesMenu/HBoxContainer2"]
+layout_mode = 2
+text = "Invincible: "
+
+[node name="inviCheck" type="CheckButton" parent="MarginContainer/modMenu/togglesMenu/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("1_vgwtl")
+
+[node name="speedMenu" type="VBoxContainer" parent="MarginContainer/modMenu"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/modMenu/speedMenu"]
+layout_mode = 2
+text = "Tank Speed: "
+
+[node name="speedSlider" type="HSlider" parent="MarginContainer/modMenu/speedMenu"]
+layout_mode = 2
+max_value = 3.0
+tick_count = 4
+ticks_on_borders = true
+
+[node name="gunMenu" type="VBoxContainer" parent="MarginContainer/modMenu"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/modMenu/gunMenu"]
+layout_mode = 2
+text = "Gun Updrade: "
+
+[node name="gunSlider" type="HSlider" parent="MarginContainer/modMenu/gunMenu"]
+layout_mode = 2
+max_value = 3.0
+tick_count = 4
+ticks_on_borders = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="toggled" from="MarginContainer/modMenu/togglesMenu/HBoxContainer/sideCheck" to="." method="_on_side_check_toggled"]
+[connection signal="toggled" from="MarginContainer/modMenu/togglesMenu/HBoxContainer2/inviCheck" to="." method="_on_invi_check_toggled"]
+[connection signal="drag_ended" from="MarginContainer/modMenu/speedMenu/speedSlider" to="." method="_on_speed_slider_drag_ended"]
+[connection signal="drag_ended" from="MarginContainer/modMenu/gunMenu/gunSlider" to="." method="_on_gun_slider_drag_ended"]

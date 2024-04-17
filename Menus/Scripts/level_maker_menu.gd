@@ -11,7 +11,7 @@ var selected_opts = {"wall":Vector2i(5,1),"hole":Vector2i(5,0),
 "yellow_turret":Vector2i(2,5),"blue_turret":Vector2i(3,5),"cyan_turret":Vector2i(4,5),"purple_turret":Vector2i(5,5),
 "boss_turret":Vector2i(6,5),"player":Vector2i(5,2),"finish":Vector2i(5,3),"none":Vector2i(2,2)}
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("shoot"):
 		var event = get_viewport().get_mouse_position()
 		if event.y > 192 && event.y < 64 + baseGrid.y*64 && event.x > 64 && event.x < baseGrid.x *64 -64:
@@ -51,40 +51,61 @@ func create_grid_element(x,y,tx,ty,l):
 	$TileMap.set_cell(l,Vector2i(x,y),1,Vector2i(tx,ty),0)
 	pass
 	
+func update_selected():
+	$TileMap.set_cell(1,Vector2i(24,0),1,selected,0);
+	
+	
 func _on_player_button_pressed():
 	selected = Vector2i(5,2)
+	update_selected()
 func _on_finish_button_pressed():
 	selected = Vector2i(5,3)
+	update_selected()
 func _on_wall_button_pressed():
 	selected = Vector2i(5,1)
+	update_selected()
 func _on_hole_button_pressed():
 	selected = Vector2i(5,0)
+	update_selected()
 func _on_red_tur_button_pressed():
 	selected = Vector2i(0,5)
+	update_selected()
 func _on_org_tur_button_pressed():
 	selected = Vector2i(1,5)
+	update_selected()
 func _on_yel_tur_button_pressed():
 	selected = Vector2i(2,5)
+	update_selected()
 func _on_blu_tur_button_pressed():
 	selected = Vector2i(3,5)
+	update_selected()
 func _on_cya_tur_button_pressed():
 	selected = Vector2i(4,5)
+	update_selected()
 func _on_pur_tur_button_pressed():
 	selected = Vector2i(5,5)
+	update_selected()
 func _on_bos_tur_button_pressed():
 	selected = Vector2i(6,5)
+	update_selected()
 func _on_red_tank_button_pressed():
 	selected = Vector2i(6,0)
+	update_selected()
 func _on_org_tank_button_pressed():
 	selected = Vector2i(6,1)
+	update_selected()
 func _on_yel_tank_button_pressed():
 	selected = Vector2i(6,2)
+	update_selected()
 func _on_blu_tank_button_pressed():
 	selected = Vector2i(6,3)
+	update_selected()
 func _on_cya_tank_button_pressed():
 	selected = Vector2i(6,4)
+	update_selected()
 func _on_min_tank_button_pressed():
 	selected = Vector2i(5,4)
+	update_selected()
 
 
 var xml_elements : Array
@@ -131,8 +152,8 @@ func save_xml():
 	var check = DirAccess.open("user://")
 	var seed = ""+str(randi())+""+str(randi())
 	var name = "Unnamed_level"
-	if $TabContainer/Required/NameLineEdit.text != "":
-		name = $TabContainer/Required/NameLineEdit.text
+	if $"TabContainer/Finish & Save/NameLineEdit".text != "":
+		name =$"TabContainer/Finish & Save/NameLineEdit".text
 	var filename = name
 	if not check.dir_exists("levels"):
 		check.make_dir("user://levels")

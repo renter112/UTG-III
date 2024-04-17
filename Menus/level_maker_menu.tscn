@@ -29,6 +29,7 @@ texture_region_size = Vector2i(64, 64)
 0:2/0 = 0
 2:2/0 = 0
 4:2/0 = 0
+5:2/next_alternative_id = 2
 5:2/0 = 0
 6:2/0 = 0
 0:3/0 = 0
@@ -83,7 +84,7 @@ offset_top = -74.0
 offset_right = 136.0
 grow_vertical = 0
 theme = ExtResource("3_qp2yh")
-text = "Back"
+text = "Quit"
 
 [node name="TabContainer" type="TabContainer" parent="."]
 layout_mode = 0
@@ -91,14 +92,16 @@ offset_right = 1600.0
 offset_bottom = 125.0
 theme = SubResource("Theme_hg5dg")
 theme_override_font_sizes/font_size = 23
+current_tab = 5
 
 [node name="Grid Builder" type="HBoxContainer" parent="TabContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 5
 
 [node name="Label" type="Label" parent="TabContainer/Grid Builder"]
 layout_mode = 2
-text = "Choose Grid Size	    "
+text = "Grid Size	:    "
 
 [node name="Label2" type="Label" parent="TabContainer/Grid Builder"]
 layout_mode = 2
@@ -121,139 +124,170 @@ alignment = 1
 editable = false
 
 [node name="GenerateButton" type="Button" parent="TabContainer/Grid Builder"]
-custom_minimum_size = Vector2(400, 75)
+custom_minimum_size = Vector2(400, 45)
 layout_mode = 2
+size_flags_vertical = 4
 theme = ExtResource("3_qp2yh")
+theme_override_font_sizes/font_size = 25
 text = "Generate Grid"
 
 [node name="Required" type="HBoxContainer" parent="TabContainer"]
 visible = false
 layout_mode = 2
 theme = ExtResource("3_qp2yh")
-
-[node name="Label" type="Label" parent="TabContainer/Required"]
-layout_mode = 2
-text = "Required: "
+theme_override_constants/separation = 25
 
 [node name="PlayerButton" type="Button" parent="TabContainer/Required"]
-custom_minimum_size = Vector2(200, 75)
+custom_minimum_size = Vector2(200, 45)
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
 text = "Player"
 
 [node name="FinishButton" type="Button" parent="TabContainer/Required"]
-custom_minimum_size = Vector2(200, 75)
+custom_minimum_size = Vector2(200, 45)
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
 text = "Finish"
-
-[node name="Label2" type="Label" parent="TabContainer/Required"]
-layout_mode = 2
-text = "  Level Name: "
-
-[node name="NameLineEdit" type="LineEdit" parent="TabContainer/Required"]
-custom_minimum_size = Vector2(400, 75)
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-placeholder_text = "My Awesome Level!"
-max_length = 20
 
 [node name="Obstacles" type="HBoxContainer" parent="TabContainer"]
 visible = false
 layout_mode = 2
 theme = ExtResource("3_qp2yh")
-
-[node name="Label" type="Label" parent="TabContainer/Obstacles"]
-layout_mode = 2
-text = "Obstacles:"
+theme_override_constants/separation = 25
 
 [node name="WallButton" type="Button" parent="TabContainer/Obstacles"]
-custom_minimum_size = Vector2(200, 75)
+custom_minimum_size = Vector2(175, 45)
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
 text = "Wall"
 
 [node name="HoleButton" type="Button" parent="TabContainer/Obstacles"]
-custom_minimum_size = Vector2(200, 75)
+custom_minimum_size = Vector2(175, 45)
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
 text = "Hole"
 
 [node name="Turrets" type="HBoxContainer" parent="TabContainer"]
 visible = false
 layout_mode = 2
 theme = ExtResource("3_qp2yh")
+theme_override_constants/separation = 25
 
 [node name="RedTurButton" type="Button" parent="TabContainer/Turrets"]
-custom_minimum_size = Vector2(200, 75)
+custom_minimum_size = Vector2(175, 45)
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
 text = "Red"
 
 [node name="OrgTurButton" type="Button" parent="TabContainer/Turrets"]
-custom_minimum_size = Vector2(200, 75)
+custom_minimum_size = Vector2(175, 45)
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
 text = "Orange"
 
 [node name="YelTurButton" type="Button" parent="TabContainer/Turrets"]
-custom_minimum_size = Vector2(200, 75)
+custom_minimum_size = Vector2(175, 45)
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
 text = "Yellow"
 
 [node name="BluTurButton" type="Button" parent="TabContainer/Turrets"]
-custom_minimum_size = Vector2(200, 75)
+custom_minimum_size = Vector2(175, 45)
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
 text = "Blue"
 
 [node name="CyaTurButton" type="Button" parent="TabContainer/Turrets"]
-custom_minimum_size = Vector2(200, 75)
+custom_minimum_size = Vector2(175, 45)
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
 text = "Cyan"
 
 [node name="PurTurButton" type="Button" parent="TabContainer/Turrets"]
-custom_minimum_size = Vector2(200, 75)
+custom_minimum_size = Vector2(175, 45)
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
 text = "Purple"
 
 [node name="BosTurButton" type="Button" parent="TabContainer/Turrets"]
-custom_minimum_size = Vector2(200, 75)
+custom_minimum_size = Vector2(175, 45)
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
 text = "Boss"
 
 [node name="Tanks" type="HBoxContainer" parent="TabContainer"]
 visible = false
 layout_mode = 2
 theme = ExtResource("3_qp2yh")
+theme_override_constants/separation = 25
 
 [node name="RedTankButton" type="Button" parent="TabContainer/Tanks"]
-custom_minimum_size = Vector2(200, 75)
+custom_minimum_size = Vector2(175, 45)
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
 text = "Red"
 
 [node name="OrgTankButton" type="Button" parent="TabContainer/Tanks"]
-custom_minimum_size = Vector2(200, 75)
+custom_minimum_size = Vector2(175, 45)
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
 text = "Orange"
 
 [node name="YelTankButton" type="Button" parent="TabContainer/Tanks"]
-custom_minimum_size = Vector2(200, 75)
+custom_minimum_size = Vector2(175, 45)
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
 text = "Yellow"
 
 [node name="BluTankButton" type="Button" parent="TabContainer/Tanks"]
-custom_minimum_size = Vector2(200, 75)
+custom_minimum_size = Vector2(175, 45)
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
 text = "Blue"
 
 [node name="CyaTankButton" type="Button" parent="TabContainer/Tanks"]
-custom_minimum_size = Vector2(200, 75)
+custom_minimum_size = Vector2(175, 45)
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
 text = "Cyan"
 
 [node name="MinTankButton" type="Button" parent="TabContainer/Tanks"]
-custom_minimum_size = Vector2(200, 75)
+custom_minimum_size = Vector2(175, 45)
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
 text = "Mini"
 
 [node name="Finish & Save" type="HBoxContainer" parent="TabContainer"]
-visible = false
 layout_mode = 2
 theme = ExtResource("3_qp2yh")
+
+[node name="Label3" type="Label" parent="TabContainer/Finish & Save"]
+layout_mode = 2
+text = "  Level Name: "
+
+[node name="NameLineEdit" type="LineEdit" parent="TabContainer/Finish & Save"]
+custom_minimum_size = Vector2(400, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+placeholder_text = "My Awesome Level!"
+max_length = 20
 
 [node name="Label" type="Label" parent="TabContainer/Finish & Save"]
 visible = false
@@ -272,8 +306,10 @@ layout_mode = 2
 text = "Save: "
 
 [node name="SaveButton" type="Button" parent="TabContainer/Finish & Save"]
-custom_minimum_size = Vector2(400, 75)
+custom_minimum_size = Vector2(400, 45)
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
 text = "SAVE Level"
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -301,6 +337,33 @@ text = "Missing Requirements"
 [node name="Timer" type="Timer" parent="Label"]
 wait_time = 2.0
 one_shot = true
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -23.0
+offset_bottom = 23.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("1_p2jcp")
+text = "Selected:
+
+Required:
+1 player tile
+1 finish tile
+
+turrets are 
+stationary
+tanks move
+
+Once you save
+Levels appear
+in \"custom\""
 
 [connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
 [connection signal="pressed" from="TabContainer/Grid Builder/GenerateButton" to="." method="_on_generate_button_pressed"]

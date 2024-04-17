@@ -1,8 +1,11 @@
 extends Control
 
 func _ready():
+	Global.reset_upgrade_list()
 	Global.custom_level_on = false
 	Global.adventureMode = false
+	if (!Global.played_game_before):
+		$MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/LevelSelectButton.text = "Tutorial"
 	Global.lives = 1
 	
 func _on_level_select_button_pressed():

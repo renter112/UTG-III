@@ -59,9 +59,9 @@ var adventure_mode_difficulty = [
 var adventure_mode_diff_selected : Array
 var adventure_mode_name = ""
 var lives = 1
-var upgrade_list = {"gun":0.0,"speed":0.0,"side_armor":0}
+var upgrade_list = {"gun":0.0,"speed":0.0,"side_armor":0, "invincible":0.0}
 func reset_upgrade_list():
-	upgrade_list = {"gun":0.0,"speed":0.0,"side_armor":0}
+	upgrade_list = {"gun":0.0,"speed":0.0,"side_armor":0, "invincible":0.0}
 
 
 func save_config():
