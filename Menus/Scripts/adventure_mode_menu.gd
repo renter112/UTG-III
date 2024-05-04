@@ -5,9 +5,10 @@ const info_text = [
 ,"15 less challenging levels, more upgrades"
 ,"A fair selection of 20 levels, with evenly placed upgrades"
 ,"Harder levels, less upgrades, 25 of them"
-,"30 of the toughest levels, fewest upgrades"]
+,"30 of the toughest levels, fewest upgrades"
+,"Only the hardest levels"]
 var val = 2
-var names = {"0":"Baby","1":"Easy","2":"Medium","3":"Hard","4":"Extreme"}
+var names = {"0":"Baby","1":"Easy","2":"Medium","3":"Hard","4":"Extreme","5":"Death"}
 func _ready():
 	Global.reset_upgrade_list()
 	Global.adventure_mode_level_num = 0
@@ -20,8 +21,13 @@ func _ready():
 func _on_h_slider_value_changed(value):
 	$MarginContainer/VBoxContainer/MarginContainer2/InfoLabel.text = info_text[value]
 	val = value
+	update_custom()
 	pass # Replace with function body.
 
+func update_custom():
+	$MarginContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HSlider.value = Global.adventure_mode_difficulty[val][5]
+	$MarginContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HSlider2.value = Global.adventure_mode_difficulty[val][4]
+	pass
 
 func _on_back_button_pressed():
 	Global.goto_scene("res://Menus/level_selector_menu_menu.tscn")
@@ -29,12 +35,13 @@ func _on_back_button_pressed():
 
 
 func _on_play_button_pressed():
-	print("will work on this laterrrrr")
 	var diff = Global.adventure_mode_difficulty[val]
 	print(diff)
+	diff[5] = $MarginContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HSlider.value as int 
+	diff[4] = $MarginContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HSlider2.value as int
 	Global.adventure_mode_diff_selected = diff
 	Global.adventure_mode_name = names.get(str(val))
-	print(names.get(str(val)))
+	print(Global.adventure_mode_diff_selected)
 	Global.adventureMode = true
 	Global.score = 0
 	var rng = RandomNumberGenerator.new()
@@ -55,7 +62,7 @@ func _on_play_button_pressed():
 		Global.current_level = Global.h_levels_play.pick_random()
 		Global.h_levels_play.erase(Global.current_level)
 		print("hard")
-	Global.lives = 3
+	Global.lives = $MarginContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HSlider3.value as int
 	Global.goto_scene("res://LevelTools/level.tscn")
 	# my idea:
 	#have bunch of hard / med / easy levels
@@ -69,4 +76,19 @@ func _on_play_button_pressed():
 
 func _on_button_pressed():
 	Global.goto_scene("res://Menus/score_menu.tscn")
+	pass # Replace with function body.
+
+
+func _on_length_value_changed(value):
+	$MarginContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxContainer/Label.text = str(value)
+	pass # Replace with function body.
+
+
+func _on_upgrades_value_changed(value):
+	$MarginContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxContainer3/Label.text = str(value)
+	pass # Replace with function body.
+
+
+func _on_h_slider_3_value_changed(value):
+	$MarginContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxContainer2/Label.text = str(value)
 	pass # Replace with function body.

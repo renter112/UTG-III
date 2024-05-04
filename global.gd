@@ -50,8 +50,8 @@ var adventureMode = false
 var adventure_mode_level_num = 0
 # beg %, easy % , med %, hard %, item room every X, length, score multiplier
 var adventure_mode_difficulty = [
-	[60,40,00,0,2,10,1], #bab
-	[35,40,25,0,4,15,1.5], #eas
+	[60,40,00,00,2,10,1], #bab
+	[35,40,25,00,4,15,1.5], #eas
 	[05,25,50,20,5,20,2], #med
 	[00,10,40,50,6,25,2.5], #hard
 	[00,00,30,70,7,30,3], #ext

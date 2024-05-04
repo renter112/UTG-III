@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cev1ytll8j8mi"]
+
+[ext_resource type="FontFile" uid="uid://n7lo661wrh6j" path="res://Menus/Assets/PixCon.ttf" id="1_jvhsk"]
+[ext_resource type="StyleBox" uid="uid://dse1i5oeiktwc" path="res://Menus/Assets/title_design.tres" id="2_h7br2"]
+
+[resource]
+Label/font_sizes/font_size = 15
+Label/fonts/font = ExtResource("1_jvhsk")
+Label/styles/normal = ExtResource("2_h7br2")

@@ -20,6 +20,8 @@ func _ready():
 	
 	o1 = opt.pick_random()
 	opt.erase(o1)
+	if opt.is_empty():
+		opt.push_back("l")
 	o2 = opt.pick_random()
 	
 	$MarginContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Button.text = btn_opts.get(o1)
