@@ -62,7 +62,14 @@ var lives = 1
 var upgrade_list = {"gun":0.0,"speed":0.0,"side_armor":0, "invincible":0.0}
 func reset_upgrade_list():
 	upgrade_list = {"gun":0.0,"speed":0.0,"side_armor":0, "invincible":0.0}
-
+func reset_adv_mod_dif():
+	adventure_mode_difficulty = [
+	[60,40,00,00,2,10,1], #bab
+	[35,40,25,00,4,15,1.5], #eas
+	[05,25,50,20,5,20,2], #med
+	[00,10,40,50,6,25,2.5], #hard
+	[00,00,30,70,7,30,3], #ext
+	[00,00,0,100,10,50,4]] #not in game
 
 func save_config():
 	var config = ConfigFile.new()

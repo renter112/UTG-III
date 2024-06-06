@@ -36,11 +36,12 @@ func _on_back_button_pressed():
 
 func _on_play_button_pressed():
 	var diff = Global.adventure_mode_difficulty[val]
-	print(diff)
+	Global.reset_adv_mod_dif()
 	diff[5] = $MarginContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HSlider.value as int 
 	diff[4] = $MarginContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HSlider2.value as int
 	Global.adventure_mode_diff_selected = diff
-	Global.adventure_mode_name = names.get(str(val))
+	check_modified(diff)
+	
 	print(Global.adventure_mode_diff_selected)
 	Global.adventureMode = true
 	Global.score = 0
@@ -63,6 +64,7 @@ func _on_play_button_pressed():
 		Global.h_levels_play.erase(Global.current_level)
 		print("hard")
 	Global.lives = $MarginContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HSlider3.value as int
+	print(Global.adventure_mode_difficulty)
 	Global.goto_scene("res://LevelTools/level.tscn")
 	# my idea:
 	#have bunch of hard / med / easy levels
@@ -73,6 +75,25 @@ func _on_play_button_pressed():
 	# switch scene -> ready func picks level -> switch back to level
 	pass # Replace with function body.
 
+func check_modified(dif):
+	var norm = Global.adventure_mode_difficulty[val]
+	print(norm)
+	print(dif)
+	var not_mod = true
+	var lives =  $MarginContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HSlider3.value as int
+	if dif[4] != norm[4]:
+		not_mod = false
+	if dif[5] != norm[5]:
+		not_mod = false
+	if lives != 3:
+		not_mod = false
+	print(not_mod)
+	if not_mod:
+		Global.adventure_mode_name = names.get(str(val))
+	else :
+		Global.adventure_mode_name = str(names.get(str(val))+ "_Custom")
+		print(Global.adventure_mode_name)
+	pass
 
 func _on_button_pressed():
 	Global.goto_scene("res://Menus/score_menu.tscn")
